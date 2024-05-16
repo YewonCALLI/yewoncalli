@@ -61,6 +61,23 @@
                 year: '2023', 
                 title: 'Cell on the Beach', 
                 description: 'A web-based party where two girls reminisce about their memories from science high school.', 
+                media: 'Website, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/2024-4.html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: './pages/2024-6.html', width: 150, height: 200, top: 600, left: 140 },
+                    { url: './pages/2024-7.html', width: 150, height: 200, top: 630, left: 320 },
+                    { url: './pages/2024-8.html', width: 450, height: 300, top: 100, left: 300 },
+                    { url: 'https://cellonthebeach.vercel.app/', width: 700, height: 500, top: 250, left: 500 },
+                    { url: './pages/2024-9.html', width: 300, height: 230, top: 680, left: 450 },
+                    { url: './pages/2024-10.html', width: 300, height: 230, top: 150, left: 1050  },
+                    { url: './pages/2024-5.html', width: 300, height: 230, top: 740, left: 900 },
+                    { url: './pages/2024-11.html', width: 300, height: 230, top: 700, left: 1140 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'Cell on the Beach', 
+                description: 'A web-based party where two girls reminisce about their memories from science high school.', 
                 media: 'Website <br> Math, Science, and Mind', 
                 urls: [
                     { url: './pages/2024-4.html', width: 300, height: 600, top: 80, left: 50 },
@@ -72,28 +89,34 @@
                     { url: './pages/2024-10.html', width: 300, height: 230, top: 150, left: 1050  },
                     { url: './pages/2024-5.html', width: 300, height: 230, top: 740, left: 900 },
                     { url: './pages/2024-11.html', width: 300, height: 230, top: 700, left: 1140 },
-
-
                 ] 
             },
             // 다른 항목 추가
         ];
 
-        const selectElement = document.getElementById('yearSelect');
-        selectElement.addEventListener('change', function() {
-            updateWorkList(this.value);
+        const yearSelectElement = document.getElementById('yearSelect');
+        yearSelectElement.addEventListener('change', function() {
+            updateWorkList(this.value, mediaSelectElement.value);
         });
 
-        function updateWorkList(selectedYear) {
+        const mediaSelectElement = document.getElementById('mediaSelect');
+        mediaSelectElement.addEventListener('change', function() {
+            updateWorkList(yearSelectElement.value, this.value);
+        });
+
+        function updateWorkList(selectedYear, selectedMedia) {
             const tableBody = document.querySelector('.worklist tbody');
             tableBody.innerHTML = ''; // Clear existing rows
             let filteredWorks = works;
             if (selectedYear !== 'all') {
-                filteredWorks = works.filter(work => work.year === selectedYear);
+                filteredWorks = filteredWorks.filter(work => work.year === selectedYear);
+            }
+            if (selectedMedia !== 'all') {
+                filteredWorks = filteredWorks.filter(work => work.media.includes(selectedMedia));
             }
             filteredWorks.forEach(work => {
                 const row = `<tr>
-                    <td><a href="#" data-urls='${JSON.stringify(work.urls)}' onclick="openWork(this)">${work.title}</a></td>
+                    <td><a href="#" data-urls='${JSON.stringify(work.urls)}' onclick="openWork(this)">${work.title}</td>
                     <td>${work.description}</td>
                     <td>${work.media}</td>
                 </tr>`;
@@ -101,7 +124,7 @@
             });
         }
 
-        updateWorkList('all');
+        updateWorkList('all', 'all');
     });
     </script>
 </head>
@@ -157,11 +180,13 @@
                 <option value="other">Others</option>
             </select>
             <select id="mediaSelect">
-                <option value="all">✍️ Isolated Data</option>
-                <option value="2024">💻 Website</option>
-                <option value="2023">🧪 Math, Science, and Mind</option>
-                <option value="2022">🎞️ Video</option>
-                <option value="2021">🌠 Poster</option>
+                <option value="all">📡 All Media</option>
+                <option value="Isolated Data">✍️ Isolated Data</option>
+                <option value="Website">🌏 Website</option>
+                <option value="Math, Science, and Mind">🧪 Math, Science, and Mind</option>
+                <option value="Video">🎞️ Video</option>
+                <option value="Poster">🌠 Poster</option>
+                <option value="Accessibility">🙌 Accessibility</option>
             </select>
         </div>
         <table class="worklist">
