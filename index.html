@@ -8,6 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .worklist tbody {
+            display: block;
+            max-height: 360px; /* Set this to the desired height */
+            overflow-y: auto;
+        }
+        .worklist thead, .worklist tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed; /* Ensures the table layout remains consistent */
+        }
+    </style>
     <script>
         function expandText() {
             var description = document.querySelector('.description');
@@ -36,7 +48,6 @@
         }
 
     function openWork(element) {
-        // Element에서 data-urls 속성을 읽고 파싱
         const windowConfigs = JSON.parse(element.getAttribute('data-urls'));
         windowConfigs.forEach((config, index) => {
             window.open(config.url, `_blank${index}`, `width=${config.width}, height=${config.height}, top=${config.top}, left=${config.left}, scrollbars=yes`);
@@ -49,7 +60,7 @@
                 year: '2024', 
                 title: 'Hongyeon 1.0', 
                 description: 'Visited Hongyeon-gil for 6 months to collect stories from the residents.', 
-                media: 'Website, Accessibility', 
+                media: 'Website, Isolated Data', 
                 urls: [
                     { url: './pages/2024-1.html', width: 300, height: 600, top: 40, left: 50 },
                     { url: 'https://hongyeon.vercel.app/ ', width: 800, height: 600, top: 250, left: 400 },
@@ -76,19 +87,71 @@
             },
             { 
                 year: '2023', 
-                title: 'Cell on the Beach', 
-                description: 'A web-based party where two girls reminisce about their memories from science high school.', 
-                media: 'Website <br> Math, Science, and Mind', 
+                title: 'MemeProject', 
+                description: 'Virtual businesses that collect and preserve memes', 
+                media: 'Website', 
                 urls: [
-                    { url: './pages/2024-4.html', width: 300, height: 600, top: 80, left: 50 },
-                    { url: './pages/2024-6.html', width: 150, height: 200, top: 600, left: 140 },
-                    { url: './pages/2024-7.html', width: 150, height: 200, top: 630, left: 320 },
-                    { url: './pages/2024-8.html', width: 450, height: 300, top: 100, left: 300 },
-                    { url: 'https://cellonthebeach.vercel.app/', width: 700, height: 500, top: 250, left: 500 },
-                    { url: './pages/2024-9.html', width: 300, height: 230, top: 680, left: 450 },
-                    { url: './pages/2024-10.html', width: 300, height: 230, top: 150, left: 1050  },
-                    { url: './pages/2024-5.html', width: 300, height: 230, top: 740, left: 900 },
-                    { url: './pages/2024-11.html', width: 300, height: 230, top: 700, left: 1140 },
+                    { url: './pages/memeproject.html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: './pages/memeproject-2.html', width: 300, height: 300, top: 300, left: 1200 },
+                    { url: './pages/memeproject-3.html', width: 200, height: 200, top: 70, left: 830 },
+                    { url: 'https://www.memeproject.site', width: 700, height: 500, top: 250, left: 450 },
+                    { url: './pages/memeproject-4.html', width: 300, height: 430, top: 200, left: 280 },
+                    { url: './pages/memeproject-5.html', width: 300, height: 290, top: 540, left: 1000 },
+                    { url: './pages/memeproject-6.html', width: 700, height: 120, top: 730, left: 90 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'MemeProject (world.html)', 
+                description: 'Meme Waterwheel🎡🎡🎡', 
+                media: 'Website', 
+                urls: [
+                    { url: './pages/memeproject(world).html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: 'https://www.memeproject.site/world.html', width: 700, height: 500, top: 250, left: 450 }
+                ] 
+            },
+            { 
+                year: '2024', 
+                title: 'p5. Ko Translate', 
+                description: 'Translation of the website of p5.js to be renewed', 
+                media: 'Accessibility', 
+                urls: [
+                    { url: 'https://github.com/p5-js-KO-Translation/2024', width: 600, height: 600, top: 200, left: 400 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'Simulating #1,2,3', 
+                description: 'Translation of the website of p5.js to be renewed', 
+                media: 'Video, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/simulating.html', width: 300, height: 600, top: 100, left: 900 },
+                    { url: './pages/simulating-1.html', width: 670, height: 380, top: 100, left: 200 },
+                    { url: './pages/simulating-2.html', width: 570, height: 330, top: 560, left: 300 },
+
+                ] 
+            },
+            { 
+                year: '2022', 
+                title: 'delta-individualism', 
+                description: 'The Goldberg device, which represents an inefficient machine, accuses modern social problems. It uses the concept of social entropy.', 
+                media: 'Video, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/delta.html', width: 300, height: 600, top: 100, left: 900 },
+                    { url: 'https://drive.google.com/file/d/11EKz-RYd7x7SjEB42nF8FnRHUOtvlP4R/view', width: 670, height: 500, top: 100, left: 200 },
+
+                ] 
+            },
+            { 
+                year: '2022', 
+                title: 'Franklin', 
+                description: 'Debiased korean AI fairytale generator', 
+                media: 'Isolated Data', 
+                urls: [
+                    { url: './pages/simulating.html', width: 300, height: 600, top: 100, left: 900 },
+                    { url: './pages/simulating-1.html', width: 670, height: 380, top: 100, left: 200 },
+                    { url: './pages/simulating-2.html', width: 570, height: 330, top: 560, left: 300 },
+
                 ] 
             },
             // 다른 항목 추가
@@ -148,6 +211,9 @@
         <span class="Isolated-Data">
             Isolated Data
         </span>
+        <span class="Accessibility">
+            Accessibility
+        </span>
         <span class="Website">
             Website
         </span>
@@ -182,11 +248,11 @@
             <select id="mediaSelect">
                 <option value="all">📡 All Media</option>
                 <option value="Isolated Data">✍️ Isolated Data</option>
+                <option value="Accessibility">🙌 Accessibility</option>
                 <option value="Website">🌏 Website</option>
                 <option value="Math, Science, and Mind">🧪 Math, Science, and Mind</option>
                 <option value="Video">🎞️ Video</option>
                 <option value="Poster">🌠 Poster</option>
-                <option value="Accessibility">🙌 Accessibility</option>
             </select>
         </div>
         <table class="worklist">
@@ -197,7 +263,7 @@
                     <th>Media</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="text-decoration: none;">
                 <!-- 작업 목록이 동적으로 삽입됩니다 -->
             </tbody>
         </table>
