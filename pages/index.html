@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yewon</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        function expandText() {
+            var description = document.querySelector('.description');
+            description.innerHTML = 'is an digital - psychophysicist <br> from Seoul, South Korea. <br><br> She aims to observe and formalize overlooked phenomena such as love, hatred, loss, and depression to evoke empathy. Various media serve as the means of formalization, with each project involving a medium—such as parties, the internet, analog TV, or Rube Goldberg devices—that maximizes the formula in relation to the phenomenon. My primary interest lies in the "Data". I liberate marginalized data, images, and stories by inviting them into the digital space. Moreover, I hope that these overlooked data, gathered on the internet, will be transmitted to others through techniques such as mixing, concealing forms, anonymizing, and making noise.';
+            var more = document.querySelector('.more');
+            more.innerHTML = 'Less';
+            var vector1 = document.querySelector('.Vector1');
+            vector1.style.display = 'block';
+
+            if(more.innerHTML === 'Less') {
+                more.setAttribute('onclick', 'collapseText()');
+            }
+        }
+
+        function collapseText(){
+            var description = document.querySelector('.description');
+            description.innerHTML = 'is an digital - psychophysicist <br> from Seoul, South Korea.';
+            var more = document.querySelector('.more');
+            more.innerHTML = 'More';
+            var vector1 = document.querySelector('.Vector1');
+            vector1.style.display = 'none';
+
+            if(more.innerHTML === 'More') {
+                more.setAttribute('onclick', 'expandText()');
+            }
+        }
+
+    function openWork(element) {
+        // Element에서 data-urls 속성을 읽고 파싱
+        const windowConfigs = JSON.parse(element.getAttribute('data-urls'));
+        windowConfigs.forEach((config, index) => {
+            window.open(config.url, `_blank${index}`, `width=${config.width}, height=${config.height}, top=${config.top}, left=${config.left}, scrollbars=yes`);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const works = [
+            { 
+                year: '2024', 
+                title: 'Hongyeon 1.0', 
+                description: 'Visited Hongyeon-gil for 6 months to collect stories from the residents.', 
+                media: 'Website, Accessibility', 
+                urls: [
+                    { url: './2024-1.html', width: 300, height: 600, top: 40, left: 50 },
+                    { url: 'https://hongyeon.vercel.app/ ', width: 800, height: 600, top: 250, left: 400 },
+                    { url: './2024-2.html', width: 300, height: 600, top: 150, left: 2040 },
+                    { url: './2024-3.html', width: 300, height: 200, top: 600, left: 140 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'Cell on the Beach', 
+                description: 'A web-based party where two girls reminisce about their memories from science high school.', 
+                media: 'Website <br> Math, Science, and Mind', 
+                urls: [
+                    { url: './2024-4.html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: './2024-6.html', width: 150, height: 200, top: 600, left: 140 },
+                    { url: './2024-7.html', width: 150, height: 200, top: 630, left: 320 },
+                    { url: './2024-8.html', width: 450, height: 300, top: 100, left: 300 },
+                    { url: 'https://cellonthebeach.vercel.app/', width: 700, height: 500, top: 250, left: 500 },
+                    { url: './2024-9.html', width: 300, height: 230, top: 680, left: 450 },
+                    { url: './2024-10.html', width: 300, height: 230, top: 150, left: 1050  },
+                    { url: './2024-5.html', width: 300, height: 230, top: 740, left: 900 },
+                    { url: './2024-11.html', width: 300, height: 230, top: 700, left: 1140 },
+
+
+                ] 
+            },
+            // 다른 항목 추가
+        ];
+
+        const selectElement = document.getElementById('yearSelect');
+        selectElement.addEventListener('change', function() {
+            updateWorkList(this.value);
+        });
+
+        function updateWorkList(selectedYear) {
+            const tableBody = document.querySelector('.worklist tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+            let filteredWorks = works;
+            if (selectedYear !== 'all') {
+                filteredWorks = works.filter(work => work.year === selectedYear);
+            }
+            filteredWorks.forEach(work => {
+                const row = `<tr>
+                    <td><a href="#" data-urls='${JSON.stringify(work.urls)}' onclick="openWork(this)">${work.title}</a></td>
+                    <td>${work.description}</td>
+                    <td>${work.media}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        updateWorkList('all');
+    });
+    </script>
+</head>
+<body>
+    <div class="item1">
+        <div class="Rectangle-2">
+            <div class="Rectangle-3">
+            </div>
+            <div class="Yeb2001">
+                🌹 Ye￦(b.2001)
+            </div>
+        </div>
+        <div class="description">
+            is an digital - psychophysicist<br>
+            from Seoul, South Korea.
+        </div>
+        <button class="more" onclick="expandText()">More</button>
+    </div>
+    <div class="Vector1"></div>
+    <div class="item2">
+        <span class="Isolated-Data">
+            Isolated Data
+        </span>
+        <span class="Website">
+            Website
+        </span>
+        <span class="Math-Science-and-Mind">
+            Math, Science and Mind
+        </span>
+        <span class="Video">
+            Video
+        </span>
+        <span class="Poster">
+            Poster
+        </span>
+    </div>
+    <div class="item3">
+        <div class="Rectangle-5">
+            Korean
+        </div>
+        <div class="Rectangle-6">
+            English
+        </div>
+    </div>
+    <div class="item4">
+        <div class="select">
+            <select id="yearSelect">
+                <option value="all">All</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="other">Others</option>
+            </select>
+            <select id="mediaSelect">
+                <option value="all">✍️ Isolated Data</option>
+                <option value="2024">💻 Website</option>
+                <option value="2023">🧪 Math, Science, and Mind</option>
+                <option value="2022">🎞️ Video</option>
+                <option value="2021">🌠 Poster</option>
+            </select>
+        </div>
+        <table class="worklist">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Media</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 작업 목록이 동적으로 삽입됩니다 -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍연길에 대한 문장들</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items:end;
+            background-color: #f5f5f5;
+        }
+
+        #faq-container {
+            position: relative;
+            width: 100%;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .question, .answer {
+            white-space: pre-wrap; /* Respect whitespace */
+            overflow-wrap: break-word;
+            margin-bottom: 20px;
+}
+
+    </style>
+</head>
+
+
+<body>
+    <div id="faq-container">
+        
+    </div>
+    <script>
+        const faqs = [
+        { question: "Q : 홍연길에 대해 알려줘", answer: "A : 홍연길은 서울의 연희동에 위치한 아기자기하고 사랑스러운 골목길로요. 오래된 상점과 현대적인 갤러리, 예술공방이 공존하며, 독특한 분위기가 느껴지는 곳이에요." },
+        { question: "Q : 홍연길에 살면 좋은 점이 뭐야?", answer: "A : 주변에 공원이 많고 편안한 분위기라서 산책하기 좋아. 아주 재밌는 카페도 많아. 가게 주인분들도 친절하시고 정이 넘쳐." },
+        { question: "Q : 홍연길에 살면서 불편한 점이 있어?", answer: "A : 홍연길은 아직 편의점이 많지 않고, 주차 공간이 적어 차를 주차하기 어려운 면이 있습니다. 또한, 오래된 건물이 많아 외관이 다소 낡아 보이는 경우가 있을 수 있습니다." },
+        { question: "Q : 홍연길의 옛날을 알려줘", answer: "A : 홍연길은 예전에는 홍제천이라는 시냇가를 따라 연평도까지 이어지는 길이었어. 물이 맑고 깨끗해서 홍제천이라고 불렀지. 여기는 물이 맑고 깨끗해서 빨래터로 유명했어. 그래서 많은 사람들이 빨래 치러 오곤 했어." },
+        { question: "Q : 홍연길은 지금 어떤 모습이야?", answer: "A : 갤러리가 많이 생기고 있다. 예술이 많이 들어와서 예술과 갤러리로 변모 중이야." },
+        { question: "Q : 홍연길로 이사갈건데 주의할 점이 있을까?", answer: "A : 주차 난이도가 있으니 참고하세요." },
+        { question: "Q : 홍연길에 있는 카페 추천해줘.", answer: "A : ‘콩깍지'가 인상 깊었어. 노인분들이 계시면, 1인 자리에 앉아서 사진 많이 찍고 계시더라고. 옛날 감성을 살린 카페라고 할 수 있어. 카페 내부도 진짜 예뻐. 노인분들이 계셔서 ‘옛날 그림' 같은 느낌을 받았어." },
+        { question: "2024/01/16 10의 n승에서 진행한 <도전! 실버벨: 홍연길 프로젝트 쇼케이스>에서 홍연 1.0이 작성한 문장입니다.", answer: " " },
+
+];
+const container = document.getElementById('faq-container');
+let currentFAQ = 0;
+
+function typeWriter(text, element, callback) {
+    let i = 0;
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, 50); // Adjust typing speed here
+        } else if (callback) {
+            callback();
+        }
+    }
+    typing();
+}
+
+function displayFAQ() {
+    if (currentFAQ < faqs.length) {
+        const faq = faqs[currentFAQ];
+        const questionElement = document.createElement('div');
+        questionElement.className = 'question';
+        container.appendChild(questionElement);
+        typeWriter(faq.question, questionElement, () => {
+            const answerElement = document.createElement('div');
+            answerElement.className = 'answer';
+            container.appendChild(answerElement);
+            typeWriter(faq.answer, answerElement, () => {
+                currentFAQ++;
+                setTimeout(displayFAQ, 1000); // Delay before the next FAQ
+            });
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', displayFAQ);
+
+    </script>
+</body>
+</html>
