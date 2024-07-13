@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-family: 'Arial';
+            z-index: 1;
+        }
+        .title{
+            color: blue;
+            cursor:pointer;
+            display: flex;
+            gap:20px;
+        }
+        .title :hover{
+            color: red;
+        }
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="wiki-frame" src="https://ko.wikipedia.org/wiki/HTML" frameborder="0"></iframe>
+    <div class="title">
+        <div class="H">H</div>
+        <div class="T">T</div>
+        <div class="M">M</div>
+        <div class="L">L</div>
+        <div class="D">D</div>
+        <div class="A">A</div>
+        <div class="Y">Y</div>
+    </div>
+</body>
+<script>
+    const H = document.querySelector('.H');
+    const iframe = document.querySelector('iframe');
+    H.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/H_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+    const T = document.querySelector('.T');
+    T.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/T_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+    const M = document.querySelector('.M');
+    M.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/M_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+    const L = document.querySelector('.L');
+    L.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/L_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+    const D = document.querySelector('.D');
+    D.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/D_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+    const A = document.querySelector('.A');
+    A.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/A_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+    const Y = document.querySelector('.Y');
+    Y.addEventListener('click', () => {
+        iframe.src = `https://ko.wikipedia.org/wiki/Y_(%EB%8F%99%EC%9D%8C%EC%9D%B4%EC%9D%98)`;
+    });
+</script>
+</html>
