@@ -55,13 +55,6 @@
             }
         }
 
-    function openWork(element) {
-        const windowConfigs = JSON.parse(element.getAttribute('data-urls'));
-        windowConfigs.forEach((config, index) => {
-            window.open(config.url, `_blank${index}`, `width=${config.width}, height=${config.height}, top=${config.top}, left=${config.left}, scrollbars=yes`);
-        });
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
         const works = [
             { 
@@ -194,8 +187,9 @@
                 filteredWorks = filteredWorks.filter(work => work.media.includes(selectedMedia));
             }
             filteredWorks.forEach(work => {
+                const firstUrl = work.urls[0].url;
                 const row = `<tr>
-                    <td><a href="#" data-urls='${JSON.stringify(work.urls)}' onclick="openWork(this)">${work.title}</td>
+                    <td><a href="${firstUrl}">${work.title}</a></td>
                     <td>${work.description}</td>
                     <td>${work.media}</td>
                 </tr>`;
