@@ -6,34 +6,149 @@
     <title>홍연 1.0에 대한 글</title>
     <link rel="stylesheet" href="../style.css">
     <style>
+        .worklist{
+            position: relative;
+        }
         .worklist tbody {
+            position: relative;
             display: block;
-            max-height: 360px;
             overflow-y: auto;
+            width: 30%;
+            height: 78vh;
+            -ms-overflow-style: none;
+        }
+        .worklist tbody::-webkit-scrollbar{
+            display:none;
+        }
+        .worklist td{
+            padding: 0px;
+            border: none;
         }
         .worklist thead, .worklist tbody tr {
             display: table;
-            width: 100%;
-            table-layout: fixed;
         }
         .thumbnail {
-            width: 100px;
-            height: auto;
+            cursor: pointer;
+            width: 100%;
         }
-
         .information {
             max-height: 600px;
             overflow-y: auto;
         }
-
         .info-img {
-            width: 200px;
-            margin: 10px 0;
+            width: 90%;
+            cursor: pointer;
+        }
+        .first-line {
+            position: absolute;
+            left: 17.4%;
+            height: 100%;
+        }
+        .second-line {
+            position: absolute;
+            left: 60.7%;
+            top: 0px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .third-line {
+            position: absolute;
+            left: 73.7%;
+            top: 0px;
+            height: 100%;
+            z-index: -1;
+        }
+        .fourth-line {
+            position: absolute;
+            left: 75.3%;
+            top: 0px;
+            height: 100%;
+            z-index: -1;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            left: 2.1%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .image-container {
-            margin-top: 20px;
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
         }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+        }
+        .modal-content, .close {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 스티커 스타일 */
+        .sticker {
+            position: relative;
+            width: 90%;
+            background-color: #20ff00;
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            animation: showSticker 1s forwards;
+        }
+
+        .sticker p{
+            margin: 0;
+            text-align: left;
+        }
+
+        /* 스티커 애니메이션 */
+        @keyframes showSticker {
+            0% { opacity: 0; transform: translateY(-10px) rotate(-10deg); }
+            100% { opacity: 1; transform: translateY(0) rotate(0deg); }
+        }
+
 
         @media (max-width: 450px) {
             .item1 {
@@ -42,224 +157,302 @@
                 left: 10px;
                 flex-direction: column;
             }
+            .second-line {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .image-container {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const works = [
-            { 
-                year: '2024', 
-                title: 'Hongyeon 1.0', 
-                description: "Exhibited : <플랜티 하우스 PlanT House>, 홍천미술관 <br><br> Yewon Jang, Hongyeon 1.0, 2023, Chatbot AI, ChatGPT 3.5, Naver Clova Note, Honyeon-gil interview<br><br>Hongyeon 1.0 is a chatbot AI created by an artist who visited Hongyeon-gil, Yeonhui-dong, Seoul, for four months to collect data about 'Hongyeon-gil.' The artist discovered that despite the high elderly population in Hongyeon-gil, there was a separation between the elderly and young generations. To address this generational divide using AI, the artist created a chatbot that mixes conversations from all generations within Hongyeon-gil. To achieve this, the artist categorized the conversations into youth, elderly, and visitors, and collected both online and offline data about 'Hongyeon-gil' through street interviews, online surveys, and web crawling. This data was then fine-tuned on GPT-3.5 and applied to the chatbot. The chatbot conveys interview responses from various age groups in Hongyeon-gil as if spoken by one person, sharing not only the history, geography, and culture of Hongyeon-gil but also personal experiences and memories as if living there. The chatbot is accessible to everyone through an avatar website.", 
-                media: 'Website, Isolated Data', 
-                thumbnail: './thumbnails/hongyeon1.0.png',
-                infoImages: ['./thumbnails/hongyeon1.0-1.png', './thumbnails/hongyeon1.0-2.png']
-            },
-            { 
-                year: '2023', 
-                title: 'Cell on the Beach', 
-                description: 'A web-based party where two girls reminisce about their memories from science high school.', 
-                media: 'Website, <br>Math, Science, and Mind', 
-                thumbnail: './thumbnails/cellonthebeach.png',
-                infoImages: ['./thumbnails/cellonthebeach-1.png']
-            },
-            { 
-                year: '2023', 
-                title: 'MemeProject', 
-                description: 'Virtual businesses that collect and preserve memes', 
-                media: 'Website', 
-                thumbnail: './thumbnails/memeproject.png',
-                infoImages: []
-            },
-            { 
-                year: '2023', 
-                title: 'MemeProject (world.html)', 
-                description: 'Meme Waterwheel🎡🎡🎡', 
-                media: 'Website', 
-                thumbnail: './thumbnails/memeprojectworld.png',
-                infoImages: []
-            },
-            { 
-                year: '2024', 
-                title: 'p5. Ko Translate', 
-                description: 'Translation of the website of p5.js to be renewed', 
-                media: 'Accessibility', 
-                thumbnail: './thumbnails/p5kotranslate.png',
-                infoImages: []
-            },
-            { 
-                year: '2023', 
-                title: 'Simulating #1,2,3', 
-                description: 'Translation of the website of p5.js to be renewed', 
-                media: 'Video, <br>Math, Science, and Mind', 
-                thumbnail: './thumbnails/simulating.png',
-                infoImages: []
-            },
-            { 
-                year: '2022', 
-                title: 'delta-individualism', 
-                description: 'The Goldberg device, which represents an inefficient machine, accuses modern social problems. It uses the concept of social entropy.', 
-                media: 'Video, <br>Math, Science, and Mind', 
-                thumbnail: './thumbnails/deltaindividualism.png',
-                infoImages: []
-            },
-            { 
-                year: '2022', 
-                title: 'Franklin', 
-                description: 'Debiased korean AI fairytale generator', 
-                media: 'Isolated Data, Paper', 
-                thumbnail: './thumbnails/franklin.png',
-                infoImages: []
-            },
-            { 
-                year: '2021', 
-                title: 'Singlet & Multiplet', 
-                description: "Work connecting 'Multiple Selves' and 'Quantum Mechanics'", 
-                media: 'Video, <br>Math, Science, and Mind', 
-                thumbnail: './thumbnails/singletmultiplet.png',
-                infoImages: []
-            },
-        ];
+            const works = [
+                { 
+                    year: '2024', 
+                    title: 'Word Wide Web', 
+                    description: "Exhibited : <플랜티 하우스 PlanT House>, 홍천미술관 <br><br> Yewon Jang, Hongyeon 1.0, 2023, Chatbot AI, ChatGPT 3.5, Naver Clova Note, Honyeon-gil interview<br><br>Hongyeon 1.0 is a chatbot AI created by an artist who visited Hongyeon-gil, Yeonhui-dong, Seoul, for four months to collect data about 'Hongyeon-gil.' The artist discovered that despite the high elderly population in Hongyeon-gil, there was a separation between the elderly and young generations. To address this generational divide using AI, the artist created a chatbot that mixes conversations from all generations within Hongyeon-gil. To achieve this, the artist categorized the conversations into youth, elderly, and visitors, and collected both online and offline data about 'Hongyeon-gil' through street interviews, online surveys, and web crawling. This data was then fine-tuned on GPT-3.5 and applied to the chatbot. The chatbot conveys interview responses from various age groups in Hongyeon-gil as if spoken by one person, sharing not only the history, geography, and culture of Hongyeon-gil but also personal experiences and memories as if living there. The chatbot is accessible to everyone through an avatar website.", 
+                    media: 'Website, Isolated Data', 
+                    thumbnail: '../assets/image/wordwideweb.png',
+                    infoImages:  [{ src: '../assets/image/hongyeon.gif', altText: 'Word Wide Web Thumbnail'}, 
+                    { src: '../assets/image/hongyeongil2.png', altText: 'Word Wide Web Thumbnail'},
+                    { src: '../assets/image/hongyeongil3.png', altText: 'Word Wide Web Thumbnail' }],
+                    id: 'wordwideweb',
+                },
+                { 
+                    year: '2024', 
+                    title: 'Hongyeon 1.0', 
+                    description: "Exhibited : <플랜티 하우스 PlanT House>, 홍천미술관 <br><br> Yewon Jang, Hongyeon 1.0, 2023, Chatbot AI, ChatGPT 3.5, Naver Clova Note, Honyeon-gil interview<br><br>Hongyeon 1.0 is a chatbot AI created by an artist who visited Hongyeon-gil, Yeonhui-dong, Seoul, for four months to collect data about 'Hongyeon-gil.' The artist discovered that despite the high elderly population in Hongyeon-gil, there was a separation between the elderly and young generations. To address this generational divide using AI, the artist created a chatbot that mixes conversations from all generations within Hongyeon-gil. To achieve this, the artist categorized the conversations into youth, elderly, and visitors, and collected both online and offline data about 'Hongyeon-gil' through street interviews, online surveys, and web crawling. This data was then fine-tuned on GPT-3.5 and applied to the chatbot. The chatbot conveys interview responses from various age groups in Hongyeon-gil as if spoken by one person, sharing not only the history, geography, and culture of Hongyeon-gil but also personal experiences and memories as if living there. The chatbot is accessible to everyone through an avatar website.", 
+                    media: 'Website, Isolated Data', 
+                    thumbnail: '../assets/image/hongyeon1.0.png',
+                    infoImages:  [{ src: '../assets/image/hongyeon.gif', altText: 'Screen recording of the interface using the Hongyeon 1.0 AI to inquire about information on Hongyeon Gil.' }, 
+                    { src: '../assets/image/hongyeongil2.png', altText: 'Exhibition view of Hongyeon 1.0 displayed at the gallery "Power of 10."' },
+                    { src: '../assets/image/hongyeongil3.png', altText: 'Photograph of multiple posters for the "Hongyeon Gil Memory Collection Survey" event, displayed in various locations along the street.' }],
+                    id: 'hongyeon1-0',
+                },
+                { 
+                    year: '2024', 
+                    title: 'ABT', 
+                    description: "Exhibited : <플랜티 하우스 PlanT House>, 홍천미술관 <br><br> Yewon Jang, Hongyeon 1.0, 2023, Chatbot AI, ChatGPT 3.5, Naver Clova Note, Honyeon-gil interview<br><br>Hongyeon 1.0 is a chatbot AI created by an artist who visited Hongyeon-gil, Yeonhui-dong, Seoul, for four months to collect data about 'Hongyeon-gil.' The artist discovered that despite the high elderly population in Hongyeon-gil, there was a separation between the elderly and young generations. To address this generational divide using AI, the artist created a chatbot that mixes conversations from all generations within Hongyeon-gil. To achieve this, the artist categorized the conversations into youth, elderly, and visitors, and collected both online and offline data about 'Hongyeon-gil' through street interviews, online surveys, and web crawling. This data was then fine-tuned on GPT-3.5 and applied to the chatbot. The chatbot conveys interview responses from various age groups in Hongyeon-gil as if spoken by one person, sharing not only the history, geography, and culture of Hongyeon-gil but also personal experiences and memories as if living there. The chatbot is accessible to everyone through an avatar website.", 
+                    media: 'Website', 
+                    thumbnail: '../assets/image/ABT website.png',
+                    infoImages:  [{ src: '../assets/image/hongyeon.gif', altText: 'Word Wide Web Thumbnail' }, 
+                    { src: '../assets/image/hongyeongil2.png', altText: 'Word Wide Web Thumbnail' },
+                    { src: '../assets/image/hongyeongil3.png', altText: 'Word Wide Web Thumbnail' }],
+                    id: 'abt',
+                },
+                { 
+                    year: '2023', 
+                    title: 'Cell on the Beach', 
+                    description: 'A web-based party where two girls reminisce about their memories from science high school.', 
+                    media: 'Website, <br>Physics', 
+                    thumbnail: '../assets/image/cellonthebeach.png',
+                    infoImages: ['./thumbnails/cellonthebeach-1.png'],
+                    id: 'cell-on-the-beach'
+                },
+                { 
+                    year: '2023', 
+                    title: 'MemeProject', 
+                    description: 'Virtual businesses that collect and preserve memes', 
+                    media: 'Website', 
+                    thumbnail: '../assets/image/meme project.png',
+                    infoImages: [],
+                    id: 'memeproject'
+                },
+                { 
+                    year: '2023', 
+                    title: 'MemeProject (world.html)', 
+                    description: 'Meme Waterwheel🎡🎡🎡', 
+                    media: 'Website', 
+                    thumbnail: '../assets/image/memproject (world.html).png',
+                    infoImages: [],
+                    id: 'memeproject-world'
+                },
+                { 
+                    year: '2024', 
+                    title: 'p5. Ko Translate', 
+                    description: 'Translation of the website of p5.js to be renewed', 
+                    media: 'Accessibility', 
+                    thumbnail: '../assets/image/p5kotranslate.png',
+                    infoImages: [],
+                    id: 'p5-ko-translate'
+                },
+                { 
+                    year: '2023', 
+                    title: 'Simulating #1,2,3', 
+                    description: 'Translation of the website of p5.js to be renewed', 
+                    media: 'Video, <br>Physics', 
+                    thumbnail: '../assets/image/Simulating.png',
+                    infoImages: [],
+                    id: 'simulating'
+                },
+                { 
+                    year: '2021', 
+                    title: 'Singlet & Multiplet', 
+                    description: "Work connecting 'Multiple Selves' and 'Quantum Mechanics'", 
+                    media: 'Video, <br>Physics', 
+                    thumbnail: '../assets/image/Singlet&Multiplet.png',
+                    infoImages: [],
+                    id: 'singlet-multiplet'
+                },
+            ];
 
+            const yearSelectElement = document.getElementById('yearSelect');
+            const mediaSelectElement = document.getElementById('mediaSelect');
+            const infoContainer = document.querySelector('.information');
+            const titleElement = document.querySelector('.Rectangle-22 p');
+            const imageContainer = document.querySelector('.image-container');
+            let currentWorks = works; // 처음엔 모든 작품을 보여줌
+            let currentIndex = 0;
 
-    const yearSelectElement = document.getElementById('yearSelect');
-    const mediaSelectElement = document.getElementById('mediaSelect');
-    const infoContainer = document.querySelector('.information');
-    const titleElement = document.querySelector('.Rectangle-22 p');
-    const imageContainer = document.querySelector('.image-container');
-    let currentWorks = works; // 처음엔 모든 작품을 보여줌
-    let currentIndex = 0;
-
-    // 페이지 로드 시 기본 상태로 첫 번째 작품 자동 표시
-    updateWorkList('all', 'all', true);
-
-    yearSelectElement.addEventListener('change', function() {
-        updateWorkList(this.value, mediaSelectElement.value, false);
-    });
-
-    mediaSelectElement.addEventListener('change', function() {
-        updateWorkList(yearSelectElement.value, this.value, false);
-    });
-
-    function updateWorkList(selectedYear, selectedMedia, initialLoad) {
-        const tableBody = document.querySelector('.worklist tbody');
-        tableBody.innerHTML = ''; // 기존의 테이블 내용을 지움
-        currentWorks = works.filter(work => {
-            return (selectedYear === 'all' || work.year === selectedYear) &&
-                   (selectedMedia === 'all' || work.media.includes(selectedMedia));
-        });
-
-        // 테이블에 필터링된 작품을 표시
-        currentWorks.forEach((work, index) => {
-            const row = `<tr data-title="${work.title}">
-                <td><a href="javascript:void(0);" class="work-link" data-index="${index}">${work.title}</a></td>
-                <td><img src="${work.thumbnail}" class="thumbnail" alt="${work.title} Thumbnail"></td>
-            </tr>`;
-            tableBody.innerHTML += row;
-        });
-
-        // 페이지 첫 로드 또는 필터링 후 첫 번째 작품 자동 표시
-        if (currentWorks.length > 0) {
-            currentIndex = 0; // 첫 번째 작품의 인덱스를 초기화
-            if (initialLoad) {
-                displayWorkInfo(currentIndex); // 첫 번째 작품을 자동으로 보여줌
-                checkForHashAndDisplay(); // 해시 확인 후 해당 작품으로 이동
-            } else {
-                displayWorkInfo(currentIndex); // 필터링 후 첫 번째 작품을 자동으로 보여줌
+            // URL의 해시값을 확인하여 해당 작품을 로드
+            const urlHash = window.location.hash.substring(1);
+            if (urlHash) {
+                const targetWorkIndex = works.findIndex(work => work.id === urlHash);
+                if (targetWorkIndex !== -1) {
+                    currentIndex = targetWorkIndex;
+                }
             }
-        }
 
-        // 클릭 이벤트를 설정하여 사용자가 작품을 클릭하면 해당 작품의 정보가 표시되도록 함
-        document.querySelectorAll('.work-link').forEach(link => {
-            link.addEventListener('click', function() {
-                currentIndex = parseInt(this.getAttribute('data-index'), 10);
-                displayWorkInfo(currentIndex);
+            updateWorkList('all', 'all', true);
+
+            yearSelectElement.addEventListener('change', function() {
+                updateWorkList(this.value, mediaSelectElement.value, false);
             });
-        });
-    }
 
-    function displayWorkInfo(index) {
-        if (index < 0 || index >= currentWorks.length) return;
-        const work = currentWorks[index];
-        if (work) {
-            const content = `
-                <div style="margin-bottom: 1000px;" class="work-info" data-index="${index}">
-                    <p>${work.description}</p>
-                </div>
-            `;
-            if (index === 0) {
-                infoContainer.innerHTML = content;
-            } else {
-                infoContainer.innerHTML += content;
-            }
-            titleElement.textContent = work.title; // 현재 작품의 제목을 Rectangle에 표시
-            imageContainer.innerHTML = work.infoImages.map(img => `<img src="${img}" class="info-img">`).join('');
-            observeLastElement(); // 새로운 요소가 추가되면 이를 감지
-            updateURLHash(work.title); // URL 해시 업데이트
-        }
-    }
+            mediaSelectElement.addEventListener('change', function() {
+                updateWorkList(yearSelectElement.value, this.value, false);
+            });
 
-    function observeLastElement() {
-        const lastElement = infoContainer.querySelector('.work-info:last-child');
-        if (lastElement) {
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    observer.disconnect();
-                    if (currentIndex < currentWorks.length - 1) {
-                        currentIndex++;
-                        displayWorkInfo(currentIndex);
+            function updateWorkList(selectedYear, selectedMedia, initialLoad) {
+                const tableBody = document.querySelector('.worklist tbody');
+                tableBody.innerHTML = ''; // 기존의 테이블 내용을 지움
+                currentWorks = works.filter(work => {
+                    return (selectedYear === 'all' || work.year === selectedYear) &&
+                           (selectedMedia === 'all' || work.media.includes(selectedMedia));
+                });
+
+                // 테이블에 필터링된 작품을 표시
+                currentWorks.forEach((work, index) => {
+                    const row = `<tr data-title="${work.title}">
+                        <td><img src="${work.thumbnail}" class="thumbnail work-link" data-index="${index}" data-id="${work.id}" alt="${work.title} Thumbnail"></td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+
+                // 페이지 첫 로드 또는 필터링 후 첫 번째 작품 자동 표시
+                if (currentWorks.length > 0) {
+                    if (initialLoad) {
+                        displayWorkInfo(currentIndex); // 첫 번째 작품을 자동으로 보여줌
+                    } else {
+                        currentIndex = 0;
+                        displayWorkInfo(currentIndex); // 필터링 후 첫 번째 작품을 자동으로 보여줌
                     }
                 }
-            }, { threshold: 1.0 });
-            observer.observe(lastElement);
-        }
 
-        observeWorkElements(); // 모든 요소 감지 시작
-    }
+                // 클릭 이벤트를 설정하여 사용자가 썸네일을 클릭하면 해당 작품의 정보가 표시되도록 함
+                document.querySelectorAll('.work-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        currentIndex = parseInt(this.getAttribute('data-index'), 10);
+                        const workId = this.getAttribute('data-id');
+                        window.location.hash = workId;
+                        displayWorkInfo(currentIndex);
+                        document.getElementById(workId).scrollIntoView({ behavior: 'smooth' }); // 클릭 시 해당 위치로 이동
+                    });
+                });
+            }
 
-    function observeWorkElements() {
-        const workElements = infoContainer.querySelectorAll('.work-info');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const index = parseInt(entry.target.getAttribute('data-index'), 10);
+            function displayWorkInfo(index) {
+                if (index < 0 || index >= currentWorks.length) return;
                     const work = currentWorks[index];
                     if (work) {
-                        titleElement.textContent = work.title;
-                        imageContainer.innerHTML = work.infoImages.map(img => `<img src="${img}" class="info-img">`).join('');
-                        updateURLHash(work.title); // URL 해시 업데이트
+                        imageContainer.className = `image-container ${work.customClass}`;
+                        imageContainer.innerHTML = work.infoImages.map((img, i) => `
+                            <div style="position: relative;">
+                                <img src="${img.src}" class="info-img" alt="${img.altText}">
+                                <div class="sticker" id="sticker-${index}-${i}">${img.altText}</div>
+                            </div>
+                        `).join('');
+
+                    const content = `
+                        <div style="margin-bottom: 1000px;" class="work-info" data-index="${index}" id="${work.id}">
+                            <p>${work.description}</p>
+                        </div>
+                    `;
+                    if (index === 0) {
+                        infoContainer.innerHTML = content;
+                    } else {
+                        infoContainer.innerHTML += content;
                     }
+                    titleElement.textContent = work.title; // 현재 작품의 제목을 Rectangle에 표시
+                    observeLastElement(); // 새로운 요소가 추가되면 이를 감지
+
+                    // 스티커를 일정 시간 후에 표시
+                    setTimeout(() => {
+                        document.querySelectorAll(`.sticker`).forEach(sticker => {
+                            sticker.style.opacity = 1;
+                        });
+                    }, 500); // 500ms 후에 스티커 표시
+                }
+            }
+
+            function observeLastElement() {
+                const lastElement = infoContainer.querySelector('.work-info:last-child');
+                if (lastElement) {
+                    const observer = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting) {
+                            observer.disconnect();
+                            if (currentIndex < currentWorks.length - 1) {
+                                currentIndex++;
+                                displayWorkInfo(currentIndex);
+                            }
+                        }
+                    }, { threshold: 1.0 });
+                    observer.observe(lastElement);
+                }
+
+                observeWorkElements(); // 모든 요소 감지 시작
+            }
+
+            function observeWorkElements() {
+                const workElements = infoContainer.querySelectorAll('.work-info');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = parseInt(entry.target.getAttribute('data-index'), 10);
+                            const work = currentWorks[index];
+                            if (work) {
+                                window.location.hash = work.id; // 스크롤 시 URL 해시 값 업데이트
+                                titleElement.textContent = work.title;
+                                imageContainer.innerHTML = work.infoImages.map((img, i) => `
+                                    <div style="position: relative;">
+                                        <img src="${img.src}" class="info-img" alt="${img.altText}">
+                                        <div class="sticker" id="sticker-${index}-${i}">${img.altText}</div>
+                                    </div>
+                                `).join('');
+
+                                // 스티커를 일정 시간 후에 표시
+                                setTimeout(() => {
+                                    document.querySelectorAll(`.sticker`).forEach(sticker => {
+                                        sticker.style.opacity = 1;
+                                    });
+                                }, 500); // 500ms 후에 스티커 표시
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                workElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+
+            // 이미지 확대를 위한 모달 로직
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const closeBtn = document.querySelector(".close");
+
+            imageContainer.addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('info-img')) {
+                    modal.style.display = "flex";
+                    modalImg.src = e.target.src;
                 }
             });
-        }, { threshold: 0.5 });
 
-        workElements.forEach(element => {
-            observer.observe(element);
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
         });
-    }
-
-    function updateURLHash(title) {
-        const hash = encodeURIComponent(title);
-        history.replaceState(null, null, `#${hash}`);
-    }
-
-    function checkForHashAndDisplay() {
-        const hash = decodeURIComponent(window.location.hash.substring(1)); // 해시에서 제목 가져오기
-        const workIndex = currentWorks.findIndex(work => work.title === hash);
-        if (workIndex !== -1) {
-            displayWorkInfo(workIndex); // 해시와 일치하는 작품을 찾으면 표시
-            document.querySelector('.information').scrollIntoView(); // 해당 작품으로 스크롤
-        }
-    }
-});
     </script>
 </head>
 <body>
     <div class="first-line">
-        <div class="Vector-25"></div>
+        <div class="Vector-1"></div>
         <div class="Rectangle-22">
             <p></p> <!-- 기본값을 초기 첫 작품으로 설정 -->
         </div>
+    </div>
+    <div class="second-line">
+        <div class="Vector-1"></div>
+        <div class="image-container">
+            <!-- Work images will be dynamically inserted here -->
+        </div>
+    </div>
+    <div class="third-line">
+        <div class="Vector-1"></div>
+    </div>
+    <div class="fourth-line">
+        <div class="Vector-1"></div>
     </div>
     <div class="item1">
         <div class="Rectangle-2">
@@ -276,9 +469,6 @@
     <div class="information">
         <!-- Work information will be dynamically inserted here -->
     </div>
-    <div class="image-container">
-        <!-- Work images will be dynamically inserted here -->
-    </div>
     <div class="item4">
         <div class="select">
             <select id="yearSelect">
@@ -294,7 +484,7 @@
                 <option value="Isolated Data">✍️ Isolated Data</option>
                 <option value="Accessibility">🙌 Accessibility</option>
                 <option value="Website">🌏 Website</option>
-                <option value="Math, Science, and Mind">🧪 Math, Science, and Mind</option>
+                <option value="Physics">🧪 Physics</option>
                 <option value="Video">🎞️ Video</option>
                 <option value="Poster">🌠 Poster</option>
             </select>
@@ -302,14 +492,18 @@
         <table class="worklist">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Thumbnail</th>
                 </tr>
             </thead>
             <tbody style="text-decoration: none;">
                 <!-- 작업 목록이 동적으로 삽입됩니다 -->
             </tbody>
         </table>
+    </div>
+
+    <!-- 모달 구조 -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
     </div>
 </body>
 </html>
