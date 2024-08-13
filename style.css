@@ -246,6 +246,7 @@ q:before, q:after {
 .item4{
     position: absolute;
     top:11.3%;
+    width: 18%;
 }
 
 .select{
