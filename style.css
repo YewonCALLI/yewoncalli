@@ -37,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-    margin: 10px;
+    margin: 0px;
 }
 ol, ul {
 	list-style: none;
@@ -95,7 +95,7 @@ q:before, q:after {
     white-space: inherit;   
     -ms-overflow-style: none;
     font-family: "Work Sans", sans-serif;  
-    font-size: 17px;
+    font-size: 15px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
