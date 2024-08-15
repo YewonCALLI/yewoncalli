@@ -38,7 +38,7 @@
             overflow-y: auto;
         }
         .info-img {
-            width: 90%;
+            width: 100%;
             cursor: pointer;
         }
         .first-line {
@@ -69,16 +69,28 @@
             height: 100%;
             z-index: -1;
         }
+        
         .image-container {
             position: relative;
             width: 100%;
-            height: 100%;
-            left: 2.1%;
+            height: 98%;
+            margin: 2.1%;
             display: flex;
             flex-direction: column;
+            justify-items: center;
             overflow-y:scroll;
             gap: 10px;
         }
+
+        /* 2열 구조를 위한 스타일 */
+        .two-column-grid {
+            display: flex;
+            width: 98%;
+            flex-direction: row;
+            justify-content: stretch;
+            gap: 10px;
+        }
+
 
         /* 모달 스타일 */
         .modal {
@@ -105,6 +117,12 @@
             animation-duration: 0.6s;
         }
 
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
         @keyframes zoom {
             from {transform: scale(0)}
             to {transform: scale(1)}
@@ -128,12 +146,9 @@
         /* 스티커 스타일 */
         .sticker {
             position: relative;
-            width: 90%;
             background-color: #20ff00;
             text-align: left;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 5px;
+            padding: 5px;
             font-size: 0.7rem;
             font-weight: 700;
             color: #333;
@@ -215,13 +230,15 @@
                 { 
                     year: '2024', 
                     title: 'ABT (Art, Body, Tech)', 
-                    description: `Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a><br><br> <a href="https://www.abt-avatar.world/">The Silver Bell Challenge: Hong Yeon-gil Project</a> is a new media art project conducted by Team ABT, consisting of one project planner and three artists. Over six months, we engaged with the elderly residents of <a href="https://www.google.co.kr/maps/@/data=!3m7!1e1!3m5!1sLyp08VMMJlzGvMNoh305-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.8135321424066%26panoid%3DLyp08VMMJlzGvMNoh305-A%26yaw%3D48.06681696015442!7i13312!8i6656?coh=205410&entry=ttu">Hongyeon-gil</a> in Yeonhui-dong, Seoul, with the aim of bridging the gap between regions and generations through art. <br><br>Through our research on Hongyeon-gil, we discovered that despite being a small neighborhood, it has a high elderly population and is home to 13 galleries, highlighting its strong connection to culture and the arts. However, during interviews with the elderly residents, we found that most had never visited any of the art galleries in their own neighborhood. In response, ABT launched a project that engaged the elderly in art through ongoing interaction.<br><br><img style="width: 100%;"src="../assets/image/abt/abt-photo1.gif"><br><br>As a member of Team ABT, I participated as an artist while also taking charge of the branding. Hongyeon-gil has a diverse demographic, with long-time elderly residents living alongside younger generations who frequent the area as it has become a popular spot.<br><br>To reflect the unique characteristics of Hongyeon-gil, I aimed for a sleek design that set us apart from traditional community-based organizations. Additionally, given that our three artists work with media, I incorporated a rave-like vibe commonly used in media art. I also created a website to archive the six months of activities by Team ABT and each artist’s work, along with web posters and leaflets that feature dynamic, ever-changing graphics. <br><br>Winning in "2023 Emerging Artists Growth Support Platform_Hwaon". Selected as the top team, <a href="https://www.instagram.com/p/C0IVy2jvM-P/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">I went on a study trip to Stuttgart.</a><br><br><img style="width: 100%;"src="../assets/image/abt/abt-mockup1.png"><br><br><img style="width: 50%;"src="../assets/image/abt/abt-mockup2.gif">`, 
+                    description: `Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a><br><br> <a href="https://www.abt-avatar.world/">The Silver Bell Challenge: Hong Yeon-gil Project</a> is a new media art project conducted by Team ABT, consisting of one project planner and three artists. Over six months, we engaged with the elderly residents of <a href="https://www.google.co.kr/maps/@/data=!3m7!1e1!3m5!1sLyp08VMMJlzGvMNoh305-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.8135321424066%26panoid%3DLyp08VMMJlzGvMNoh305-A%26yaw%3D48.06681696015442!7i13312!8i6656?coh=205410&entry=ttu">Hongyeon-gil</a> in Yeonhui-dong, Seoul, with the aim of bridging the gap between regions and generations through art. <br><br>Through our research on Hongyeon-gil, we discovered that despite being a small neighborhood, it has a high elderly population and is home to 13 galleries, highlighting its strong connection to culture and the arts. However, during interviews with the elderly residents, we found that most had never visited any of the art galleries in their own neighborhood. In response, ABT launched a project that engaged the elderly in art through ongoing interaction.<br><br><img style="width: 100%;"src="../assets/image/abt/abt-photo1.gif"><br><br>As a member of Team ABT, I participated as an artist while also taking charge of the branding. Hongyeon-gil has a diverse demographic, with long-time elderly residents living alongside younger generations who frequent the area as it has become a popular spot.<br><br>To reflect the unique characteristics of Hongyeon-gil, I aimed for a sleek design that set us apart from traditional community-based organizations. Additionally, given that our three artists work with media, I incorporated a rave-like vibe commonly used in media art. I also created a website to archive the six months of activities by Team ABT and each artist’s work, along with web posters and leaflets that feature dynamic, ever-changing graphics. <br><br>Winning in "2023 Emerging Artists Growth Support Platform_Hwaon". Selected as the top team, <a href="https://www.instagram.com/p/C0IVy2jvM-P/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">I went on a study trip to Stuttgart.</a><br><br><img style="width: 100%;"src="../assets/image/abt/abt-mockup1.png"><br><br><div class="video-container"><img style="width: 49%;"src="../assets/image/abt/abt-mockup2.gif"><img style="width: 49%;"src="../assets/image/abt/abt-mockup3.gif"></>`, 
                     media: 'Digital, Branding&UX/UI', 
                     thumbnail: '../assets/image/ABT website.png',
-                    infoImages:  [{ src: '../assets/image/abt/abt-bi 1.png', altText: 'Word Wide Web Thumbnail' },
-                        {src: '../assets/image/abt/abt-bi 2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/abt/abt-photo2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/abt/abt-photo3.png', altText: 'Back side of the poster'},
+                    infoImages:  [{ src: '../assets/image/abt/abt-bi 1.png', altText: 'This logo image displays the title "The Silver Bell Challenge: Hong Yeon-gil Project" written in both Korean and English, centered on a black background. Surrounding the title are five glowing circles in various colors, each labeled with Korean text. The circles are blue, green, pink, and yellow, providing a vibrant contrast against the dark background.' },
+                        {src: '../assets/image/abt/abt-bi 2.png', altText: 'This logo image displays the title "The Silver Bell Challenge: Hong Yeon-gil Project" written in both Korean and English, centered on a black background. Surrounding the title are five glowing circles in various colors, each labeled with Korean text. The circles are blue, green, pink, and yellow, providing a vibrant contrast against the white background.'},
+                        {src: '../assets/image/abt/abt-poster.gif', altText: 'Two pieces of paper on a black background. The left one is an ABT brochure, and the right is an ABT web poster with various graphics that continuously change in appearance.'},
+                        {src: '../assets/image/abt/abt-photo5.png', altText: 'A stack of brochures titled "The Silver Road Challenge: Hongyeon Gil Project" featuring a map-like graphic design is placed on a black surface. To the left, a transparent holder contains several purple and blue cards or pamphlets, arranged neatly. The scene appears to be at an exhibition or information desk.'},
+                        {src: '../assets/image/abt/abt-photo3.png', altText: 'A glass door with the text "The Silver Bell Challenge: Hong Yeon-gil Project" written in both Korean and English. Through the glass, a group of people is visible inside the room, some engaged in conversation. A desk with a computer monitor and a laptop is also visible in the foreground. The room appears to be part of an exhibition space.'},
+                        {src: '../assets/image/abt/abt-photo6.png', altText: 'A view through a glass window with text partially obscuring the scene inside. Behind the glass, there is a wooden desk with two monitors. One monitor displays a colorful image of abstract shapes, while the other shows a document with text. The desk also has a keyboard, a mouse, and a few small items. A white chair is placed in front of the desk, and a black shelf is mounted on the wall in the background with a few objects on it. The setting appears to be an exhibition.'},
                     ],
                     id: 'abt',
                 },
@@ -231,7 +248,10 @@
                     description: 'A web-based party where two girls reminisce about their memories from science high school.', 
                     media: 'Digital', 
                     thumbnail: '../assets/image/cellonthebeach.png',
-                    infoImages: ['./thumbnails/cellonthebeach-1.png'],
+                    infoImages: [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
+                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    ],
                     id: 'cell-on-the-beach'
                 },
                 { 
@@ -240,7 +260,10 @@
                     description: 'Virtual businesses that collect and preserve memes', 
                     media: 'Digital', 
                     thumbnail: '../assets/image/meme project.png',
-                    infoImages: [],
+                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
+                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    ],
                     id: 'memeproject'
                 },
                 { 
@@ -249,7 +272,10 @@
                     description: 'Meme Waterwheel🎡🎡🎡', 
                     media: 'Digital', 
                     thumbnail: '../assets/image/memproject (world.html).png',
-                    infoImages: [],
+                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
+                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    ],
                     id: 'memeproject-world'
                 },
                 { 
@@ -258,7 +284,10 @@
                     description: 'Translation of the website of p5.js to be renewed', 
                     media: 'Accessibility', 
                     thumbnail: '../assets/image/p5kotranslate.png',
-                    infoImages: [],
+                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
+                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    ],
                     id: 'p5-ko-translate'
                 },
                 { 
@@ -267,7 +296,10 @@
                     description: 'Translation of the website of p5.js to be renewed', 
                     media: 'Physics', 
                     thumbnail: '../assets/image/Simulating.png',
-                    infoImages: [],
+                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
+                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    ],
                     id: 'simulating'
                 },
                 { 
@@ -276,7 +308,10 @@
                     description: "Work connecting 'Multiple Selves' and 'Quantum Mechanics'", 
                     media: 'Physics', 
                     thumbnail: '../assets/image/Singlet&Multiplet.png',
-                    infoImages: [],
+                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
+                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    ],
                     id: 'singlet-multiplet'
                 },
             ];
@@ -339,29 +374,37 @@
 
                 // 클릭 이벤트를 설정하여 사용자가 썸네일을 클릭하면 해당 작품의 정보가 표시되도록 함
                 document.querySelectorAll('.work-link').forEach(link => {
-                    link.addEventListener('click', function() {
-                        currentIndex = parseInt(this.getAttribute('data-index'), 10);
-                        const workId = this.getAttribute('data-id');
-                        window.location.hash = workId;
-                        displayWorkInfo(currentIndex);
-                        document.getElementById(workId).scrollIntoView({ behavior: 'smooth' }); // 클릭 시 해당 위치로 이동
-                    });
-                });
-            }
+                link.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-index'), 10);
+                    const workId = this.getAttribute('data-id');
+                    window.location.hash = workId;
+                    displayWorkInfo(currentIndex);
 
-           
+                    // 해당 섹션으로 부드럽게 스크롤
+                    document.getElementById(workId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            }
 
             function displayWorkInfo(index) {
                 if (index < 0 || index >= currentWorks.length) return;
-                    const work = currentWorks[index];
-                    if (work) {
-                        imageContainer.className = `image-container ${work.customClass}`;
-                        imageContainer.innerHTML = work.infoImages.map((img, i) => `
-                            <div style="position: relative;">
-                                <img src="${img.src}" class="info-img" alt="${img.altText}">
-                                <div class="sticker" id="sticker-${index}-${i}">${img.altText}</div>
-                            </div>
-                        `).join('');
+                const work = currentWorks[index];
+
+                if (work) {
+                    // imageContainer를 비우고, 각 작품의 이미지를 렌더링
+                    imageContainer.innerHTML = '';
+
+                    work.infoImages.forEach((img, i) => {
+                        const imgElement = document.createElement('div');
+                        imgElement.style.position = 'relative';
+
+                        // 모든 이미지를 1열로 표시
+                        imgElement.innerHTML = `
+                            <img src="${img.src}" class="info-img" alt="${img.altText}">
+                            <div class="sticker">${img.altText}</div>
+                        `;
+                        imageContainer.appendChild(imgElement);
+                    });
 
                     const content = `
                         <div style="margin-bottom: 600px;" class="work-info" data-index="${index}" id="${work.id}">
@@ -385,6 +428,10 @@
                 }
             }
 
+
+           
+
+            
             function observeLastElement() {
                 const lastElement = infoContainer.querySelector('.work-info:last-child');
                 if (lastElement) {
@@ -429,12 +476,13 @@
                             }
                         }
                     });
-                }, { threshold: 0.5 });
+                }, { threshold: [0.25, 0.5, 0.75, 1.0] });  // 여러 임계값을 설정해 더 많은 스크롤 위치를 감지
 
                 workElements.forEach(element => {
                     observer.observe(element);
                 });
             }
+
 
             // 이미지 확대를 위한 모달 로직
             const modal = document.getElementById("myModal");

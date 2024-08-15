@@ -123,6 +123,8 @@ q:before, q:after {
 .item1{
     position: absolute;
     top:0px;
+    left: 10px;
+    top: 10px;
     display: flex;
     flex-direction: row;
     gap:0px;
@@ -245,6 +247,7 @@ q:before, q:after {
 
 .item4{
     position: absolute;
+    left: 10px;
     top:11.3%;
     width: 18%;
 }
