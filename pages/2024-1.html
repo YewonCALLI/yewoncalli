@@ -168,16 +168,25 @@
         }
 
         .vimeo-container {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
+            position: relative;
+            padding-bottom: 56.25%;
+            height:0;
             gap: 10px;
         }
 
-        .vimeo-container iframe,
-        .vimeo-container object,
-        .vimeo-container embed iframe{
-            height: 300px;
+        .vimeo-container embed, .vimeo-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .vimeo-container-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .information a{
@@ -263,11 +272,13 @@
                 { 
                     year: '2023', 
                     title: 'Cell on the Beach', 
-                    description: `Exhibited : 2023 Art & Technology Conference 	&lt;Delicate disorder and precarious shelter&gt;<br><br>Exhibited : 2023 Art & Technology Conference <Delicate disorder and precarious shelter> Cell on the Beach is a web-based party that serves as a creative rebellion against the rigid structure of higher education in South Korea. Both Jisu and I experienced the intense and often overwhelming environment of Korea’s private education system during high school. Our memories of attending a science high school, where a hyper-competitive atmosphere dictated our lives solely based on test scores, are far from positive. <br><br>It was only after entering university that we realized life has so much more to offer than just grades. While our high school experiences remain a source of negativity, our pure love for science has never waned. Inspired by the curiosity and excitement we felt when we first encountered science, we decided to create our own unique science museum. We believe that science is a discipline that everyone should engage with and reflect on. That’s why we organized an event called Cell on the Beach, inviting people to join and enjoy. <br><br> To introduce the fun side of science, we decided to use the concept of 'memes.' The term 'meme' was originally coined by Richard Dawkins in his book The Selfish Gene, deriving from the word 'gene' to describe a unit of cultural transmission. We hope to preserve and share our experiences with science through these memes. You can download the science memes we created from the link below.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo1.png"> <br><br>On the Cell on the Beach website, users can interact with various objects that represent cellular organelles, and collaboratively produce sounds by clicking on them. The sound you trigger can be heard on another device! Typically, in games or the metaverse, we perceive each other’s presence through avatars. However, this experience allows you to sense the presence of others in an online space without any visual effects. <br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo2.png">`, 
+                    description: `Exhibited : 2023 Art & Technology Conference 	&lt;Delicate disorder and precarious shelter&gt;<br><br>Exhibited : 2023 Art & Technology Conference <Delicate disorder and precarious shelter> Cell on the Beach is a web-based party that serves as a creative rebellion against the rigid structure of higher education in South Korea. Both Jisu and I experienced the intense and often overwhelming environment of Korea’s private education system during high school. Our memories of attending a science high school, where a hyper-competitive atmosphere dictated our lives solely based on test scores, are far from positive. <br><br>It was only after entering university that we realized life has so much more to offer than just grades. While our high school experiences remain a source of negativity, our pure love for science has never waned. Inspired by the curiosity and excitement we felt when we first encountered science, we decided to create our own unique science museum. We believe that science is a discipline that everyone should engage with and reflect on. That’s why we organized an event called Cell on the Beach, inviting people to join and enjoy. <br><br> To introduce the fun side of science, we decided to use the concept of 'memes.' The term 'meme' was originally coined by Richard Dawkins in his book The Selfish Gene, deriving from the word 'gene' to describe a unit of cultural transmission. We hope to preserve and share our experiences with science through these memes. You can download the science memes we created from the link below.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo1.png"> <br><br>On the Cell on the Beach website, users can interact with various objects that represent cellular organelles, and collaboratively produce sounds by clicking on them. The sound you trigger can be heard on another device! Typically, in games or the metaverse, we perceive each other’s presence through avatars. However, this experience allows you to sense the presence of others in an online space without any visual effects. <br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo2.png"><br><br>Secondly, participants can enjoy a simple DJing experience. We built a MIDI controller using Arduino, allowing users to control various sounds from the pre-prepared tracks. This feature was the crowd favorite!<br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo4.png"><br><br>Finally, we created a photo booth where visitors can capture memories. We developed a Cell on the Beach photo filter and built the system for taking and sharing pictures ourselves. Through these experiences, we aim to challenge the conventional approaches to education and celebrate the boundless joy of scientific discovery.`, 
                     media: 'Digital', 
                     thumbnail: '../assets/image/cellonthebeach.png',
                     infoImages: [{ src: '../assets/image/cellonthebeach/photo3.png', altText: 'GIF image of the "W ord Wide Web" poster, showing a repeating sequence of the front and back sides.'},
-                    {src: 'https://player.vimeo.com/video/999835647?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&portrait=0&byline=0&title=0', altText: 'dd'},
+                    {src: 'https://player.vimeo.com/video/999835647?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'dd'},
+                    {src: 'https://player.vimeo.com/video/999909118?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Back side of the poster'},
+                    {src: '../assets/image/cellonthebeach/photo5.png', altText: 'Back side of the poster'},
                     ],
                     id: 'cell-on-the-beach'
                 },
@@ -482,7 +493,7 @@
                                 
                                 imageContainer.innerHTML = work.infoImages.map((img, i) => {
                                     if (img.src.includes('vimeo.com')) {
-                                        return `<div class="vimeo-container"><iframe src="${img.src}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> <div class="sticker" id="sticker-${index}-${i}">${img.altText}</div></div>`;
+                                        return `<div class="vimeo-container-container"><div class="vimeo-container"><iframe src="${img.src}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div> <div class="sticker" id="sticker-${index}-${i}">${img.altText}</div></div>`;
                                     } else {
                                         return `
                                             <div style="position: relative;">
