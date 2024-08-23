@@ -310,7 +310,6 @@
     body {
         position: relative;
         min-height: 100vh; /* 최소 높이 설정 */
-        margin-bottom: env(safe-area-inset-bottom); /* 아이폰 X 이상의 모델에서 하단 여백을 고려 */
     }
 
     .information {
@@ -325,7 +324,7 @@
 
     .item4 {
         position: fixed; /* 화면에 고정 */
-        top: calc(100vh - 240px); /* 화면 아래에 고정 */
+        top: calc(100dvh - 160px); /* 화면 아래에 고정 */
         left: 0;
         width: 100vw;
         z-index: 1;
