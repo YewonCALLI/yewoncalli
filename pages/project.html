@@ -414,8 +414,8 @@
     .combined-container {
         font-family: 'Work Sans', sans-serif;
         font-size: 13px;
-        top: 11%;
-        height: calc(100vh - 100px);
+        top: 12%;
+        height: calc(100dvh - 100px);
         width: 100vw;
         overflow-y: scroll;
         position: relative; /* 부모 요소에 상대 위치를 설정 */
@@ -742,7 +742,7 @@
                         combinedConatiner.innerHTML='';
 
                         combinedConatiner.innerHTML += `
-                            <div class="Rectangle-22">
+                            <div class="Rectangle-22" data-index="${index}" id="${work.id}">
                                 <p>${work.title}</p>
                             </div>
                         `;
@@ -762,7 +762,7 @@
                         });
 
                         const content = `
-                            <div class="work-info" data-index="${index}" id="${work.id}">
+                            <div class="work-info" style="margin-bottom: 200px">
                                 <h2>▶︎ ${work.year}</h2>
                                 <h2>▶︎ ${work.media}</h2>
                                 <p>${work.description}</p>
