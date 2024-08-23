@@ -767,7 +767,6 @@
                     if(isMobile()){
                         const combinedConatiner = document.querySelector('.combined-container');
                         combinedConatiner.innerHTML='';
-
                         combinedConatiner.innerHTML += `
                             <div class="Rectangle-22" data-index="${index}" id="${work.id}">
                                 <p>${work.title}</p>
@@ -796,6 +795,7 @@
                             </div>
                         `;
                         combinedContainer.innerHTML += content;
+
 
                         setTimeout(() => {
                             document.querySelectorAll(`.sticker`).forEach(sticker => {
@@ -834,6 +834,7 @@
                         infoContainer.innerHTML += content;
                     }
                     titleElement.textContent = work.title; // 현재 작품의 제목을 Rectangle에 표시
+                    
                     observeLastElement(); // 새로운 요소가 추가되면 이를 감지
 
                     // 스티커를 일정 시간 후에 표시
@@ -860,7 +861,7 @@
                                 displayWorkInfo(currentIndex);
                             }
                         }
-                    }, { threshold: 1.0 });
+                    }, { threshold: [0.25, 0.5, 0.75, 1.0] });
                     observer.observe(lastElement);
                 }
 
