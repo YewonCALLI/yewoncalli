@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yewon</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .worklist tbody {
+            display: block;
+            max-height: 360px; /* Set this to the desired height */
+            overflow-y: auto;
+        }
+        .worklist thead, .worklist tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed; /* Ensures the table layout remains consistent */
+        }
+        @media (max-width: 450px) {
+        .item1{
+            position: relative;
+            top:10px;
+            left:10px;
+            flex-direction: column;
+        }
+    }
+    </style>
+    <script>
+        function expandText() {
+            var description = document.querySelector('.description');
+            description.innerHTML = 'is an digital - psychophysicist <br> from Seoul, South Korea. <br><br> She aims to formalize overlooked phenomena such as love, grief, animosity, and melancholy. Various media serve as the means of formalization, with each project involving a medium—such as parties, the internet, analog TV, or Rube Goldberg devices—that maximizes the formula in relation to the phenomenon. My primary interest lies in the "Data". I liberate marginalized data, images, and stories by inviting them into the digital space. Moreover, I hope that these overlooked data, gathered on the internet, will be transmitted to others through techniques such as mixing, concealing forms, anonymizing, and making noise.';
+            var more = document.querySelector('.more');
+            more.innerHTML = 'Less';
+            var vector1 = document.querySelector('.Vector1');
+            vector1.style.display = 'block';
+
+            if(more.innerHTML === 'Less') {
+                more.setAttribute('onclick', 'collapseText()');
+            }
+        }
+
+        function collapseText(){
+            var description = document.querySelector('.description');
+            description.innerHTML = 'is an digital - psychophysicist <br> from Seoul, South Korea.';
+            var more = document.querySelector('.more');
+            more.innerHTML = 'More';
+            var vector1 = document.querySelector('.Vector1');
+            vector1.style.display = 'none';
+
+            if(more.innerHTML === 'More') {
+                more.setAttribute('onclick', 'expandText()');
+            }
+        }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const works = [
+            { 
+                year: '2024', 
+                title: 'Hongyeon 1.0', 
+                description: 'Visited Hongyeon-gil for 6 months to collect stories from the residents.', 
+                media: 'Website, Isolated Data', 
+                urls: [
+                    { url: './pages/2024-1.html', width: 300, height: 600, top: 40, left: 50 },
+                    { url: 'https://hongyeon.vercel.app/ ', width: 800, height: 600, top: 250, left: 400 },
+                    { url: './pages/2024-2.html', width: 300, height: 600, top: 150, left: 2040 },
+                    { url: './pages/2024-3.html', width: 300, height: 200, top: 600, left: 140 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'Cell on the Beach', 
+                description: 'A web-based party where two girls reminisce about their memories from science high school.', 
+                media: 'Website, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/2024-4.html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: './pages/2024-6.html', width: 150, height: 200, top: 600, left: 140 },
+                    { url: './pages/2024-7.html', width: 150, height: 200, top: 630, left: 320 },
+                    { url: './pages/2024-8.html', width: 450, height: 300, top: 100, left: 300 },
+                    { url: 'https://cellonthebeach.vercel.app/', width: 700, height: 500, top: 250, left: 500 },
+                    { url: './pages/2024-9.html', width: 300, height: 230, top: 680, left: 450 },
+                    { url: './pages/2024-10.html', width: 300, height: 230, top: 150, left: 1050  },
+                    { url: './pages/2024-5.html', width: 300, height: 230, top: 740, left: 900 },
+                    { url: './pages/2024-11.html', width: 300, height: 230, top: 700, left: 1140 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'MemeProject', 
+                description: 'Virtual businesses that collect and preserve memes', 
+                media: 'Website', 
+                urls: [
+                    { url: './pages/memeproject.html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: './pages/memeproject-2.html', width: 300, height: 300, top: 300, left: 1200 },
+                    { url: './pages/memeproject-3.html', width: 200, height: 200, top: 70, left: 830 },
+                    { url: 'https://www.memeproject.site', width: 700, height: 500, top: 250, left: 450 },
+                    { url: './pages/memeproject-4.html', width: 300, height: 430, top: 200, left: 280 },
+                    { url: './pages/memeproject-5.html', width: 300, height: 290, top: 540, left: 1000 },
+                    { url: './pages/memeproject-6.html', width: 700, height: 120, top: 730, left: 90 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'MemeProject (world.html)', 
+                description: 'Meme Waterwheel🎡🎡🎡', 
+                media: 'Website', 
+                urls: [
+                    { url: './pages/memeproject(world).html', width: 300, height: 600, top: 80, left: 50 },
+                    { url: 'https://www.memeproject.site/world.html', width: 700, height: 500, top: 250, left: 450 }
+                ] 
+            },
+            { 
+                year: '2024', 
+                title: 'p5. Ko Translate', 
+                description: 'Translation of the website of p5.js to be renewed', 
+                media: 'Accessibility', 
+                urls: [
+                    { url: 'https://github.com/p5-js-KO-Translation/2024', width: 600, height: 600, top: 200, left: 400 },
+                ] 
+            },
+            { 
+                year: '2023', 
+                title: 'Simulating #1,2,3', 
+                description: 'Translation of the website of p5.js to be renewed', 
+                media: 'Video, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/simulating.html', width: 300, height: 600, top: 100, left: 900 },
+                    { url: './pages/simulating-1.html', width: 670, height: 380, top: 100, left: 200 },
+                    { url: './pages/simulating-2.html', width: 570, height: 330, top: 560, left: 300 },
+
+                ] 
+            },
+            { 
+                year: '2022', 
+                title: 'delta-individualism', 
+                description: 'The Goldberg device, which represents an inefficient machine, accuses modern social problems. It uses the concept of social entropy.', 
+                media: 'Video, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/delta.html', width: 300, height: 600, top: 100, left: 900 },
+                    { url: 'https://drive.google.com/file/d/11EKz-RYd7x7SjEB42nF8FnRHUOtvlP4R/view', width: 670, height: 500, top: 100, left: 200 },
+
+                ] 
+            },
+            { 
+                year: '2022', 
+                title: 'Franklin', 
+                description: 'Debiased korean AI fairytale generator', 
+                media: 'Isolated Data, Paper', 
+                urls: [
+                    { url: './pages/franklin.html', width: 300, height: 600, top: 200, left: 900 },
+                    { url: 'https://buly.kr/H6dGVFX', width: 670, height: 600, top: 200, left: 200 },
+                ] 
+            },
+            { 
+                year: '2021', 
+                title: 'Singlet & Multiplet', 
+                description: "Work connecting 'Multiple Selves' and 'Quantum Mechanics'", 
+                media: 'Video, <br>Math, Science, and Mind', 
+                urls: [
+                    { url: './pages/single&multiplet.html', width: 300, height: 600, top: 200, left: 900 },
+                    { url: 'https://youtu.be/pBTghj77Zhg?si=gXPIqosTOoplxdkr', width: 670, height: 600, top: 200, left: 200 },
+                ] 
+            },
+            // 다른 항목 추가
+        ];
+
+        const yearSelectElement = document.getElementById('yearSelect');
+        yearSelectElement.addEventListener('change', function() {
+            updateWorkList(this.value, mediaSelectElement.value);
+        });
+
+        const mediaSelectElement = document.getElementById('mediaSelect');
+        mediaSelectElement.addEventListener('change', function() {
+            updateWorkList(yearSelectElement.value, this.value);
+        });
+
+        function updateWorkList(selectedYear, selectedMedia) {
+            const tableBody = document.querySelector('.worklist tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+            let filteredWorks = works;
+            if (selectedYear !== 'all') {
+                filteredWorks = filteredWorks.filter(work => work.year === selectedYear);
+            }
+            if (selectedMedia !== 'all') {
+                filteredWorks = filteredWorks.filter(work => work.media.includes(selectedMedia));
+            }
+            filteredWorks.forEach(work => {
+                const firstUrl = work.urls[0].url;
+                const row = `<tr>
+                    <td><a href="${firstUrl}">${work.title}</a></td>
+                    <td>${work.description}</td>
+                    <td>${work.media}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        updateWorkList('all', 'all');
+    });
+    </script>
+</head>
+<body>
+    <iframe src="https://07-fullscreen-and-resizing.vercel.app/" height="100%" width="90%" style="position: absolute; right: 0px;"></iframe>
+    <div class="item1">
+        <div class="Rectangle-2">
+            <div class="Rectangle-3">
+            </div>
+            <div class="Yeb2001">
+                🌹 Ye￦(b.2001)
+            </div>
+        </div>
+        <div class="description">
+            is an digital - psychophysicist<br>
+            from Seoul, South Korea.
+        </div>
+        <button class="more" onclick="expandText()">More</button>
+    </div>
+    <div class="Vector1"></div>
+    <div class="item2">
+        <span class="Isolated-Data">
+            Isolated Data
+        </span>
+        <span class="Accessibility">
+            Accessibility
+        </span>
+        <span class="Website">
+            Website
+        </span>
+        <span class="Math-Science-and-Mind">
+            Math, Science and Mind
+        </span>
+        <span class="Video">
+            Video
+        </span>
+        <span class="Poster">
+            Poster
+        </span>
+    </div>
+    <div class="item3">
+        <a href="about.html" style="text-decoration: none;">
+            <div class="Rectangle-5">
+            About me
+            </div>
+        </a>
+        <a href="https://docs.google.com/document/d/1FG2vJTRECiWKBN5ZYv8LOuD1ei6HQSRPCzswuCBhWPI/edit?usp=sharing" style="text-decoration: none;">
+            <div class="Rectangle-5">
+            CV
+            </div>
+        </a>
+        <a href="https://www.instagram.com/yewon.calli/" style="text-decoration: none;">
+            <div class="Rectangle-6">
+            Contact me
+            </div>
+        </a>
+    </div>
+    <div class="item4">
+        <div class="select">
+            <select id="yearSelect">
+                <option value="all">All</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="other">Others</option>
+            </select>
+            <select id="mediaSelect">
+                <option value="all">📡 All Media</option>
+                <option value="Isolated Data">✍️ Isolated Data</option>
+                <option value="Accessibility">🙌 Accessibility</option>
+                <option value="Website">🌏 Website</option>
+                <option value="Math, Science, and Mind">🧪 Math, Science, and Mind</option>
+                <option value="Video">🎞️ Video</option>
+                <option value="Poster">🌠 Poster</option>
+            </select>
+        </div>
+        <table class="worklist">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Media</th>
+                </tr>
+            </thead>
+            <tbody style="text-decoration: none;">
+                <!-- 작업 목록이 동적으로 삽입됩니다 -->
+            </tbody>
+        </table>
+    </div>
+    <div class="item5" style="position: absolute; right:10px; bottom: 0px; text-align: right;">
+        <p>You can observe ❤️ by moving the mouse. <br>
+            Making a English version ... wait for a while</p>
+    </div>
+
+</body>
+</html>
