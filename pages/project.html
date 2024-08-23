@@ -304,7 +304,6 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        overflow-x: hidden; /* 오른쪽 여백 문제 해결 */
     }
     
     body {
@@ -318,7 +317,6 @@
         width: 92%;
         left: 20px;
         max-width: 100%;
-        height: calc(100vh - 300px);
         overflow-x: hidden;
     }
 
@@ -332,6 +330,8 @@
         align-items: flex-start;
         flex-direction: column;
         overflow: hidden;
+        transition: top 0.3s ease, height 0.3s ease; /* 트랜지션 효과 추가 */
+
     }
 
 
@@ -345,7 +345,8 @@
         width: 100%; /* 화면 너비에 맞춤 */
         height: 100%;
         background-color: #000000;
-        padding-bottom: constant(safe-area-inset-bottom);
+        transition: height 0.3s ease; /* 트랜지션 효과 추가 */
+
     }
 
     .worklist img {
@@ -365,6 +366,7 @@
         padding: 7px;
         flex-direction: row;
         background-color: blue;
+        align-items: center;
     }
 
     .first-line {
@@ -414,8 +416,8 @@
     .combined-container {
         font-family: 'Work Sans', sans-serif;
         font-size: 13px;
-        top: 10%;
-        height: calc(100dvh - 100px);
+        top: 12%;
+        height: calc(100dvh - 80px);
         width: 100vw;
         overflow-y: scroll;
         position: relative; /* 부모 요소에 상대 위치를 설정 */
@@ -905,16 +907,19 @@
                 }
             });
 
-            const close = document.getElementById('close');
+            const close = document.getElementById('select-close');
             const worklist = document.querySelector('.worklist');
             const item4 = document.querySelector('.item4');
             
             close.addEventListener('click', function() {
                 if(worklist.style.display === 'none') {
                     worklist.style.display = 'block';
-                    item4.style.bottom = '0';
+                    item4.style.top = 'calc(100dvh - 160px)';
+                    close.innerHTML = '🔽';
                 } else {
                     worklist.style.display = 'none';
+                    item4.style.top = 'calc(100dvh - 42px)';
+                    close.innerHTML = '🔼';
                 }
             });
 
@@ -996,6 +1001,7 @@
                 <option value="Accessibility">🔍 Accessibility</option>
                 <option value="Projection">🌠 Projection</option>
             </select>
+            <div id="select-close">🔽</div>
         </div>
         <div class="worklist" id="worklist">
         </div>
