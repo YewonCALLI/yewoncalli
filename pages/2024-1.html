@@ -6,33 +6,51 @@
     <title>홍연 1.0에 대한 글</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .worklist{
-            position: relative;
-            width: 90%;
-        }
-        .worklist tbody {
-            position: relative;
-            display: block;
-            overflow-y: auto;
-            height: 78vh;
-            -ms-overflow-style: none;
-        }
-        .worklist tbody::-webkit-scrollbar{
-            display:none;
-        }
-        .worklist td{
-            padding: 0px;
-            border: none;
-        }
-        .worklist thead, .worklist tbody tr {
-            display: table;
-        }
-        .thumbnail {
+        .worklist {
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            height: calc(100vh - 200px); /* 화면에 맞게 높이 조절 */
+            overflow-y: auto; /* 스크롤 가능하게 설정 */
+            overflow-x: hidden;
         }
-        .worklist img{
+
+        .item4{
+            height: calc(100vh - 200px);
+        }
+
+        /* .item4 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        } */
+
+        .worklist {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            flex-grow: 1; /* 남은 공간을 모두 차지하게 설정 */
+            overflow-y: auto; /* 내부에서 스크롤 가능하게 설정 */
+        }
+
+
+        .worklist img {
+            height: auto;
             cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s;
         }
+
+        .worklist img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
         .information {
             max-height: 650px;
             overflow-y: auto;
@@ -189,42 +207,217 @@
             gap: 10px;
         }
 
+        .youtube-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height:0;
+            gap: 10px;
+        }
+
+        .youtube-container embed, .youtube-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .youtube-container-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
         .information a{
             color: #333;
             font-family: "Work Sans", sans-serif; 
-            font-weight: 500;
-            font-size: large;
+            font-weight: 600;
             text-decoration: none;
         }
 
         .information a:hover{
             color: #FF4646;
-        }   
+        }
 
+        .description-modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .description-modal-content {
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            box-sizing: border-box;
+        }
+        .description-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .description-close:hover, .description-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+ 
+       
         /* 스티커 애니메이션 */
         @keyframes showSticker {
             0% { opacity: 0; transform: translateY(-10px) rotate(-10deg); }
             100% { opacity: 1; transform: translateY(0) rotate(0deg); }
         }
 
-
-        @media (max-width: 450px) {
-            .item1 {
-                position: relative;
-                top: 10px;
-                left: 10px;
-                flex-direction: column;
+        @media (max-width : 1200px) {
+            .Rectangle-22 p{
+                font-size: 30px;
             }
-            .second-line {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .image-container {
-                margin-left: 0;
-                width: 100%;
-                text-align: center;
-            }
+            .information {
+                font-size: 13px;
+            }    
         }
+
+        @media (max-width: 768px) {
+
+            body{
+                overflow: hidden;
+            }
+            
+            .information{
+                font-size: 14px;
+                top: 41%;
+                width: 92%;
+                left: 20px;
+                max-width: 100%;
+                height:calc(100vh - 300px);
+                overflow-x: hidden;
+            }
+
+            .item4 {
+                position: absolute;
+                left: 0px;
+                bottom: 20px;
+                width: 100%;
+                z-index: 1;
+                height: 120px;
+                background-color: #fff;
+                margin-bottom: 20px;
+            }
+
+            .worklist {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto; /* 가로 스크롤 가능 */
+                overflow-y: hidden; /* 세로 스크롤 숨기기 */
+                gap: 20px;
+                width: 100%; /* 화면 너비에 맞춤 */
+                height: 100%;
+                background-color: #000000;
+            }
+
+            .worklist img {
+                height: 100px;
+                padding: 10px;
+            }
+
+            .select {
+                flex-direction: row;
+                background-color: blue;
+            }
+
+            .first-line {
+                left: 0;
+                z-index: 1;
+            }
+
+            .Rectangle-22 {
+                top: 20px;
+            }
+
+            .first-line{
+                display: none;
+            }
+
+            .second-line{
+                display: none;
+            }
+
+            .information{
+                display: none;
+            }
+
+            .work-info{
+                padding: 10px;
+            }
+
+            .third-line,
+            .fourth-line {
+                display: none;
+            }
+
+            .image-container{
+                flex-direction: row;
+                width: 90%;
+                height: 40%;
+                flex-wrap: nowrap;
+                z-index: 100;
+                overflow-y: hidden;
+            }
+
+            .image-container img{
+                width: 200px;
+                flex: 0 0 auto;
+            }
+
+            .combined-container{
+                position: absolute;
+                font-family: 'Work Sans', sans-serif;
+                font-size: 12px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+
+            }
+
+            .sticker{
+                font-weight: 400;
+                margin-bottom: 5px;
+            }
+
+            .item1{
+                z-index: 1;
+                mix-blend-mode: hard-light;
+            }
+
+            .description{
+                color: white;
+            }
+
+            
+
+            
+            
+
+            
+        }
+
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -232,7 +425,12 @@
                 { 
                     year: '2024', 
                     title: 'Word Wide Web', 
-                    description: `Performed : SFPC(School for Poetic Computation) <br><br> Word Wide Web is a project I developed while attending the "Human-Scale Natural Language Processing" course at SFPC Summer School. In this course, around a dozen participants, including myself, contributed by curating and submitting our own unique text data. I submitted a poetic essay inspired by the works of Dai Yoko and George Eliot. <br><br> We meticulously broke down these text contributions into individual words and classified them into 15 different parts of speech, such as nouns, adjectives, and adverbs. Additionally, we labeled each word based on six criteria: dog-cat, utilitarian-romantic, static-dynamic, concrete-intangible, satisfying-irritating, and hard-soft. <br><br>Using the scores from these labels, created a method to measure the similarity between words, allowing our system to suggest synonyms within the framework we developed.<br><br> <img style="width: 100%;"src="../assets/image/wordwideweb/wordwideweb4.gif"><br><br>Now, I invite you to explore: do the words you select feel similar to the ones orbiting them? Or do they seem entirely different? Embrace the strange and unexpected gaps as you play the Word Wide Web game. <br><br><a href="https://solarword.vercel.app/">Word Wide Web</a> is a game where you weave together words that are similar or seem related within the system we created. The goal is to weave as many words as possible in a short amount of time. Speed is the key to victory! <br><br><img style="width: 100%;"src="../assets/image/wordwideweb/wordwideweb5.gif"><br><br><img style="width: 100%;"src="../assets/image/wordwideweb/wordwideweb6.gif"> P.S. Who knows? The word you're looking for might just be too unique for our dictionary to handle!`, 
+                    description: `▶︎ Performed : SFPC(School for Poetic Computation) <br><br> Word Wide Web is a project I developed while attending the "Human-Scale Natural Language Processing" course at SFPC Summer School. In this course, around a dozen participants, including myself, contributed by curating and submitting our own unique text data. I submitted a poetic essay inspired by the works of Dai Yoko and George Eliot. <br><br> We meticulously broke down these text contributions into individual words and classified them into 15 different parts of speech, such as nouns, adjectives, and adverbs. Additionally, we labeled each word based on six criteria: dog-cat, utilitarian-romantic, static-dynamic, concrete-intangible, satisfying-irritating, and hard-soft. <br><br>Using the scores from these labels, created a method to measure the similarity between words, allowing our system to suggest synonyms within the framework we developed.<br><br> <img style="width: 100%;"src="../assets/image/wordwideweb/wordwideweb4.gif"><br><br>Now, I invite you to explore: do the words you select feel similar to the ones orbiting them? Or do they seem entirely different? Embrace the strange and unexpected gaps as you play the Word Wide Web game. <br><br><a href="https://solarword.vercel.app/">Word Wide Web</a> is a game where you weave together words that are similar or seem related within the system we created. The goal is to weave as many words as possible in a short amount of time. Speed is the key to victory! <br><br><img style="width: 100%;"src="../assets/image/wordwideweb/wordwideweb5.gif"><br><br><img style="width: 100%;"src="../assets/image/wordwideweb/wordwideweb6.gif"> P.S. Who knows? The word you're looking for might just be too unique for our dictionary to handle!
+                    <br><br>
+                        ------------------------------------------------------<br><br>
+                        Credit<br>
+                        ▷ Web Design&Develop : Yewon Jang<br>
+                        ▷ Data & Word Scoring : Ilona Brand, Lillian Hua, Jean Kim, Maya Williams, kathy wu, Joses Ho, Maya Detwiller, Jireh Deng, Ellen Fritz, Alice Yuan Zhang, Yewon Jang, Charis Poon, Kimberly Lyle, Hannah Jenkins, Cecilia Knaub, Gabriella Chronis, Juliana Gomez<br>`, 
                     media: 'Digital, Poetic', 
                     thumbnail: '../assets/image/wordwideweb.png',
                     infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
@@ -244,7 +442,15 @@
                 {
                     year: '2024',
                     title: 'Hongyeon 1.0',
-                    description: `Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a> <br><br> Yewon Jang, Hongyeon 1.0, 2023, Chatbot AI, ChatGPT 3.5, Naver Clova Note, Hongyeon-gil interviews<br><br> <a href="https://hongyeon.vercel.app/">Hongyeon 1.0</a> is a chatbot AI developed by the artist Yewon Jang, who spent four months in Hongyeon-gil, Yeonhui-dong, Seoul, collecting data about the area. The artist observed a generational divide between the elderly and younger populations and aimed to bridge this gap using AI. The chatbot blends conversations from various generations in Hongyeon-gil, incorporating data gathered from street interviews, online surveys, and web crawling. This data was fine-tuned on GPT-3.5 to create a chatbot that speaks with a unified voice representing multiple perspectives. The chatbot shares not only the history, geography, and culture of Hongyeon-gil but also personal experiences and memories, as if lived by one person. It is accessible to everyone through an avatar website.<br><br><b>Interview Excerpt:</b><br><br><b>Eunchong:</b> I understand that AI chatbots require extensive data preprocessing before they can generate coherent speech. Can you explain the AI generation process for this project?<br><br><b>Yewon:</b> I first visited Hongyeon-gil in July. Over six months, we familiarized ourselves with the area, approached residents, and conducted interviews and Google Form events. I even remember directly asking people about their thoughts on Hongyeon-gil. We spent time talking to residents and visitors, collecting information, which we then transcribed using Clova Note.<br><br><b>Eunchong:</b> How does your work differ from other AI models?<br><br><b>Yewon:</b> While traditional chatbots provide answers based on objective information, the data I collected reflects the language habits, emotions, and everyday experiences of Hongyeon-gil residents. The stories are more personal and capture the essence of life in Hongyeon-gil.<br><br><b>Eunchong:</b> What was the most challenging part of creating the AI chatbot?<br><br><b>Yewon:</b> Capturing the lives of the residents within the chatbot was the most challenging part. Processing and training the data involved repeatedly listening to interview recordings, which often moved me deeply. It felt more like archaeology or exploration than development. This project was a small challenge to the current AI scene, as it wasn’t about perfection.<br><br><b>Eunchong:</b> Your AI sometimes says unexpected things, which gives it a novelist-like quality. You played a significant role in this project, especially by emphasizing communication across regions and generations. I believe the project's success is largely due to your efforts in listening to the elderly, gathering feedback, and incorporating it into your work.`,
+                    description: `▶︎ Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a> <br><br>▶︎ Yewon Jang, Hongyeon 1.0, 2023, Chatbot AI, ChatGPT 3.5, Naver Clova Note, Hongyeon-gil interviews<br><br> <a href="https://hongyeon.vercel.app/">Hongyeon 1.0</a> is a chatbot AI developed by the artist Yewon Jang, who spent four months in Hongyeon-gil, Yeonhui-dong, Seoul, collecting data about the area. The artist observed a generational divide between the elderly and younger populations and aimed to bridge this gap using AI. The chatbot blends conversations from various generations in Hongyeon-gil, incorporating data gathered from street interviews, online surveys, and web crawling. This data was fine-tuned on GPT-3.5 to create a chatbot that speaks with a unified voice representing multiple perspectives. The chatbot shares not only the history, geography, and culture of Hongyeon-gil but also personal experiences and memories, as if lived by one person. It is accessible to everyone through an avatar website.<br><br><b>Interview Excerpt:</b><br><br><b>Eunchong:</b> I understand that AI chatbots require extensive data preprocessing before they can generate coherent speech. Can you explain the AI generation process for this project?<br><br><b>Yewon:</b> I first visited Hongyeon-gil in July. Over six months, we familiarized ourselves with the area, approached residents, and conducted interviews and Google Form events. I even remember directly asking people about their thoughts on Hongyeon-gil. We spent time talking to residents and visitors, collecting information, which we then transcribed using Clova Note.<br><br><b>Eunchong:</b> How does your work differ from other AI models?<br><br><b>Yewon:</b> While traditional chatbots provide answers based on objective information, the data I collected reflects the language habits, emotions, and everyday experiences of Hongyeon-gil residents. The stories are more personal and capture the essence of life in Hongyeon-gil.<br><br><b>Eunchong:</b> What was the most challenging part of creating the AI chatbot?<br><br><b>Yewon:</b> Capturing the lives of the residents within the chatbot was the most challenging part. Processing and training the data involved repeatedly listening to interview recordings, which often moved me deeply. It felt more like archaeology or exploration than development. This project was a small challenge to the current AI scene, as it wasn’t about perfection.<br><br><b>Eunchong:</b> Your AI sometimes says unexpected things, which gives it a novelist-like quality. You played a significant role in this project, especially by emphasizing communication across regions and generations. I believe the project's success is largely due to your efforts in listening to the elderly, gathering feedback, and incorporating it into your work.
+                        <br><br>
+                        ------------------------------------------------------<br><br>
+                        Credit<br>
+                        ▷ Web Design&Develop : Yewon Jang<br>
+                        ▷ Interview : Jaein Tao, Eunjeong Lim, Yewon Jang, Eunchong Choi<br>
+                        ▷ Interview Summary : Yewon Jang<br>
+                        ▷ Special Thanks : Kang X won, Im X lee, Lee X Guen, Kim X kyeong, Choi X Hwang, Attertain, Yeolrin Gonggan Yeonhui, Market Cannelle, Sans, Bottle Lounge, Hong Yeon-gil Instagram, Hong Yeon-gil Community Center<br>
+                        ▷ Advisor : Shin Bo Seul<br>`,
                     media: 'Digital',
                     thumbnail: '../assets/image/hongyeon1.0.png',
                     infoImages: [
@@ -257,7 +463,15 @@
                 { 
                     year: '2024', 
                     title: 'ABT (Art, Body, Tech)', 
-                    description: `Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a><br><br> <a href="https://www.abt-avatar.world/">The Silver Bell Challenge: Hong Yeon-gil Project</a> is a new media art project conducted by Team ABT, consisting of one project planner and three artists. Over six months, we engaged with the elderly residents of <a href="https://www.google.co.kr/maps/@/data=!3m7!1e1!3m5!1sLyp08VMMJlzGvMNoh305-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.8135321424066%26panoid%3DLyp08VMMJlzGvMNoh305-A%26yaw%3D48.06681696015442!7i13312!8i6656?coh=205410&entry=ttu">Hongyeon-gil</a> in Yeonhui-dong, Seoul, with the aim of bridging the gap between regions and generations through art. <br><br>Through our research on Hongyeon-gil, we discovered that despite being a small neighborhood, it has a high elderly population and is home to 13 galleries, highlighting its strong connection to culture and the arts. However, during interviews with the elderly residents, we found that most had never visited any of the art galleries in their own neighborhood. In response, ABT launched a project that engaged the elderly in art through ongoing interaction.<br><br><img style="width: 100%;"src="../assets/image/abt/abt-photo1.gif"><br><br>As a member of Team ABT, I participated as an artist while also taking charge of the branding. Hongyeon-gil has a diverse demographic, with long-time elderly residents living alongside younger generations who frequent the area as it has become a popular spot.<br><br>To reflect the unique characteristics of Hongyeon-gil, I aimed for a sleek design that set us apart from traditional community-based organizations. Additionally, given that our three artists work with media, I incorporated a rave-like vibe commonly used in media art. I also created a website to archive the six months of activities by Team ABT and each artist’s work, along with web posters and leaflets that feature dynamic, ever-changing graphics. <br><br>Winning in "2023 Emerging Artists Growth Support Platform_Hwaon". Selected as the top team, <a href="https://www.instagram.com/p/C0IVy2jvM-P/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">I went on a study trip to Stuttgart.</a><br><br><img style="width: 100%;"src="../assets/image/abt/abt-mockup1.png"><br><br><div class="video-container"><img style="width: 49%;"src="../assets/image/abt/abt-mockup2.gif"><br><img style="width: 49%;"src="../assets/image/abt/abt-mockup3.gif"></>`, 
+                    description: `▶︎ Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a><br><br> <a href="https://www.abt-avatar.world/">The Silver Bell Challenge: Hong Yeon-gil Project</a> is a new media art project conducted by Team ABT, consisting of one project planner and three artists. Over six months, we engaged with the elderly residents of <a href="https://www.google.co.kr/maps/@/data=!3m7!1e1!3m5!1sLyp08VMMJlzGvMNoh305-A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.8135321424066%26panoid%3DLyp08VMMJlzGvMNoh305-A%26yaw%3D48.06681696015442!7i13312!8i6656?coh=205410&entry=ttu">Hongyeon-gil</a> in Yeonhui-dong, Seoul, with the aim of bridging the gap between regions and generations through art. <br><br>Through our research on Hongyeon-gil, we discovered that despite being a small neighborhood, it has a high elderly population and is home to 13 galleries, highlighting its strong connection to culture and the arts. However, during interviews with the elderly residents, we found that most had never visited any of the art galleries in their own neighborhood. In response, ABT launched a project that engaged the elderly in art through ongoing interaction.<br><br><img style="width: 100%;"src="../assets/image/abt/abt-photo1.gif"><br><br>As a member of Team ABT, I participated as an artist while also taking charge of the branding. Hongyeon-gil has a diverse demographic, with long-time elderly residents living alongside younger generations who frequent the area as it has become a popular spot.<br><br>To reflect the unique characteristics of Hongyeon-gil, I aimed for a sleek design that set us apart from traditional community-based organizations. Additionally, given that our three artists work with media, I incorporated a rave-like vibe commonly used in media art. I also created a website to archive the six months of activities by Team ABT and each artist’s work, along with web posters and leaflets that feature dynamic, ever-changing graphics. 
+                        <br><br>Winning in "2023 Emerging Artists Growth Support Platform_Hwaon". 
+                        Selected as the top team, <a href="https://www.instagram.com/p/C0IVy2jvM-P/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">I went on a study trip to Stuttgart.</a><br><br><img style="width: 100%;"src="../assets/image/abt/abt-mockup1.png"><br><br><div class="video-container"><img style="width: 49%;"src="../assets/image/abt/abt-mockup2.gif"></><br>
+                        <img style="width: 49%;"src="../assets/image/abt/abt-mockup3.gif"></div>
+                        <br><br>
+                        ------------------------------------------------------<br><br>
+                        Credit<br>
+                        ▷ Graphic Design : Yewon Jang<br>
+                        ▷ Web Development : Yewon Jang, Sejin Oh(@ohsj1999)<br>`, 
                     media: 'Digital, Branding&UX/UI', 
                     thumbnail: '../assets/image/ABT website.png',
                     infoImages:  [{ src: '../assets/image/abt/abt-bi 1.png', altText: 'This logo image displays the title "The Silver Bell Challenge: Hong Yeon-gil Project" written in both Korean and English, centered on a black background. Surrounding the title are five glowing circles in various colors, each labeled with Korean text. The circles are blue, green, pink, and yellow, providing a vibrant contrast against the dark background.' },
@@ -272,73 +486,106 @@
                 { 
                     year: '2023', 
                     title: 'Cell on the Beach', 
-                    description: `Exhibited : 2023 Art & Technology Conference 	&lt;Delicate disorder and precarious shelter&gt;<br><br>Exhibited : 2023 Art & Technology Conference <Delicate disorder and precarious shelter> Cell on the Beach is a web-based party that serves as a creative rebellion against the rigid structure of higher education in South Korea. Both Jisu and I experienced the intense and often overwhelming environment of Korea’s private education system during high school. Our memories of attending a science high school, where a hyper-competitive atmosphere dictated our lives solely based on test scores, are far from positive. <br><br>It was only after entering university that we realized life has so much more to offer than just grades. While our high school experiences remain a source of negativity, our pure love for science has never waned. Inspired by the curiosity and excitement we felt when we first encountered science, we decided to create our own unique science museum. We believe that science is a discipline that everyone should engage with and reflect on. That’s why we organized an event called Cell on the Beach, inviting people to join and enjoy. <br><br> To introduce the fun side of science, we decided to use the concept of 'memes.' The term 'meme' was originally coined by Richard Dawkins in his book The Selfish Gene, deriving from the word 'gene' to describe a unit of cultural transmission. We hope to preserve and share our experiences with science through these memes. You can download the science memes we created from the link below.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo1.png"> <br><br>On the Cell on the Beach website, users can interact with various objects that represent cellular organelles, and collaboratively produce sounds by clicking on them. The sound you trigger can be heard on another device! Typically, in games or the metaverse, we perceive each other’s presence through avatars. However, this experience allows you to sense the presence of others in an online space without any visual effects. <br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo2.png"><br><br>Secondly, participants can enjoy a simple DJing experience. We built a MIDI controller using Arduino, allowing users to control various sounds from the pre-prepared tracks. This feature was the crowd favorite!<br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo4.png"><br><br>Finally, we created a photo booth where visitors can capture memories. We developed a Cell on the Beach photo filter and built the system for taking and sharing pictures ourselves. Through these experiences, we aim to challenge the conventional approaches to education and celebrate the boundless joy of scientific discovery.`, 
+                    description: `▶︎ Exhibited : 2023 Art & Technology Conference 	&lt;Delicate disorder and precarious shelter&gt;<br><br>Exhibited : 2023 Art & Technology Conference <Delicate disorder and precarious shelter> Cell on the Beach is a web-based party that serves as a creative rebellion against the rigid structure of higher education in South Korea. Both Jisu and I experienced the intense and often overwhelming environment of Korea’s private education system during high school. Our memories of attending a science high school, where a hyper-competitive atmosphere dictated our lives solely based on test scores, are far from positive. <br><br>It was only after entering university that we realized life has so much more to offer than just grades. While our high school experiences remain a source of negativity, our pure love for science has never waned. Inspired by the curiosity and excitement we felt when we first encountered science, we decided to create our own unique science museum. We believe that science is a discipline that everyone should engage with and reflect on. That’s why we organized an event called Cell on the Beach, inviting people to join and enjoy. <br><br> To introduce the fun side of science, we decided to use the concept of 'memes.' The term 'meme' was originally coined by Richard Dawkins in his book The Selfish Gene, deriving from the word 'gene' to describe a unit of cultural transmission. We hope to preserve and share our experiences with science through these memes. You can download the science memes we created from the link below.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo1.png"> <br><br>On the Cell on the Beach website, users can interact with various objects that represent cellular organelles, and collaboratively produce sounds by clicking on them. The sound you trigger can be heard on another device! Typically, in games or the metaverse, we perceive each other’s presence through avatars. However, this experience allows you to sense the presence of others in an online space without any visual effects. <br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo2.png"><br><br>Secondly, participants can enjoy a simple DJing experience. We built a MIDI controller using Arduino, allowing users to control various sounds from the pre-prepared tracks. This feature was the crowd favorite!<br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo4.png"><br><br>Finally, we created a photo booth where visitors can capture memories. We developed a Cell on the Beach photo filter and built the system for taking and sharing pictures ourselves. Through these experiences, we aim to challenge the conventional approaches to education and celebrate the boundless joy of scientific discovery.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo7.png">
+                        <br><br>
+                        ------------------------------------------------------<br><br>
+                        Credit<br>
+                        ▷ Idea&Creation : Yewon Jang, Jisu Kang<br>
+                        ▷ 3D Modeling : Jisu Kang<br>
+                        ▷ Web Design&Develop : Yewon Jang<br>
+                        ▷ Typography : Ryu Haesung(@egzg.up)<br>
+                        `, 
                     media: 'Digital', 
                     thumbnail: '../assets/image/cellonthebeach.png',
-                    infoImages: [{ src: '../assets/image/cellonthebeach/photo3.png', altText: 'GIF image of the "W ord Wide Web" poster, showing a repeating sequence of the front and back sides.'},
-                    {src: 'https://player.vimeo.com/video/999835647?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'dd'},
-                    {src: 'https://player.vimeo.com/video/999909118?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Back side of the poster'},
-                    {src: '../assets/image/cellonthebeach/photo5.png', altText: 'Back side of the poster'},
+                    infoImages: [{ src: '../assets/image/cellonthebeach/photo3.png', altText: 'The image is a meme divided into two parts. The left side shows two frames featuring SpongeBob SquarePants with a rainbow above him. The top frame is labeled "When I was in high school" with the Korean word "아텍" (Artech) inside the rainbow. The bottom frame is labeled "Now" with the Korean word "졸업" (graduation) inside the rainbow. The right side of the image shows a GIF of a cat walking inside a cardboard box with holes cut out for its legs. The text above the GIF reads, "The living trend of the 24th century; Quantum Cats!" and below it, "FASTER THAN A FLYING CAR!"'},
+                    {src: 'https://player.vimeo.com/video/999835647?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video showcases a DJing demonstration using a DIY MIDI controller created for the "Cell on the Beach" exhibition. The pink, box-shaped MIDI controller appears on screen, allowing the user to adjust the volume of various musical components. The background music emphasizes drum and bass sounds, and the track was composed by Yewon.'},
+                    {src: 'https://player.vimeo.com/video/999909118?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video explains that it is possible to play sound effects collaboratively on a website. Users on the web are gathering in the web space from different locations at the same time, pressing objects in "Cell on the Beach" to trigger various sound effects.'},
+                    {src: '../assets/image/cellonthebeach/photo5.png', altText: 'The image shows a "Cell on the Beach" exhibition space. On the left, a group is gathered around a computer in a dimly lit room, focusing on their work, while on the right, a person in a brighter area is examining a wall filled with images and notes, holding a red pen as if she’s contributing to the project.'},
                     ],
                     id: 'cell-on-the-beach'
                 },
                 { 
                     year: '2023', 
                     title: 'MemeProject', 
-                    description: 'Virtual businesses that collect and preserve memes', 
+                    description: '▶︎ Exhibited : PlanT House, Hongcheon Art Museum, Hongcheon, KR <br><br>▶︎ Yewon Jang, Meme Project, 2023, interactive web, recorded video, cue code, dimensions variable<br><br>The Meme Project is a fictional company dedicated to collecting and preserving memes. The term "meme" was first coined by Richard Dawkins in The Selfish Gene and is derived from the word "gene." Unlike genes, which are transmitted biologically, memes are units of cultural transmission that spread rapidly and independently of blood relations. Recently, memes have become a popular way to share humorous commentary or critique political and social issues, delivering messages with a playful edge. <br><br>The website offers a virtual space for the Meme Project, organized into three floors: the first floor is a kitchen space that explains the origins and meaning of memes; the second floor showcases five of the latest memes alongside a globe sculpture surrounded by memes; and the third floor is where visitors can create and save their own memes.<br><br><img style="width: 100%;"src="../assets/image/memeproject/photo1.png"><br><br> <a href="https://www.memeproject.site/">www.memeproject.site</a> can be accessed by anyone through a QR code displayed in the exhibition space (PlanT House). On the site, visitors can explore the collected memes and even create their own. Like genes, memes have a self-replicating nature—they’re humorous, but they often hit on something deeper. Through this exhibition, the artist experiments to see just how far the memes created on the site can spread.<br><br><img style="width: 100%;"src="../assets/image/memeproject/photo2.png">', 
                     media: 'Digital', 
                     thumbnail: '../assets/image/meme project.png',
-                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    infoImages:  [{ src: 'https://player.vimeo.com/video/1000663988?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video showcases various meme artworks as you navigate through the Memeproject space.'}, 
+                        {src: 'https://player.vimeo.com/video/1000665147?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video documents the memes left by various people, stored on memproject/world.html.'},
+                        {src: '../assets/image/memeproject/photo3.png', altText: 'The image features a digital collage depicting various elements related to memes. A globe is at the center, encircled by white ribbons with text. Surrounding the globe are different meme-related images, such as posters and digital interfaces, floating in space. A prominent yellow text box on the globe displays a quote: "We are survival machines—robot vehicles blindly programmed to preserve the selfish molecules known as genes. -The Selfish Gene, 378pg-". Below the globe, there is a caption in Korean stating that new self-replicating memes float in the online space, are copied, transformed, and passed on to someone who is neither blood-related nor familiar.'},
+                        {src: '../assets/image/memeproject/photo5.png', altText: `The image shows a combination of physical and digital elements related to meme culture. On the left, several orange traffic cones are decorated with memes, and a pile of papers with meme-related images is scattered at their base. On the right, there are various meme posters and images, including a laptop displaying a meme and a poster promoting a "Meme Project" event. A large quote at the top center reads: "We are survival machines—robot vehicles blindly programmed to preserve the selfish molecules known as genes. -The Selfish Gene, 378pg-". Another section of text, in blue, reflects on the concept of meme propagation, questioning the identity of the creator and the value of the meme's spread.`},
+                        {src: '../assets/image/memeproject/photo4.png', altText: 'The image shows a white wall with a pink and white banner promoting the "PlanT House" exhibition at Hongcheon Museum, running from December 14, 2023, to March 3, 2024.'},
                     ],
                     id: 'memeproject'
                 },
                 { 
                     year: '2023', 
-                    title: 'MemeProject (world.html)', 
-                    description: 'Meme Waterwheel🎡🎡🎡', 
-                    media: 'Digital', 
-                    thumbnail: '../assets/image/memproject (world.html).png',
-                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    title: 'Simulating #1,2,3', 
+                    description: `▶︎ Exhibited : ACC Media Cube, Gwangju, KR <br><br>"Simulating #1,2,3" is a simulation program that models gravity between entities through physical computations. The artist, an entity within this program, observes beings from another dimension through a visualization of a two-dimensional world. The simulation does not always yield the same results; the entities within it exhibit different behaviors each time. As the artist watches these beings moving diligently within the simulation, they are prompted to reconsider the uncertainty that pervades the real world. Just like in the simulation, real life is a continuous series of uncertain events. However, this uncertainty might be precisely why we strive to predict outcomes and navigate through probabilistic scenarios, continually making efforts to handle unpredictability and anticipate the future. <div style="padding:56.25% 0 0 0;position:relative;"> <iframe src="https://player.vimeo.com/video/1000697197?badge=0&amp;&autopause=0&portrait=0&byline=0&title=0;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="simulating2"></iframe></div><br>To create this piece, I designed a gravitational algorithm using Unreal Engine's Blueprint system. By adjusting parameters such as gravitational acceleration and the mass of the objects, I was able to control their movements.<br><br><img src="../assets/image/simulating/gravity.svg" style="width: 30%;"> <br><br>I based the design on the universal law of gravitation.`, 
+                    media: 'Physics', 
+                    thumbnail: '../assets/image/Simulating.png',
+                    infoImages:  [{ src: 'https://player.vimeo.com/video/833905494?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: 'https://player.vimeo.com/video/1000799277?&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Front side of the poster'}
                     ],
-                    id: 'memeproject-world'
-                },
-                { 
-                    year: '2024', 
-                    title: 'p5. Ko Translate', 
-                    description: 'Translation of the website of p5.js to be renewed', 
-                    media: 'Accessibility', 
-                    thumbnail: '../assets/image/p5kotranslate.png',
-                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
-                    ],
-                    id: 'p5-ko-translate'
+                    id: 'simulating'
                 },
                 { 
                     year: '2023', 
-                    title: 'Simulating #1,2,3', 
-                    description: 'Translation of the website of p5.js to be renewed', 
+                    title: 'SEF2023', 
+                    description: `▶︎ Exhibited : ACC Media Cube, Gwangju, KR <br><br>"Simulating #1,2,3" is a simulation program that models gravity between entities through physical computations. The artist, an entity within this program, observes beings from another dimension through a visualization of a two-dimensional world. The simulation does not always yield the same results; the entities within it exhibit different behaviors each time. As the artist watches these beings moving diligently within the simulation, they are prompted to reconsider the uncertainty that pervades the real world. Just like in the simulation, real life is a continuous series of uncertain events. However, this uncertainty might be precisely why we strive to predict outcomes and navigate through probabilistic scenarios, continually making efforts to handle unpredictability and anticipate the future. <div style="padding:56.25% 0 0 0;position:relative;"> <iframe src="https://player.vimeo.com/video/1000697197?badge=0&amp;&autopause=0&portrait=0&byline=0&title=0;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="simulating2"></iframe></div><br>To create this piece, I designed a gravitational algorithm using Unreal Engine's Blueprint system. By adjusting parameters such as gravitational acceleration and the mass of the objects, I was able to control their movements.<br><br><img src="../assets/image/simulating/gravity.svg" style="width: 30%;"> <br><br>I based the design on the universal law of gravitation.`, 
                     media: 'Physics', 
-                    thumbnail: '../assets/image/Simulating.png',
-                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    thumbnail: '../assets/image/sef2023.png',
+                    infoImages:  [{ src: 'https://player.vimeo.com/video/833905494?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                        {src: 'https://player.vimeo.com/video/1000799277?&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Front side of the poster'}
                     ],
                     id: 'simulating'
                 },
                 { 
                     year: '2021', 
                     title: 'Singlet & Multiplet', 
-                    description: "Work connecting 'Multiple Selves' and 'Quantum Mechanics'", 
+                    description: `▶︎ Exhibited in <br> 
+                        8th International New Media Art Exhibition, CICA Museum, KR <br>
+                        Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)<br><br>
+                        ▶︎ Published in<br> 
+                        New Media Art 2023, CICA Museum, KR<br><br>
+                        ▶︎ Winning in<br>
+                        Spin Art Contest, QNS(Center for Quantum Nanoscience)<br>
+                        ------------------------------------------------------<br><br>
+                        The following two lines are from Goethe's poem Epirrhema:<br>
+
+                        Inside, there is nothing; outside, there is nothing.<br>
+                        What is inside is also what is outside.
+                        <br><br>
+
+                        The American physicist Wolfgang Pauli drew inspiration from Epirrhema to conceptualize the entanglement and superposition characteristics of spin. In the quantum world, more than one quantum state can exist probabilistically. When the spin number is 1/2, two states are superposed, and at the moment the observer performs an "observation," one of these states is perceived. Through countless observations and experiments, we discover the laws of physics. We interpret the projected forms of essence and transform them into concepts, and then we seek to rediscover that essence. Pauli was convinced of the homogeneity between the external image of essence, which is the "law" created by the observer, and the internal image, which is the "concept," because, despite being different internal images, they ultimately originate from the same "essence."
+
+                        <br><br>
+                        The same is true for humans, who are made up of countless atoms. As we live our lives, we encounter various images within ourselves. Sometimes, we may display overflowing love for humanity, while at other times, when faced with moral lapses, we might react with uncontrollable anger. There are moments when we are bewildered by these unfamiliar aspects of ourselves, wondering, "Why am I so contradictory?" However, all these images are just different representations originating from one individual, making them natural. We all possess a multi-layered self that is superposed within, and we leave traces of this self in the spaces and relationships we inhabit.
+                        <br><br>
+
+                        Singlet&Multiplet is a media art performance that depicts the process of discovering and embracing the diverse selves that exist within an individual. Team Mouaré views the layered state of various identities as "layers," and the patterns and traces created by these layers as "grains." It is a universal human experience to acquire various identities throughout life, and in doing so, to encounter doubt, confusion, and anxiety. Simultaneously, humans also converge these multifaceted selves into a coherent whole, growing into mature individuals.
+                        <br><br>
+
+                        Quantum mechanics and the self both deal with the essence of science and philosophy, respectively, which aligns them in certain ways. They also share common ground in that quantum mechanics deals with an unobservable microcosm, while the self deals with an unseen inner world. Therefore, the images that humans create are the products of the unique "grains" inherent to themselves, produced by countless "layers." Singlet&Multiplet has been expressed through video art using basic elements of form such as points, lines, and planes, with the story unfolding through performance.
+                        <br><br>
+                        ------------------------------------------------------<br><br>
+                        Credit<br>
+                        ▷ Idea&Creation : Yewon Jang, Jiyeong Kim, Yejin Cho<br>
+                        ▷ Performance : Heewon Jeon<br>
+                        ▷ Sound Design : Kyungwoo Bae
+
+
+                        `,
                     media: 'Physics', 
                     thumbnail: '../assets/image/Singlet&Multiplet.png',
-                    infoImages:  [{ src: '../assets/image/wordwideweb/wordwideweb1.gif', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                        {src: '../assets/image/wordwideweb/wordwideweb2.png', altText: 'Front side of the poster'},
-                        {src: '../assets/image/wordwideweb/wordwideweb3.png', altText: 'Back side of the poster'},
+                    infoImages:  [{ src: 'https://www.youtube.com/embed/pBTghj77Zhg?si=CI3uXccI1cXrFqdQ', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'},
+                    { src: '../assets/image/singlet&multiplet/6.png', altText: ''},
+                    { src: '../assets/image/singlet&multiplet/7.png', altText: ''},
+                    { src: '../assets/image/singlet&multiplet/5.png', altText: ''}, 
+                    { src: '../assets/image/singlet&multiplet/1.jpg', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                    { src: '../assets/image/singlet&multiplet/2.jpg', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                    { src: '../assets/image/singlet&multiplet/3.jpg', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
+                    { src: '../assets/image/singlet&multiplet/4.jpg', altText: ''}
                     ],
                     id: 'singlet-multiplet'
                 },
@@ -349,30 +596,17 @@
             const infoContainer = document.querySelector('.information');
             const titleElement = document.querySelector('.Rectangle-22 p');
             const imageContainer = document.querySelector('.image-container');
+            const combinedContainer = document.querySelector('.combined-container');
             let currentWorks = works; // 처음엔 모든 작품을 보여줌
             let currentIndex = 0;
 
-            // URL의 해시값을 확인하여 해당 작품을 로드
-            const urlHash = window.location.hash.substring(1);
-            if (urlHash) {
-                const targetWorkIndex = works.findIndex(work => work.id === urlHash);
-                if (targetWorkIndex !== -1) {
-                    currentIndex = targetWorkIndex;
-                }
+            function isMobile() {
+                return window.innerWidth <= 768;
             }
 
-            updateWorkList('all', 'all', true);
-
-            yearSelectElement.addEventListener('change', function() {
-                updateWorkList(this.value, mediaSelectElement.value, false);
-            });
-
-            mediaSelectElement.addEventListener('change', function() {
-                updateWorkList(yearSelectElement.value, this.value, false);
-            });
 
             function updateWorkList(selectedYear, selectedMedia, initialLoad) {
-                const tableBody = document.querySelector('.worklist tbody');
+                const tableBody = document.querySelector('.worklist');
                 tableBody.innerHTML = ''; // 기존의 테이블 내용을 지움
                 currentWorks = works.filter(work => {
                     return (selectedYear === 'all' || work.year === selectedYear) &&
@@ -411,14 +645,72 @@
                     // 해당 섹션으로 부드럽게 스크롤
                     document.getElementById(workId).scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
+
+
             });
             }
+
+            
+            // URL의 해시값을 확인하여 해당 작품을 로드
+            const urlHash = window.location.hash.substring(1);
+            if (urlHash) {
+                const targetWorkIndex = works.findIndex(work => work.id === urlHash);
+                if (targetWorkIndex !== -1) {
+                    currentIndex = targetWorkIndex;
+                }
+            }
+
+            updateWorkList('all', 'all', true);
+
+            yearSelectElement.addEventListener('change', function() {
+                updateWorkList(this.value, mediaSelectElement.value, false);
+            });
+
+            mediaSelectElement.addEventListener('change', function() {
+                updateWorkList(yearSelectElement.value, this.value, false);
+            });
+
 
             function displayWorkInfo(index) {
                 if (index < 0 || index >= currentWorks.length) return;
                 const work = currentWorks[index];
 
                 if (work) {
+
+                    if(isMobile()){
+                        const combinedConatiner = document.querySelector('.combined-container');
+                        combinedConatiner.innerHTML='';
+
+                        work.infoImages.forEach((img, i) => {
+                            const imgElement = document.createElement('div');
+                            imgElement.style.position = 'relative';
+
+                            if (img.src.includes('vimeo.com')) {
+                                imgElement.innerHTML = `<div class="vimeo-container"><iframe src="${img.src}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="video-${i}"></iframe></div>`;
+                            } else if (img.src.includes('youtube')) {
+                                imgElement.innerHTML = `<div class="youtube-container"><iframe src="${img.src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
+                            } else {
+                                imgElement.innerHTML = `<img src="${img.src}" class="info-img" alt="${img.altText}"> <div class="sticker">${img.altText}</div>`;
+                            }
+                            combinedContainer.appendChild(imgElement);
+                        });
+
+                        const content = `
+                            <div style="margin-bottom: 20px;" class="work-info" data-index="${index}" id="${work.id}">
+                                <h2>▶︎ ${work.year}</h2>
+                                <h2>▶︎ ${work.media}</h2>
+                                <p>${work.description}</p>
+                            </div>
+                        `;
+                        combinedContainer.innerHTML += content;
+
+                        setTimeout(() => {
+                            document.querySelectorAll(`.sticker`).forEach(sticker => {
+                                sticker.style.opacity = 1;
+                            });
+                        }, 500);
+
+                    } else {
                     // imageContainer를 비우고, 각 작품의 이미지를 렌더링
                     imageContainer.innerHTML = '';
 
@@ -427,17 +719,19 @@
                         imgElement.style.position = 'relative';
 
                         if(img.src.includes('vimeo.com')) {
-                            imgElement.innerHTML = 'div class="vimeo-container"><iframe src="${img.src}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="cellonthebeach-video1"></iframe></div>';
-                        } else {
+                            imgElement.innerHTML = '<div class="vimeo-container"><iframe src="${img.src}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="cellonthebeach-video1"></iframe></div>';
+                        } else if(img.src.includes('youtube')) {
+                            imgElement.innerHTML = '<div class="youtube-container"><iframe src="${img.src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>';
+                        }else {
                             imgElement.innerHTML = '<img src="${img.src}" class="info-img" alt="${img.altText}"> <div class="sticker">${img.altText}</div>';
                         }
                         imageContainer.appendChild(imgElement);
-
-
                     });
 
                     const content = `
                         <div style="margin-bottom: 600px;" class="work-info" data-index="${index}" id="${work.id}">
+                            <h2>▶︎ ${work.year}</h2>
+                            <h2>▶︎ ${work.media}</h2>
                             <p>${work.description}</p>
                         </div>
                     `;
@@ -455,13 +749,13 @@
                             sticker.style.opacity = 1;
                         });
                     }, 500); // 500ms 후에 스티커 표시
+
+                }
+
+
                 }
             }
 
-
-           
-
-            
             function observeLastElement() {
                 const lastElement = infoContainer.querySelector('.work-info:last-child');
                 if (lastElement) {
@@ -494,7 +788,9 @@
                                 imageContainer.innerHTML = work.infoImages.map((img, i) => {
                                     if (img.src.includes('vimeo.com')) {
                                         return `<div class="vimeo-container-container"><div class="vimeo-container"><iframe src="${img.src}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div> <div class="sticker" id="sticker-${index}-${i}">${img.altText}</div></div>`;
-                                    } else {
+                                    } else if(img.src.includes('youtube.com')){
+                                        return `<div class="youtube-container"><iframe src="${img.src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="sticker" id="sticker-${index}-${i}">${img.altText}</div></div>`;
+                                    }else {
                                         return `
                                             <div style="position: relative;">
                                                 <img src="${img.src}" class="info-img" alt="${img.altText}">
@@ -543,6 +839,24 @@
                 }
             });
 
+            const close = document.getElementById('close');
+            const worklist = document.querySelector('.worklist');
+            const item4 = document.querySelector('.item4');
+            
+            close.addEventListener('click', function() {
+                if(worklist.style.display === 'none') {
+                    worklist.style.display = 'block';
+                    item4.style.bottom = '0';
+                } else {
+                    worklist.style.display = 'none';
+                }
+            });
+
+
+            
+
+
+            
         });
     </script>
 </head>
@@ -599,16 +913,10 @@
                 <option value="Accessibility">🔍 Accessibility</option>
                 <option value="Projection">🌠 Projection</option>
             </select>
+            <div id="close">X</div>
         </div>
-        <table class="worklist">
-            <thead>
-                <tr>
-                </tr>
-            </thead>
-            <tbody style="text-decoration: none;">
-                <!-- 작업 목록이 동적으로 삽입됩니다 -->
-            </tbody>
-        </table>
+        <div class="worklist" id="worklist">
+        </div>
     </div>
 
     <!-- 모달 구조 -->
@@ -616,5 +924,12 @@
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
     </div>
+
+    <div class="combined-container">
+        <!-- Combined content of image-container and information -->
+    </div>
+    
+
+       
 </body>
 </html>
