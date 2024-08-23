@@ -41,6 +41,7 @@
 
         .worklist img {
             height: auto;
+            width: 80%;
             cursor: pointer;
             border-radius: 10px;
             transition: transform 0.3s, opacity 0.3s;
@@ -51,8 +52,12 @@
             opacity: 0.9;
         }
 
+        .worklist::-webkit-scrollbar {
+            display: none;
+        }
+
         .information {
-            max-height: 650px;
+            max-height: calc(100vh - 200px);
             overflow-y: auto;
         }
         .info-img {
@@ -294,9 +299,8 @@
         }
 
         @media (max-width: 768px) {
-
             body{
-                overflow: hidden;
+                height: 100vh;
             }
             
             .information{
@@ -310,20 +314,21 @@
             }
 
             .item4 {
-                position: absolute;
-                left: 0px;
-                bottom: 20px;
-                width: 100%;
-                z-index: 1;
+                position: fixed;
+                left: 0;
+                top: 100vh;
+                width: 100vw;
+                right: 0;
                 height: 120px;
+                z-index: 1;
+                transform: translate(-50%, -50%);
                 background-color: #fff;
-                margin-bottom: 20px;
             }
 
             .worklist {
                 flex-direction: row;
                 flex-wrap: nowrap;
-                overflow-x: auto; /* 가로 스크롤 가능 */
+                overflow-x: scroll; /* 가로 스크롤 가능 */
                 overflow-y: hidden; /* 세로 스크롤 숨기기 */
                 gap: 20px;
                 width: 100%; /* 화면 너비에 맞춤 */
@@ -332,11 +337,20 @@
             }
 
             .worklist img {
-                height: 100px;
                 padding: 10px;
             }
 
+            #mediaSelect {
+                margin: 0px;
+            }
+
+            #yearSelect {
+                margin: 0px;
+            }
+
             .select {
+                position: relative;
+                padding: 7px;
                 flex-direction: row;
                 background-color: blue;
             }
@@ -371,27 +385,12 @@
                 display: none;
             }
 
-            .image-container{
-                flex-direction: row;
-                width: 90%;
-                height: 40%;
-                flex-wrap: nowrap;
-                z-index: 100;
-                overflow-y: hidden;
-            }
-
-            .image-container img{
-                width: 200px;
-                flex: 0 0 auto;
-            }
-
             .combined-container{
-                position: absolute;
                 font-family: 'Work Sans', sans-serif;
-                font-size: 12px;
+                font-size: 13px;
                 top: 0px;
-                width: 100%;
-                height: 100%;
+                width: 100vw;
+                
                 overflow-y: scroll;
                 mix-blend-mode: difference;
 
@@ -698,7 +697,7 @@
                         });
 
                         const content = `
-                            <div style="margin-bottom: 20px;" class="work-info" data-index="${index}" id="${work.id}">
+                            <div class="work-info" data-index="${index}" id="${work.id}">
                                 <h2>▶︎ ${work.year}</h2>
                                 <h2>▶︎ ${work.media}</h2>
                                 <p>${work.description}</p>
@@ -896,6 +895,23 @@
     <div class="information">
         <!-- Work information will be dynamically inserted here -->
     </div>
+    <div class="item3">
+        <a href="../about.html" style="text-decoration: none;">
+            <div class="Rectangle-5">
+            About me
+            </div>
+        </a>
+        <a href="https://docs.google.com/document/d/1FG2vJTRECiWKBN5ZYv8LOuD1ei6HQSRPCzswuCBhWPI/edit?usp=sharing" style="text-decoration: none;">
+            <div class="Rectangle-5">
+            CV
+            </div>
+        </a>
+        <a href="https://www.instagram.com/yewon.calli/" style="text-decoration: none;">
+            <div class="Rectangle-6">
+            Contact me
+            </div>
+        </a>
+    </div>
     <div class="item4">
         <div class="select">
             <select id="yearSelect">
@@ -915,7 +931,6 @@
                 <option value="Accessibility">🔍 Accessibility</option>
                 <option value="Projection">🌠 Projection</option>
             </select>
-            <div id="close">X</div>
         </div>
         <div class="worklist" id="worklist">
         </div>
