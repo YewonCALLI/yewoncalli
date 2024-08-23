@@ -252,12 +252,6 @@ q:before, q:after {
     width: 18%;
 }
 
-.select{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
 
 #yearSelect{
     position: relative;

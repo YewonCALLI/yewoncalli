@@ -323,10 +323,21 @@
                 max-width: 100%;
                 overflow-x: hidden;
             }
+            .select-container{
+                display: flex;
+                background-color: #0059ff;
+                padding: 7px;
+            }
                 
             #select-close{
-                display: block;
+                display: flex;
+                padding: 7px;
+                height: 100%;
                 cursor: pointer;
+                color: #fff;
+                justify-content: center;
+                align-items: center;
+                background-color: #000;
             }
 
             #select-close:hover{
@@ -347,8 +358,6 @@
 
             }
 
-
-
             .worklist {
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -357,7 +366,7 @@
                 gap: 20px;
                 width: 100%; /* 화면 너비에 맞춤 */
                 height: 100%;
-                background-color: #000000;
+                background-color: #000;
                 transition: height 0.3s ease; /* 트랜지션 효과 추가 */
 
             }
@@ -367,7 +376,8 @@
             }
 
             #mediaSelect {
-                margin: 0px;
+                margin-left: 10px;
+                margin-bottom: 0px;
             }
 
             #yearSelect {
@@ -375,11 +385,12 @@
             }
 
             .select {
+                display: flex;
                 position: relative;
-                padding: 7px;
+                width: 100vw;
                 flex-direction: row;
-                background-color: blue;
                 align-items: center;
+                justify-content: flex-end;
             }
 
             .first-line {
@@ -933,11 +944,11 @@
                 if(worklist.style.display === 'none') {
                     worklist.style.display = 'block';
                     item4.style.top = 'calc(100dvh - 160px)';
-                    close.innerHTML = '🔽';
+                    close.innerHTML = '▼';
                 } else {
                     worklist.style.display = 'none';
                     item4.style.top = 'calc(100dvh - 42px)';
-                    close.innerHTML = '🔼';
+                    close.innerHTML = '▲';
                 }
             });
             
@@ -997,24 +1008,26 @@
     </div>
     <div class="item4">
         <div class="select">
-            <select id="yearSelect">
-                <option value="all">All</option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="other">Others</option>
-            </select>
-            <select id="mediaSelect">
-                <option value="all">📡 All Media</option>
-                <option value="Website">📱 Digital</option>
-                <option value="Poetic">✍️ Poetic</option>
-                <option value="Physics">🧪 Physics</option>
-                <option value="Branding&UX/UI">🎨 Branding&UX/UI</option>
-                <option value="Accessibility">🔍 Accessibility</option>
-                <option value="Projection">🌠 Projection</option>
-            </select>
-            <div id="select-close">🔽</div>
+            <div class="select-container">
+                <select id="yearSelect">
+                    <option value="all">All</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="other">Others</option>
+                </select>
+                <select id="mediaSelect">
+                    <option value="all">📡 All Media</option>
+                    <option value="Website">📱 Digital</option>
+                    <option value="Poetic">✍️ Poetic</option>
+                    <option value="Physics">🧪 Physics</option>
+                    <option value="Branding&UX/UI">🎨 Branding&UX/UI</option>
+                    <option value="Accessibility">🔍 Accessibility</option>
+                    <option value="Projection">🌠 Projection</option>
+                </select>
+            </div>
+            <div id="select-close">▼</div>
         </div>
         <div class="worklist" id="worklist">
         </div>
