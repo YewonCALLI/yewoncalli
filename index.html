@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../style.css">
     <style>
         .worklist {
-            width: 100%;
+            width: 90%;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
             height: calc(100vh - 200px); /* 화면에 맞게 높이 조절 */
             overflow-y: auto; /* 스크롤 가능하게 설정 */
@@ -33,20 +33,15 @@
             flex-direction: column;
         } */
 
-        .worklist {
-            width: 100%;
+        .select-container{
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
-            flex-grow: 1; /* 남은 공간을 모두 차지하게 설정 */
-            overflow-y: auto; /* 내부에서 스크롤 가능하게 설정 */
         }
-
 
         .worklist img {
             position: relative;
             height: auto;
-            height: 100px;
             cursor: pointer;
             border-radius: 10px;
             transition: transform 0.3s, opacity 0.3s;
@@ -325,6 +320,7 @@
             }
             .select-container{
                 display: flex;
+                flex-direction: row;
                 background-color: #0059ff;
                 padding: 7px;
             }
@@ -363,7 +359,6 @@
                 flex-wrap: nowrap;
                 overflow-x: scroll; /* 가로 스크롤 가능 */
                 overflow-y: hidden; /* 세로 스크롤 숨기기 */
-                gap: 20px;
                 width: 100%; /* 화면 너비에 맞춤 */
                 height: 100%;
                 background-color: #000;
@@ -372,6 +367,8 @@
             }
 
             .worklist img {
+                height: 100px;
+                width: 50%;
                 padding: 10px;
             }
 
@@ -558,7 +555,7 @@
                         Credit<br>
                         ▷ Graphic Design : Yewon Jang<br>
                         ▷ Web Development : Yewon Jang, Sejin Oh(@ohsj1999)<br>`, 
-                    media: 'Digital, Branding&UX/UI', 
+                    media: 'Branding&UX/UI, Digital', 
                     thumbnail: '../assets/image/ABT website.png',
                     infoImages:  [{ src: '../assets/image/abt/abt-bi 1.png', altText: 'This logo image displays the title "The Silver Bell Challenge: Hong Yeon-gil Project" written in both Korean and English, centered on a black background. Surrounding the title are five glowing circles in various colors, each labeled with Korean text. The circles are blue, green, pink, and yellow, providing a vibrant contrast against the dark background.' },
                         {src: '../assets/image/abt/abt-bi 2.png', altText: 'This logo image displays the title "The Silver Bell Challenge: Hong Yeon-gil Project" written in both Korean and English, centered on a black background. Surrounding the title are five glowing circles in various colors, each labeled with Korean text. The circles are blue, green, pink, and yellow, providing a vibrant contrast against the white background.'},
@@ -1019,7 +1016,7 @@
                 </select>
                 <select id="mediaSelect">
                     <option value="all">📡 All Media</option>
-                    <option value="Website">📱 Digital</option>
+                    <option value="Digital">📱 Digital</option>
                     <option value="Poetic">✍️ Poetic</option>
                     <option value="Physics">🧪 Physics</option>
                     <option value="Branding&UX/UI">🎨 Branding&UX/UI</option>
