@@ -324,18 +324,16 @@
     }
 
     .item4 {
-    position: fixed; /* 화면에 고정 */
-    top: calc(100vh - 160px); /* 안전 영역을 고려하여 bottom을 설정 */
-    left: 0;
-    width: 100vw;
-    z-index: 1;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #fff; /* 백그라운드 컬러 추가로 가독성 향상 */
-    padding-bottom: env(safe-area-inset-bottom); /* 하단바를 고려한 패딩 추가 */
-}
+        position: fixed; /* 화면에 고정 */
+        top: calc(100vh - 240px); /* 화면 아래에 고정 */
+        left: 0;
+        width: 100vw;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        overflow: hidden;
+    }
 
 
 
@@ -348,6 +346,7 @@
         width: 100%; /* 화면 너비에 맞춤 */
         height: 100%;
         background-color: #000000;
+        padding-bottom: constant(safe-area-inset-bottom);
     }
 
     .worklist img {
