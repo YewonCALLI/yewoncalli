@@ -16,6 +16,10 @@
             overflow-x: hidden;
         }
 
+        #select-close{
+            display: none;
+        }
+
         .item4{
             height: calc(100vh - 200px);
         }
@@ -300,183 +304,192 @@
         }
 
         @media (max-width: 768px) {
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
-    body {
-        position: relative;
-        min-height: 100vh; /* 최소 높이 설정 */
-    }
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                position: relative;
+                min-height: 100vh; /* 최소 높이 설정 */
+            }
 
-    .information {
-        font-size: 14px;
-        top: 41%;
-        width: 92%;
-        left: 20px;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
+            .information {
+                font-size: 14px;
+                top: 41%;
+                width: 92%;
+                left: 20px;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+                
+            #select-close{
+                display: block;
+                cursor: pointer;
+            }
 
-    .item4 {
-        position: fixed; /* 화면에 고정 */
-        top: calc(100dvh - 160px); /* 화면 아래에 고정 */
-        left: 0;
-        width: 100vw;
-        z-index: 1;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        overflow: hidden;
-        transition: top 0.3s ease, height 0.3s ease; /* 트랜지션 효과 추가 */
+            #select-close:hover{
+                scale: 1.1;
+            }
 
-    }
+            .item4 {
+                position: fixed; /* 화면에 고정 */
+                top: calc(100dvh - 160px); /* 화면 아래에 고정 */
+                left: 0;
+                width: 100vw;
+                z-index: 1;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                overflow: hidden;
+                transition: top 0.3s ease, height 0.3s ease; /* 트랜지션 효과 추가 */
 
-
-
-    .worklist {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: scroll; /* 가로 스크롤 가능 */
-        overflow-y: hidden; /* 세로 스크롤 숨기기 */
-        gap: 20px;
-        width: 100%; /* 화면 너비에 맞춤 */
-        height: 100%;
-        background-color: #000000;
-        transition: height 0.3s ease; /* 트랜지션 효과 추가 */
-
-    }
-
-    .worklist img {
-        padding: 10px;
-    }
-
-    #mediaSelect {
-        margin: 0px;
-    }
-
-    #yearSelect {
-        margin: 0px;
-    }
-
-    .select {
-        position: relative;
-        padding: 7px;
-        flex-direction: row;
-        background-color: blue;
-        align-items: center;
-    }
-
-    .first-line {
-        left: 0;
-        z-index: 1;
-    }
-
-    .Rectangle-22 {
-        position: fixed;
-        top: 6%;
-        left: 0;
-        z-index: 2;
-        background-color: rgb(202, 29, 255);
-        mix-blend-mode: difference;
-    }
+            }
 
 
-    .first-line {
-        display: none;
-    }
 
-    .second-line {
-        display: none;
-    }
+            .worklist {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: scroll; /* 가로 스크롤 가능 */
+                overflow-y: hidden; /* 세로 스크롤 숨기기 */
+                gap: 20px;
+                width: 100%; /* 화면 너비에 맞춤 */
+                height: 100%;
+                background-color: #000000;
+                transition: height 0.3s ease; /* 트랜지션 효과 추가 */
 
-    .information {
-        display: none;
-    }
+            }
 
-    .work-info {
-        padding: 10px;
-    }
+            .worklist img {
+                padding: 10px;
+            }
 
-    .sticker{
-        background-color: #20ff00;
-        font-weight: 600;
-        margin-bottom: 5px;
-        font-size: 16px;
-        color: rgb(0, 0, 0);
-    }
+            #mediaSelect {
+                margin: 0px;
+            }
 
-    .third-line,
-    .fourth-line {
-        display: none;
-    }
+            #yearSelect {
+                margin: 0px;
+            }
 
-    .combined-container {
-        font-family: 'Work Sans', sans-serif;
-        font-size: 13px;
-        top: 12%;
-        height: calc(100dvh - 80px);
-        width: 100vw;
-        overflow-y: scroll;
-        position: relative; /* 부모 요소에 상대 위치를 설정 */
-    }
+            .select {
+                position: relative;
+                padding: 7px;
+                flex-direction: row;
+                background-color: blue;
+                align-items: center;
+            }
 
+            .first-line {
+                left: 0;
+                z-index: 1;
+            }
 
-    .item1 {
-        z-index: 3;
-        left: 8px;
-        top:0;
-        width: 130px;
-        position: fixed;
-    }
-
-
-    .item3{
-        top: 3px;
-        flex-direction: row;
-        font-size: 16px;
-        gap: 2px;
-    }
-
-    .Rectangle-2{
-        background-color: rgba(255, 255, 255, 0);
-    }
-
-    .Yeb2001{
-        top: 6px;
-        font-size: 16px;
-        width: fit-content;
-        font-weight: 500;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    }
+            .Rectangle-22 {
+                position: fixed;
+                top: 6%;
+                left: 0;
+                z-index: 2;
+                background-color: rgb(202, 29, 255);
+                mix-blend-mode: difference;
+            }
 
 
-    .Rectangle-3{
-        display: none;
-        
-    }
-    .Rectangle-5{
-        background-image: none;
-        width: fit-content;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-weight: 500;
-    }
+            .first-line {
+                display: none;
+            }
 
-    .Rectangle-6{
-        width: fit-content;
-        background-image: none;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-weight: 500;
-    }
+            .second-line {
+                display: none;
+            }
 
-    .description{
-        display: none;
-        font-family: 'Work Sans', sans-serif;
-    }
+            .information {
+                display: none;
+            }
 
-    
+            .work-info {
+                padding: 10px;
+            }
+
+            .sticker{
+                background-color: #20ff00;
+                font-weight: 600;
+                margin-bottom: 5px;
+                font-size: 16px;
+                color: rgb(0, 0, 0);
+            }
+
+            .third-line,
+            .fourth-line {
+                display: none;
+            }
+
+            .combined-container {
+                font-family: 'Work Sans', sans-serif;
+                font-size: 13px;
+                top: 12%;
+                height: calc(100dvh - 80px);
+                width: 100vw;
+                overflow-y: scroll;
+                position: relative; /* 부모 요소에 상대 위치를 설정 */
+            }
+
+
+            .item1 {
+                z-index: 3;
+                left: 8px;
+                top:0;
+                width: 130px;
+                position: fixed;
+            }
+
+
+            .item3{
+                top: 3px;
+                flex-direction: row;
+                font-size: 16px;
+                gap: 2px;
+            }
+
+            .Rectangle-2{
+                background-color: rgba(255, 255, 255, 0);
+            }
+
+            .Yeb2001{
+                top: 6px;
+                font-size: 16px;
+                width: fit-content;
+                font-weight: 500;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+
+
+            .Rectangle-3{
+                display: none;
+                
+            }
+            .Rectangle-5{
+                background-image: none;
+                width: fit-content;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-weight: 500;
+            }
+
+            .Rectangle-6{
+                width: fit-content;
+                background-image: none;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-weight: 500;
+            }
+
+            .description{
+                display: none;
+                font-family: 'Work Sans', sans-serif;
+            }
+
+            
 }
 
 
@@ -686,15 +699,19 @@
                 // 페이지 첫 로드 또는 필터링 후 첫 번째 작품 자동 표시
                 if (currentWorks.length > 0) {
                     if (initialLoad) {
-                        currentIndex = 0;
-                        currentWorks.forEach((_, index) => {
-                            displayWorkInfo(index); // 모든 작품 정보를 한 번에 표시
-                        });
+                        if (isMobile()) {
+                            currentIndex = 0;
+                            displayWorkInfo(currentIndex);
+                        } else {
+                            currentIndex = 0;
+                            displayWorkInfo(currentIndex);
+                        }
                     } else {
                         currentIndex = 0;
                         displayWorkInfo(currentIndex); // 필터링 후 첫 번째 작품을 자동으로 보여줌
                     }
                 }
+
 
                 // 클릭 이벤트를 설정하여 사용자가 썸네일을 클릭하면 해당 작품의 정보가 표시되도록 함
                 document.querySelectorAll('.work-link').forEach(link => {
@@ -882,6 +899,7 @@
                 workElements.forEach(element => {
                     observer.observe(element);
                 });
+
             }
 
 
@@ -922,11 +940,6 @@
                     close.innerHTML = '🔼';
                 }
             });
-
-
-            
-
-
             
         });
     </script>
