@@ -939,13 +939,15 @@
             
             close.addEventListener('click', function() {
                 if(worklist.style.display === 'none') {
-                    worklist.style.display = 'block';
+                    worklist.style.display = 'flex';
                     item4.style.top = 'calc(100dvh - 160px)';
                     close.innerHTML = '▼';
+
                 } else {
                     worklist.style.display = 'none';
                     item4.style.top = 'calc(100dvh - 42px)';
                     close.innerHTML = '▲';
+
                 }
             });
             
