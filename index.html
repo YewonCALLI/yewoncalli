@@ -11,7 +11,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            height: calc(100vh - 200px); /* 화면에 맞게 높이 조절 */
+            height: calc(100vh - 180px); /* 화면에 맞게 높이 조절 */
             overflow-y: auto; /* 스크롤 가능하게 설정 */
             overflow-x: hidden;
         }
@@ -20,9 +20,7 @@
             display: none;
         }
 
-        .item4{
-            height: calc(100vh - 200px);
-        }
+        
 
         /* .item4 {
             position: absolute;
@@ -57,7 +55,7 @@
         }
 
         .information {
-            max-height: calc(100vh - 200px);
+            max-height: calc(100vh - 180px);
             overflow-y: auto;
         }
         .info-img {
@@ -343,7 +341,7 @@
 
             .item4 {
                 position: fixed; /* 화면에 고정 */
-                top: calc(100dvh - 160px); /* 화면 아래에 고정 */
+                top: calc(100dvh - 180px); /* 화면 아래에 고정 */
                 left: 0;
                 width: 100vw;
                 z-index: 1;
@@ -608,8 +606,8 @@
                     description: `▶︎ Exhibited : ACC Media Cube, Gwangju, KR <br><br>"Simulating #1,2,3" is a simulation program that models gravity between entities through physical computations. The artist, an entity within this program, observes beings from another dimension through a visualization of a two-dimensional world. The simulation does not always yield the same results; the entities within it exhibit different behaviors each time. As the artist watches these beings moving diligently within the simulation, they are prompted to reconsider the uncertainty that pervades the real world. Just like in the simulation, real life is a continuous series of uncertain events. However, this uncertainty might be precisely why we strive to predict outcomes and navigate through probabilistic scenarios, continually making efforts to handle unpredictability and anticipate the future. <div style="padding:56.25% 0 0 0;position:relative;"> <iframe src="https://player.vimeo.com/video/1000697197?badge=0&amp;&autopause=0&portrait=0&byline=0&title=0;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="simulating2"></iframe></div><br>To create this piece, I designed a gravitational algorithm using Unreal Engine's Blueprint system. By adjusting parameters such as gravitational acceleration and the mass of the objects, I was able to control their movements.<br><br><img src="../assets/image/simulating/gravity.svg" style="width: 30%;"> <br><br>I based the design on the universal law of gravitation.`, 
                     media: 'Physics', 
                     thumbnail: '../assets/image/Simulating.png',
-                    infoImages:  [{ src: 'https://player.vimeo.com/video/833905494?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                        {src: 'https://player.vimeo.com/video/1000799277?&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Front side of the poster'}
+                    infoImages:  [{ src: 'https://player.vimeo.com/video/833905494?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video shows "Simulating #1,2,3" being projected at the ACC Media Cube.'}, 
+                        {src: 'https://player.vimeo.com/video/1000799277?&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This is a different version of "Simulating #1,2,3," an edited compilation of the three simulations.'}
                     ],
                     id: 'simulating'
                 },
@@ -632,11 +630,11 @@
                     `, 
                     media: 'Branding/UX&UI, Work for Hire', 
                     thumbnail: '../assets/image/sef2023.png',
-                    infoImages:  [{ src: 'https://player.vimeo.com/video/1002249919?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                    {src:'../assets/image/sef2023/photo4.png', altText: 'The image shows a group of people gathered around a computer screen, examining the SEF2023 website. The screen displays the SEF2023 homepage, featuring a colorful, animated character and various sections with information about the event. The group appears to be discussing the website content and design, with one person pointing at the screen.'},
-                    {src:'https://player.vimeo.com/video/1002265479?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'The image shows a group of people gathered around a computer screen, examining the SEF2023 website. The screen displays the SEF2023 homepage, featuring a colorful, animated character and various sections with information about the event. The group appears to be discussing the website content and design, with one person pointing at the screen.'},
-                    {src:'../assets/image/sef2023/photo9.jpeg',altText:'dd'},
-                    {src:'../assets/image/sef2023/photo12.jpeg',altText:'dd'},
+                    infoImages:  [{ src: 'https://player.vimeo.com/video/1002249919?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Desktop view of 4th update of the SEF2023 website, showing the homepage with a custom mouse cursor and various sections, including a live stream of online sessions, a list of confirmed speakers, an FAQ, and a sponsor list.'}, 
+                    {src:'https://player.vimeo.com/video/1002265479?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'Mobile and tablet view of 1th launch of the SEF2023 website.'},
+                    {src:'../assets/image/sef2023/photo4.png', altText: "This image is a flowchart of the SEF2023 website's 4th launch version. It outlines the main sections of the site, including information about SEF2023, online and offline programs, event reviews, and various interactive features. Red boxes highlight external link areas, such as YouTube sessions, the Entry 10th Anniversary page, and social media links."},
+                    {src:'../assets/image/sef2023/photo9.jpeg',altText:'This photo shows a group of people sitting around a table, smiling and eating together. The setting appears to be casual and relaxed, possibly during a break or a meetup. I am the person in the center, smiling, as I work as the SEF2023 coding meetup facilitator. The table is filled with paper bags, drinks, and food, indicating a shared meal. The atmosphere is friendly and collaborative.'},
+                    {src:'../assets/image/sef2023/photo12.jpeg',altText:'This photo shows a presentation at SEF2023. The person on the left, seated and holding a clipboard, is me, while the person on the right is speaking on stage with a microphone.'},
                     ],
                     id: 'sef2023'
                 },
@@ -676,14 +674,14 @@
                         `,
                     media: 'Physics', 
                     thumbnail: '../assets/image/Singlet&Multiplet.png',
-                    infoImages:  [{ src: 'https://www.youtube.com/embed/pBTghj77Zhg?si=CI3uXccI1cXrFqdQ', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'},
-                    { src: '../assets/image/singlet&multiplet/6.png', altText: ''},
-                    { src: '../assets/image/singlet&multiplet/7.png', altText: ''},
-                    { src: '../assets/image/singlet&multiplet/5.png', altText: ''}, 
-                    { src: '../assets/image/singlet&multiplet/1.jpg', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                    { src: '../assets/image/singlet&multiplet/2.jpg', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                    { src: '../assets/image/singlet&multiplet/3.jpg', altText: 'GIF image of the "Word Wide Web" poster, showing a repeating sequence of the front and back sides.'}, 
-                    { src: '../assets/image/singlet&multiplet/4.jpg', altText: ''}
+                    infoImages:  [{ src: 'https://www.youtube.com/embed/pBTghj77Zhg?si=CI3uXccI1cXrFqdQ', altText: 'Youtube video of the "Singlet & Multiplet" performance, showing a performer moving in a dark space with projected light patterns and shapes.'},
+                    { src: '../assets/image/singlet&multiplet/6.png', altText: 'A person in a white outfit is captured mid-motion, running across a stage in front of a large white wall with abstract, arching line patterns projected onto it. The image is slightly blurred, emphasizing the speed and movement of the performer. The floor beneath them also displays circular patterns that complement the background design.'},
+                    { src: '../assets/image/singlet&multiplet/7.png', altText: 'The same performer is seen extending their arm upwards in a dynamic pose in front of the same abstract, dotted line projections on the wall. The stage floor continues to feature circular patterns that interact with the performer’s movements, creating a visually cohesive and immersive scene.'},
+                    { src: '../assets/image/singlet&multiplet/5.png', altText: 'The image shows abstract designs: the top half features arching dotted lines on a light background, and the bottom half displays overlapping white circles on a black background. The composition is dynamic and contrasting.'}, 
+                    { src: '../assets/image/singlet&multiplet/1.jpg', altText: "A performer in a white outfit is performing on a stage with a dark background, where abstract white lines are projected, creating a dynamic and ethereal atmosphere. The dancer's pose is fluid, complementing the swirling patterns behind them."}, 
+                    { src: '../assets/image/singlet&multiplet/2.jpg', altText: 'A performer in a white outfit performs a high kick on a dark stage with scattered light projections. The scene is minimalistic, with the dancer illuminated against the dark background, creating a striking contrast.'}, 
+                    { src: '../assets/image/singlet&multiplet/3.jpg', altText: 'A performer in a white outfit stands on a stage with a dark, geometric background featuring large circles and intersecting lines. The scene is minimalistic, emphasizing the contrast between the performer and the intricate projections.'}, 
+                    { src: '../assets/image/singlet&multiplet/4.jpg', altText: 'A performer in a white outfit performs on a stage with abstract figures projected in motion behind them, creating a dynamic and ethereal atmosphere. The scene is filled with movement, both from the dancer and the swirling projections.'}
                     ],
                     id: 'singlet-multiplet'
                 },
