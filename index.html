@@ -476,9 +476,10 @@
 
             .item3{
                 top: 0px;
-                flex-direction: row;
+                flex-direction: column;
+                align-items: flex-end;
                 font-size: 16px;
-                gap: 30px;
+                gap: 10px;
             }
 
             .Rectangle-2{
@@ -491,7 +492,7 @@
             }
 
             .description{
-                display: none;
+                white-space: nowrap;
             }
 
             
@@ -543,6 +544,32 @@
                     id: 'hongyeon1-0',
                 },
                 { 
+                    year: '2023', 
+                    title: 'Cell on the Beach', 
+                    description: `▶︎ Exhibited : 2023 Art & Technology Conference 	&lt;Delicate disorder and precarious shelter&gt;<br><br>Exhibited : 2023 Art & Technology Conference <Delicate disorder and precarious shelter> Cell on the Beach is a web-based party that serves as a creative rebellion against the rigid structure of higher education in South Korea. Both Jisu and I experienced the intense and often overwhelming environment of Korea’s private education system during high school. Our memories of attending a science high school, where a hyper-competitive atmosphere dictated our lives solely based on test scores, are far from positive. <br><br>It was only after entering university that we realized life has so much more to offer than just grades. While our high school experiences remain a source of negativity, our pure love for science has never waned. Inspired by the curiosity and excitement we felt when we first encountered science, we decided to create our own unique science museum. We believe that science is a discipline that everyone should engage with and reflect on. That’s why we organized an event called Cell on the Beach, inviting people to join and enjoy. <br><br> 
+                        To introduce the fun side of science, we decided to use the concept of 'memes.' The term 'meme' was originally coined by Richard Dawkins in his book The Selfish Gene, deriving from the word 'gene' to describe a unit of cultural transmission. We hope to preserve and share our experiences with science through these memes. You can download the science memes we created from the link below.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo1.png"><div class="sticker">A white wall filled with various memes, images, and handwritten notes related to science and technology, creating a collage-like display. The bottom of the image shows a red cushion or bench.</div>
+                        <br><br>On the Cell on the Beach website, users can interact with various objects that represent cellular organelles, and collaboratively produce sounds by clicking on them. The sound you trigger can be heard on another device! Typically, in games or the metaverse, we perceive each other’s presence through avatars. However, this experience allows you to sense the presence of others in an online space without any visual effects. <br><br>
+                        <img style="width: 100%;"src="../assets/image/cellonthebeach/photo2.png"><div class="sticker">A 3D digital scene with abstract objects floating against a blue background, with the text "Cell on the beach" at the top and user interface elements for messaging and signing out.</div>
+                        <br><br>Secondly, participants can enjoy a simple DJing experience. We built a MIDI controller using Arduino, allowing users to control various sounds from the pre-prepared tracks. This feature was the crowd favorite!<br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo4.png"><div class="sticker">A person is using a colorful, custom-made control box connected to a laptop on a metallic surface. The box has several buttons and knobs, and the person's hands are adjusting the controls.</div>
+                        <br><br>Finally, we created a photo booth where visitors can capture memories. We developed a Cell on the Beach photo filter and built the system for taking and sharing pictures ourselves. Through these experiences, we aim to challenge the conventional approaches to education and celebrate the boundless joy of scientific discovery.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo7.png"><div class="sticker">This image shows a photo booth setup where custom filters have been created. The main screen displays a photo with a tropical drink and the text "Cell on the Beach," alongside smaller photo previews on the right.</div>
+                        <br><br>
+                        ------------------------------------------------------<br><br>
+                        Credit<br>
+                        ▷ Idea&Creation : Yewon Jang, Jisu Kang<br>
+                        ▷ 3D Modeling : Jisu Kang<br>
+                        ▷ Web Design&Develop : Yewon Jang<br>
+                        ▷ Typography : Ryu Haesung(@egzg.up)<br>
+                        `, 
+                    media: 'Digital', 
+                    thumbnail: '../assets/image/cellonthebeach.png',
+                    infoImages: [{ src: '../assets/image/cellonthebeach/photo3.png', altText: 'The image is a meme divided into two parts. The left side shows two frames featuring SpongeBob SquarePants with a rainbow above him. The top frame is labeled "When I was in high school" with the Korean word "아텍" (Artech) inside the rainbow. The bottom frame is labeled "Now" with the Korean word "졸업" (graduation) inside the rainbow. The right side of the image shows a GIF of a cat walking inside a cardboard box with holes cut out for its legs. The text above the GIF reads, "The living trend of the 24th century; Quantum Cats!" and below it, "FASTER THAN A FLYING CAR!"'},
+                    {src: 'https://player.vimeo.com/video/999835647?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video showcases a DJing demonstration using a DIY MIDI controller created for the "Cell on the Beach" exhibition. The pink, box-shaped MIDI controller appears on screen, allowing the user to adjust the volume of various musical components. The background music emphasizes drum and bass sounds, and the track was composed by Yewon.'},
+                    {src: 'https://player.vimeo.com/video/999909118?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video explains that it is possible to play sound effects collaboratively on a website. Users on the web are gathering in the web space from different locations at the same time, pressing objects in "Cell on the Beach" to trigger various sound effects.'},
+                    {src: '../assets/image/cellonthebeach/photo5.png', altText: 'The image shows a "Cell on the Beach" exhibition space. On the left, a group is gathered around a computer in a dimly lit room, focusing on their work, while on the right, a person in a brighter area is examining a wall filled with images and notes, holding a red pen as if she’s contributing to the project.'},
+                    ],
+                    id: 'cell-on-the-beach'
+                },
+                { 
                     year: '2024', 
                     title: 'ABT (Art, Body, Tech)', 
                     description: `▶︎ Exhibited : The Silver Bell Challenge: Hong Yeon-gil Project, <a href="https://www.tentothen.com/">ten to the n</a><br><br> <a href="https://www.abt-avatar.world/">
@@ -579,32 +606,6 @@
                         {src: '../assets/image/abt/abt-photo6.png', altText: 'A view through a glass window with text partially obscuring the scene inside. Behind the glass, there is a wooden desk with two monitors. One monitor displays a colorful image of abstract shapes, while the other shows a document with text. The desk also has a keyboard, a mouse, and a few small items. A white chair is placed in front of the desk, and a black shelf is mounted on the wall in the background with a few objects on it. The setting appears to be an exhibition.'},
                     ],
                     id: 'abt',
-                },
-                { 
-                    year: '2023', 
-                    title: 'Cell on the Beach', 
-                    description: `▶︎ Exhibited : 2023 Art & Technology Conference 	&lt;Delicate disorder and precarious shelter&gt;<br><br>Exhibited : 2023 Art & Technology Conference <Delicate disorder and precarious shelter> Cell on the Beach is a web-based party that serves as a creative rebellion against the rigid structure of higher education in South Korea. Both Jisu and I experienced the intense and often overwhelming environment of Korea’s private education system during high school. Our memories of attending a science high school, where a hyper-competitive atmosphere dictated our lives solely based on test scores, are far from positive. <br><br>It was only after entering university that we realized life has so much more to offer than just grades. While our high school experiences remain a source of negativity, our pure love for science has never waned. Inspired by the curiosity and excitement we felt when we first encountered science, we decided to create our own unique science museum. We believe that science is a discipline that everyone should engage with and reflect on. That’s why we organized an event called Cell on the Beach, inviting people to join and enjoy. <br><br> 
-                        To introduce the fun side of science, we decided to use the concept of 'memes.' The term 'meme' was originally coined by Richard Dawkins in his book The Selfish Gene, deriving from the word 'gene' to describe a unit of cultural transmission. We hope to preserve and share our experiences with science through these memes. You can download the science memes we created from the link below.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo1.png"><div class="sticker">A white wall filled with various memes, images, and handwritten notes related to science and technology, creating a collage-like display. The bottom of the image shows a red cushion or bench.</div>
-                        <br><br>On the Cell on the Beach website, users can interact with various objects that represent cellular organelles, and collaboratively produce sounds by clicking on them. The sound you trigger can be heard on another device! Typically, in games or the metaverse, we perceive each other’s presence through avatars. However, this experience allows you to sense the presence of others in an online space without any visual effects. <br><br>
-                        <img style="width: 100%;"src="../assets/image/cellonthebeach/photo2.png"><div class="sticker">A 3D digital scene with abstract objects floating against a blue background, with the text "Cell on the beach" at the top and user interface elements for messaging and signing out.</div>
-                        <br><br>Secondly, participants can enjoy a simple DJing experience. We built a MIDI controller using Arduino, allowing users to control various sounds from the pre-prepared tracks. This feature was the crowd favorite!<br><br><img style="width: 100%;"src="../assets/image/cellonthebeach/photo4.png"><div class="sticker">A person is using a colorful, custom-made control box connected to a laptop on a metallic surface. The box has several buttons and knobs, and the person's hands are adjusting the controls.</div>
-                        <br><br>Finally, we created a photo booth where visitors can capture memories. We developed a Cell on the Beach photo filter and built the system for taking and sharing pictures ourselves. Through these experiences, we aim to challenge the conventional approaches to education and celebrate the boundless joy of scientific discovery.<br><br> <img style="width: 100%;"src="../assets/image/cellonthebeach/photo7.png"><div class="sticker">This image shows a photo booth setup where custom filters have been created. The main screen displays a photo with a tropical drink and the text "Cell on the Beach," alongside smaller photo previews on the right.</div>
-                        <br><br>
-                        ------------------------------------------------------<br><br>
-                        Credit<br>
-                        ▷ Idea&Creation : Yewon Jang, Jisu Kang<br>
-                        ▷ 3D Modeling : Jisu Kang<br>
-                        ▷ Web Design&Develop : Yewon Jang<br>
-                        ▷ Typography : Ryu Haesung(@egzg.up)<br>
-                        `, 
-                    media: 'Digital', 
-                    thumbnail: '../assets/image/cellonthebeach.png',
-                    infoImages: [{ src: '../assets/image/cellonthebeach/photo3.png', altText: 'The image is a meme divided into two parts. The left side shows two frames featuring SpongeBob SquarePants with a rainbow above him. The top frame is labeled "When I was in high school" with the Korean word "아텍" (Artech) inside the rainbow. The bottom frame is labeled "Now" with the Korean word "졸업" (graduation) inside the rainbow. The right side of the image shows a GIF of a cat walking inside a cardboard box with holes cut out for its legs. The text above the GIF reads, "The living trend of the 24th century; Quantum Cats!" and below it, "FASTER THAN A FLYING CAR!"'},
-                    {src: 'https://player.vimeo.com/video/999835647?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video showcases a DJing demonstration using a DIY MIDI controller created for the "Cell on the Beach" exhibition. The pink, box-shaped MIDI controller appears on screen, allowing the user to adjust the volume of various musical components. The background music emphasizes drum and bass sounds, and the track was composed by Yewon.'},
-                    {src: 'https://player.vimeo.com/video/999909118?autoplay=1&loop=1&autopause=0&portrait=0&byline=0&title=0', altText: 'This video explains that it is possible to play sound effects collaboratively on a website. Users on the web are gathering in the web space from different locations at the same time, pressing objects in "Cell on the Beach" to trigger various sound effects.'},
-                    {src: '../assets/image/cellonthebeach/photo5.png', altText: 'The image shows a "Cell on the Beach" exhibition space. On the left, a group is gathered around a computer in a dimly lit room, focusing on their work, while on the right, a person in a brighter area is examining a wall filled with images and notes, holding a red pen as if she’s contributing to the project.'},
-                    ],
-                    id: 'cell-on-the-beach'
                 },
                 { 
                     year: '2023', 
@@ -992,9 +993,9 @@
             });
 
             const messages = [
-                    "is a digital - psychophysicist",
-                    "is an AI researcher and developer",
-                    "is a creative coder and artist"
+                    "is a computational artist.",
+                    "is a digital - psychophysicist.",
+                    "is a accessibility researcher."
                 ];
                 
                 const descriptionElement = document.querySelector('.description');
