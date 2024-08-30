@@ -10,6 +10,10 @@
     <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+
+    body{
+        overflow-x: hidden;
+    }
     
     .container {
         padding: 20px;
@@ -49,10 +53,11 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
+        z-index: 2;
     }
 
     .static-text {
-        font-size: 30px;
+        font-size: 28px;
         font-family: Old Standard TT, serif;
         white-space: nowrap;
         color: red;
@@ -68,12 +73,12 @@
     }
 
     .iframe-container {
+        position: relative;
+        margin-top: 60px;
         width: 100%;
         height: 400px;
-        top: 50%;
         border: 1px solid #ccc;
         margin-bottom: 20px;
-        margin-top: 40px;
     }
 
     iframe {
@@ -86,6 +91,7 @@
         display: flex;
         gap: 10px;
         left: 10px;
+        width: fit-content;
         margin-bottom: 20px;
     }
 
@@ -104,12 +110,12 @@
 
     .description2 {
         position: relative;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-        font-weight: 400;
-        font-size: 18px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
         line-height: 1.4em;
-        width: 80%;
-        left: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 40px;
     }
     .insta{
         position: relative;
@@ -118,8 +124,6 @@
     }
     .cv-content {
         position: relative;
-        font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
-        font-weight: 300;
         color: black;
         font-size: 16px;
         padding: 10px;
@@ -158,15 +162,43 @@
         width: 100%;
     }
 
+    .Yeb2001{
+        top: 12px;
+        font-size: 16px;
+        width: max-content;
+        font-weight: 500;
+        margin: 10px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        white-space: nowrap;
+    }
+
+    .description{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        width: max-content;
+    }
+
+    .Rectangle-6{
+        color: black;
+    }
+
+    .item3{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .Rectangle-6 a{
+        color: black;
+    }
+    .item3 :hover{
+        color: #b2b2b2;
+    }
+
+
     @media (max-width: 450px) {
         .select-container {
             width: 97%;
+            position: relative;
+            top: 70px;
         }
         .iframe-container {
-            position: relative;
-            top: 50px;
-        }
-        .select-container {
             position: relative;
             top: 50px;
         }
@@ -185,40 +217,84 @@
         .description2 {
             width: 95%;
         }
-        .item1{
-            position: relative;
-            top:10px;
-            left:10px;
-            flex-direction: column;
+        .item1 {
+            z-index: 3;
+            left: 8px;
+            top:0;
+            left: 0px;
+            width: 130px;
+            position: fixed;
         }
         .Rectangle-2{
             margin: 0px;
             padding: 0px;
         }
         .item3{
-            padding-top: 10px;
+            top: 0px;
+            right: 0px;
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 16px;
+            gap: 0px;
+            z-index: 3;
         }
-        .Rectangle-6{
-            display: none;
+        .description{
+            white-space: nowrap;
+        }
+        .Rectangle-6 a{
+            color: black;
         }
     }
 
 
     </style>
     <script>
-        
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const messages = [
+                        "is a computational artist.",
+                        "is a digital - psychophysicist.",
+                        "is an accessibility researcher."
+                    ];
+                    
+                    const descriptionElement = document.querySelector('.description');
+                    let currentMessageIndex = 0;
+                    let charIndex = 0;
+                    let isDeleting = false;
+
+                    function typeAnimation() {
+                        const currentMessage = messages[currentMessageIndex];
+                        if (isDeleting) {
+                            charIndex--;
+                            descriptionElement.textContent = currentMessage.substring(0, charIndex);
+                        } else {
+                            charIndex++;
+                            descriptionElement.textContent = currentMessage.substring(0, charIndex);
+                        }
+
+                        if (!isDeleting && charIndex === currentMessage.length) {
+                            setTimeout(() => isDeleting = true, 1000); // 삭제 시작 전 대기 시간
+                        } else if (isDeleting && charIndex === 0) {
+                            isDeleting = false;
+                            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+                        }
+
+                        const typingSpeed = isDeleting ? 50 : 150;
+                        setTimeout(typeAnimation, typingSpeed);
+                    }
+
+                    typeAnimation();
+        });
     </script>
 </head>
 <body>
     <div class="item1">
-        <a href="index.html">
-        <div class="Rectangle-2">
-            <div class="Rectangle-3">
-            </div>
+        <a href="index.html" style="text-decoration: none;">
             <div class="Yeb2001">
                 🌹 Ye￦(b.2001)
             </div>
-        </div>
         </a>
         <div class="description">
             is an digital - psychophysicist<br>
@@ -229,11 +305,11 @@
         <div class="Rectangle-5" id="korean">
         Korean
         </div>
-        <a href="https://www.instagram.com/yewon.calli/" style="text-decoration: none;">
-            <div class="Rectangle-6">
+        <div class="Rectangle-6">
+            <a href="https://www.instagram.com/yewon.calli/" style="text-decoration: none;">
             Contact me
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
     <div class="select-container">
         <span class="static-text">Love is</span>
