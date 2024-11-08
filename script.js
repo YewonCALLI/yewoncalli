@@ -9,7 +9,7 @@ const dashLineGap = 5;
 function createDashLineDiv() {
   const dashLineDiv = document.createElement("div");
   dashLineDiv.style.width = "100%";
-  dashLineDiv.style.height = "2px";
+  dashLineDiv.style.height = "1px";
   dashLineDiv.style.display = "flex";
   dashLineDiv.style.justifyContent = "center";
   dashLineDiv.style.flexDirection = "row";
@@ -69,9 +69,6 @@ function toggleMenu() {
   // 메뉴 버튼을 클릭하면 scrollIntoView 함수를 사용하여 해당 섹션으로 이동
   projects.addEventListener("click", () => {
     document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
-  });
-  info.addEventListener("click", () => {
-    document.getElementById("info").scrollIntoView({ behavior: "smooth" });
   });
 }
 
@@ -200,18 +197,15 @@ function displayFilteredContents(sectionName, filteredContents) {
       content.title
     }</div>
           <div class='card-subContainer'>
-            <div class='card-date'>☼ ${content.date}</div>
+            <div class='card-date'>${content.date}</div>
             <div class='card-tags'>${formatTags(content.tags)}</div>
           </div>
         </div>
         <div class='card-contents'>
-          <div class='card-projectType'><div class='rectemoji'></div> ${
-            content.projectType
-          }</div>
-          <div class='card-event'><div class='rectemoji'></div> ${
+          <div class='card-description'>${content.description}</div>
+          <div class='card-event'> ${
             content.event
           }</div>
-          <div class='card-description'>${content.description}</div>
           <div class='card-more'>view more...</div>
         </div>
       </div>
@@ -267,15 +261,15 @@ function displayResearch() {
       content.title
     }</div>
           <div class='card-subContainer'>
-            <div class='card-date'>☼ ${content.date}</div>
+            <div class='card-date'>${content.date}</div>
             <div class='card-tags'>${formatTags(content.tags)}</div>
           </div>
         </div>
         <div class='card-contents'>
-          <div class='card-projectType'><div class='rectemoji'></div> ${
+          <div class='card-projectType'> ${
             content.projectType
           }</div>
-          <div class='card-event'><div class='rectemoji'></div> ${
+          <div class='card-event'> ${
             content.event
           }</div>
           <div class='card-description'>${content.description}</div>
@@ -291,6 +285,14 @@ function displayResearch() {
   });
 
   container.append(fragment); // 필터링된 프로젝트 콘텐츠 추가
+}
+
+function openOverlay() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function closeOverlay() {
+  document.getElementById("overlay").style.display = "none";
 }
 
 // 페이지 로드 시 프로젝트 표시 함수 실행

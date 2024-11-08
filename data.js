@@ -4,7 +4,7 @@ const projects = [
     date: "2024",
     tags: ["Game", "Code"],
     projectType: "Personal Project",
-    event: "2024 ATC",
+    event: "Performed in : 2024 ATC",
     description:
       "Creates papercraft templates of 3D models, enabling coded designs on each surface to be printed and assembled into physical forms.",
     projectLink: "typefold.vercel.app",
