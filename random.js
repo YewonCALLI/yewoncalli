@@ -100,8 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = ""; // 기존 콘텐츠 초기화
 
     const table = document.createElement("table");
-    table.style.width = "90%"; // 테이블 너비를 100%로 설정
-    table.style.borderCollapse = "collapse";
     table.innerHTML = `
         <thead>
           <tr>
@@ -146,4 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 페이지 로드 시 초기화
   generateRandomSentence(); // 랜덤 문장 생성
   displayFilteredContents("customContentTable", contents); // 전체 콘텐츠 표시
+
+  showImage(contents[0]);
 });

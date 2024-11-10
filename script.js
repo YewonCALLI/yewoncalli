@@ -203,9 +203,7 @@ function displayFilteredContents(sectionName, filteredContents) {
         </div>
         <div class='card-contents'>
           <div class='card-description'>${content.description}</div>
-          <div class='card-event'> ${
-            content.event
-          }</div>
+          <div class='card-event'> ${content.event}</div>
           <div class='card-more'>
           <a href=${content.link}>
             view more...
@@ -215,9 +213,7 @@ function displayFilteredContents(sectionName, filteredContents) {
       </div>
       <div class="card-image">
         <img src="${imagePath(content.image)}" alt="${content.title}" />
-        <a class="card-link" id='card-${sectionName}' href='https://${
-      content.projectLink
-    }'>
+        <a class="card-link" href='https://${content.projectLink}'>
          ${content.projectLink}
         </a>
       </div>
@@ -270,12 +266,8 @@ function displayResearch() {
           </div>
         </div>
         <div class='card-contents'>
-          <div class='card-projectType'> ${
-            content.projectType
-          }</div>
-          <div class='card-event'> ${
-            content.event
-          }</div>
+          <div class='card-projectType'> ${content.projectType}</div>
+          <div class='card-event'> ${content.event}</div>
           <div class='card-description'>${content.description}</div>
           <div class='card-more'>view more...</div>
         </div>
@@ -312,7 +304,6 @@ document.addEventListener("DOMContentLoaded", displayResearch);
 // 페이지 로드 시 메뉴 토글 함수 실행
 document.addEventListener("DOMContentLoaded", toggleMenu);
 
-
 let showAllProjects = false; // 프로젝트를 모두 보여줄지 여부를 나타내는 변수
 
 function displayFilteredContents(sectionName, filteredContents) {
@@ -330,7 +321,9 @@ function displayFilteredContents(sectionName, filteredContents) {
     card.innerHTML = `
       <div class='card-text'>
         <div class='card-header'>
-          <div class='card-title' id='card-${sectionName}'>${content.title}</div>
+          <div class='card-title' id='card-${sectionName}'>${
+      content.title
+    }</div>
           <div class='card-subContainer'>
             <div class='card-date'>${content.date}</div>
             <div class='card-tags'>${formatTags(content.tags)}</div>
@@ -344,7 +337,9 @@ function displayFilteredContents(sectionName, filteredContents) {
       </div>
       <div class="card-image">
         <img src="${imagePath(content.image)}" alt="${content.title}" />
-        <a class="card-link" id='card-${sectionName}' href='https://${content.projectLink}'>
+        <a class="card-link" id='card-${sectionName}' href='https://${
+      content.projectLink
+    }'>
          ${content.projectLink}
         </a>
       </div>
@@ -359,7 +354,7 @@ function displayFilteredContents(sectionName, filteredContents) {
 document.querySelector(".toggle").addEventListener("click", () => {
   showAllProjects = !showAllProjects; // 상태 변경
   displayFilteredContents("projects", projects); // 변경된 상태로 프로젝트 표시
-  document.querySelector(".toggle").textContent = showAllProjects ? "≪ Show less" : "≫ View more";
+  document.querySelector(".toggle").textContent = showAllProjects
+    ? "≪ Show less"
+    : "≫ View more";
 });
-
-

@@ -96,8 +96,8 @@ section {}
   font-size: 16px;
   font-weight: 300;
   font-family: 'montreal', sans-serif;
-  border: 0.1rem solid  #FF4000;
-  
+  border: 0.1rem solid #FF4000;
+
 }
 
 .headerBtn:hover {
@@ -131,7 +131,7 @@ section {
 
 .sectionTitleText {
   min-width: fit-content;
-  font-family: 'montreal',sans-serif;
+  font-family: 'montreal', sans-serif;
   font-weight: 300;
   font-size: 20px;
 }
@@ -166,7 +166,7 @@ section {
   font-weight: 300;
   font-style: normal;
   cursor: pointer;
-  
+
 }
 
 #filterYear {
@@ -202,7 +202,7 @@ section {
   font-style: normal;
   display: none;
   z-index: 1000;
-  
+
 }
 
 .show {
@@ -308,18 +308,10 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:#000;
+  color: #000;
   font-size: 36px;
   font-family: 'montreal', sans-serif;
   font-weight: 500;
-}
-
-#card-projects {
-  background-color: #fff;
-}
-
-#card-research {
-  background-color: #fff;
 }
 
 .card-subContainer {
@@ -342,7 +334,7 @@ section {
   font-family: 'montreal', sans-serif;
   font-weight: 200;
   font-style: normal;
-  
+
 }
 
 .card-tags {
@@ -366,7 +358,7 @@ section {
     sans-serif;
   font-weight: 300;
   font-style: normal;
-  
+
 }
 
 .card-tag:hover {
@@ -419,7 +411,7 @@ section {
   font-size: 20px;
   font-family: 'montreal', sans-serif;
   font-weight: 400;
-  color : #2C2C2C;
+  color: #2C2C2C;
   font-style: normal;
 }
 
@@ -461,26 +453,28 @@ section {
   width: fit-content;
   height: fit-content;
   padding: 8px 12px;
+  background-color: #000;
   color: #fff;
   font-size: 16px;
   letter-spacing: 0.48px;
   text-align: center;
   cursor: pointer;
+  border: 1px solid #000;
 }
 
 .card-link:hover {
   text-decoration: underline;
 }
 
-.toggle{
+.toggle {
   width: fit-content;
   position: relative;
   font-family: 'montreal', sans-serif;
-  color :#FF4000;
+  color: #FF4000;
   font-weight: 400;
   left: 50%;
-  transform: translate(-50%,0%);
-  padding:20px;
+  transform: translate(-50%, 0%);
+  padding: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
   cursor: pointer;
@@ -502,7 +496,8 @@ section {
 }
 
 #overlay {
-  display: none; /* 초기에는 숨김 */
+  display: none;
+  /* 초기에는 숨김 */
   position: fixed;
   top: 0;
   left: 0;
@@ -530,7 +525,7 @@ section {
   z-index: 100;
 }
 
-.name{
+.name {
   font-weight: 600;
 }
 
@@ -556,7 +551,9 @@ section {
   margin-top: 10px;
 }
 
-.cv-content table, .cv-content th, .cv-content td {
+.cv-content table,
+.cv-content th,
+.cv-content td {
   border-bottom: 1px solid #fff;
 }
 
@@ -567,7 +564,7 @@ section {
 
 .cv-content a {
   text-decoration: none;
-  color:#fff;
+  color: #fff;
 }
 
 .cv-content a:hover {
@@ -577,7 +574,7 @@ section {
 
 /* 2열 레이아웃 */
 
-.cv-content{
+.cv-content {
   display: flex;
   gap: 40px;
   padding: 20px;
@@ -598,7 +595,6 @@ section {
 
 /* 테이블 스타일 */
 table {
-  width: 70%;
   border-collapse: collapse;
 }
 
@@ -608,38 +604,102 @@ td {
   padding-bottom: 8px;
 }
 
-th{
+th {
   padding-bottom: 8px;
   text-align: left;
 }
 
-.custom-container{
+.custom-container {
   display: flex;
   gap: 50px;
 }
 
-#customContentTable{
+#customContentTable {
   position: relative;
-  width: 50%;
 }
 
-#customContentImage{
-  position: relative;
-  width: 50%;
+#customContentTable table {
+  width: 100%;
+  border-collapse: collapse;
 }
+
+#customContentTable th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #000;
+}
+
+#customContentTable td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #000;
+}
+
+#customContentImage {
+  position: relative;
+  width: 100%;
+}
+
 @media (max-width: 550px) {
-  .cv-content{
+  .cv-content {
     flex-direction: column;
-    overflow:visible;
+    overflow: visible;
   }
-  .cv-content2{
+
+  .cv-content2 {
     font-size: 13px;
   }
-  .overlay-content{
-    overflow:visible;
+
+  .overlay-content {
+    overflow: visible;
   }
-  #overlay{
+
+  #overlay {
     display: block;
     overflow-y: auto;
   }
+}
+
+.code-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.code-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #F2F2F2;
+}
+
+.title-cell {
+  cursor: pointer;
+}
+
+
+#customRandomSentence {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/1;
+  background-color: #FFFCF0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-word {
+  cursor: pointer;
+}
+
+.filter-word:hover {
+  text-decoration: underline;
+}
+
+#customContentTable {
+  width: 100%;
+  height: 100%;
 }
