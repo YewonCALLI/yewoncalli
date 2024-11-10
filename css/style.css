@@ -586,13 +586,25 @@ section {
 
 /* 테이블 스타일 */
 table {
-  width: 100%;
+  width: 70%;
   border-collapse: collapse;
 }
 
 td {
-  padding: 8px;
   vertical-align: top;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+th{
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+#customContentImage{
+  width: 100px;
+  height: 100px;
+  z-index: 100;
 }
 
 

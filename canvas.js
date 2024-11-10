@@ -90,7 +90,7 @@ function init() {
   createGridHelpers();
 
   var img = new THREE.MeshBasicMaterial({
-    map: THREE.ImageUtils.loadTexture("coordinate2.png"),
+    map: THREE.ImageUtils.loadTexture("assets/model/coordinate2.png"),
     transparent: true,
     opacity: 0.9,
   });
@@ -98,7 +98,7 @@ function init() {
   img.transparent = true;
 
   var img2 = new THREE.MeshBasicMaterial({
-    map: THREE.ImageUtils.loadTexture("coordinate1.png"),
+    map: THREE.ImageUtils.loadTexture("assets/model/coordinate1.png"),
     transparent: true,
     opacity: 0.9,
     side: THREE.DoubleSide,

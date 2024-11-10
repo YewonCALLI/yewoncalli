@@ -361,3 +361,5 @@ document.querySelector(".toggle").addEventListener("click", () => {
   displayFilteredContents("projects", projects); // 변경된 상태로 프로젝트 표시
   document.querySelector(".toggle").textContent = showAllProjects ? "≪ Show less" : "≫ View more";
 });
+
+
