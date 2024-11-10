@@ -672,7 +672,6 @@ th {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #F2F2F2;
 }
 
 .title-cell {

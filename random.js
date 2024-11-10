@@ -2,46 +2,52 @@ document.addEventListener("DOMContentLoaded", () => {
   // 예시 콘텐츠 데이터
   const contents = [
     {
-      title: "Draw the Beat!",
       date: "2021",
-      tags: ["Code", "Game"],
-      description: "A program that creates music by drawing",
-      projectLink: "daduck.vercel.app",
-      image: "drawthebeat.png",
-      link: "works/daduck.html",
+      tags: ["typography", "physics"],
+      description: "A kinetic typography capturing irreversible ink spread",
+      image: "image1.gif",
     },
     {
-      title: "Physics Simulation",
-      date: "2022",
-      tags: ["physics"],
-      description: "Physics-based project.",
-      projectLink: "physicssim.vercel.app",
-      image: "physicssim.png",
-      link: "works/physicssim.html",
+        date: "2021",
+        tags: ["L-system", "Art"],
+        description: "Pattern created using the envelope formula.",
+        image: "image3.gif",
+      },
+    {
+      date: "2021",
+      tags: ["typography"],
+      description: "Transformed images into rounded forms, creating a stamp-like effect.",
+      image: "image2.gif",
     },
     {
-      title: "L-system Art",
-      date: "2023",
-      tags: ["L-system", "Art"],
-      description: "Fractal art using L-system.",
-      projectLink: "lsystem.vercel.app",
-      image: "lsystem.png",
-      link: "works/lsystem.html",
+      date: "2021",
+      tags: ["Generative"],
+      description: "Twinkling Brush1",
+      image: "image4.png",
     },
     {
-      title: "Shader Animation",
-      date: "2023",
-      tags: ["shader"],
-      description: "Real-time shader effects.",
-      projectLink: "shaderanim.vercel.app",
-      image: "shaderanim.png",
-      link: "works/shaderanim.html",
+      date: "2021",
+      tags: ["Generative"],
+      description: "Twinkling Brush2",
+      image: "image5.png",
+    },
+    {
+      date: "2021",
+      tags: ["Sound"],
+      description: "Ambient sound varies based on the x, y coordinates and number of points.",
+      image: "image6.png",
+    },
+    {
+      date: "2021",
+      tags: ["Generative"],
+      description: "An interactive gradient pattern",
+      image: "image7.gif",
     },
   ];
 
   // 랜덤 문장 생성 함수
   function generateRandomSentence() {
-    const words = ["physics", "L-system", "shader"];
+    const words = ["Generative", "typography", "shader"];
     const sentenceContainer = document.getElementById("customRandomSentence");
     if (!sentenceContainer) {
       console.error("Element with ID 'customRandomSentence' not found.");
@@ -83,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 이미지 경로 확인을 위해 console.log 추가
-    const imagePath = `assets/image/thumbnails/${content.image}`;
+    const imagePath = `assets/image/codeart/${content.image}`;
     console.log("Displaying image at path:", imagePath);
 
     // 이미지 HTML을 추가
@@ -103,8 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
     table.innerHTML = `
         <thead>
           <tr>
-            <th>Title</th>
             <th>Description</th>
+            <th>Date</th>
           </tr>
         </thead>
       `;
@@ -115,14 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 타이틀에 클릭 이벤트 추가하여 이미지 표시
       const titleCell = document.createElement("td");
-      titleCell.textContent = content.title;
+      titleCell.textContent = content.description;
       titleCell.style.cursor = "pointer";
       titleCell.classList.add("title-cell"); // 클래스 추가로 구분
 
       row.appendChild(titleCell);
 
       row.innerHTML += `
-          <td>${content.description}</td>
+        <td>${content.date}</td>
         `;
       tbody.appendChild(row);
     });
@@ -135,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const clickedElement = event.target;
       if (clickedElement.classList.contains("title-cell")) {
         const clickedContentTitle = clickedElement.textContent;
-        const content = contents.find((c) => c.title === clickedContentTitle);
+        const content = contents.find((c) => c.description === clickedContentTitle);
         if (content) showImage(content);
       }
     });
