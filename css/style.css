@@ -16,6 +16,14 @@
 
 * {
   box-sizing: border-box;
+
+  /* 스크롤바 업애기 */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -26,7 +34,7 @@ body {
   font-style: normal;
 }
 
-div {
+.checking {
   /* border: 1px dashed red; */
 }
 
@@ -56,6 +64,7 @@ section {}
   left: 0;
   right: 0;
   z-index: 1000;
+  gap: 20px;
 }
 
 .headerTitle {
@@ -272,17 +281,15 @@ section {
   gap: 60px;
 }
 
-
-.card2 {
-  position: relative;
-  top:70px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
+
+
 
 .card-text {
   width: 40%;
@@ -294,6 +301,13 @@ section {
   gap: 30px;
 }
 
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .card-text {
+    width: 100%;
+  }
+}
+
 .card-header {
   display: flex;
   flex-direction: column-reverse;
@@ -301,6 +315,15 @@ section {
   align-items: stretch;
   gap: 8px;
 }
+
+@media (max-width: 768px) {
+  .card-header {
+    flex-direction: column;
+
+
+  }
+}
+
 
 .card-title {
   width: fit-content;
@@ -372,13 +395,7 @@ section {
   background-color: #000;
 }
 
-.card-contents {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  gap: 20px;
-}
+
 
 .card-event {
   display: flex;
@@ -439,12 +456,22 @@ section {
   cursor: pointer;
 }
 
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .card-image {
+    width: 100%;
+  }
+}
+
+
 .card-image img {
   display: flex;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  cursor: pointer;
 }
+
 
 .card-link {
   position: absolute;
@@ -614,6 +641,14 @@ th {
   gap: 50px;
 }
 
+@media (max-width: 768px) {
+  .custom-container {
+    flex-direction: column;
+  }
+}
+
+
+
 #customContentTable {
   position: relative;
 }
@@ -640,6 +675,12 @@ th {
   width: 100%;
 }
 
+#customContentImage img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 @media (max-width: 550px) {
   .cv-content {
     flex-direction: column;
@@ -655,13 +696,15 @@ th {
   }
 
   #overlay {
-    display: block;
+    /* display: block; */
     overflow-y: auto;
   }
 }
 
 .code-left {
   width: 100%;
+  height: 100%;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -669,6 +712,8 @@ th {
 
 .code-right {
   width: 100%;
+  height: 100%;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -701,4 +746,125 @@ th {
 #customContentTable {
   width: 100%;
   height: 100%;
+}
+
+.card2 {
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .card2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.card2-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+}
+
+.card-contents-sub {}
+
+.card-contents-title {
+  font-size: 20px;
+  font-family: 'montreal', sans-serif;
+  font-weight: 400;
+  color: #5F5F5F;
+  font-style: normal;
+}
+
+.card-contents-text {
+  font-size: 20px;
+  font-family: 'montreal', sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-style: normal;
+  display: block;
+}
+
+/* card-description의 초기 스타일로 텍스트를 제한합니다 */
+.card-description.short {
+  display: -webkit-box;
+  /* Flexbox 기반의 레이아웃 */
+  -webkit-line-clamp: 3;
+  /* 보여줄 줄 수 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 넘칠 경우 ...으로 표시 */
+
+  /* 줄 수에 맞게 조절 */
+}
+
+.note {
+  color: #5F5F5F;
+  font-family: 'montreal', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.card2-right {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+}
+
+.card2-image {
+  width: 100%;
+  height: calc(100dvh - 70px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.card2-image img {
+  width: 100%;
+  height: fit-content;
+  object-fit: contain;
+}
+
+.card2-image iframe {
+  width: 100%;
+
+}
+
+.imageRow {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageRow img {
+  width: 48%;
+  height: fit-content;
+  object-fit: contain;
 }

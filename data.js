@@ -9,7 +9,7 @@ const projects = [
       "Creates papercraft templates of 3D models, enabling coded designs on each surface to be printed and assembled into physical forms.",
     projectLink: "typefold.vercel.app",
     image: "wordwideweb.png",
-    link : 'works/typefold.html'
+    link: "works/typefold.html",
   },
   {
     title: "Ganpan",
@@ -21,7 +21,7 @@ const projects = [
       "A digital art project transforming user-inputted text into Korean signboard images.",
     projectLink: "ganpan.vercel.app",
     image: "hongyeon.png",
-    link : 'works/ganpan.html'
+    link: "works/ganpan.html",
   },
   {
     title: "DA-DUCK",
@@ -33,7 +33,7 @@ const projects = [
       "p5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store.",
     projectLink: "daduck.vercel.app",
     image: "daduck.png",
-    link : 'works/daduck.html'
+    link: "works/daduck.html",
   },
   {
     title: "Word Wide Web",
@@ -43,9 +43,9 @@ const projects = [
     event: "The Hyundai Seoul, B1 Event Plaza",
     description:
       "A collaborative word-weaving game exploring poetic connections through custom similarity criteria",
-    projectLink: "https://solarword.vercel.app/",
+    projectLink: "solarword.vercel.app",
     image: "wordwideweb.png",
-    link : 'works/daduck.html'
+    link: "works/wordwideweb.html",
   },
   {
     title: "Memeproject",
@@ -55,9 +55,9 @@ const projects = [
     event: "PlanT House, Hongcheon Art Museum",
     description:
       "An interactive website exploring meme origins, impact, and replication",
-    projectLink: "daduck.vercel.app",
+    projectLink: "memeproject.vercel.app",
     image: "memeproject.png",
-    link : 'works/daduck.html'
+    link: "works/memeproject.html",
   },
   {
     title: "Hongyeon 1.0",
@@ -67,9 +67,9 @@ const projects = [
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
       "A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative",
-    projectLink: "daduck.vercel.app",
+    projectLink: "hongyeon.vercel.app",
     image: "hongyeon.png",
-    link : 'works/daduck.html'
+    link: "works/hongyeon.html",
   },
   {
     title: "ABT (Art, Body, Tech)",
@@ -79,9 +79,9 @@ const projects = [
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
       "Branding design for Team ABT’s project using p5.js code art to create event typography, posters, and a website",
-    projectLink: "daduck.vercel.app",
+    projectLink: "abt-avatar.world",
     image: "abt.png",
-    link : 'works/daduck.html'
+    link: "works/abt.html",
   },
   {
     title: "Simulating #1,2,3",
@@ -89,35 +89,35 @@ const projects = [
     tags: ["Computer Graphics", "Media Facade"],
     projectType: "Team Project",
     event: "ACC Media Cube, Gwangju",
-    description:
-      "Simulating gravity through Unreal Engine’s Blueprint",
-    projectLink: "daduck.vercel.app",
+    description: "Simulating gravity through Unreal Engine’s Blueprint",
+    projectLink: "",
     image: "simulating.png",
-    link : 'works/daduck.html'
+    link: "works/simulating.html",
   },
   {
     title: "Singlet&Multiplet",
     date: "2021",
     tags: ["Code", "Media Facade"],
     projectType: "Team Project",
-    event: "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
+    event:
+      "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
     description:
       "A media art performance exploring identity and quantum mechanics through layered video art and live performance",
-    projectLink: "daduck.vercel.app",
+    projectLink: "",
     image: "singlet&multiplet.png",
-    link : 'works/daduck.html'
+    link: "works/singlet&multiplet.html",
   },
   {
     title: "Draw the Beat!",
     date: "2021",
     tags: ["Code", "Game"],
     projectType: "Team Project",
-    event: "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
-    description:
-      "A program that creates music by drawing",
-    projectLink: "daduck.vercel.app",
+    event:
+      "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
+    description: "A program that creates music by drawing",
+    projectLink: "",
     image: "drawthebeat.png",
-    link : 'works/daduck.html'
+    link: "works/drawthebeat.html",
   },
 ];
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganpan</title>
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Ye￦" />
+  <meta name="description" content="I love poetic code, where logic and beauty intertwine,
+    if (emotion == true): let words dance, let thoughts align.
+    Each function a verse, every loop a refrain,
+    In the syntax of life, art and logic remain." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.yewoncalli.com/" />
+  <meta property="og:title" content="Ye￦" />
+  <meta property="og:description" content="I love poetic code, where logic and beauty intertwine,
+    if (emotion == true): let words dance, let thoughts align.
+    Each function a verse, every loop a refrain,
+    In the syntax of life, art and logic remain." />
+  <meta property="og:image" content="https://www.yewoncalli.com/assets/image/OG image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.yewoncalli.com/" />
+  <meta property="twitter:title" content="Ye￦" />
+  <meta property="twitter:description" content="I love poetic code, where logic and beauty intertwine,
+    if (emotion == true): let words dance, let thoughts align.
+    Each function a verse, every loop a refrain,
+    In the syntax of life, art and logic remain." />
+  <meta property="twitter:image" content="https://www.yewoncalli.com/assets/image/OG image.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/font/stylesheet.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="headerTitle" onclick="window.location.href='https://www.yewoncalli.com/'">
+        <span style="font-style: normal;">🌹</span> <span class="ye">Ye</span><span class="won">₩</span>(b.2001)
+        is a computational designer.
+      </div>
+      <div class="headerNav">
+        <button class="headerBtn" id="goProjects">Projects</button>
+        <button class="headerBtn" onclick="openOverlay()" id="goInfo">Info</button>
+      </div>
+    </div>
+    <div class="card2">
+      <div class="card2-left">
+        <div class="card-header">
+          <div class="card-title" id="card-projects">Ganpan</div>
+          <div class="card-subContainer">
+            <div class="card-date">2024</div>
+            <div class="card-tags">
+              <span class="card-tag">Code</span>
+              <span class="card-tag">Game</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-contents">
+          <div class="card-description short" id="card-description">
+            Creates papercraft templates of 3D models, enabling coded designs on each surface to be printed
+            and assembled into physical forms.
+
+            <br /><br />
+
+            TypeFold is a tool that converts digital 3D models into papercraft templates, allowing each
+            surface to be customized with coded designs. Users upload an OBJ or GLTF file, click "Unfold,"
+            and the model’s layout is displayed. Each surface can then be edited with graphics applied via
+            code using libraries like p5.js.
+
+            <br /><br />
+
+            The result is a printed template that can be cut and assembled, creating a physical version of
+            the digital model with custom, code-based visuals on each side.
+          </div>
+          <div class="card-more">
+            <a href="#" id="toggle-description" onclick="toggleDescription(event)">view more...</a>
+          </div>
+        </div>
+        <div class="card-contents">
+          <div class="card-contents-sub">
+            <div class="card-contents-title">Website</div>
+            <a class="card-contents-text" href="https://typefold.com" target="_blank">typefold.com ↖︎</a>
+          </div>
+        </div>
+        <div class="card-contents">
+          <div class="card-contents-sub">
+            <div class="card-contents-title">Team</div>
+            <div class="card-contents-text">000, Lead Designer</div>
+            <div class="card-contents-text">000, Project Manager</div>
+          </div>
+          <div class="card-contents-sub">
+            <div class="card-contents-title">Role</div>
+            <div class="card-contents-text">Designer</div>
+          </div>
+        </div>
+      </div>
+      <div class="card2-right">
+        <div class="card2-image">
+          <img src="../assets/img/typefold.png" alt="TypeFold" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function toggleDescription(event) {
+      event.preventDefault(); // 링크 기본 동작 방지
+
+      const description = document.getElementById("card-description");
+      const toggleLink = document.getElementById("toggle-description");
+
+      // 짧은 버전과 전체 버전을 토글
+      if (description.classList.contains("short")) {
+        description.classList.remove("short");
+        toggleLink.textContent = "view less";
+      } else {
+        description.classList.add("short");
+        toggleLink.textContent = "view more...";
+      }
+    }
+  </script>
+</body>
+
+</html>

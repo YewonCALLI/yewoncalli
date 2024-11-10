@@ -336,7 +336,8 @@ function displayFilteredContents(sectionName, filteredContents) {
         </div>
       </div>
       <div class="card-image">
-        <img src="${imagePath(content.image)}" alt="${content.title}" />
+      <img src="${imagePath(content.image)}" alt="${content.title}"
+     onclick="window.location.href='${content.link}'" />
         <a class="card-link" id='card-${sectionName}' href='https://${
       content.projectLink
     }'>
