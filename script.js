@@ -206,7 +206,11 @@ function displayFilteredContents(sectionName, filteredContents) {
           <div class='card-event'> ${
             content.event
           }</div>
-          <div class='card-more'>view more...</div>
+          <div class='card-more'>
+          <a href=${content.link}>
+            view more...
+          </a>
+          </div>
         </div>
       </div>
       <div class="card-image">
@@ -307,3 +311,53 @@ document.addEventListener("DOMContentLoaded", displayResearch);
 
 // 페이지 로드 시 메뉴 토글 함수 실행
 document.addEventListener("DOMContentLoaded", toggleMenu);
+
+
+let showAllProjects = false; // 프로젝트를 모두 보여줄지 여부를 나타내는 변수
+
+function displayFilteredContents(sectionName, filteredContents) {
+  const container = document.getElementById(sectionName + "Container");
+  container.innerHTML = ""; // 기존 프로젝트 리스트 초기화
+
+  // 모든 프로젝트를 보여줄지 여부에 따라 표시할 개수 설정
+  const displayCount = showAllProjects ? filteredContents.length : 3;
+
+  const fragment = document.createDocumentFragment();
+  filteredContents.slice(0, displayCount).forEach((content) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+      <div class='card-text'>
+        <div class='card-header'>
+          <div class='card-title' id='card-${sectionName}'>${content.title}</div>
+          <div class='card-subContainer'>
+            <div class='card-date'>${content.date}</div>
+            <div class='card-tags'>${formatTags(content.tags)}</div>
+          </div>
+        </div>
+        <div class='card-contents'>
+          <div class='card-description'>${content.description}</div>
+          <div class='card-event'> ${content.event}</div>
+          <div class='card-more'><a href=${content.link}>view more...</a></div>
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="${imagePath(content.image)}" alt="${content.title}" />
+        <a class="card-link" id='card-${sectionName}' href='https://${content.projectLink}'>
+         ${content.projectLink}
+        </a>
+      </div>
+    `;
+    fragment.append(card);
+  });
+
+  container.append(fragment);
+}
+
+// toggle 버튼 클릭 시 동작 설정
+document.querySelector(".toggle").addEventListener("click", () => {
+  showAllProjects = !showAllProjects; // 상태 변경
+  displayFilteredContents("projects", projects); // 변경된 상태로 프로젝트 표시
+  document.querySelector(".toggle").textContent = showAllProjects ? "≪ Show less" : "≫ View more";
+});

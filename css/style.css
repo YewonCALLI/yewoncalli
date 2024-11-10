@@ -259,6 +259,9 @@ section {
   justify-content: center;
   align-items: stretch;
   gap: 100px;
+  transition: all 1s ease-in-out;
+
+
 }
 
 .card {
@@ -456,6 +459,20 @@ section {
 
 .card-link:hover {
   text-decoration: underline;
+}
+
+.toggle{
+  width: fit-content;
+  position: relative;
+  font-family: 'montreal', sans-serif;
+  color :#FF4000;
+  font-weight: 400;
+  left: 50%;
+  transform: translate(-50%,0%);
+  padding:20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
 }
 
 

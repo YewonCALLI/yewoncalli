@@ -8,7 +8,8 @@ const projects = [
     description:
       "Creates papercraft templates of 3D models, enabling coded designs on each surface to be printed and assembled into physical forms.",
     projectLink: "typefold.vercel.app",
-    image: "typefold.png",
+    image: "wordwideweb.png",
+    link : 'works/typefold.html'
   },
   {
     title: "Ganpan",
@@ -20,6 +21,7 @@ const projects = [
       "A digital art project transforming user-inputted text into Korean signboard images.",
     projectLink: "ganpan.vercel.app",
     image: "ganpan.png",
+    link : 'works/ganpan.html'
   },
   {
     title: "DA-DUCK",
@@ -31,6 +33,30 @@ const projects = [
       "p5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store.",
     projectLink: "daduck.vercel.app",
     image: "daduck.png",
+    link : 'works/daduck.html'
+  },
+  {
+    title: "DA-DUCK",
+    date: "2024",
+    tags: ["Code", "Branding Design"],
+    projectType: "Team Project",
+    event: "The Hyundai Seoul, B1 Event Plaza",
+    description:
+      "p5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store.",
+    projectLink: "daduck.vercel.app",
+    image: "daduck.png",
+    link : 'works/daduck.html'
+  },{
+    title: "DA-DUCK",
+    date: "2024",
+    tags: ["Code", "Branding Design"],
+    projectType: "Team Project",
+    event: "The Hyundai Seoul, B1 Event Plaza",
+    description:
+      "p5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store.",
+    projectLink: "daduck.vercel.app",
+    image: "daduck.png",
+    link : 'works/daduck.html'
   },
 ];
 
