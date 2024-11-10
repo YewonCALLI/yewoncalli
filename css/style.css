@@ -601,13 +601,20 @@ th{
   text-align: left;
 }
 
-#customContentImage{
-  width: 100px;
-  height: 100px;
-  z-index: 100;
+.custom-container{
+  display: flex;
+  gap: 50px;
 }
 
+#customContentTable{
+  position: relative;
+  width: 50%;
+}
 
+#customContentImage{
+  position: relative;
+  width: 50%;
+}
 @media (max-width: 550px) {
   .cv-content{
     flex-direction: column;

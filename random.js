@@ -100,15 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = ""; // 기존 콘텐츠 초기화
 
     const table = document.createElement("table");
-    table.style.width = "100%"; // 테이블 너비를 100%로 설정
+    table.style.width = "90%"; // 테이블 너비를 100%로 설정
     table.style.borderCollapse = "collapse";
     table.innerHTML = `
         <thead>
           <tr>
             <th>Title</th>
-            <th>Date</th>
             <th>Description</th>
-            <th>Link</th>
           </tr>
         </thead>
       `;
@@ -126,9 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       row.appendChild(titleCell);
 
       row.innerHTML += `
-          <td>${content.date}</td>
           <td>${content.description}</td>
-          <td><a href="${content.link}" target="_blank">View more</a></td>
         `;
       tbody.appendChild(row);
     });
