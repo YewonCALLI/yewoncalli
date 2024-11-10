@@ -272,6 +272,18 @@ section {
   gap: 60px;
 }
 
+
+.card2 {
+  position: relative;
+  top:70px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
 .card-text {
   width: 40%;
   height: 100%;
