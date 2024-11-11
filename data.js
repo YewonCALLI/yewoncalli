@@ -8,8 +8,8 @@ const projects = [
     description:
       "Creates papercraft templates of 3D models, enabling coded designs on each surface to be printed and assembled into physical forms.",
     projectLink: "typefold.vercel.app",
-    image: "wordwideweb.png",
-    link: "works/typefold.html",
+    image: "typefold.png",
+    link: "coming soon",
   },
   {
     title: "Ganpan",
@@ -20,8 +20,9 @@ const projects = [
     description:
       "A digital art project transforming user-inputted text into Korean signboard images.",
     projectLink: "ganpan.vercel.app",
-    image: "hongyeon.png",
-    link: "works/ganpan.html",
+    image: "ganpan.png",
+    link: "coming soon"
+ 
   },
   {
     title: "DA-DUCK",
@@ -40,7 +41,7 @@ const projects = [
     date: "2024",
     tags: ["Code", "Game"],
     projectType: "Team Project",
-    event: "The Hyundai Seoul, B1 Event Plaza",
+    event: "SFPC (School for Poetic Computation)",
     description:
       "A collaborative word-weaving game exploring poetic connections through custom similarity criteria",
     projectLink: "solarword.vercel.app",
