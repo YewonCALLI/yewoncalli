@@ -456,6 +456,18 @@ section {
   cursor: pointer;
 }
 
+.card-image img{
+  position: relative;
+  width: 100%;
+}
+
+.card-short{
+  color:#5F5F5F;
+}
+.special-font{
+  font-style: italic;
+}
+
 /* mobile 기준 */
 @media (max-width: 768px) {
   .card-image {

@@ -1,15 +1,15 @@
 const projects = [
   {
-    title: "TypeFold",
+    title: "TypoFold",
     date: "2024",
-    tags: ["Game", "Code"],
+    tags: ["Craft", "Computer Graphics"],
     projectType: "Personal Project",
-    event: "Performed in : 2024 ATC",
+    event: "2024 ATC",
     description:
-      "Creates papercraft templates of 3D models, enabling coded designs on each surface to be printed and assembled into physical forms.",
+      "A design tool for bridging digital typography with physical space through computational origami.",
     projectLink: "typefold.vercel.app",
     image: "typefold.png",
-    link: "coming soon",
+    link: "works/typefold.html",
   },
   {
     title: "Ganpan",
@@ -21,7 +21,7 @@ const projects = [
       "A digital art project transforming user-inputted text into Korean signboard images.",
     projectLink: "ganpan.vercel.app",
     image: "ganpan.png",
-    link: "coming soon"
+    link: "works/ganpan.html"
  
   },
   {
