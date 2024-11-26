@@ -1,8 +1,11 @@
-## Hi there 👋
+## Hi I'm Yewon👋
 
 I am a creative technologist focused on developing experimental tools for expanding digital expression. My expertise lies in creating systems that bridge between different forms - from text to interactive experiences, and from screen-based graphics to physical objects. I specialize in building computational tools that combine natural language processing and form generation with intuitive interfaces, exploring how digital tools can expand our creative and physical making possibilities.
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=YewonCALLI&show_icons=true&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+
+![lhjbg0821's GitHub stats](https://github-readme-stats.vercel.app/api?username=YewonCALLI&show_icons=true&theme=gruvbox)
+
 <!--
 **YewonCALLI/yewoncalli** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
