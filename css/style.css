@@ -456,15 +456,16 @@ section {
   cursor: pointer;
 }
 
-.card-image img{
+.card-image img {
   position: relative;
   width: 100%;
 }
 
-.card-short{
-  color:#5F5F5F;
+.card-short {
+  color: #5F5F5F;
 }
-.special-font{
+
+.special-font {
   font-style: italic;
 }
 
@@ -685,12 +686,36 @@ th {
 #customContentImage {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #customContentImage img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  position: relative;
+}
+
+#customContentImage img:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#codeartImagebutton {
+  padding: 8px 0px;
+  color: #FF4000;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: underline;
+
+}
+
+#codeartImagebutton:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 @media (max-width: 550px) {
