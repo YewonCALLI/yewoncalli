@@ -23,6 +23,14 @@ div {
   padding-bottom: 20px;
 }
 
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .cda-title {
+    padding-left: 40px;
+    padding-bottom: 20px;
+  }
+}
+
 .cda-link {
   position: absolute;
   bottom: 0;
@@ -39,6 +47,15 @@ div {
   text-decoration: underline;
 }
 
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .cda-link {
+    padding-right: 40px;
+    padding-bottom: 20px;
+  }
+}
+
+
 .cda-link:hover {
   text-decoration: none;
 }
@@ -54,6 +71,13 @@ div {
   padding: 60px 120px;
   gap: 60px;
   padding-bottom: 200px;
+}
+
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .cda-container {
+    padding: 60px 40px;
+  }
 }
 
 .cda-h1 {
@@ -183,4 +207,11 @@ code {
   width: 100%;
   height: fit-content;
   gap: 20px;
+}
+
+/* mobile 기준 */
+@media (max-width: 768px) {
+  .cda-row {
+    flex-direction: column;
+  }
 }
