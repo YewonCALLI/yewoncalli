@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["typography", "physics"],
       description: "A kinetic typography capturing irreversible ink spread",
       image: "image1.gif",
-      path: "kinetictypography.html",
+      path: "waterytypo.html",
     },
     {
       date: "2021",
