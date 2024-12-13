@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 랜덤 문장 생성 함수
   function generateRandomSentence() {
-    const words = ["Generative", "typography", "shader"];
+    const words = ["physics", "typography", "shader"];
     const sentenceContainer = document.getElementById("customRandomSentence");
     if (!sentenceContainer) {
       console.error("Element with ID 'customRandomSentence' not found.");

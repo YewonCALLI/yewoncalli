@@ -9,9 +9,9 @@ let letters = "";
 let button, txt;
 let x;
 
-let leap = 5;
+let leap = 1;
 
-let shouldClearCanvas = false; // 캔버스를 초기화할지 여부
+let shouldClearCanvas = false;
 
 const sectionCanvas = document.getElementById("canvas");
 const p5Element = document.createElement("div");
@@ -47,7 +47,7 @@ function setup() {
   // Create a new input
   input = document.createElement("input");
   input.type = "text";
-  input.value = "yewon";
+  input.value = "TruthFul";
   input.placeholder = "Type here";
   input.classList.add("p5-input");
   textfont = font2;
@@ -81,9 +81,9 @@ function setup() {
 
   slider = document.createElement("input");
   slider.type = "range";
-  slider.min = 1;
-  slider.max = 10;
-  slider.value = 2.5;
+  slider.min = 0;
+  slider.max = 4;
+  slider.value = 1.5;
   slider.step = 0.1;
   slider.classList.add("p5-slider");
 
@@ -93,6 +93,8 @@ function setup() {
   sliderContainer.append(sliderName, slider, sliderValue);
 
   p5Element.append(inputContainer, sliderContainer);
+
+
   // noLoop(); // Stop continuous drawing
 }
 
@@ -133,16 +135,16 @@ function draw() {
   textFont(textfont);
 
   for (let ti = 0; ti < txt.length; ti++) {
-    let points = textfont.textToPoints(txt, width / 10, height / 2, width / 7, {
+    points = textfont.textToPoints(txt, width / 10, height / 2, width / 10, {
       sampleFactor: 0.2,
     });
-    // if (ti % 2 == 0) translate(0, 100);
+
     for (var i = 0; i < points.length; i++) {
-      // ellipse(points[i].x, points[i].y,0.5, 0.5);
+      ellipse(points[i].x, points[i].y,0.1, 0.1);
       points[i].x = points[i].x + 1.5 * random(-leap, leap);
       points[i].y = points[i].y + 1.5 * random(-leap, leap);
-      stroke(0.1 * i, 0.1 * i, 200 - 0.4 * i, leap * 3);
-      fill(230 - 0.7 * i, 0, 0.2 * i, leap * 3);
+      stroke(100, 200 - 0.4 * i, 200 - 0.4 * i, leap * 2);
+      fill(230 - 0.7 * i, 0, 0.2 * i, leap * 2);
       strokeWeight(leap);
       point(points[i].x, points[i].y);
     }

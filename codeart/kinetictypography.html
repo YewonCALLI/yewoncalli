@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinetic Typography</title>
-
+  <title>Template</title>
   <!-- Favicon & Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -221,7 +220,7 @@
           <div class="card-subContainer">
             <div class="card-date">2021</div>
             <div class="card-tags">
-              <span class="card-tag">Paper Craft</span>
+              <span class="card-tag">Code Art</span>
               <span class="card-tag">Computer Graphics</span>
             </div>
           </div>
@@ -233,12 +232,119 @@
     </div>
     <div class="cda-container">
       <!-- 내용을 여기서 적으시오. -->
+      <div class="cda-h1">
+        Heading1
+      </div>
+      <div class="cda-h2">
+        Heading2
+      </div>
+      <div class="cda-h3">
+        Heading3
+      </div>
+      <div class="cda-p">
+        This is paragraph.
+        This work based on wave interference formula. Users can add wave sources with mouse clicks and adjust wave
+        parameters(frequency, wavelength, amplitude, and damping) via keyboard controls.
+      </div>
+      <div class="cda-binding">
+        <div class="cda-h2">
+          Heading2
+        </div>
+        <div class="cda-p">
+          This is paragraph.
+          This work based on wave interference formula. Users can add wave sources with mouse clicks and adjust wave
+          parameters(frequency, wavelength, amplitude, and damping) via keyboard controls.
+        </div>
+      </div>
+
+      <div class="cda-img">
+        <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
+        <span class="cda-img-caption">Wave interference formula</span>
+      </div>
+
+      <div class="cda-code">
+        <code id="code-block"></code>
+      </div>
+
+      <div class="cda-col">
+        <div class="cda-p">
+          When wrapped in a column, it is aligned vertically.
+          칼럼으로 감싸면 상하로 정렬됩니다.
+        </div>
+        <div class="cda-p">
+          When wrapped in a column, it is aligned vertically.
+          칼럼으로 감싸면 상하로 정렬됩니다.
+        </div>
+      </div>
+      <div class="cda-row">
+        <div class="cda-p">
+          When wrapped in a row, it is aligned horizontally.
+          로우로 감싸면 좌우로 정렬됩니다.
+        </div>
+        <div class="cda-p">
+          When wrapped in a row, it is aligned horizontally.
+          로우로 감싸면 좌우로 정렬됩니다.
+        </div>
+      </div>
+      <div class="cda-row">
+        <div class="cda-code">
+          <code id="code-block2"></code>
+        </div>
+        <div class="cda-img">
+          <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
+          <span class="cda-img-caption">Wave interference formula</span>
+        </div>
+      </div>
+      <div class="cda-row">
+        <div class="cda-p">
+          When wrapped in a row, it is aligned horizontally.
+          로우로 감싸면 좌우로 정렬됩니다.
+        </div>
+        <div class="cda-img">
+          <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
+          <span class="cda-img-caption">Wave interference formula</span>
+        </div>
+      </div>
 
 
     </div>
     <script src="../script.js"></script>
     <script>
+      const codeBlock =
+        `
+    <div class="example">
+      <p>Hello, World!</p>
+    </div>
+    `;
+      document.getElementById("code-block").textContent = codeBlock;
 
+
+      const codeBlock2 =
+        `
+      void setup() {
+        size(800, 800);
+        colorMode(HSB, 360, 100, 100);
+        sources = new ArrayList<WaveSource>();
+        intensityField = new float[width][height];
+
+        sources.add(new WaveSource(width/3, height/2));
+        sources.add(new WaveSource(2*width/3, height/2));
+      }
+
+      void draw() {
+        loadPixels();
+        for (int x = 0; x < width; x++) { 
+          for (int y=0; y < height; y++) { 
+            float totalWave = 0; 
+            for (WaveSource source : sources) { 
+              float distance=dist(x, y, source.x, source.y);
+            }
+          } 
+        }
+        updatePixels();
+      }
+         `;
+      document.getElementById("code-block2").textContent = codeBlock2;
     </script>
 </body>
 
