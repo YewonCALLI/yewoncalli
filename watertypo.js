@@ -48,7 +48,7 @@ function setup() {
   input = document.createElement("input");
   input.type = "text";
   input.value = "TruthFul";
-  input.placeholder = "Type here";
+  input.placeholder = "Type here : Max 10 letters";
   input.classList.add("p5-input");
   textfont = font2;
 
@@ -83,7 +83,7 @@ function setup() {
   slider.type = "range";
   slider.min = 0;
   slider.max = 4;
-  slider.value = 1.5;
+  slider.value = 2;
   slider.step = 0.1;
   slider.classList.add("p5-slider");
 
@@ -130,21 +130,31 @@ function draw() {
   leap = slider.value;
   txt = input.value;
 
-  noStroke();
-  // textSize(300);
-  textFont(textfont);
+  txt = txt.substring(0, 10);
+
+  const sampleFactor = map(txt.length, 1, 10, 0.3, 0.15);  // 텍스트 길이에 따라 샘플링 비율 조정
 
   for (let ti = 0; ti < txt.length; ti++) {
     points = textfont.textToPoints(txt, width / 10, height / 2, width / 10, {
-      sampleFactor: 0.2,
+      sampleFactor: sampleFactor
     });
 
-    for (var i = 0; i < points.length; i++) {
-      ellipse(points[i].x, points[i].y,0.1, 0.1);
-      points[i].x = points[i].x + 1.5 * random(-leap, leap);
-      points[i].y = points[i].y + 1.5 * random(-leap, leap);
-      stroke(100, 200 - 0.4 * i, 200 - 0.4 * i, leap * 2);
-      fill(230 - 0.7 * i, 0, 0.2 * i, leap * 2);
+    // 최대 포인트 수 제한
+    const maxPoints = 1000;
+    const pointsLength = Math.min(points.length, maxPoints);
+
+    for (var i = 0; i < pointsLength; i++) {
+      ellipse(points[i].x, points[i].y, 0.1, 0.1);
+      
+      // random 함수 호출 최소화
+      const randX = random(-leap, leap);
+      const randY = random(-leap, leap);
+      
+      points[i].x = points[i].x + 1.5 * randX;
+      points[i].y = points[i].y + 1.5 * randY;
+      
+      stroke(100, 200 - 0.4 * i, 200 - 0.4 * i, leap * 2.5);
+      fill(230 - 0.7 * i, 0, 0.2 * i, leap * 2.5);
       strokeWeight(leap);
       point(points[i].x, points[i].y);
     }

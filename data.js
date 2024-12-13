@@ -12,6 +12,18 @@ const projects = [
     link: "works/typefold.html",
   },
   {
+    title: "Word Wide Web",
+    date: "2024",
+    tags: ["Code", "Game"],
+    projectType: "Team Project",
+    event: "SFPC (School for Poetic Computation)",
+    description:
+      "A collaborative word-weaving game exploring poetic connections through custom similarity criteria",
+    projectLink: "solarword.vercel.app",
+    image: "wordwideweb.png",
+    link: "works/wordwideweb.html",
+  },
+  {
     title: "Ganpan",
     date: "2024",
     tags: ["Zine", "Code"],
@@ -35,18 +47,6 @@ const projects = [
     projectLink: "daduck.vercel.app",
     image: "daduck.png",
     link: "works/daduck.html",
-  },
-  {
-    title: "Word Wide Web",
-    date: "2024",
-    tags: ["Code", "Game"],
-    projectType: "Team Project",
-    event: "SFPC (School for Poetic Computation)",
-    description:
-      "A collaborative word-weaving game exploring poetic connections through custom similarity criteria",
-    projectLink: "solarword.vercel.app",
-    image: "wordwideweb.png",
-    link: "works/wordwideweb.html",
   },
   {
     title: "Memeproject",
