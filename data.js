@@ -4,7 +4,7 @@ const projects = [
     date: "2024",
     tags: ["Craft", "Computer Graphics"],
     projectType: "Personal Project",
-    event: "2024 ATC",
+    event: "2024 ATC (Art&Technology Conference)",
     description:
       "A design tool for bridging digital typography with physical space through computational origami.",
     projectLink: "typefold.vercel.app",
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "Word Wide Web",
     date: "2024",
-    tags: ["Code", "Game"],
+    tags: ["Code Art", "Game"],
     projectType: "Team Project",
     event: "SFPC (School for Poetic Computation)",
     description:
@@ -26,9 +26,9 @@ const projects = [
   {
     title: "Ganpan",
     date: "2024",
-    tags: ["Zine", "Code"],
+    tags: ["Zine", "Code Art"],
     projectType: "Team Project",
-    event: "2024 ATC",
+    event: "2024 ATC (Art&Technology Conference)",
     description:
       "A digital art project transforming user-inputted text into Korean signboard images.",
     projectLink: "ganpan.vercel.app",
@@ -39,7 +39,7 @@ const projects = [
   {
     title: "DA-DUCK",
     date: "2024",
-    tags: ["Code", "Branding Design"],
+    tags: ["Code Art", "Branding Design"],
     projectType: "Team Project",
     event: "The Hyundai Seoul, B1 Event Plaza",
     description:
@@ -50,8 +50,8 @@ const projects = [
   },
   {
     title: "Memeproject",
-    date: "2024",
-    tags: ["Game", "Story", "Code"],
+    date: "2023",
+    tags: ["Game", "Story", "Code Art"],
     projectType: "Team Project",
     event: "PlanT House, Hongcheon Art Museum",
     description:
@@ -62,7 +62,7 @@ const projects = [
   },
   {
     title: "Hongyeon 1.0",
-    date: "2024",
+    date: "2023",
     tags: ["AI", "Story"],
     projectType: "Team Project",
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
@@ -74,8 +74,8 @@ const projects = [
   },
   {
     title: "ABT (Art, Body, Tech)",
-    date: "2024",
-    tags: ["Code", "Branding Design"],
+    date: "2023",
+    tags: ["Code Art", "Branding Design"],
     projectType: "Team Project",
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
@@ -86,7 +86,7 @@ const projects = [
   },
   {
     title: "Simulating #1,2,3",
-    date: "2024",
+    date: "2023",
     tags: ["Computer Graphics", "Media Facade"],
     projectType: "Team Project",
     event: "ACC Media Cube, Gwangju",
@@ -98,7 +98,7 @@ const projects = [
   {
     title: "Singlet&Multiplet",
     date: "2021",
-    tags: ["Code", "Media Facade"],
+    tags: ["Code Art", "Media Facade"],
     projectType: "Team Project",
     event:
       "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
@@ -111,7 +111,7 @@ const projects = [
   {
     title: "Draw the Beat!",
     date: "2021",
-    tags: ["Code", "Game"],
+    tags: ["Code Art", "Game"],
     projectType: "Team Project",
     event:
       "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",

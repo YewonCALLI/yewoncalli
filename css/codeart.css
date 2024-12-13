@@ -181,6 +181,7 @@ div {
   overflow: auto;
   padding: 20px 0;
   padding-right: 40px;
+  line-height: 23px;
 }
 
 code {

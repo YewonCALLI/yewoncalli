@@ -215,13 +215,14 @@
       <div class="cda-title">
         <div class="card-header">
           <div class="card-title" id="card-projects">
-            Kinetic Typography
+            Watery Typography
           </div>
           <div class="card-subContainer">
             <div class="card-date">2021</div>
             <div class="card-tags">
               <span class="card-tag">Code Art</span>
-              <span class="card-tag">Computer Graphics</span>
+              <span class="card-tag">Typography</span>
+              <span class="card-tag">For Fun</span>
             </div>
           </div>
         </div>
@@ -231,29 +232,40 @@
       </div>
     </div>
     <div class="cda-container">
-      <!-- 내용을 여기서 적으시오. -->
-      <div class="cda-h1">
-        Heading1
-      </div>
-      <div class="cda-h2">
-        Heading2
-      </div>
-      <div class="cda-h3">
-        Heading3
-      </div>
       <div class="cda-p">
-        This is paragraph.
-        This work based on wave interference formula. Users can add wave sources with mouse clicks and adjust wave
-        parameters(frequency, wavelength, amplitude, and damping) via keyboard controls.
+        What happens when typography meets fluid dynamics? <br>This project creates an interactive typographic experience that simulates the behavior of ink diffusing in water, transforming static letters into dynamic, flowing forms.
       </div>
       <div class="cda-binding">
         <div class="cda-h2">
-          Heading2
+          Project Overview
         </div>
         <div class="cda-p">
-          This is paragraph.
-          This work based on wave interference formula. Users can add wave sources with mouse clicks and adjust wave
-          parameters(frequency, wavelength, amplitude, and damping) via keyboard controls.
+          This project allows users to input text and watch it transform as if it were ink spreading through water. The text is deconstructed into points that move and flow, creating an organic, fluid animation effect.
+        </div>
+      </div>
+
+      <div class="cda-binding">
+        <div class="cda-h2">
+          Key Features
+        </div>
+        <div class="cda-p">
+        <pre>
+        1. Interactive User Experience
+        ▪️Real-time text input (maximum 10 characters)
+        ▪️Dynamic typography that constantly evolves
+        ▪️Reset functionality for new experiments
+
+        2. Flow Control
+        A slider controls the 'water flow' effect, allowing users to adjust:
+        ▪️The spread radius of points
+        ▪️The movement intensity
+        ▪️The overall diffusion effect
+
+        3. Visual Effects
+        ▪️Gradient color transitions
+        ▪️Semi-transparent overlapping points
+        ▪️Fluid, organic movement patterns
+        </pre>
         </div>
       </div>
 
@@ -262,28 +274,28 @@
         <span class="cda-img-caption">Wave interference formula</span>
       </div>
 
+      <div class="cda-binding">
+        <div class="cda-h2">
+          Technical Approach
+        </div>
+        <div class="cda-p">
+        The project is built using p5.js(a JavaScript library for creative coding). p5.js is an amazing tool.<br>
+        Here's how the key components work:
+        </div>
+      </div>
+
       <div class="cda-code">
         <code id="code-block"></code>
       </div>
-
       <div class="cda-col">
         <div class="cda-p">
-          When wrapped in a column, it is aligned vertically.
-          칼럼으로 감싸면 상하로 정렬됩니다.
-        </div>
-        <div class="cda-p">
-          When wrapped in a column, it is aligned vertically.
-          칼럼으로 감싸면 상하로 정렬됩니다.
-        </div>
-      </div>
-      <div class="cda-row">
-        <div class="cda-p">
-          When wrapped in a row, it is aligned horizontally.
-          로우로 감싸면 좌우로 정렬됩니다.
-        </div>
-        <div class="cda-p">
-          When wrapped in a row, it is aligned horizontally.
-          로우로 감싸면 좌우로 정렬됩니다.
+          This function converts text into a series of points. <br><br>
+          The parameters are:<br>
+
+          txt: The input text<br>
+          200, 400: X and Y coordinates<br>
+          170: Text size<br>
+          sampleFactor: 0.2: Determines point density (lower = more points)  
         </div>
       </div>
       <div class="cda-row">
@@ -297,14 +309,12 @@
       </div>
       <div class="cda-row">
         <div class="cda-p">
-          When wrapped in a row, it is aligned horizontally.
-          로우로 감싸면 좌우로 정렬됩니다.
-        </div>
-        <div class="cda-img">
-          <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
-          <span class="cda-img-caption">Wave interference formula</span>
+          ▪️Moves each point randomly within a range controlled by leap<br>
+          ▪️Creates color gradients based on point index<br>
+          ▪️Adjusts opacity based on the flow intensity
         </div>
       </div>
+
 
 
     </div>
@@ -312,36 +322,20 @@
     <script>
       const codeBlock =
         `
-    <div class="example">
-      <p>Hello, World!</p>
-    </div>
+      let points = textfont.textToPoints(txt, 200, 400, 170, {sampleFactor: 0.2});
     `;
       document.getElementById("code-block").textContent = codeBlock;
 
 
       const codeBlock2 =
         `
-      void setup() {
-        size(800, 800);
-        colorMode(HSB, 360, 100, 100);
-        sources = new ArrayList<WaveSource>();
-        intensityField = new float[width][height];
-
-        sources.add(new WaveSource(width/3, height/2));
-        sources.add(new WaveSource(2*width/3, height/2));
-      }
-
-      void draw() {
-        loadPixels();
-        for (int x = 0; x < width; x++) { 
-          for (int y=0; y < height; y++) { 
-            float totalWave = 0; 
-            for (WaveSource source : sources) { 
-              float distance=dist(x, y, source.x, source.y);
-            }
-          } 
-        }
-        updatePixels();
+      for(var i = 0; i < points.length; i++) {
+        points[i].x = points[i].x + 1.5 * random(-leap, leap);
+        points[i].y = points[i].y + 1.5 * random(-leap, leap);
+        stroke(0.1*i, 0.1*i, 200-0.4*i, leap*3);
+        fill(230-0.7*i, 0, 0.2*i, leap*3);
+        strokeWeight(leap);
+        point(points[i].x, points[i].y);
       }
          `;
       document.getElementById("code-block2").textContent = codeBlock2;
