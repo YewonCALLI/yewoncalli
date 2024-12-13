@@ -206,7 +206,7 @@ function displayFilteredContents(sectionName, filteredContents) {
           <div class='card-event'> ${content.event}</div>
           <div class='card-more'>
           <a href=${content.link}>
-            view more...
+            More...
           </a>
           </div>
         </div>
@@ -269,7 +269,7 @@ function displayResearch() {
           <div class='card-projectType'> ${content.projectType}</div>
           <div class='card-event'> ${content.event}</div>
           <div class='card-description'>${content.description}</div>
-          <div class='card-more'>view more...</div>
+          <div class='card-more'>More...</div>
         </div>
       </div>
       <div class="card-image">
@@ -332,7 +332,7 @@ function displayFilteredContents(sectionName, filteredContents) {
         <div class='card-contents'>
           <div class='card-description'>${content.description}</div>
           <div class='card-event'> ${content.event}</div>
-          <div class='card-more'><a href=${content.link}>view more...</a></div>
+          <div class='card-more'><a href=${content.link}>More...</a></div>
         </div>
       </div>
       <div class="card-image">
@@ -356,6 +356,6 @@ document.querySelector(".toggle").addEventListener("click", () => {
   showAllProjects = !showAllProjects; // 상태 변경
   displayFilteredContents("projects", projects); // 변경된 상태로 프로젝트 표시
   document.querySelector(".toggle").textContent = showAllProjects
-    ? "≪ Show less"
-    : "≫ View more";
+    ? "≪ Less"
+    : "≫ More";
 });

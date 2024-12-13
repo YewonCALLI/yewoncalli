@@ -68,56 +68,25 @@
         Yewon Jang
       </div>
       <div class="headerNav">
-        <button class="headerBtn" id="goProjects">Projects</button>
+        <button class="headerBtn" id="goProjects" onclick="location.href='/index.html'">Projects</button>
         <button type='button' class="headerBtn" onclick="location.href='/physics.html'">Visual Physics</button>
         <button class="headerBtn" onclick="openOverlay()" id="goInfo">Info</button>
       </div>
     </div>
-    <section id="canvas">
+
+    <section id="codeArt" style="margin-top: 100px; padding-top: 40px; position: relative; gap:0px; background: none;">
+        <div class="sectionTitle">
+            Physics-Based <br>(물리에 의거한)
+        </div>
+        <div id="customContentTable" class="gallery-container"></div>
     </section>
 
-    <section id="projects">
-      <div class="sectionTitle">
-        <div class="dash"></div>
-        <span class="sectionTitleText">Projects</span>
-        <div class="dash"></div>
-      </div>
-      <div class="filterContainer">
-        <button class="filterBtn" id="filterYear">
-          <svg id="filterYearIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16" fill="currentColor">
-            <path
-              d="M0.152344 0.859375H17.8477L9 15.8789L0.152344 0.859375ZM2.88672 2.40234L9 12.832L15.1523 2.40234H2.88672Z" />
-          </svg>
-          <span id="selectedYear">All Years</span>
-          <div class="filterDropdown" id="yearDropdown">
-          </div>
-        </button>
-        <button class="filterBtn" id="filterTag"><svg id="filterTagIcon" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 18 16" fill="currentColor">
-            <path
-              d="M0.152344 0.859375H17.8477L9 15.8789L0.152344 0.859375ZM2.88672 2.40234L9 12.832L15.1523 2.40234H2.88672Z" />
-          </svg> <span id="selectedTag">All Media</span>
-          <div class="filterDropdown" id="tagDropdown">
-          </div>
-        </button>
-      </div>
-      <div class="contents" id="projectsContainer">
-      </div>
-      <div class="toggle">
-        ≫ More
-      </div>
+    <section id="codeArt" style="background: none;">
+        <div class="sectionTitle">
+            Mathematics-Based <br>(수학 공식에 의거한)
+        </div>
+        <div id="customContentTable" class="gallery-container"></div>
     </section>
-
-    <!-- <section id="research">
-      <div class="sectionTitle">
-        <div class="dash"></div>
-        <span class="sectionTitleText">Research</span>
-        <div class="dash"></div>
-      </div>
-      <div class="contents" id="researchContainer">
-      </div>
-    </section> -->
-    <section class="blank"></section>
 
     <div id="overlay">
       <span class="close-btn" onclick="closeOverlay()">×</span>
@@ -257,10 +226,8 @@
 
     </div>
   </div>
-  <script src="data.js"></script>
+  <script src="random.js"></script>
   <script src="script.js"></script>
-  <script src="watertypo.js"></script>
-  <!-- <script type='module' src="canvas.js"></script> -->
 </body>
 
 </html>
