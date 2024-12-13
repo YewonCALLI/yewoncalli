@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Template</title>
+  <title>Watery Typography</title>
   <!-- Favicon & Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -249,28 +249,12 @@
           Key Features
         </div>
         <div class="cda-p">
-        <pre>
-        1. Interactive User Experience
-        ▪️Real-time text input (maximum 10 characters)
-        ▪️Dynamic typography that constantly evolves
-        ▪️Reset functionality for new experiments
-
-        2. Flow Control
-        A slider controls the 'water flow' effect, allowing users to adjust:
-        ▪️The spread radius of points
-        ▪️The movement intensity
-        ▪️The overall diffusion effect
-
-        3. Visual Effects
-        ▪️Gradient color transitions
-        ▪️Semi-transparent overlapping points
-        ▪️Fluid, organic movement patterns
-        </pre>
+          The code art consists of three main features: a text input system with a 10-character limit, a slider control that adjusts point movement and diffusion effects, and a rendering system using gradient colors and transparency to create a fluid effect. These elements work together to transform static text into moving typography.
         </div>
       </div>
 
       <div class="cda-img">
-        <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
+        <img src="../assets/image/codeart/watery.gif" class="cda-image">
         <span class="cda-img-caption">Animation of the Effect</span>
       </div>
 
@@ -306,18 +290,34 @@
         2. Point Movement Algorithm
       </div>
       <div class="cda-p">
-        ▪️Moves each point randomly within a range controlled by leap<br>
-        ▪️Creates color gradients based on point index<br>
-        ▪️Adjusts opacity based on the flow intensity
+        The leap variable, controlled by a slider input, acts as our primary animation control parameter.<br><br>
+
+        ▪︎ Movement Range: The random(-leap, leap) calculation determines how far each point can move from its original position. This is multiplied by 1.5 to create more pronounced movement while maintaining control.<br>
+        ▪︎ Visual Weight: leap directly influences strokeWeight(), making points appear larger or smaller based on the animation intensity.<br>
+        ▪︎ Opacity Control: The opacity of each point is tied to leap * 3, creating a more diffused appearance as the animation intensity increases.<br>
+        <br>
+        While the initial point positions are determined by the text shape, their movement is semi-random within controlled boundaries. This creates an organic, fluid effect while maintaining the overall readability of the text.
+        The color and opacity calculations are tied to both the point index (i) and the leap value, creating a dynamic visual effect that responds to the animation intensity. As points move further from their original positions, their visual properties change, simulating the way ink diffuses in water.
+      </div>
+
+      <div class="cda-img" style="width: 50%;">
+        <img src="../assets/image/codeart/IMG_6627.jpg" class="cda-image">
+        <span class="cda-img-caption">Make a rectangular boundary surrounding the origin</span>
       </div>
       
       <div class="cda-row">
         <div class="cda-code">
           <code id="code-block2"></code>
         </div>
-        <div class="cda-img">
-          <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
-          <span class="cda-img-caption">Animation of the Effect</span>
+        <div class="cda-row">
+          <div class="cda-img">
+            <img src="../assets/image/codeart/detail1.gif" class="cda-image">
+            <span class="cda-img-caption">Control leap</span>
+          </div>
+          <div class="cda-img">
+            <img src="../assets/image/codeart/detail2.gif" class="cda-image">
+            <span class="cda-img-caption">Put animation into text</span>
+          </div>
         </div>
       </div>
 

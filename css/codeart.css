@@ -210,6 +210,16 @@ code {
   gap: 20px;
 }
 
+.cda-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  height: fit-content;
+  gap: 20px;
+}
+
 /* mobile 기준 */
 @media (max-width: 768px) {
   .cda-row {
