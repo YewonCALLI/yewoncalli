@@ -143,7 +143,7 @@ function draw() {
       points[i].y = points[i].y + 1.5 * random(-leap, leap);
       stroke(0.1 * i, 0.1 * i, 200 - 0.4 * i, leap * 3);
       fill(230 - 0.7 * i, 0, 0.2 * i, leap * 3);
-      strokeWeight(width / 200);
+      strokeWeight(leap);
       point(points[i].x, points[i].y);
     }
   }
