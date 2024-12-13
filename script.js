@@ -314,7 +314,7 @@ function displayFilteredContents(sectionName, filteredContents) {
   const displayCount = showAllProjects ? filteredContents.length : 3;
 
   const fragment = document.createDocumentFragment();
-  filteredContents.slice(0, displayCount).forEach((content) => {
+  filteredContents.forEach((content) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -351,11 +351,4 @@ function displayFilteredContents(sectionName, filteredContents) {
   container.append(fragment);
 }
 
-// toggle 버튼 클릭 시 동작 설정
-document.querySelector(".toggle").addEventListener("click", () => {
-  showAllProjects = !showAllProjects; // 상태 변경
-  displayFilteredContents("projects", projects); // 변경된 상태로 프로젝트 표시
-  document.querySelector(".toggle").textContent = showAllProjects
-    ? "≪ Less"
-    : "≫ More";
-});
+

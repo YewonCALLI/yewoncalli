@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Envelope Formula</title>
-
+  <title>Watery Typography</title>
   <!-- Favicon & Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -61,13 +60,12 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="headerTitle" onclick="window.location.href='https://www.yewoncalli.com/'">
-        <span style="font-style: normal;">🌹</span> <span class="ye">Ye</span><span class="won">₩</span>(b.2001)
-        is a computational designer.
+      <div class="headerTitle" onclick="window.location.href='/index.html'">
+        Yewon is a computational designer.
       </div>
       <div class="headerNav">
-        <button class="headerBtn" id="goProjects"
-          onclick="window.location.href='../index.html#projects'">Projects</button>
+        <button class="headerBtn" id="goProjects" onclick="location.href='/index.html'">Projects</button>
+        <button type='button' class="headerBtn" onclick="location.href='/physics.html'">Visual Physics</button>
         <button class="headerBtn" onclick="openOverlay()" id="goInfo">Info</button>
       </div>
     </div>
@@ -211,34 +209,153 @@
     </div>
     <!-- content -->
     <div class="cda-cover">
-      <img src="../assets/image/codeart/image1.gif" alt="kinetictypography" class="coverImg">
+      <img src="../assets/image/codeart/image3.png" alt="kinetictypography" class="coverImg">
 
       <div class="cda-title">
         <div class="card-header">
           <div class="card-title" id="card-projects">
-            Envelope Formula
+            Wave Interference
           </div>
           <div class="card-subContainer">
-            <div class="card-date">2021</div>
+            <div class="card-date">Sep 23, 2021</div>
             <div class="card-tags">
-              <span class="card-tag">Paper Craft</span>
-              <span class="card-tag">Computer Graphics</span>
+              <span class="card-tag">Wave & Oscillation</span>
+              <span class="card-tag">For Fun</span>
             </div>
           </div>
         </div>
       </div>
       <div class="cda-link">
-        <a href="https://www.yewoncalli.com/" class="cda-link-btn">Link</a>
+        <a href="https://editor.p5js.org/blockbwriting/sketches/wxqFpTXJS" class="cda-link-btn">Link</a>
       </div>
     </div>
     <div class="cda-container">
-      <!-- 내용을 여기서 적으시오. -->
+      <div class="cda-binding">
+        <div class="cda-h2">
+          Project Overview
+        </div>
+        <div class="cda-p">
+          I've developed a wave simulation using Processing that visualizes real-time wave propagation and interference patterns. The simulation allows users to dynamically add wave sources through mouse clicks, enabling them to observe the superposition and interference patterns of waves in real-time. This project combines physical wave mechanics with visualization, creating an engaging platform for understanding wave behavior.
+        </div>
+      </div>
+
+      <div class="cda-binding">
+        <div class="cda-h2">
+          Key Features
+        </div>
+        <div class="cda-p">
+          1. Multiple Wave Source System<br><br>
+
+          ▪️Dynamic wave source management using ArrayList<br>
+          ▪️Real-time wave source addition through user interaction<br>
+          ▪️Independent wave generation from each source<br><br>
+
+
+          2. Physical Wave<br><br>
+
+          ▪️Sinusoidal wave generation based on amplitude and wavelength<br>
+          ▪️Distance-based wave damping effects<br>
+          ▪️Wave superposition and interference simulation<br><br>
+
+
+          3. Visualization Elements<br><br>
+
+          ▪️Wave intensity visualization using HSB color mode<br>
+          ▪️Pixel-level precise rendering<br>
+        </div>
+      </div>
+
+      <div class="cda-img">
+        <img src="../assets/image/codeart/watery.gif" class="cda-image">
+        <span class="cda-img-caption">Animation of the Effect</span>
+      </div>
+
+      <div class="cda-binding">
+        <div class="cda-h2">
+          Technical Approach
+        </div>
+        <div class="cda-p">
+        The project is built using p5.js(a JavaScript library for creative coding). p5.js is an amazing tool.<br>
+        </div>
+      </div>
+
+      
+      <div class="cda-binding">
+        <div class="cda-h3">
+        1. Text to Points
+        </div>
+        <div class="cda-p">
+          This function converts text into a series of points. <br><br>
+
+          txt: the input text<br>
+          200, 400: x and y coordinates<br>
+          170: text size<br>
+          sampleFactor: 0.2<br>
+          *determines point density (lower = more points)  
+        </div>
+      </div>
+      <div class="cda-code">
+        <code id="code-block"></code>
+      </div>
+
+      <div class="cda-h3">
+        2. Point Movement Algorithm
+      </div>
+      <div class="cda-p">
+        The leap variable, controlled by a slider input, acts as our primary animation control parameter.<br><br>
+
+        ▪︎ Movement Range: The random(-leap, leap) calculation determines how far each point can move from its original position. This is multiplied by 1.5 to create more pronounced movement while maintaining control.<br>
+        ▪︎ Visual Weight: leap directly influences strokeWeight(), making points appear larger or smaller based on the animation intensity.<br>
+        ▪︎ Opacity Control: The opacity of each point is tied to leap * 3, creating a more diffused appearance as the animation intensity increases.<br>
+        <br>
+        While the initial point positions are determined by the text shape, their movement is semi-random within controlled boundaries. This creates an organic, fluid effect while maintaining the overall readability of the text.
+        The color and opacity calculations are tied to both the point index (i) and the leap value, creating a dynamic visual effect that responds to the animation intensity. As points move further from their original positions, their visual properties change, simulating the way ink diffuses in water.
+      </div>
+
+      <div class="cda-img" style="width: 50%;">
+        <img src="../assets/image/codeart/IMG_6627.jpg" class="cda-image">
+        <span class="cda-img-caption">Make a rectangular boundary surrounding the origin</span>
+      </div>
+      
+      <div class="cda-row">
+        <div class="cda-code">
+          <code id="code-block2"></code>
+        </div>
+        <div class="cda-row">
+          <div class="cda-img">
+            <img src="../assets/image/codeart/detail1.gif" class="cda-image">
+            <span class="cda-img-caption">Control leap</span>
+          </div>
+          <div class="cda-img">
+            <img src="../assets/image/codeart/detail2.gif" class="cda-image">
+            <span class="cda-img-caption">Put animation into text</span>
+          </div>
+        </div>
+      </div>
 
 
     </div>
     <script src="../script.js"></script>
     <script>
+      const codeBlock =
+        `
+      let points = textfont.textToPoints(txt, 200, 400, 170, {sampleFactor: 0.2});
+    `;
+      document.getElementById("code-block").textContent = codeBlock;
 
+
+      const codeBlock2 =
+        `
+      for(var i = 0; i < points.length; i++) {
+        points[i].x = points[i].x + 1.5 * random(-leap, leap);
+        points[i].y = points[i].y + 1.5 * random(-leap, leap);
+        stroke(0.1*i, 0.1*i, 200-0.4*i, leap*3);
+        fill(230-0.7*i, 0, 0.2*i, leap*3);
+        strokeWeight(leap);
+        point(points[i].x, points[i].y);
+      }
+         `;
+      document.getElementById("code-block2").textContent = codeBlock2;
     </script>
 </body>
 
