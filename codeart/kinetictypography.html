@@ -271,7 +271,7 @@
 
       <div class="cda-img">
         <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
-        <span class="cda-img-caption">Wave interference formula</span>
+        <span class="cda-img-caption">Animation of the Effect</span>
       </div>
 
       <div class="cda-binding">
@@ -280,41 +280,46 @@
         </div>
         <div class="cda-p">
         The project is built using p5.js(a JavaScript library for creative coding). p5.js is an amazing tool.<br>
-        Here's how the key components work:
         </div>
       </div>
 
+      
+      <div class="cda-binding">
+        <div class="cda-h3">
+        1. Text to Points
+        </div>
+        <div class="cda-p">
+          This function converts text into a series of points. <br><br>
+
+          txt: the input text<br>
+          200, 400: x and y coordinates<br>
+          170: text size<br>
+          sampleFactor: 0.2<br>
+          *determines point density (lower = more points)  
+        </div>
+      </div>
       <div class="cda-code">
         <code id="code-block"></code>
       </div>
-      <div class="cda-col">
-        <div class="cda-p">
-          This function converts text into a series of points. <br><br>
-          The parameters are:<br>
 
-          txt: The input text<br>
-          200, 400: X and Y coordinates<br>
-          170: Text size<br>
-          sampleFactor: 0.2: Determines point density (lower = more points)  
-        </div>
+      <div class="cda-h3">
+        2. Point Movement Algorithm
       </div>
+      <div class="cda-p">
+        ▪️Moves each point randomly within a range controlled by leap<br>
+        ▪️Creates color gradients based on point index<br>
+        ▪️Adjusts opacity based on the flow intensity
+      </div>
+      
       <div class="cda-row">
         <div class="cda-code">
           <code id="code-block2"></code>
         </div>
         <div class="cda-img">
           <img src="../assets/image/codeart/image2.gif" alt="kinetictypography" class="cda-image">
-          <span class="cda-img-caption">Wave interference formula</span>
+          <span class="cda-img-caption">Animation of the Effect</span>
         </div>
       </div>
-      <div class="cda-row">
-        <div class="cda-p">
-          ▪️Moves each point randomly within a range controlled by leap<br>
-          ▪️Creates color gradients based on point index<br>
-          ▪️Adjusts opacity based on the flow intensity
-        </div>
-      </div>
-
 
 
     </div>
