@@ -124,7 +124,7 @@ function draw() {
     button.style.opacity = "1";
     const sampleFactor = map(txt.length, 1, 20, 0.4, 0.01);
     
-    points = textfont.textToPoints(txt, width / 10, height / 2, 200, {
+    points = textfont.textToPoints(txt, width / 10, height / 2+30, 200, {
       sampleFactor: sampleFactor
     });
     

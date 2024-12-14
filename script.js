@@ -63,6 +63,7 @@ window.addEventListener("resize", () => {
 
 drawDashLine();
 
+
 function toggleMenu() {
   const projects = document.getElementById("goProjects");
   const info = document.getElementById("goInfo");
@@ -295,7 +296,6 @@ function closeOverlay() {
 document.addEventListener("DOMContentLoaded", () => {
   displayFilteredContents("projects", projects); // 초기에는 모든 프로젝트 표시
   toggleMenu(); // 메뉴 토글 기능 추가
-  // 필요한 다른 초기화 함수 호출
 });
 
 // 페이지 로드 시 리서치 표시 함수 실행

@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
     const contents = [
       {
+        date: "Sep 16, 2021",
+        tag:'Curve',
+        description: "Hypocycloid Curve",
+        image: "image2.png",
+        path: "hypocycloid.html",
+      },
+      {
         date: "	May 24, 2021",
         description: "Watery Typography",
         image: "image1.gif",
         path: "waterytypo.html",
-      },
-      {
-        date: "2021",
-        description: "Hypocycloid Curve",
-        image: "image2.png",
-        path: "envelopeformula.html",
       },
       {
         date: "2021",
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryItem.className = 'gallery-item';
         
         galleryItem.innerHTML = `
+          <div class="gallery-tag">${content.tag}</div>
           <img class="gallery-image" src="assets/image/codeart/${content.image}" alt="${content.description}">
           <div class="gallery-info">
             <div class="gallery-date">${content.date}</div>
