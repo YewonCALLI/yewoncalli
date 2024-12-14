@@ -12,21 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
       tag:"Wave & Oscillation",
       description: "Wave Diffraction",
       image: "texture2.png", 
-      path: "",
+      path: "wavediffraction.html",
     }, 
     {
       date: "Sep 23, 2021",
       tag:"Wave & Oscillation",
       description: "Wave interference2",
       image: "wave2.gif", 
-      path: "",
+      path: "waveinterference2.html",
     },
     {
       date: "Oct 10, 2021",
       tag:"Fluid",
       description: "Fireworks",
       image: "drop.gif",
-      path: "",
+      path: "firework.html",
+    },
+    {
+      date: "Sep 23, 2021",
+      tag:"Gravity",
+      description: "Animated Typography",
+      image: "typoanimate.gif",
+      path: "animated_typography.html",
     },
     {
       date: "Sep 19, 2023",
@@ -35,13 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "gravity.png",
       path: "",
     },
-    {
-      date: "Sep 23, 2021",
-      tag:"Gravity",
-      description: "Animated Typography",
-      image: "typoanimate.gif",
-      path: "",
-    },
+    
   ];
 
 

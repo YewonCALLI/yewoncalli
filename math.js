@@ -15,6 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
         path: "waterytypo.html",
       },
       {
+        date: "	May 24, 2021",
+        tag:'Randomness',
+        description: "Random Walker",
+        image: "randomwalker.png",
+        path: "randomwalker.html",
+      },
+      {
+        date: "	May 24, 2021",
+        tag:'Noise',
+        description: "Perin Noise",
+        image: "perin_noise.gif",
+        path: "perin_noise.html",
+      },
+      {
         date: "2021",
         tag:'Geometric',
         description: "Twinkling Brush1",
