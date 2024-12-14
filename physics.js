@@ -8,19 +8,40 @@ document.addEventListener("DOMContentLoaded", () => {
       path: "waveinterference.html",
     },
     {
+      date: "Sep 23, 2021",
+      tag:"Wave & Oscillation",
+      description: "Wave Diffraction",
+      image: "texture2.png", 
+      path: "",
+    }, 
+    {
+      date: "Sep 23, 2021",
+      tag:"Wave & Oscillation",
+      description: "Wave interference2",
+      image: "wave2.gif", 
+      path: "",
+    },
+    {
       date: "Oct 10, 2021",
       tag:"Fluid",
       description: "Fireworks",
       image: "drop.gif",
-      path: "waveinterference.html",
+      path: "",
+    },
+    {
+      date: "Sep 19, 2023",
+      tag:"Gravity",
+      description: "Gravity",
+      image: "gravity.png",
+      path: "",
     },
     {
       date: "Sep 23, 2021",
-      tag:"Particle",
-      description: "Wave interference",
-      image: "image3.png",
-      path: "waveinterference.html",
-    }
+      tag:"Gravity",
+      description: "Animated Typography",
+      image: "typoanimate.gif",
+      path: "",
+    },
   ];
 
 

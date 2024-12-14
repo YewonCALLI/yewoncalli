@@ -9,35 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         date: "	May 24, 2021",
+        tag:'Randomness',
         description: "Watery Typography",
         image: "image1.gif",
         path: "waterytypo.html",
       },
       {
         date: "2021",
+        tag:'Geometric',
         description: "Twinkling Brush1",
         image: "image4.png",
         path: "twinklingbrush1.html",
-      },
-      {
-        date: "2021",
-        description: "Twinkling Brush2",
-        image: "image5.png",
-        path: "twinklingbrush2.html",
-      },
-      {
-        date: "2021",
-        description:
-          "Ambient sound varies based on the x, y coordinates and number of points.",
-        image: "image6.png",
-        path: "numberofpoints.html",
-      },
-      {
-        date: "2021",
-        description: "An interactive gradient pattern",
-        image: "image7.gif",
-        path: "interactivegradient.html",
-      },
+      }
     ];
   
   
