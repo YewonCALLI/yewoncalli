@@ -1,0 +1,34 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 타이틀 -->
+  <text x="50" y="50" font-size="20" font-family="serif">Hypocycloid Limit Proof (r → 0)</text>
+  
+  <!-- 매개변수 방정식 -->
+  <text x="50" y="100" font-size="18" font-family="serif">Parametric equations:</text>
+  <text x="80" y="140" font-family="serif" font-size="16">x(t) = (R-r)cos(t) + r·cos((R-r)t/r)</text>
+  <text x="80" y="170" font-family="serif" font-size="16">y(t) = (R-r)sin(t) - r·sin((R-r)t/r)</text>
+
+  <!-- x(t)에 대한 극한 -->
+  <text x="50" y="220" font-size="18" font-family="serif">For x(t):</text>
+  <text x="80" y="260" font-family="serif" font-size="16">lim</text>
+  <text x="80" y="250" font-family="serif" font-size="12">r→0</text>
+  <text x="120" y="260" font-family="serif" font-size="16">x(t) = lim</text>
+  <text x="170" y="250" font-family="serif" font-size="12">r→0</text>
+  <text x="200" y="260" font-family="serif" font-size="16">[(R-r)cos(t) + r·cos((R-r)t/r)]</text>
+  <text x="80" y="290" font-family="serif" font-size="16">= Rcos(t) + 0</text>
+  <text x="80" y="320" font-family="serif" font-size="16">= Rcos(t)</text>
+
+  <!-- y(t)에 대한 극한 -->
+  <text x="50" y="370" font-size="18" font-family="serif">For y(t):</text>
+  <text x="80" y="410" font-family="serif" font-size="16">lim</text>
+  <text x="80" y="400" font-family="serif" font-size="12">r→0</text>
+  <text x="120" y="410" font-family="serif" font-size="16">y(t) = lim</text>
+  <text x="170" y="400" font-family="serif" font-size="12">r→0</text>
+  <text x="200" y="410" font-family="serif" font-size="16">[(R-r)sin(t) - r·sin((R-r)t/r)]</text>
+  <text x="80" y="440" font-family="serif" font-size="16">= Rsin(t) - 0</text>
+  <text x="80" y="470" font-family="serif" font-size="16">= Rsin(t)</text>
+
+  <!-- 결론 -->
+  <text x="50" y="520" font-size="18" font-family="serif">Therefore:</text>
+  <text x="80" y="550" font-family="serif" font-size="16">x = Rcos(t)</text>
+  <text x="80" y="580" font-family="serif" font-size="16">y = Rsin(t)</text>
+</svg>
