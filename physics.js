@@ -6,6 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Wave interference",
       image: "image3.png",
       path: "waveinterference.html",
+    },
+    {
+      date: "Oct 10, 2021",
+      tag:"Fluid",
+      description: "Fireworks",
+      image: "drop.gif",
+      path: "waveinterference.html",
+    },
+    {
+      date: "Sep 23, 2021",
+      tag:"Particle",
+      description: "Wave interference",
+      image: "image3.png",
+      path: "waveinterference.html",
     }
   ];
 
