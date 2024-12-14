@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watery Typography</title>
+  <title>Hypocycloid</title>
   <!-- Favicon & Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -209,17 +209,17 @@
     </div>
     <!-- content -->
     <div class="cda-cover">
-      <img src="../assets/image/codeart/image3.png" alt="kinetictypography" class="coverImg">
+      <img src="../assets/image/codeart/image2.png" alt="kinetictypography" class="coverImg">
 
       <div class="cda-title">
         <div class="card-header">
-          <div class="card-title" id="card-projects">
-            Wave Interference
+          <div class="card-title" id="card-projects" style="color: white;">
+            Hypocycloid
           </div>
           <div class="card-subContainer">
-            <div class="card-date">Sep 23, 2021</div>
+            <div class="card-date">Sep 16, 2021</div>
             <div class="card-tags">
-              <span class="card-tag">Wave & Oscillation</span>
+              <span class="card-tag">Geometric</span>
               <span class="card-tag">For Fun</span>
             </div>
           </div>
@@ -235,203 +235,42 @@
           Project Overview
         </div>
         <div class="cda-p">
-          This project bridges wave interference physics with interactive visualization through Processing. By implementing fundamental wave equations and superposition principles, we create a real-time simulation that helps understand how waves interact in two-dimensional space.
+            In this coding project, I've developed a generative art inspired by the mathematical beauty of hypocycloids. A hypocycloid is a special curve traced by a point on a small circle that rolls inside a larger circle. I've taken this classical mathematical concept and transformed it into an animated, visualization using Processing.
         </div>
       </div>
 
       <div class="cda-binding">
         <div class="cda-h2">
-          Physical Wave Theory and Implementation
-        </div>
-        <div class="cda-h3">
-          Basic Wave Physics
+        Mathematical Foundation
         </div>
         <div class="cda-p">
-          In physics, a wave is a disturbance that travels through space and matter. The basic mathematical representation of a wave is:
+            The hypocycloid formula that inspired this project is:
         </div>
         <div class="cda-code">
           <code id="code-block"></code>
         </div>
         <div class="cda-p">
-          A: Amplitude (height of wave)<br>
-          k: Wave number (2π/wavelength)<br>
-          ω: Angular frequency (2πf)<br>
-          x: Position in space<br>
-          t: Time
+            R: radius of the fixed circle (outer)<br>
+            r: radius of the rolling circle (inner)<br>
+            t: parameter angle [0, 2π]<br>
+            k = R/r: ratio determining the number of cusps<br><br>
+        </div>
+        <div class="cda-h3">
+            1. Number of Cusps
         </div>
         <div class="cda-p">
-          In my code, I implement this wave equation as:
+            The number of cusps (sharp points) in a hypocycloid is determined by k = R/r<br>
+            When k is an integer, the curve closes after one revolution<br>
+            The curve has k cusps when R/r is rational<br><br>
         </div>
-        <div class="cda-code">
-          <code id="code-block2"></code>
+        <div class="cda-h3">
+            2. Periodicity
         </div>
-        <div class="cda-row">
-          <div class="cda-p">
-          -> amplitude directly corresponds to A <br>
-          -> distance/wavelength represents kx (spatial component)<br>
-          -> time * frequency represents ωt (temporal component)<br>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/singlewave.png" class="cda-image">
-            <span class="cda-img-caption">Standing Wave (정상파)</span>
-          </div>
+        <div class="cda-p">
+            The curve is periodic with period 2πr/(R-r)<br>
+            Complete pattern emerges when t spans [0, 2π]
         </div>
         
-      </div>
-
-      <div class="cda-binding">
-        <div class="cda-h3">
-          Wave Interference        
-        </div>
-        <div class="cda-p">
-          In physics, when two or more waves overlap, they exhibit interference patterns. The principle of superposition states that the resultant displacement at any point is the sum of the displacements of different waves at that point.
-        </div>
-        <div class="cda-code">
-          <code id="code-block3"></code>
-        </div>
-        <div class="cda-p">
-          When multiple waves meet in physical space, they combine through the principle of superposition. In my simulation, I implement this fundamental physics concept through a simple yet line of code: totalWave += wave. For each pixel in my simulation, I add up the contributions from every wave source, directly mirroring how waves combine in nature. If a pixel experiences a positive displacement from one wave and a negative displacement from another, these will naturally add to create the resulting interference pattern - whether constructive (waves reinforcing each other) or destructive (waves canceling each other out).<br><br>
-          The circular nature of my waves comes from how I calculate the distance between each wave source and every point in my simulation space. Using Processing's dist(x, y, source.x, source.y) function, I compute the radial distance from each source point to each pixel. This creates circular wavefronts because the waves propagate equally in all directions from their source, just like ripples in a pond. Each point at the same distance from the source experiences the same phase of the wave, creating those characteristic circular patterns.<br><br>
-          In real physical systems, waves tend to lose energy as they travel through a medium. I model this natural phenomenon using an exponential decay function: exp(-distance * damping/1000). This exponential attenuation reflects how waves behave in real systems, where energy loss often follows an exponential law. As waves travel further from their source, they gradually lose amplitude, with the damping parameter controlling how quickly this decay occurs. The division by 1000 helps scale the damping effect to work well with my simulation's dimensions. Higher damping values cause waves to die out more quickly with distance, while lower values allow them to propagate further, giving me control over the wave behavior to match different physical scenarios.
-        </div>
-      </div>
-
-      <div class="cda-binding">
-        <div class="cda-h3">
-          Visualization Through Color Mapping
-        </div>
-        <div class="cda-p">
-          The visualization of wave interference patterns is crucial for understanding how waves interact, so I carefully chose HSB color mapping for its intuitive representation. Here's the key implementation:
-        </div>
-        <div class="cda-code">
-          <code id="code-block4"></code>
-        </div>
-        <div class="cda-row">
-          <div class="cda-p">
-              In this code, I map the total wave displacement (totalWave) to a color hue value. The map() function converts the wave amplitude, which ranges from -amplitude to +amplitude, to a hue value between 100 and 300 degrees in the HSB color wheel. I specifically chose this range because it creates a beautiful and intuitive color transition: <br><br>
-
-              -> When totalWave is at its maximum positive amplitude, the hue value becomes 300 (purple/magenta), representing wave peaks <br>
-              -> When totalWave is at its maximum negative amplitude, the hue value becomes 100 (green/blue), representing wave troughs<br>
-              -> When totalWave is near zero, the hue value is around 200 (cyan), representing neutral areas<br><br>
-
-              I set both saturation and brightness to 100 to ensure vivid colors that clearly show the wave patterns. This creates a striking visualization where:<br><br>
-
-              -> Areas of constructive interference (where waves reinforce each other) appear in vibrant purple/magenta<br>
-              -> Areas of destructive interference (where waves cancel each other) appear in deep blue/green<br>
-              -> Areas with minimal wave activity appear in cyan<br><br>
-
-              This color mapping makes it immediately apparent where waves are interfering constructively or destructively, making the abstract concept of wave interference visually tangible. The smooth gradient between colors also helps visualize the continuous nature of wave propagation, showing how wave amplitude changes gradually across space.
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave.gif" class="cda-image">
-            <span class="cda-img-caption">Four Stainding Wave Interference</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 실험결론 -->
-
-      <div class="cda-binding">
-        <div class="cda-h2">
-          Wave Parameter Experiments and Analysis
-        </div>
-
-        <div class="cda-p">
-          In my wave simulation, I conducted experiments by varying four key parameters while keeping others constant. For each parameter, I analyzed three different values: low, medium (default), and high. The default values were: <br><br>
-          float frequency = 0.1;<br>
-          float wavelength = 50;<br>
-          float amplitude = 100;<br>
-          float damping = 0.95;
-        </div>
-
-        <div class="cda-h3">
-          Wavelength(파장)
-        </div>
-        <div class="cda-row">
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/wavelength1.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 100.0, 0.95)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/wavelength2.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 31.19722, 100.0, 0.95)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/wavelength3.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 19.371023, 100.0, 0.95)</span>
-          </div>
-        </div>
-        <div class="cda-p">
-          Shorter wavelengths create more numerous, closely packed interference nodes. Longer wavelengths result in fewer, more spread out interference patterns. The distance between constructive interference points scales directly with wavelength.
-          <br><br>
-        </div>
-
-        <div class="cda-h3">
-          Amplitude(진폭)
-        </div>
-
-        <div class="cda-row">
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/amplitude1.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 100.0, 0.95)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/amplitude2.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 40526.57, 0.95)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/amplitude3.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 4757454.5, 0.95)</span>
-          </div>
-        </div>
-
-        <div class="cda-p">
-          Low amplitude: Narrower range of color variation, mostly middle tones.<br>
-          High amplitude: Fuller use of the color spectrum with more extreme values<br>
-          Color contrast becomes more pronounced with higher amplitude<br>
-        </div>
-
-        <div class="cda-h3">
-          Damping(감쇠)
-        </div>
-
-        <div class="cda-row">
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/damping1.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 100.0, 6.391127)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/damping2.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 100.0, 2.7104616)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/damping3.png" class="cda-image">
-            <span class="cda-img-caption">(0.1, 50.0, 100.0, 1.6829833)</span>
-          </div>
-        </div>
-
-        <div class="cda-h3">
-          Position (위치)
-        </div>
-
-        <div class="cda-row">
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/position1.png" class="cda-image">
-            <span class="cda-img-caption">Single Wave</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/position2.png" class="cda-image">
-            <span class="cda-img-caption">(width/4, 3*width/4)</span>
-          </div>
-          <div class="cda-img">
-            <img src="../assets/image/codeart/wave/position3.png" class="cda-image">
-            <span class="cda-img-caption">(width/5, 4*width/5)</span>
-          </div>
-        </div>
-
-
-
       </div>
       
     </div>
@@ -439,14 +278,16 @@
     <script>
       const codeBlock =
         `
-      y(x,t) = A * sin(kx - ωt)
+    x = (R-r)cos(t) + r*cos((R-r)t/r)
+    y = (R-r)sin(t) - r*sin((R-r)t/r)
     `;
       document.getElementById("code-block").textContent = codeBlock;
 
 
       const codeBlock2 =
         `
-      float wave = amplitude * sin(distance/wavelength - time * frequency);
+    float px = (R-r)*cos(t) + r*cos((R-r)*t/r);
+    float py = (R-r)*sin(t) - r*sin((R-r)*t/r);
          `;
       document.getElementById("code-block2").textContent = codeBlock2;
 
