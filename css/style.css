@@ -38,6 +38,7 @@ div {
   /* border: 1px dashed red; */
 }
 
+
 section {}
 
 /* Container */
@@ -431,6 +432,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
   background-color: #D9D9D9;
   padding: 6px 10px;
   font-size: 16px;
