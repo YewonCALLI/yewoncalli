@@ -360,6 +360,14 @@ canvas {
   .header{
     gap:7px;
   }
+  .card2-left{
+    overflow-y:auto;
+    height:max-content;
+  }
+  .card2-right{
+    overflow-y:auto;
+    height:max-content;
+  }
 }
 
 .card-header {
@@ -835,7 +843,7 @@ th {
 }
 
 .card2 {
-  padding-top: 180px;
+  padding-top: 130px;
   padding-left: 20px;
   padding-right: 20px;
   display: flex;
@@ -855,7 +863,8 @@ th {
 
 .card2-left {
   width: 100%;
-  display: flex;
+  overflow-y: scroll;
+  height: calc(100dvh - 130px);
   flex-direction: column;
   gap: 20px;
 }
@@ -916,13 +925,13 @@ th {
 .card2-right {
   width: 100%;
   height: fit-content;
+  overflow-y: scroll;
+  height: calc(100dvh - 130px);
   display: flex;
 }
 
 .card2-image {
   width: 100%;
-  height: calc(100dvh - 70px);
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 20px;

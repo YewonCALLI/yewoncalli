@@ -230,7 +230,7 @@
                     </div>
                 </div>
                 <div class="card-contents">
-                    <div class="card-description short" id="card-description">
+                    <div class="card-description" id="card-description">
                         <div class="card-short">
                             A design tool for bridging digital typography with physical space through computational
                             origami.
@@ -261,9 +261,6 @@
                         accessible, TypeFold aims to expand the possibilities of Creative Coding in product design and
                         typography.
                     </div>
-                    <div class="card-more">
-                        <a href="#" id="toggle-description" onclick="toggleDescription(event)">view more...</a>
-                    </div>
                 </div>
                 <div class="card-contents">
                     <div class="card-contents-sub">
@@ -292,23 +289,6 @@
         </div>
     </div>
     <script src="../script.js"></script>
-    <script>
-        function toggleDescription(event) {
-            event.preventDefault(); // 링크 기본 동작 방지
-
-            const description = document.getElementById("card-description");
-            const toggleLink = document.getElementById("toggle-description");
-
-            // 짧은 버전과 전체 버전을 토글
-            if (description.classList.contains("short")) {
-                description.classList.remove("short");
-                toggleLink.textContent = "view less";
-            } else {
-                description.classList.add("short");
-                toggleLink.textContent = "view more...";
-            }
-        }
-    </script>
 </body>
 
 </html>
