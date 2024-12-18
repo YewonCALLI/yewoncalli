@@ -61,20 +61,20 @@
   <div class="container">
     <div class="header">
       <div class="header-container" style="display: flex;">
-      <div class="headerTitle" onclick="window.location.href='/index.html'">
-        Yewon Jang°
+        <div class="headerTitle" onclick="window.location.href='/index.html'">
+          Yewon Jang°
+        </div>
+        <div class="headerTitle2">
+          Tool Designer
+        </div>
       </div>
-      <div class="headerTitle2">
-        Tool Designer
-      </div> 
+
+      <div class="headerNav">
+        <button class="headerBtn" id="goProjects" onclick="window.location.href='/index.html'">Projects</button>
+        <button type='button' class="headerBtn" onclick="location.href='/physics.html'">Visual Physics</button>
+        <button class="headerBtn" onclick="openOverlay()" id="goInfo">Info</button>
+      </div>
     </div>
-    
-    <div class="headerNav">
-      <button class="headerBtn" id="goProjects" onclick="window.location.href='/index.html'">Projects</button>
-      <button type='button' class="headerBtn" onclick="location.href='/physics.html'">Visual Physics</button>
-      <button class="headerBtn" onclick="openOverlay()" id="goInfo">Info</button>
-    </div>
-  </div>
     <div id="overlay">
       <span class="close-btn" onclick="closeOverlay()">×</span>
       <div class="overlay-content">
@@ -228,10 +228,9 @@
           </div>
         </div>
         <div class="card-contents">
-          <div class="card-description short" id="card-description">
-            <div class="card-short">
-              P5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store
-            </div>
+          <div class="card-description" id="card-description">
+            P5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store
+            <br />
             <br />
 
             DADUCK is a digital character created with p5.js, inspired by Yeongdeungpo’s symbol, the mallard duck.
@@ -243,9 +242,7 @@
             products like hand warmers and scrubbers. Users can experience DADUCK’s animated movements on our website,
             bridging digital and physical realms.
           </div>
-          <div class="card-more">
-            <a href="#" id="toggle-description" onclick="toggleDescription(event)">view more...</a>
-          </div>
+
         </div>
         <div class="card-contents">
           <div class="card-contents-sub">

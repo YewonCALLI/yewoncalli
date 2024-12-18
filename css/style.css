@@ -34,7 +34,7 @@ body {
   font-style: normal;
 }
 
-.checking {
+div {
   /* border: 1px dashed red; */
 }
 
@@ -60,16 +60,16 @@ section {}
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  display:flex;
+  display: flex;
   flex-direction: column;
   top: 0;
   left: 50%;
-  transform: translate(-50%,0%);
+  transform: translate(-50%, 0%);
   right: 0;
   z-index: 100;
   transition: all 0.3s ease;
   gap: 10px;
-  
+
 }
 
 .headerTitle {
@@ -116,7 +116,7 @@ section {}
 
 .headerNav {
   display: flex;
-  flex-wrap:nowrap;
+  flex-wrap: nowrap;
   gap: 8px;
   justify-content: flex-start;
   align-items: center;
@@ -329,6 +329,7 @@ canvas {
   .card {
     flex-direction: column;
     gap: 20px;
+    height: fit-content;
   }
 }
 
@@ -349,24 +350,19 @@ canvas {
   .card-text {
     width: 100%;
   }
-  .headerTitle{
+
+  .headerTitle {
     font-size: 24px;
     white-space: nowrap;
   }
-  .headerTitle2{
-    font-size:16px;
+
+  .headerTitle2 {
+    font-size: 16px;
     margin-bottom: 14px;
   }
-  .header{
-    gap:7px;
-  }
-  .card2-left{
-    overflow-y:auto;
-    height:max-content;
-  }
-  .card2-right{
-    overflow-y:auto;
-    height:max-content;
+
+  .header {
+    gap: 7px;
   }
 }
 
@@ -381,8 +377,7 @@ canvas {
 @media (max-width: 768px) {
   .card-header {
     flex-direction: column;
-
-
+    padding-bottom: 20px;
   }
 }
 
@@ -537,7 +532,6 @@ canvas {
     width: 100%;
   }
 }
-
 
 .card-image img {
   display: flex;
@@ -859,14 +853,35 @@ th {
     flex-direction: column;
     gap: 20px;
   }
+
+  .card2-left {
+    height: fit-content;
+  }
+
+  .card2-right {
+    height: fit-content;
+  }
+}
+
+/* desktop 기준 */
+@media (min-width: 768px) {
+  .card2-left {
+    overflow-y: scroll;
+    height: calc(100dvh - 130px);
+  }
+
+  .card2-right {
+    overflow-y: scroll;
+    height: calc(100dvh - 130px);
+  }
 }
 
 .card2-left {
   width: 100%;
-  overflow-y: scroll;
-  height: calc(100dvh - 130px);
-  flex-direction: column;
-  gap: 20px;
+}
+
+.card2-right {
+  width: 100%;
 }
 
 .card-contents {
@@ -922,13 +937,7 @@ th {
   font-style: italic;
 }
 
-.card2-right {
-  width: 100%;
-  height: fit-content;
-  overflow-y: scroll;
-  height: calc(100dvh - 130px);
-  display: flex;
-}
+
 
 .card2-image {
   width: 100%;
@@ -1125,7 +1134,7 @@ th {
   filter: grayscale(0%);
 }
 
-.gallery-tag{
+.gallery-tag {
   background: none;
   padding: 7px;
   text-align: center;
@@ -1138,7 +1147,7 @@ th {
 
 .gallery-info {
   background-color: #fff;
-  top:0px;
+  top: 0px;
   padding: 15px;
 }
 
