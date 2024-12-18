@@ -66,7 +66,7 @@ section {}
   left: 50%;
   transform: translate(-50%,0%);
   right: 0;
-  z-index: 10;
+  z-index: 100;
   transition: all 0.3s ease;
   gap: 10px;
   
@@ -963,7 +963,7 @@ th {
   transform: translate(-50%, 0);
   width: fit-content;
   height: fit-content;
-  z-index: 1000;
+  z-index: 9;
   cursor: pointer;
   display: flex;
   flex-direction: column;
