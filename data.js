@@ -6,9 +6,9 @@ const projects = [
     projectType: "Personal Project",
     event: "2024 ATC (Art&Technology Conference)",
     description:
-      "A design tool for bridging digital typography with physical space through computational origami.",
+      "A design tool that converts 3D typography into paper craft.",
     projectLink: "typefold.vercel.app",
-    image: "typefold.png",
+    image: "../details/typofold4.png",
     link: "works/typefold.html",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     projectType: "Team Project",
     event: "SFPC (School for Poetic Computation)",
     description:
-      "A collaborative word-weaving game exploring poetic connections through custom similarity criteria",
+      "A word-weaving platform that creates poems through connected synonyms.",
     projectLink: "solarword.vercel.app",
     image: "wordwideweb.png",
     link: "works/wordwideweb.html",
@@ -55,7 +55,7 @@ const projects = [
     projectType: "Team Project",
     event: "PlanT House, Hongcheon Art Museum",
     description:
-      "An interactive website exploring meme origins, impact, and replication",
+      "An interactive website exploring meme origins, impact, and replication.",
     projectLink: "memeproject.vercel.app",
     image: "memeproject.png",
     link: "works/memeproject.html",
@@ -67,7 +67,7 @@ const projects = [
     projectType: "Team Project",
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
-      "A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative",
+      "A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative.",
     projectLink: "hongyeon.vercel.app",
     image: "hongyeon.png",
     link: "works/hongyeon.html",
@@ -79,7 +79,7 @@ const projects = [
     projectType: "Team Project",
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
-      "Branding design for Team ABT’s project using p5.js code art to create event typography, posters, and a website",
+      "Branding design for Team ABT’s project using p5.js code art to create event typography, posters, and a website.",
     projectLink: "abt-avatar.world",
     image: "abt.png",
     link: "works/abt.html",
@@ -90,7 +90,7 @@ const projects = [
     tags: ["Computer Graphics", "Media Facade"],
     projectType: "Team Project",
     event: "ACC Media Cube, Gwangju",
-    description: "Simulating gravity through Unreal Engine’s Blueprint",
+    description: "Simulating gravity through Unreal Engine’s Blueprint.",
     projectLink: "",
     image: "simulating.png",
     link: "works/simulating.html",
@@ -103,7 +103,7 @@ const projects = [
     event:
       "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
     description:
-      "A media art performance exploring identity and quantum mechanics through layered video art and live performance",
+      "A media art performance exploring identity and quantum mechanics through layered video art and live performance.",
     projectLink: "",
     image: "singlet&multiplet.png",
     link: "works/singlet&multiplet.html",
@@ -114,8 +114,8 @@ const projects = [
     tags: ["Code Art", "Game"],
     projectType: "Team Project",
     event:
-      "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
-    description: "A program that creates music by drawing",
+      "School Project (Creative Algorithms)",
+    description: "A program that creates music by drawing.",
     projectLink: "",
     image: "drawthebeat.png",
     link: "works/drawthebeat.html",
