@@ -62,7 +62,7 @@
 </head>
 
 <body>
-  <div class="container">
+    <div class="container">
       <div class="header">
         <div class="header-container" style="display: flex;">
         <div class="headerTitle" onclick="window.location.href='/index.html'">
@@ -72,13 +72,13 @@
           Tool Designer
         </div> 
       </div>
-      
       <div class="headerNav">
         <button class="headerBtn" id="goProjects">Projects</button>
         <button type='button' class="headerBtn" onclick="location.href='/physics.html'">Visual Physics</button>
         <button class="headerBtn" onclick="location.href='/info.html'" id="goInfo">Info</button>
       </div>
     </div>
+    
     <section id="canvas">
     </section>
 
@@ -89,27 +89,20 @@
         <div class="dash"></div>
       </div>
       <div class="filterContainer">
-        <button class="filterBtn" id="filterYear">
-          <svg id="filterYearIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16" fill="currentColor">
-            <path
-              d="M0.152344 0.859375H17.8477L9 15.8789L0.152344 0.859375ZM2.88672 2.40234L9 12.832L15.1523 2.40234H2.88672Z" />
-          </svg>
-          <span id="selectedYear">All Years</span>
-          <div class="filterDropdown" id="yearDropdown">
-          </div>
-        </button>
-        <button class="filterBtn" id="filterTag"><svg id="filterTagIcon" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 18 16" fill="currentColor">
-            <path
-              d="M0.152344 0.859375H17.8477L9 15.8789L0.152344 0.859375ZM2.88672 2.40234L9 12.832L15.1523 2.40234H2.88672Z" />
-          </svg> <span id="selectedTag">All Media</span>
-          <div class="filterDropdown" id="tagDropdown">
-          </div>
-        </button>
+        <div class="intro-text">
+          Hi.👋 I'm Yewon, based in Seoul, South Korea. Welcome to my place! Glad to show my <button class="tagBtn" data-tag="all">projects</button>.<br>I am a technologist focused on developing <button class="tagBtn" data-tag="Tool">tools</button> that bridge computational methods with artistic expression.<br>
+          My work enables artists and children to explore new forms of expression through 
+          <button class="tagBtn" data-tag="Generative-arts">generative arts</button>,
+          <button class="tagBtn" data-tag="Music">music</button>, 
+          <button class="tagBtn" data-tag="Papercraft">papercraft</button>, and 
+          <button class="tagBtn" data-tag="AI-Writing">AI writing</button>.<br>
+          I also do <button class="tagBtn" data-tag="Commercial">commercial</button> work with code art.<br><br>
+          I've loved <button class="tagBtn" data-tag="Physics">physics</button> since I was young, and I create works that incorporate physical laws.
+        </div>
       </div>
-      <div class="contents" id="projectsContainer">
+      <div id="projectsContainer" class="masonry-grid">
       </div>
-    </section>
+</section>
 
     <!-- <section id="research">
       <div class="sectionTitle">

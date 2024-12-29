@@ -2,7 +2,7 @@ const projects = [
   {
     title: "TypoFold",
     date: "2024",
-    tags: ["Paper Craft📦", "Tool"],
+    tags: ["Papercraft", "Tool"],
     projectType: "Personal Project",
     event: "2024 ATC (Art&Technology Conference)",
     description:
@@ -14,19 +14,19 @@ const projects = [
   {
     title: "Word Wide Web",
     date: "2024",
-    tags: ["AI writing ✏️", "Tool"],
+    tags: ["AI-Writing", "Tool"],
     projectType: "Team Project",
     event: "SFPC (School for Poetic Computation)",
     description:
       "A word-weaving platform that creates poems through connected synonyms.",
     projectLink: "solarword.vercel.app",
-    image: "wordwideweb.png",
+    image: "wordwideweb_2.png",
     link: "works/wordwideweb.html",
   },
   {
     title: "Ganpan",
     date: "2024",
-    tags: ["Typography🀄️", "Tool", "Zine"],
+    tags: ["Typography", "Tool", "Zine"],
     projectType: "Team Project",
     event: "2024 ATC (Art&Technology Conference)",
     description:
@@ -51,7 +51,7 @@ const projects = [
   {
     title: "Memeproject",
     date: "2023",
-    tags: ["Generative🔮", "Tool"],
+    tags: ["Generative-arts", "Tool"],
     projectType: "Team Project",
     event: "PlanT House, Hongcheon Art Museum",
     description:
@@ -63,7 +63,7 @@ const projects = [
   {
     title: "Hongyeon 1.0",
     date: "2023",
-    tags: ["AI writing ✏️", "Tool"],
+    tags: ["AI-Writing", "Tool"],
     projectType: "Team Project",
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
@@ -87,7 +87,7 @@ const projects = [
   {
     title: "Simulating #1,2,3",
     date: "2023",
-    tags: ["Generative🔮", "Physics🤹‍♀️","Media Facade"],
+    tags: ["Generative-arts", "Physics","Media Facade"],
     projectType: "Team Project",
     event: "ACC Media Cube, Gwangju",
     description: "Simulating gravity through Unreal Engine’s Blueprint.",
@@ -98,7 +98,7 @@ const projects = [
   {
     title: "Singlet&Multiplet",
     date: "2021",
-    tags: ["Generative🔮", "Physics🤹‍♀️","Media Facade"],
+    tags: ["Generative-arts", "Physics","Media Facade"],
     projectType: "Team Project",
     event:
       "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
