@@ -87,7 +87,7 @@ const projects = [
   {
     title: "Simulating #1,2,3",
     date: "2023",
-    tags: ["Generative🔮", "Media Facade"],
+    tags: ["Generative🔮", "Physics🤹‍♀️","Media Facade"],
     projectType: "Team Project",
     event: "ACC Media Cube, Gwangju",
     description: "Simulating gravity through Unreal Engine’s Blueprint.",
@@ -98,7 +98,7 @@ const projects = [
   {
     title: "Singlet&Multiplet",
     date: "2021",
-    tags: ["Generative🔮", "Media Facade"],
+    tags: ["Generative🔮", "Physics🤹‍♀️","Media Facade"],
     projectType: "Team Project",
     event:
       "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
