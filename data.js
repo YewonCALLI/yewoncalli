@@ -117,7 +117,7 @@ const projects = [
       "School Project (Creative Algorithms)",
     description: "A program that creates music by drawing.",
     projectLink: "",
-    image: "drawthebeat.png",
+    image: "../details/drawthebeat01.png",
     link: "works/drawthebeat.html",
   },
 ];
