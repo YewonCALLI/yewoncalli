@@ -8,7 +8,7 @@ const projects = [
     description:
       "A design tool that converts 3D typography into paper craft.",
     projectLink: "typefold.vercel.app",
-    image: "../details/typofold4.png",
+    image: "../thumbnails/typofold.gif",
     link: "works/typefold.html",
   },
   {
