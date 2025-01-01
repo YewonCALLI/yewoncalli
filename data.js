@@ -172,7 +172,7 @@ const activitiesData = [
     links: [
       {
         text: "Workshop Materials",
-        url: "https://marvelous-catmint-e23.notion.site/AR-641a2795580b47e0a5fa98cc69964c9e?pvs=73"
+        url: "https://youtu.be/EG4EocHJbdk?si=GGVawNz0y87OP6zG"
       }
     ]
   },
