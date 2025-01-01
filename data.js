@@ -136,3 +136,81 @@ const projects = [
 //     image: "typefold.png",
 //   },
 // ];
+
+const activitiesData = [
+  {
+    category: "OPENSOURCE",
+    title: "p5.js 2.0 Renewal Korean Translate Contribution",
+    description: "Contributed to Korean translation of technical documentations.",
+    date: "03/2024~04/2024",
+    image: "activities/p5js.png",
+    links: [
+      {
+        text: "Workshop Materials",
+        url: "https://github.com/p5-js-KO-Translation/2024"
+      }
+    ]
+  },
+  {
+    category: "COMMUNITY",
+    title: "Open Source Education Curation - NAVER Connect Foundation",
+    description: "Curated educational platforms focused on open-source tools (p5.js, Life Coding, Inflearn) to promote accessible software education.",
+    date: "09/2023",
+    links: [
+      {
+        text: "Workshop Materials",
+        url: "https://www.instagram.com/p/Cw2w4dMxETC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+      }
+    ]
+  },
+  {
+    category: "COMMUNITY",
+    title: "Software Education Festival (SEF) 2023 - Full-time Staff",
+    description: "Worked as a full-time staff member for SEF2023, a major software education festival. Led speaker coordination and meetup event management, working closely with various software communities and educational institutions.",
+    date: "05/2023~09/2023",
+    image: "activities/photo9.png",
+    links: [
+      {
+        text: "Workshop Materials",
+        url: "https://marvelous-catmint-e23.notion.site/AR-641a2795580b47e0a5fa98cc69964c9e?pvs=73"
+      }
+    ]
+  },
+  {
+    category: "RESEARCH",
+    title: "Construction of Debiased Korean AI Fairytale Generator",
+    description: "Journal of Digital Contents Society<br><br>Jiin An*, Saetbyeol Leeyouk*, Yewon Jang*, & Dasaem Jeong.",
+    date: "07/2023",
+    links: [
+      {
+        text: "View on GitHub",
+        url: "http://journal.dcs.or.kr/xml/37344/37344.pdf"
+      }
+    ]
+  },
+  {
+    category: "RESEARCH",
+    title: "Debiased korean AI fairytale generator &lt;Franklin&gt;",
+    description: "PROCEEDINGS OF HCI KOREA <br><br>Jiin An*, Saetbyeol Leeyouk*, Yewon Jang*, & Dasaem Jeong.",
+    date: "02/2023",
+    links: [
+      {
+        text: "View on GitHub",
+        url: "http://journal.dcs.or.kr/xml/37344/37344.pdf"
+      }
+    ]
+  },
+  {
+    category: "WORKSHOP",
+    title: "Create your own AR snowball using SPARK AR",
+    description: "Collaboration with the Hyundai Motor Company Chung Mong-koo Foundation",
+    date: "11/19/2022",
+    image: "activities/AR_workshop.jpg",
+    links: [
+      {
+        text: "Workshop Materials",
+        url: "https://marvelous-catmint-e23.notion.site/AR-641a2795580b47e0a5fa98cc69964c9e?pvs=73"
+      }
+    ]
+  },
+];

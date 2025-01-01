@@ -1,4 +1,4 @@
-// Dash Line 관련 코드 유지
+// Dash Line 관련 코드
 const dashElements = document.querySelectorAll(".dash");
 const dashLineElementWidth = 20;
 const dashLineElementStroke = 2;
@@ -27,7 +27,7 @@ function createDashLineElement() {
 
 const dashLineDiv = createDashLineDiv();
 const dashLineElement = createDashLineElement();
-let dashLineWidth = dashElements[0].offsetWidth;
+let dashLineWidth = dashElements[0]?.offsetWidth || 0;
 let dashLineElementCount = Math.floor(dashLineWidth / dashLineElementWidth);
 
 function drawDashLine() {
@@ -46,19 +46,14 @@ function drawDashLine() {
   });
 }
 
-window.addEventListener("resize", () => {
-  dashLineWidth = dashElements[0].offsetWidth;
-  dashLineElementCount = Math.floor(dashLineWidth / dashLineElementWidth);
-  drawDashLine();
-});
-
-drawDashLine();
-
-// 현재 선택된 필터 상태
+// Projects 관련 코드
 let selectedYear = "All Years";
 let selectedTag = "All Media";
 
-// 필터링된 프로젝트 표시 함수
+function imagePath(image) {
+  return `./assets/image/thumbnails/${image}`;
+}
+
 function displayFilteredContents(sectionName, filteredContents) {
   const container = document.getElementById(sectionName + "Container");
   if (!container) return;
@@ -78,17 +73,17 @@ function displayFilteredContents(sectionName, filteredContents) {
           <span class="card-tag">${tag}</span>
         `).join('')}
       </div>
-        <h3 class="project-title">${content.title}</h3>
-          <div class="project-image-container">
-            <img 
-              src="${imagePath(content.image)}" 
-              alt="${content.title}"
-              onclick="window.location.href='${content.link}'"
-            />
-        </div>
+      <h3 class="project-title">${content.title}</h3>
+      <div class="project-image-container">
+        <img 
+          src="${imagePath(content.image)}" 
+          alt="${content.title}"
+          onclick="window.location.href='${content.link}'"
+        />
+      </div>
       <div class="project-content">
         <p class="project-description">${content.description}</p>
-        <p class="card-event">${content.event}</p>
+        ${content.event ? `<p class="card-event">${content.event}</p>` : ''}
       </div>
     `;
 
@@ -98,105 +93,98 @@ function displayFilteredContents(sectionName, filteredContents) {
   container.append(fragment);
 }
 
-function imagePath(image) {
-  return `./assets/image/thumbnails/${image}`;
-}
-
-// Year 드롭다운 필터 로직
-function filterYearLogic() {
-  if (!projects || !projects.length) return;
-  
-  const years = [...new Set(projects.map((project) => project.date))];
-  const dropdownYear = document.getElementById("yearDropdown");
-  const selectedYearSpan = document.querySelector("#selectedYear");
-  const dropdownYearIcon = document.getElementById("filterYearIcon");
-
-  if (!dropdownYear || !selectedYearSpan || !dropdownYearIcon) return;
-
-  years.forEach((year) => {
-    const item = document.createElement("div");
-    item.classList.add("dropdown-item");
-    item.textContent = year;
-    item.onclick = () => {
-      selectedYear = year;
-      selectedYearSpan.textContent = year;
-      applyFilters();
-    };
-    dropdownYear.appendChild(item);
-  });
-
-  const allItem = document.createElement("div");
-  allItem.classList.add("dropdown-item");
-  allItem.textContent = "All Years";
-  allItem.onclick = () => {
-    selectedYear = "All Years";
-    selectedYearSpan.textContent = "All Years";
-    applyFilters();
-  };
-  dropdownYear.prepend(allItem);
-
-  document.getElementById("filterYear").onclick = () => {
-    dropdownYear.classList.toggle("show");
-    dropdownYearIcon.style.transform = dropdownYear.classList.contains("show")
-      ? "rotate(180deg)"
-      : "rotate(0deg)";
-  };
-
-  window.addEventListener("click", (event) => {
-    const filterYearButton = document.getElementById("filterYear");
-    if (!filterYearButton.contains(event.target)) {
-      dropdownYear.classList.remove("show");
-      dropdownYearIcon.style.transform = "rotate(0deg)";
-    }
-  });
-}
-// 필터 적용 함수 수정
 function applyFilters() {
   if (!projects) return;
   
   const filteredProjects = projects.filter((project) => {
     const matchesYear = selectedYear === "All Years" || project.date.toString() === selectedYear.toString();
-    
-    // data-tag="all"인 경우의 처리를 수정
-    const matchesTag = 
-      selectedTag === "all" || // HTML의 data-tag 값과 일치하도록 수정
-      selectedTag === "All Media" || // 이전 코드와의 호환성을 위해 유지
-      project.tags.includes(selectedTag);
+    const matchesTag = selectedTag === "all" || selectedTag === "All Media" || project.tags.includes(selectedTag);
     
     return matchesYear && matchesTag;
   });
-
-  console.log('Selected Tag:', selectedTag); // 디버깅용
-  console.log('Filtered Projects:', filteredProjects); // 디버깅용
   
   displayFilteredContents("projects", filteredProjects);
 }
 
-// 태그 버튼 초기화 함수 수정
-function initializeTagButtons() {
-  const tagButtons = document.querySelectorAll('.tagBtn');
+function initializeProjectFilters() {
+  const tagButtons = document.querySelectorAll('.tagBtn:not(.activity-tagBtn)');
   
   tagButtons.forEach(button => {
     button.addEventListener('click', function() {
       tagButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
       
-      // data-tag 속성값을 그대로 사용
       selectedTag = this.dataset.tag;
-      
-      console.log('Tag clicked:', selectedTag); // 디버깅용
       applyFilters();
     });
   });
 }
 
-// 초기화 시 모든 프로젝트 표시 보장
-document.addEventListener("DOMContentLoaded", () => {
-  filterYearLogic();
-  initializeTagButtons();
+// Activities 관련 코드
+let selectedActivityTag = 'all';
+
+function renderActivities(items = activitiesData) {
+  const container = document.querySelector('.activities-grid');
+  if (!container) return;
   
-  // 초기 상태에서 모든 프로젝트 표시
-  selectedTag = "all";
-  selectedYear = "All Years";
-  displayFilteredContents("projects", projects);
+  container.innerHTML = items.map(item => `
+    <div class="activity-card" onclick="window.location.href='${item.links[0].url}'">
+      <div class="activity-category">${item.category}</div>
+      ${item.image ? `
+        <div class="activity-image">
+          <img src="${imagePath(item.image)}" alt="${item.title}">
+        </div>
+      ` : ''}
+      <h3 class="activity-title">${item.title}</h3>
+      <div class="activity-description">${item.description}</div>
+      <div class="activity-date">${item.date}</div>
+    </div>
+  `).join('');
+}
+
+function initializeActivityFilters() {
+  const activityTagButtons = document.querySelectorAll('.activity-tagBtn');
+  
+  activityTagButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      activityTagButtons.forEach(button => button.classList.remove('active'));
+      this.classList.add('active');
+      
+      const tag = this.dataset.activityTag;
+      selectedActivityTag = tag;
+      
+      const filtered = tag === 'all' 
+        ? activitiesData 
+        : activitiesData.filter(item => 
+            item.category.toUpperCase() === tag.toUpperCase()
+          );
+          
+      renderActivities(filtered);
+    });
+  });
+}
+
+// 초기화 및 이벤트 리스너
+document.addEventListener('DOMContentLoaded', () => {
+  // Dash line 초기화
+  drawDashLine();
+  window.addEventListener("resize", () => {
+    dashLineWidth = dashElements[0]?.offsetWidth || 0;
+    dashLineElementCount = Math.floor(dashLineWidth / dashLineElementWidth);
+    drawDashLine();
+  });
+
+  // Projects 초기화
+  if (typeof projects !== 'undefined') {
+    initializeProjectFilters();
+    applyFilters();
+  }
+
+  // Activities 초기화
+  if (typeof activitiesData !== 'undefined') {
+    renderActivities();
+    initializeActivityFilters();
+  }
 });

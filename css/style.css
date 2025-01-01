@@ -46,6 +46,16 @@ body {
   background: linear-gradient(#d20cff 0%, #ffffff 20%);
 }
 
+.container-main {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; */
+}
+
 
 /* Header */
 .header {
@@ -1290,4 +1300,121 @@ th {
   section{
     padding:0px;
   }
+}
+
+
+#activities {
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#activities .filterContainer {
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+
+/* Grid Layout */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+/* Activity Card */
+.activity-card {
+  position: relative;
+  border: 1px solid #000;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  cursor: pointer;
+  background: white;
+}
+
+.activity-card::after {
+  content: "→";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0;
+  font-size: 1.2rem;
+}
+
+.activity-card:hover {
+  background: #333;
+  color: white;
+}
+
+.activity-card:hover::after {
+  opacity: 1;
+  color: white;
+}
+
+/* Card Image */
+.activity-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-card:hover .activity-image {
+  opacity: 0;
+}
+
+/* Card Content */
+.activity-category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.8rem;
+  z-index: 2;
+}
+
+.activity-title {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+  z-index: 1;
+}
+
+.activity-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  z-index: 1;
+}
+
+.activity-date {
+  margin-top: auto;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+.activity-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+.activity-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.activity-link:hover {
+  text-decoration: underline;
 }
