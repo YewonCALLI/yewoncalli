@@ -196,7 +196,7 @@ const activitiesData = [
     links: [
       {
         text: "View on GitHub",
-        url: "http://journal.dcs.or.kr/xml/37344/37344.pdf"
+        url: "https://conference.hcikorea.org/hcik2023/creative/awarded_CA.asp"
       }
     ]
   },
