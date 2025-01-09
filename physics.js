@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tag:"Gravity",
       description: "Gravity",
       image: "gravity.png",
-      path: "",
     },
     
   ];
@@ -54,13 +53,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const galleryItem = document.createElement('div');
       galleryItem.className = 'gallery-item';
       
+      const moreLink = content.path ? `<a class="view-more2" href="./codeart/${content.path}">More</a>` : '';
+
       galleryItem.innerHTML = `
         <div class="gallery-tag">${content.tag}</div>
         <img class="gallery-image" src="assets/image/codeart/${content.image}" alt="${content.description}">
         <div class="gallery-info">
           <div class="gallery-date">${content.date}</div>
           <div class="gallery-description">${content.description}</div>
-          <a class="view-more2" href="./codeart/${content.path}">More</a>
+          ${moreLink}
         </div>
       `;
 
@@ -71,4 +72,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // 초기화
   displayGallery();
 });
-

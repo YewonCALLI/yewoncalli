@@ -15,25 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
         path: "waterytypo.html",
       },
       {
-        date: "	May 24, 2021",
+        date: "June 6, 2021",
         tag:'Randomness',
         description: "Random Walker",
         image: "randomwalker.png",
-        path: "randomwalker.html",
       },
       {
-        date: "	May 24, 2021",
+        date: "June 10, 2023",
         tag:'Noise',
         description: "Perin Noise",
         image: "perin_noise.gif",
-        path: "perin_noise.html",
       },
       {
-        date: "2021",
+        date: "January 2, 2022",
         tag:'Geometric',
         description: "Twinkling Brush1",
         image: "image4.png",
-        path: "twinklingbrush1.html",
       }
     ];
   
@@ -46,13 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
         
+        const moreLink = content.path ? `<a class="view-more2" href="./codeart/${content.path}">More</a>` : '';
+        
         galleryItem.innerHTML = `
           <div class="gallery-tag">${content.tag}</div>
           <img class="gallery-image" src="assets/image/codeart/${content.image}" alt="${content.description}">
           <div class="gallery-info">
             <div class="gallery-date">${content.date}</div>
             <div class="gallery-description">${content.description}</div>
-            <a class="view-more2" href="./codeart/${content.path}">More</a>
+            ${moreLink}
           </div>
         `;
   
