@@ -69,144 +69,6 @@
         <button class="headerBtn" onclick="openOverlay()" id="goInfo">Info</button>
       </div>
     </div>
-    <div id="overlay">
-      <span class="close-btn" onclick="closeOverlay()">×</span>
-      <div class="overlay-content">
-        <div class="cv-content">
-          <div class="name">
-            YEWON JANG
-          </div>
-          <div class="cv-content2">
-            <h3>☀Education</h3>
-            <table>
-              <tr>
-                <td>2020~</td>
-                <td>BA Art&Technology, Sogang University, KR<br>
-                  BS Computer Software, Sogang University, KR
-                </td>
-                <td> <a href="https://creative.sogang.ac.kr/" target='_blank'> ⮂ creative.sogang.ac.kr </a></td>
-              </tr>
-              <tr>
-                <td>2024</td>
-                <td>School for Poetic Computation(SFPC), NYC <br></td>
-                <td> <a href="https://sfpc.study/sessions/summer-24/human-scale-nlp" target='_blank'> ⮂ sfpc.study
-                  </a>
-                </td>
-              </tr>
-            </table>
-            <br><br>
-            <h3>☀Selected Group Exhibitions</h3>
-            <table>
-              <tr>
-                <td>2024</td>
-                <td>2024 Yeongdeungpo Living Fair: YDP Edition Homegrown Mallard</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2024</td>
-                <td>The Silver Bell Challenge, ten to the n, Seoul, KR</td>
-                <td> <a href="https://www.abt-avatar.world/" target='_blank'> ⮂ abt-avatar.world </a></td>
-              </tr>
-              <tr>
-                <td>2023</td>
-                <td>PlanT House, Hongcheon Art Museum, Hongcheon, KR
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2023</td>
-                <td>
-                  ACC Unreal Engine Workshop Exhibition, ACC Media Cube, Gwangju
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2022</td>
-                <td>
-                  The 8th International Exhibition on New Media Art 2022, CICA, Gimpo, KR
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2021</td>
-                <td>
-                  Artifacts: the Creator’s View, unscene_unseen, online
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2021</td>
-                <td>
-                  Beyond the Lens : Nano Bio Nature, SIA, Seoul, KR
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2021</td>
-                <td>
-                  The 1st Joongang Media Art Competition, Coex Media Tower/Parnas Media Tower, Seoul, KR
-                </td>
-                <td></td>
-              </tr>
-            </table>
-            <br><br>
-          </div>
-          <div class="cv-content2">
-            <h3>☀Award, Residencies & Grants</h3>
-            <table>
-              <tr>
-                <td>2023</td>
-                <td>Young Artists Support Platform_Hwawon: Hong Yeon-gil, Total Museum of Contemporary Art, KR</td>
-              </tr>
-              <tr>
-                <td>2023</td>
-                <td>Creative Awards, HCI Korea, KR
-                </td>
-              </tr>
-              <tr>
-                <td>2022</td>
-                <td>Smilegate AI Membership, Smilegate, KR
-                </td>
-              </tr>
-              <tr>
-                <td>2021</td>
-                <td>First Prize, Institute for Basic Science(IBS) Center for Quantum Nanoscience(QNS), KR
-                </td>
-              </tr>
-              <tr>
-                <td>2021</td>
-                <td>Media Art Association President's Award, Korea JoongAng Daily, KR
-                </td>
-              </tr>
-            </table>
-            <br><br>
-            <h3>☀Papers</h3>
-            <table>
-              <tr>
-                <td>2023</td>
-                <td>Jiin An, Saetbyeol Leeyouk, Yewon Jang, Dasaem Jeong, Construction of
-                  Debiased Korean AI Fairytale Generator, Journal of Digital Contents Society</td>
-                <td> <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11485031" target='_blank'> ⮂
-                    paper </a></td>
-              </tr>
-              <tr>
-                <td>2023</td>
-                <td>Jiin An, Saetbyeol Leeyouk, Yewon Jang, Dasaem Jeong, Debiased korean AI
-                  fairytale generator 〈Franklin〉, PROCEEDINGS OF HCI KOREA
-                </td>
-                <td> <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11229866" target='_blank'> ⮂
-                    paper </a></td>
-              </tr>
-            </table>
-            <br><br>
-          </div>
-        </div>
-
-
-      </div>
-
-
-    </div>
     <!-- content -->
     <div class="cda-cover">
       <img src="../assets/image/codeart/drop.gif" alt="kinetictypography" class="coverImg">
@@ -225,40 +87,126 @@
           </div>
         </div>
       </div>
-      <div class="cda-link">
-        <a href="https://editor.p5js.org/blockbwriting/sketches/wxqFpTXJS" class="cda-link-btn">Link</a>
-      </div>
     </div>
     <div class="cda-container">
         <div class="cda-h1">
             Overview
         </div>
         <div class="cda-p">
-            Overview
+          This project uses Processing to implement a real-time fluid simulation and visualize it in the style of an ink drawing. It simulates fluid dynamics based on the Navier-Stokes equations.
         </div>
 
+        <div class="cda-binding">
+          <div class="cda-h2">
+            Basic Fluid Simulation
+          </div>
+          <div class="cda-code">
+            <code id="code-block"></code>
+          </div>
+          <div class="cda-p">
+            This is the core function that calculates fluid velocity and density. It uses diffuse() for diffusion, advect() for movement, and project() to maintain incompressibility.
+          </div>
+        </div>
+
+        <div class="cda-binding">
+          <div class="cda-h2">
+            Visual Effects
+          </div>
+          <div class="cda-code">
+            <code id="code-block2"></code>
+          </div>
+          <div class="cda-p">
+            This function creates marbling effects based on density and curl. It uses HSB color mode to implement smooth color transitions reminiscent of ink wash paintings.          
+          </div>
+        </div>
+
+        <div class="cda-binding">
+          <div class="cda-h3">
+            Vortex Pattern
+          </div>
+          <div class="cda-p">
+            Creates a vortex pattern that rotates around a center point.
+          </div>
+          <div class="cda-row">
+            <div class="cda-code">
+              <code id="code-block3"></code>
+            </div>
+            <div class="cda-image">
+              <img src="../assets/image/codeart/firework/vortex.gif" class="cda-image" style="width: 100%;">
+            </div>
+          </div>
+          
+
+        <div class="cda-binding">
+          <div class="cda-h3">
+            Spiral Pattern
+          </div>
+          <div class="cda-p">
+            Creates a spiral pattern that expands outward from the center while rotating.
+          </div>
+          <div class="cda-row">
+            <div class="cda-code">
+              <code id="code-block4"></code>
+            </div>
+            <div class="cda-image">
+              <img src="../assets/image/codeart/firework/spiral.gif" style="width: 100%;" class="cda-image">
+            </div>
+          </div>
+          
     </div>
     <script src="../script.js"></script>
     <script>
       const codeBlock =
         `
-      let points = textfont.textToPoints(txt, 200, 400, 170, {sampleFactor: 0.2});
+      void vel_step() {
+      diffuse(1, u_prev, u, visc, dt);
+      diffuse(2, v_prev, v, visc, dt);
+      project(u_prev, v_prev, u, v);
+      advect(1, u, u_prev, u_prev, v_prev, dt);
+      advect(2, v, v_prev, u_prev, v_prev, dt);
+      project(u, v, u_prev, v_prev);
+      }
     `;
       document.getElementById("code-block").textContent = codeBlock;
 
 
       const codeBlock2 =
         `
-      for(var i = 0; i < points.length; i++) {
-        points[i].x = points[i].x + 1.5 * random(-leap, leap);
-        points[i].y = points[i].y + 1.5 * random(-leap, leap);
-        stroke(0.1*i, 0.1*i, 200-0.4*i, leap*3);
-        fill(230-0.7*i, 0, 0.2*i, leap*3);
-        strokeWeight(leap);
-        point(points[i].x, points[i].y);
+      color getMarbleColor(float density, float curl, int i, int j) {
+          if (density < 0.1) return color(0, 0, 100);
+          float h = 200 + curl * 30 + sin(t + i*0.1) * 20;
+          float s = 30 + density * 20;
+          float b = 100 - density * 30;
+          return color(h % 360, s, b, 90);
       }
          `;
       document.getElementById("code-block2").textContent = codeBlock2;
+
+      const codeBlock3 =
+        `
+      void addVortex(float x, float y, float radius) {
+        // Generate rotating force in circular motion
+        float angle = atan2(j, i);
+        float force = (radius - dist) / radius;
+        u[IX(xi,yi)] += cos(angle) * force * 2;
+        v[IX(xi,yi)] += sin(angle) * force * 2;
+    }
+         `;
+      document.getElementById("code-block3").textContent = codeBlock2;
+
+      const codeBlock4 =
+        `
+      void addSpiral(float centerX, float centerY) {
+        float angle = 0;
+        float radius = 0;
+        while (radius < 50) {
+            // Generate expanding spiral
+            angle += 0.2;
+            radius += 0.5;
+        }
+      }
+         `;
+      document.getElementById("code-block4").textContent = codeBlock2;
 
       document.addEventListener('DOMContentLoaded', () => {
       const container = document.querySelector('.container');
