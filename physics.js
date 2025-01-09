@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const contents = [
     {
+      date: "Sep 30, 2021",
+      tag:"Wave & Oscillation",
+      description: "Wave interference2",
+      image: "wave2.gif", 
+      path: "waveinterference2.html",
+    },
+    {
       date: "Sep 23, 2021",
       tag:"Wave & Oscillation",
       description: "Wave interference",
@@ -14,13 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "texture2.png", 
       path: "wavediffraction.html",
     }, 
-    {
-      date: "Sep 23, 2021",
-      tag:"Wave & Oscillation",
-      description: "Wave interference2",
-      image: "wave2.gif", 
-      path: "waveinterference2.html",
-    },
     {
       date: "Oct 10, 2021",
       tag:"Fluid",
