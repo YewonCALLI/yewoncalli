@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watery Typography</title>
+  <title>Wave Diffraction&lt;파동회절&gt; </title>
   <!-- Favicon & Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -76,7 +76,7 @@
       <div class="cda-title">
         <div class="card-header">
           <div class="card-title" id="card-projects" style="color: white;">
-            Wave Diffraction
+            Wave Diffraction&lt;파동회절&gt;
           </div>
           <div class="card-subContainer">
             <div class="card-date">Sep 16, 2021</div>
@@ -328,59 +328,21 @@
         </div>
       </div>
     </div>
+    <div class="cda-img">
+      <img src="../assets/image/codeart/wave_diffraction/wave_diffraction.gif" class="cda-image">
+      <span class="cda-img-caption">Wave Diffraction patterns</span>
+    </div>
+    <div class="cda-img">
+      <img src="../assets/image/codeart/wave_diffraction/wave_diffraction2.gif" class="cda-image">
+      <span class="cda-img-caption">Wave Diffraction patterns: Rainbow</span>
+    </div>
+    <div class="cda-img">
+      <img src="../assets/image/codeart/wave_diffraction/wave_diffraction3.gif" class="cda-image">
+      <span class="cda-img-caption">Wave Diffraction patterns: Black&White</span>
+    </div>
 </div>
 </div>
-    
-    <script src="../script.js"></script>
-    <script>
-      const codeBlock =
-        `
-      y(x,t) = A * sin(kx - ωt)
-    `;
-      document.getElementById("code-block").textContent = codeBlock;
-
-
-      const codeBlock2 =
-        `
-      float wave = amplitude * sin(distance/wavelength - time * frequency);
-         `;
-      document.getElementById("code-block2").textContent = codeBlock2;
-
-      const codeBlock3 =
-        `
-      float totalWave = 0;
-      for (WaveSource source : sources) {
-          float distance = dist(x, y, source.x, source.y);
-          float wave = amplitude * sin(distance/wavelength - time * frequency);
-          wave *= exp(-distance * damping/1000);
-          totalWave += wave;  // Superposition principle
-      }
-         `;
-      document.getElementById("code-block3").textContent = codeBlock3;
-
-      const codeBlock4 = 
-      `
-      float hue = map(totalWave, -amplitude, amplitude, 100, 300);
-      pixels[y * width + x] = color(hue, 100, 100);
-      `
-      document.getElementById("code-block4").textContent = codeBlock4;
-
-
-      document.addEventListener('DOMContentLoaded', () => {
-      const container = document.querySelector('.container');
-      const header = document.querySelector('.header');
-      
-      container.addEventListener('scroll', () => {
-        
-        if (container.scrollTop > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
-    });
-
-    </script>
+  <script src="../script.js"></script>
 </body>
 
 </html>

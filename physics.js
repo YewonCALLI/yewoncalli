@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       path: "waveinterference.html",
     },
     {
-      date: "Sep 23, 2021",
+      date: "Sep 16, 2021",
       tag:"Wave & Oscillation",
       description: "Wave Diffraction",
       image: "texture2.png", 
