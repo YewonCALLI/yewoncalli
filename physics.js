@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       path: "firework.html",
     },
     {
-      date: "Sep 23, 2021",
+      date: "Dec 12, 2021",
       tag:"Gravity",
       description: "Animated Typography",
       image: "typoanimate.gif",
