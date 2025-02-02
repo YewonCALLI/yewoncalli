@@ -2,14 +2,14 @@ const projects = [
   {
     title: "TypoFold",
     date: "2024",
-    tags: ["Papercraft", "Tool"],
+    tags: ["Papercraft", "Typography", "Tool"],
     projectType: "Personal Project",
-    event: "2024 ATC (Art&Technology Conference)",
+    event: "HCI Korea 2025",
     description:
       "A design tool that converts 3D typography into paper craft.",
     projectLink: "typefold.vercel.app",
     image: "../thumbnails/typofold.gif",
-    link: "works/typefold.html",
+    link: "works/typofold.html",
   },
   {
     title: "Word Wide Web",
@@ -30,7 +30,7 @@ const projects = [
     projectType: "Team Project",
     event: "2024 ATC (Art&Technology Conference)",
     description:
-      "A digital art project transforming user-inputted text into Korean signboard images.",
+      "A Korean typography generation model based on signboard images in South Korea.",
     projectLink: "ganpan.vercel.app",
     image: "ganpan.png",
     link: "works/ganpan.html"
@@ -43,7 +43,7 @@ const projects = [
     projectType: "Team Project",
     event: "The Hyundai Seoul, B1 Event Plaza",
     description:
-      "p5.js character goods inspired by Yeongdeungpo’s mallard, sold at The Hyundai Department Store.",
+      "Character goods for Yeongdeungpo and made with p5.js.",
     projectLink: "daduck.vercel.app",
     image: "daduck.png",
     link: "works/daduck.html",
@@ -79,7 +79,7 @@ const projects = [
     projectType: "Team Project",
     event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
     description:
-      "Branding design for Team ABT’s project using p5.js code art to create event typography, posters, and a website.",
+      "Branding design for Team ABT’s project using p5.js.",
     projectLink: "abt-avatar.world",
     image: "abt.png",
     link: "works/abt.html",
@@ -90,7 +90,7 @@ const projects = [
     tags: ["Generative-arts", "Physics","Media Facade"],
     projectType: "Team Project",
     event: "ACC Media Cube, Gwangju",
-    description: "Simulating gravity through Unreal Engine’s Blueprint.",
+    description: "Simulating gravity through Unreal Engine.",
     projectLink: "",
     image: "simulating.png",
     link: "works/simulating.html",
@@ -103,7 +103,7 @@ const projects = [
     event:
       "8th International New Media Art Exhibition, CICA Museum <br>Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)",
     description:
-      "A media art performance exploring identity and quantum mechanics through layered video art and live performance.",
+      "A media art performance exploring identity and quantum mechanics.",
     projectLink: "",
     image: "singlet&multiplet.png",
     link: "works/singlet&multiplet.html",

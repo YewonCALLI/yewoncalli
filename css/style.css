@@ -43,7 +43,6 @@ body {
   overflow-y: scroll;
   /* scroll-snap-type: y mandatory;
   scroll-behavior: smooth; */
-  background: linear-gradient(#d20cff 0%, #ffffff 20%);
 }
 
 .container-main {
@@ -1380,26 +1379,32 @@ th {
   padding: 0.5rem 1rem;
   background: #000;
   color: #fff;
+  font-family: 'montreal', sans-serif;
   font-size: 0.8rem;
   z-index: 2;
 }
 
 .activity-title {
   font-size: 1rem;
-  line-height: 1.4;
+  font-weight: 300;
+  font-family:'montreal', sans-serif;
+  line-height: 1.6;
   margin: 1rem 0;
   z-index: 1;
 }
 
 .activity-description {
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family:'montreal', sans-serif;
   line-height: 1.6;
   z-index: 1;
 }
 
 .activity-date {
-  margin-top: auto;
+  margin-top: 10px;
   font-size: 0.9rem;
+  font-family:'montreal', sans-serif;
   z-index: 1;
 }
 
