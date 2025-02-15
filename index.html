@@ -82,17 +82,46 @@
     <section id="canvas">
     </section>
 
-    <div class="update-banner">
-      <div class="banner-content">
-        <div class="banner-text">
+    <div id="floating-update" class="floating-window">
+      <div class="window-header">
+        <div class="window-title">
           <span class="new-badge">NEW</span>
+          <span>Recent Update</span>
+        </div>
+        <button class="window-close" aria-label="Close window">×</button>
+      </div>
+      <div class="window-content">
+        <div class="gallery-container">
+          <div class="gallery-wrapper">
+            <div class="gallery-track">
+              <div class="gallery-slide">
+                <img src="/assets/image/details/typofold-workshop.png" alt="WaterTypo Preview 1"/>
+              </div>
+              <div class="gallery-slide">
+                <img src="/api/placeholder/400/200" alt="WaterTypo Preview 2"/>
+              </div>
+              <div class="gallery-slide">
+                <img src="/api/placeholder/400/200" alt="WaterTypo Preview 3"/>
+              </div>
+            </div>
+          </div>
+          <button class="gallery-arrow prev" aria-label="Previous image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="gallery-arrow next" aria-label="Next image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+          <div class="gallery-dots"></div>
+        </div>
+        <div class="update-info">
           <span class="update-date">2025.02</span>
-          <h3 class="update-title">WaterTypo: New Typography Generator Tool Released</h3>
+          <h3 class="update-title">TypoFold: HCI Korea 2025</h3>
+          <p class="update-description">At HCI Korea 2025, I showcased TypoFold through a demo exhibition where participants created unique alphabet keyrings.</p>
         </div>
-        <div class="banner-image">
-          <img src="/assets/image/details/typofold-workshop.png"/>
-        </div>
-        <button class="banner-close" aria-label="Close banner">×</button>
       </div>
     </div>
 

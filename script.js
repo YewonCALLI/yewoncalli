@@ -189,17 +189,122 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.querySelector('.banner-close').addEventListener('click', function() {
-  const banner = document.querySelector('.update-banner');
-  banner.style.height = banner.offsetHeight + 'px';
-  
-  // Force a reflow
-  banner.offsetHeight;
-  
-  banner.style.height = '0';
-  banner.style.opacity = '0';
-  
-  setTimeout(() => {
-    banner.style.display = 'none';
-  }, 300);
+//floating banner
+const floatingWindow = document.getElementById('floating-update');
+const windowHeader = floatingWindow.querySelector('.window-header');
+let isDragging = false;
+let currentX;
+let currentY;
+let initialX;
+let initialY;
+let xOffset = 0;
+let yOffset = 0;
+
+windowHeader.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', drag);
+document.addEventListener('mouseup', dragEnd);
+
+function dragStart(e) {
+  initialX = e.clientX - xOffset;
+  initialY = e.clientY - yOffset;
+
+  if (e.target === windowHeader || e.target.parentNode === windowHeader) {
+    isDragging = true;
+  }
+}
+
+function drag(e) {
+  if (isDragging) {
+    e.preventDefault();
+    
+    currentX = e.clientX - initialX;
+    currentY = e.clientY - initialY;
+
+    xOffset = currentX;
+    yOffset = currentY;
+
+    setTranslate(currentX, currentY, floatingWindow);
+  }
+}
+
+function dragEnd(e) {
+  initialX = currentX;
+  initialY = currentY;
+  isDragging = false;
+}
+
+function setTranslate(xPos, yPos, el) {
+  // Using requestAnimationFrame for smoother animation
+  requestAnimationFrame(() => {
+    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+  });
+}
+
+// Add visual feedback when dragging
+function dragStart(e) {
+  initialX = e.clientX - xOffset;
+  initialY = e.clientY - yOffset;
+
+  if (e.target === windowHeader || e.target.parentNode === windowHeader) {
+    isDragging = true;
+    floatingWindow.style.boxShadow = '0 12px 48px rgba(0, 0, 0, 0.4)';
+  }
+}
+
+function dragEnd(e) {
+  initialX = currentX;
+  initialY = currentY;
+  isDragging = false;
+  floatingWindow.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+}
+
+// Close button functionality
+// Gallery functionality
+const track = document.querySelector('.gallery-track');
+const slides = document.querySelectorAll('.gallery-slide');
+const prevButton = document.querySelector('.gallery-arrow.prev');
+const nextButton = document.querySelector('.gallery-arrow.next');
+const dotsContainer = document.querySelector('.gallery-dots');
+
+let currentIndex = 0;
+
+// Create dots
+slides.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('gallery-dot');
+  if (index === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
+// Update dots
+function updateDots() {
+  document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// Go to specific slide
+function goToSlide(index) {
+  currentIndex = index;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  updateDots();
+}
+
+// Next slide
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  goToSlide(currentIndex);
+});
+
+// Previous slide
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  goToSlide(currentIndex);
+});
+
+// Close button functionality
+document.querySelector('.window-close').addEventListener('click', function() {
+  floatingWindow.style.opacity = '0';
+  floatingWindow.style.transform = 'scale(0.9)';
 });
