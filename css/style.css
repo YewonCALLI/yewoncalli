@@ -1625,7 +1625,6 @@ th {
 
 @media (max-width: 768px) {
   .floating-window{
-    top: 100px;
     width: 340px;
   }
 }
