@@ -188,3 +188,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeActivityFilters();
   }
 });
+
+document.querySelector('.banner-close').addEventListener('click', function() {
+  const banner = document.querySelector('.update-banner');
+  banner.style.height = banner.offsetHeight + 'px';
+  
+  // Force a reflow
+  banner.offsetHeight;
+  
+  banner.style.height = '0';
+  banner.style.opacity = '0';
+  
+  setTimeout(() => {
+    banner.style.display = 'none';
+  }, 300);
+});

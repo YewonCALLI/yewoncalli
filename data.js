@@ -37,18 +37,6 @@ const projects = [
  
   },
   {
-    title: "DA-DUCK",
-    date: "2024",
-    tags: ["Commercial", "Branding Design"],
-    projectType: "Team Project",
-    event: "The Hyundai Seoul, B1 Event Plaza",
-    description:
-      "Character goods for Yeongdeungpo and made with p5.js.",
-    projectLink: "daduck.vercel.app",
-    image: "daduck.png",
-    link: "works/daduck.html",
-  },
-  {
     title: "Memeproject",
     date: "2023",
     tags: ["Generative-arts", "Tool"],
@@ -71,18 +59,6 @@ const projects = [
     projectLink: "hongyeon.vercel.app",
     image: "hongyeon.png",
     link: "works/hongyeon.html",
-  },
-  {
-    title: "ABT (Art, Body, Tech)",
-    date: "2023",
-    tags: ["Commercial", "Branding Design"],
-    projectType: "Team Project",
-    event: "The Silver Bell Challenge: Hong Yeon-gil Project, ten to the n",
-    description:
-      "Branding design for Team ABT’s project using p5.js.",
-    projectLink: "abt-avatar.world",
-    image: "abt.png",
-    link: "works/abt.html",
   },
   {
     title: "Simulating #1,2,3",
