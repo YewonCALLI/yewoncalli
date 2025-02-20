@@ -303,8 +303,10 @@ prevButton.addEventListener('click', () => {
   goToSlide(currentIndex);
 });
 
-// Close button functionality
+// 창 닫기 버튼 클릭 이벤트
 document.querySelector('.window-close').addEventListener('click', function() {
-  floatingWindow.style.opacity = '0';
-  floatingWindow.style.transform = 'scale(0.9)';
+  const floatingWindow = document.getElementById('floating-update');
+  floatingWindow.classList.remove('show');
+  // 또는
+  floatingWindow.style.display = 'none';
 });
