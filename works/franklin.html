@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draw the Beat!</title>
+
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Ye￦" />
+  <meta name="description" content="I love poetic code, where logic and beauty intertwine,
+    if (emotion == true): let words dance, let thoughts align.
+    Each function a verse, every loop a refrain,
+    In the syntax of life, art and logic remain." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.yewoncalli.com/" />
+  <meta property="og:title" content="Ye￦" />
+  <meta property="og:description" content="I love poetic code, where logic and beauty intertwine,
+    if (emotion == true): let words dance, let thoughts align.
+    Each function a verse, every loop a refrain,
+    In the syntax of life, art and logic remain." />
+  <meta property="og:image" content="https://www.yewoncalli.com/assets/image/OG image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.yewoncalli.com/" />
+  <meta property="twitter:title" content="Ye￦" />
+  <meta property="twitter:description" content="I love poetic code, where logic and beauty intertwine,
+    if (emotion == true): let words dance, let thoughts align.
+    Each function a verse, every loop a refrain,
+    In the syntax of life, art and logic remain." />
+  <meta property="twitter:image" content="https://www.yewoncalli.com/assets/image/OG image.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/font/stylesheet.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY9JQWZ3S3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-LY9JQWZ3S3');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container">
+      <div class="header">
+        <div class="header-container" style="display: flex;">
+          <div class="headerTitle" onclick="window.location.href='/index.html'">
+            Yewon Jang°
+          </div>
+          <div class="headerTitle2">
+            Tool Maker
+          </div>
+        </div>
+
+        <div class="headerNav">
+          <button class="headerBtn" id="goProjects" onclick="window.location.href='/index.html'">Projects</button>
+          <button type='button' class="headerBtn" onclick="location.href='/physics.html'">Visual Physics</button>
+          <button class="headerBtn" onclick="location.href='/info.html'" id="goInfo">Info</button>
+        </div>
+      </div>
+      <div class="card2">
+        <div class="card2-left">
+          <div class="card-header">
+            <div class="card-title" id="card-projects">
+              Franklin
+            </div>
+            <div class="card-subContainer">
+              <div class="card-date">2022</div>
+              <div class="card-tags">
+                <span class="card-tag">AI writing ✏️</span>
+                <span class="card-tag">Tool</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-contents">
+            <div class="card-description" id="card-description">
+                A gender-neutral Korean fairy tale generator using AI, addressing social
+                biases in children's literature.
+                <br /><br />
+                Trained language models to self-diagnose bias, creating 'Franklin,' an AI storyteller which reinterprets fairy tales through an equitable lens. 'Franklin' collaborates with users to create stories while fostering empathetic, horizontal relationships between AI and humans.
+            </div>
+            <br><br>
+
+            <div class="process-toggle-container">
+              <button class="process-toggle-btn" id="processToggleBtn">
+                  <span class="toggle-icon">+</span> View Project Process
+              </button>
+              <div class="process-section" id="processSection">
+                  <div class="process-item">
+                      <div class="process-subtitle">1. Key Question</div>
+                      <div class="process-equation">
+                        Why don't fairy tales show female protagonists slaying dragons while male protagonists wear glass slippers and dance?
+                      </div>
+                  </div>
+                  <div class="process-item">
+                      <div class="process-subtitle">2. Motivation</div>
+                      <div class="process-content">
+                        While the formats through which children encounter fairy tales have diversified, Korean fairy tales still contain biased clichés and prejudices.<br><br>
+                      </div>
+                      <div class="process-image">
+                        <img src="/assets/image/details/franklin01.png">
+                      </div>
+                  </div>
+                    <div class="process-item">
+                    <div class="process-subtitle">3. Process</div>
+                    <div class="process-subtitle">3-1. Dataset Refinement</div>
+                    <div class="process-image">
+                        <img src="/assets/image/details/franklin03.png">
+                    </div>
+                    <div class="process-content">
+                        We refined 1600 copyright-free Korean fairy tales through the UnSmile Dataset and used a total of 1197 Korean fairy tales as learning materials.<br><br>
+                    </div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-subtitle">3-2. Debiasing</div>
+                        <div class="process-image">
+                            <img src="/assets/image/details/franklin04.png">
+                        </div>
+                        <div class="process-content">
+                            We applied a de-biased approach that adjusts word embeddings based on the female and male word axes.
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-subtitle">3-3. Web Flow, Prompt Engineering</div>
+                        <div class="process-image">
+                            <img src="/assets/image/details/franklin06.png">
+                        </div>
+                        <div class="process-content">
+                            To compare the performance differences in the sentences generated by the prompts, we designed three different prompt structures as follows. First, the essential elements of a fairy tale are characters, setting, and events. The text generated by the model corresponds to the events. We allowed users to customize the characters and background elements. Among them, we prepared 'keywords', which are words that help the direction of the story, 'title', which has an implied meaning for the story, and 'plot', which summarizes important events in the story. Three datasets were built by combining the three elements appropriately. We fed the same inputs to the model trained with the three datasets and extracted the text. Table 11, Table 12, and Table 13 show examples of each dataset's composition and output. <br><br>
+                            We generated 10 fairy tales for each of the three prompt styles, 10 for fantasy and 10 for everyday life, for a total of 100 fairy tale texts for each model, and calculated the PPL values and compared the arithmetic mean values. As a result, we found that method 1 had the lowest sentence complexity evaluation, which was used to construct Web Flow.
+                        </div>
+                        <div class="process-image">
+                            <img src="/assets/image/details/franklin05.png">
+                        </div>
+                        <div class="process-image">
+                            <img src="/assets/image/details/franklin02.png">
+                        </div>
+                    </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-contents">
+            <div class="card-contents-sub">
+              <div class="card-contents-title">Paper</div>
+              <a class="card-contents-text" href="http://journal.dcs.or.kr/xml/37344/37344.pdf" target="_blank">Construction of Debiased Korean AI Fairytale Generator
+                ↖︎</a>
+            </div>
+          </div>
+          <div class="card-contents">
+            <div class="card-contents-sub">
+              <div class="card-contents-title">Team</div>
+              <div class="card-contents-text">
+                Jiin An,
+                Saetbyeol Leeyouk,
+                Advised by Dasaem Jeong<br><br>
+              </div>
+            </div>
+            <div class="card-contents-sub">
+                <div class="card-contents-title">Role</div>
+                <div class="card-contents-text">
+                    AI engineer lead in Coherency<br>
+
+                    - Engineered AI coherency improving process using reinforce Algorithm<br>
+                    - Developed sentiment analysis & hate speech detection software of data preprocessing process<br>
+                    - Developed AI model serving pipeline using FastAPI of the website
+                </div>
+              </div>
+          </div>
+          <div class="card-contents">
+            <div class="card-contents-sub">
+              <div class="card-contents-title">Funded by</div>
+              <div class="card-contents-text">
+                SmileGate AI Membership
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="card2-right">
+          <div class="card2-image">
+            <img src="../assets/image/thumbnails/franklin.png" alt="Franklin">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+  const toggleBtn = document.getElementById('processToggleBtn');
+  const processSection = document.getElementById('processSection');
+  
+  if (toggleBtn && processSection) {
+      // 초기 상태 설정
+      processSection.style.display = 'none';
+      
+      // 클릭 이벤트 리스너 추가
+      toggleBtn.addEventListener('click', function() {
+          if (processSection.style.display === 'none') {
+              // 열기
+              processSection.style.display = 'block';
+              toggleBtn.innerHTML = '<span class="toggle-icon">+</span> Close Project Process';
+              toggleBtn.classList.add('toggle-active');
+          } else {
+              // 닫기
+              processSection.style.display = 'none';
+              toggleBtn.innerHTML = '<span class="toggle-icon">+</span> View Project Process';
+              toggleBtn.classList.remove('toggle-active');
+          }
+      });
+  }
+})();
+
+// Gallery functionality
+const track = document.querySelector('.gallery-track');
+const slides = document.querySelectorAll('.gallery-slide');
+const prevButton = document.querySelector('.gallery-arrow.prev');
+const nextButton = document.querySelector('.gallery-arrow.next');
+const dotsContainer = document.querySelector('.gallery-dots');
+
+let currentIndex = 0;
+
+// Create dots
+slides.forEach((_, index) => {
+const dot = document.createElement('div');
+dot.classList.add('gallery-dot');
+if (index === 0) dot.classList.add('active');
+dot.addEventListener('click', () => goToSlide(index));
+dotsContainer.appendChild(dot);
+});
+
+// Update dots
+function updateDots() {
+document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+dot.classList.toggle('active', index === currentIndex);
+});
+}
+
+// Go to specific slide
+function goToSlide(index) {
+currentIndex = index;
+track.style.transform = `translateX(-${index * 100}%)`;
+updateDots();
+}
+
+// Next slide
+nextButton.addEventListener('click', () => {
+currentIndex = (currentIndex + 1) % slides.length;
+goToSlide(currentIndex);
+});
+
+// Previous slide
+prevButton.addEventListener('click', () => {
+currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+goToSlide(currentIndex);
+});
+
+    </script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
