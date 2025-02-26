@@ -248,6 +248,213 @@
                             <br />
                             TypoFold reimagines computational design by combining code-driven graphics with physical paper craft. Through custom GLSL shaders and unfolding tools, it bridges digital creativity and tangible typography.
                         </div>
+                        <br /><br />
+                        <div class="process-toggle-container">
+                            <button class="process-toggle-btn" id="processToggleBtn">
+                                <span class="toggle-icon">+</span> View Project Process
+                            </button>
+                            <div class="process-section" id="processSection">
+                                <div class="process-item">
+                                    <div class="process-subtitle">1. Face Processing System</div>
+                                    <div class="process-content">
+                                        When importing a model from a 3D tool into three.js and separating the faces, I observed that all faces were divided into triangles. To apply the concept of faces as humans perceive them, I implemented two methods.<br><br>
+                                        ① Proximity and Similarity<br>
+                                        <div class="process-equation">
+                                            D(f₁, f₂) = arccos(n₁ · n₂) < θ<br>
+                                        </div>
+                                        f₁, f₂ represent two faces to compare, D(f₁, f₂) is the angle
+                                        between the two faces, and n₁, n₂ are the unit normal
+                                        vectors of the two faces. This equation calculates the angle
+                                        between two faces. It indicates how much two faces are
+                                        oriented in the same direction, and after experimenting
+                                        with 26 alphabets, I classified faces with θ value of 0.5 as
+                                        belonging to the same group.<br><br>
+                                    </div>
+                                    <div class="process-content">
+                                        ② Continuity<br>
+                                        <div class="process-equation">
+                                            C(f₁, f₂) = {<br>
+                                            1 if |V₁ ∩ V₂| ≥ 2<br>
+                                            0 otherwise}<br>
+                                        </div>
+                                        V₁, V₂ represent the
+                                        vertex sets of each face, and |V₁ ∩ V₂| represents the
+                                        number of shared vertices. To determine if two faces are
+                                        physically connected, I counted the number of shared
+                                        vertices and recognized them as faces of the same group
+                                        when this value was 2 or more.<br><br>
+                                    </div>
+                                    <div class="process-content">
+                                        ③ Grouping the surfaces<br>
+                                        <div class="process-image">
+                                            <img src="/assets/image/details/typofold-detail1.png">
+                                            <div class="process-subscribe">
+                                                Figure 1. Comparison before and after applying face processing system to 3D object:
+                                                (Left) Automatically triangulated state in three.js, (Right) State after applying face processing system based on Gestalt principles
+                                            </div>
+                                        </div>
+                                        Finally, a face group G is defined as a set of faces that are
+                                        adjacent (continuity) and have normal vector angles less
+                                        than the threshold (proximity, similarity). I designed the
+                                        system to sequentially group faces meeting these
+                                        conditions through a BFS algorithm, continuing until all
+                                        faces of the entire model are appropriately assigned to
+                                        groups.
+                                    </div>
+                                </div>
+                                <div class="process-item">
+                                    <div class="process-subtitle">2. Paper Craft Generation System</div>
+                                    <div class="process-image">
+                                        <img src="/assets/image/details/typofold-detail2.png">
+                                        <div class="process-subscribe">
+                                            Figure 2. Paper Craft Template Diagram: (Top) Top-
+                                            Bottom Priority Unfolding Method, (Bottom) Side Priority
+                                            Unfolding Method
+                                        </div>
+                                    </div>
+
+                                    <div class="process-content">
+                                        I considered two unfolding methods: 'top-bottom priority
+                                        unfolding' and 'side priority unfolding'. While 'top-bottom
+                                        priority unfolding' unfolds patterns centered on the top and
+                                        bottom faces, user testing revealed difficulties in securing
+                                        sufficient margins when cutting and assembling patterns.
+                                        Therefore, I ultimately adopted the 'side priority unfolding'
+                                        method, which allows users to cut and fold patterns more
+                                        intuitively.
+                                    </div>
+                                    <div style="overflow-x: auto; margin: 1.5rem 0;">
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                                            <thead>
+                                                <tr style="background-color: rgba(0, 0, 0, 0.03);">
+                                                    <th style="padding: 0.8rem; text-align: left; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">Unfolding Method</th>
+                                                    <th style="padding: 0.8rem; text-align: left; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">Top-Bottom Priority</th>
+                                                    <th style="padding: 0.8rem; text-align: left; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">Side Priority</th>
+                                                    <th style="padding: 0.8rem; text-align: left; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">Undecided</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 0.8rem; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">Preference (%)</td>
+                                                    <td style="padding: 0.8rem; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">37%</td>
+                                                    <td style="padding: 0.8rem; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">59.3%</td>
+                                                    <td style="padding: 0.8rem; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">3.7%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="process-subscribe">
+                                            Table 1. User Preference Survey by Unfolding Method
+                                        </div>
+                                        <div class="process-content">
+                                            I use BFS (Breadth-First Search) to identify consecutive
+                                            sides and DFS (Depth-First Search) to determine the
+                                            overall unfolding sequence, connecting them into a single long strip format. Using this generated side strip as a
+                                            reference, I calculate optimal placement positions for top
+                                            and bottom faces, determine folding sequences
+                                            considering face connections, and finally optimize the
+                                            overall layout by adjusting face placement to minimize
+                                            pattern size and marking appropriate margins and fold
+                                            lines for easy assembly.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-item">
+                                    <div class="process-subtitle">3. Texture Mapping System</div>
+                                    <div class="process-image">
+                                        <img src="/assets/image/details/typofold-detail4.png">
+                                        <div class="process-subscribe">
+                                            Figure 3. Website interface screenshot – 3D mode
+                                        </div>
+                                        <img src="/assets/image/details/typofold-detail3.png">
+                                        <div class="process-subscribe">
+                                            Figure 4. Website interface screenshot – Unfold mode
+                                        </div>
+                                        <div class="process-content">
+                                            I implemented the ability to apply graphics generated with
+                                            GLSL shaders and p5.js to 3D models. I adopted a
+                                            direction-conscious UV mapping strategy, using a method
+                                            that calculates tangent and bitangent vectors based on each
+                                            face's normal vector to construct a consistent texture
+                                            coordinate system. This ensures textures map naturally
+                                            regardless of face orientation.<br><br>
+                                            To maintain texture continuity in the unfolded state, I
+                                            applied different UV mappings according to face direction.
+                                            For top and bottom faces, I calculated UV coordinates
+                                            based on the xz plane, while for side faces, I used either
+                                            the xy or yz plane depending on the face's main direction.<br><br>
+                                            To ensure texture continuity in the unfolded state, I
+                                            implemented a global scale-based mapping system where
+                                            UV coordinates naturally connect between adjacent faces.
+                                            This normalizes UV coordinates based on the overall
+                                            model size, ensuring consistent texture connection
+                                            between faces.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-item">
+                                    <div class="process-subtitle">
+                                        🍭 Alphabet Keyring Workshop 🍭
+                                    </div>
+                                    <div class="process-content">
+                                        TypoFold had a demo exhibition at HCI Korea 2025. People made their own pattern using TypoFold editor by editing codes or controling pattern size. Then, print the template by printer that I prepared. 
+                                        They cut the paper into shapes along the lines specified in the template. These photos are of the keyrings they made. <br><br>
+                                    </div>
+                                        <div class="gallery-container2">
+                                          <div class="gallery-wrapper">
+                                            <div class="gallery-track">
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-2.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-3.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-4.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-5.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-11.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-6.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-12.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-10.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-7.png"/>
+                                              </div>
+                                              <div class="gallery-slide">
+                                                <img src="/assets/image/details/워크샵-1.png"/>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <button class="gallery-arrow prev" aria-label="Previous image">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                              <path d="M15 18l-6-6 6-6"/>
+                                            </svg>
+                                          </button>
+                                          <button class="gallery-arrow next" aria-label="Next image">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                              <path d="M9 18l6-6-6-6"/>
+                                            </svg>
+                                          </button>
+                                          <div class="gallery-dots"></div>
+                                        </div>
+                                        
+                                      
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-contents">
                         <div class="card-contents-sub">
@@ -294,7 +501,78 @@
                 </div>
             </div>
         </div>
-        <script src="../script.js"></script>
+        <script>
+            (function() {
+        const toggleBtn = document.getElementById('processToggleBtn');
+        const processSection = document.getElementById('processSection');
+        
+        if (toggleBtn && processSection) {
+            // 초기 상태 설정
+            processSection.style.display = 'none';
+            
+            // 클릭 이벤트 리스너 추가
+            toggleBtn.addEventListener('click', function() {
+                if (processSection.style.display === 'none') {
+                    // 열기
+                    processSection.style.display = 'block';
+                    toggleBtn.innerHTML = '<span class="toggle-icon">+</span> Close Project Process';
+                    toggleBtn.classList.add('toggle-active');
+                } else {
+                    // 닫기
+                    processSection.style.display = 'none';
+                    toggleBtn.innerHTML = '<span class="toggle-icon">+</span> View Project Process';
+                    toggleBtn.classList.remove('toggle-active');
+                }
+            });
+        }
+    })();
+
+    // Gallery functionality
+const track = document.querySelector('.gallery-track');
+const slides = document.querySelectorAll('.gallery-slide');
+const prevButton = document.querySelector('.gallery-arrow.prev');
+const nextButton = document.querySelector('.gallery-arrow.next');
+const dotsContainer = document.querySelector('.gallery-dots');
+
+let currentIndex = 0;
+
+// Create dots
+slides.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('gallery-dot');
+  if (index === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
+// Update dots
+function updateDots() {
+  document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// Go to specific slide
+function goToSlide(index) {
+  currentIndex = index;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  updateDots();
+}
+
+// Next slide
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  goToSlide(currentIndex);
+});
+
+// Previous slide
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  goToSlide(currentIndex);
+});
+
+    </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

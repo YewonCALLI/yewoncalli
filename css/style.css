@@ -862,7 +862,6 @@ th {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 30px;
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   padding: 20px 0;
@@ -1612,7 +1611,6 @@ th {
   text-decoration: underline;
 }
 
-/* 반응형 디자인 */
 @media (max-width: 480px) {
   .floating-window {
     width: calc(100% - 32px);
@@ -1620,4 +1618,80 @@ th {
     bottom: 0;
     right: 0;
   }
+}
+
+
+.process-toggle-btn {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 2rem;
+  border: 1px #000 solid;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-family: 'montreal',
+    sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.process-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.toggle-icon {
+  margin-right: 8px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.toggle-active .toggle-icon {
+  transform: rotate(45deg);
+}
+
+.process-section {
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.process-item {
+  margin-bottom: 1.5rem;
+}
+
+.process-subtitle {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.process-content {
+  line-height: 1.6;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.process-equation{
+  width: 100%;
+  border: #000 solid 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.process-image img{
+  position: relative;
+  width: 100%;
+}
+
+.process-subscribe{
+  font-style: italic;
+  font-size: smaller;
+  margin-bottom: 15px;
 }
