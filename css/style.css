@@ -1628,10 +1628,10 @@ th {
   justify-content: center;
   align-items: center;
   color: #000;
-  padding: 4px 10px;
+  padding: 7px 13px;
   border-radius: 2rem;
   border: 1px #000 solid;
-  font-size: 0.8rem;
+  font-size: 1rem;
   white-space: nowrap;
   font-family: 'montreal',
     sans-serif;
@@ -1649,6 +1649,7 @@ th {
   transition: transform 0.3s ease;
   display: inline-block;
 }
+
 
 .toggle-active .toggle-icon {
   transform: rotate(45deg);
