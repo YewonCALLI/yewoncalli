@@ -72,6 +72,17 @@ const projects = [
     link: "works/simulating.html",
   },
   {
+    title: "Franklin",
+    date: "2022",
+    tags: ["AI-Writing", "Tool"],
+    projectType: "Team Project",
+    event: "HCI Korea 2022",
+    description: "A gender-neutral Korean fairy tale generator using AI, addressing social biases in children's literature.",
+    projectLink: "",
+    image: "franklin.png",
+    link: "works/franklin.html",
+  },
+  {
     title: "Singlet&Multiplet",
     date: "2021",
     tags: ["Generative-arts", "Physics","Media Facade"],
