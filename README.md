@@ -1,6 +1,8 @@
 ## Hi I'm Yewon👋
 
-I am a creative technologist focused on developing experimental tools for expanding digital expression. My expertise lies in creating systems that bridge between different forms - from text to interactive experiences, and from screen-based graphics to physical objects. I specialize in building computational tools that combine natural language processing and form generation with intuitive interfaces, exploring how digital tools can expand our creative and physical making possibilities.
+I am a software developer focusing on developing tools for creators. <br>
+My expertise lies in developing computational design tools that bridge digital and physical fabrication. 
+I am skilled in software development that entails novel combinations of machine learning, computer graphics, and interaction design for design applications such as paper craft converters and Korean typography generators. My work focuses on transforming complex computational methods into intuitive interfaces for creative expression.
 
 <h3 align="left">✨ Tech Stack ✨</h3>
 
