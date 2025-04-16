@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dot Typography - FUTURE BEE</title>
+  <style>
+    body {
+      background: #1a1616;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .text-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .letter {
+      display: grid;
+      grid-template-columns: repeat(5, 20px);
+      grid-template-rows: repeat(5, 20px);
+      gap: 5px;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: transparent;
+    }
+
+    .dot.white {
+      background-color: white;
+    }
+
+    .dot.yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="text-container" id="text"></div>
+
+  <script>
+    // 간단한 5x5 도트 글자 정의 예시 (F만 예시)
+    const letters = {
+      "F": [
+        "11111",
+        "10000",
+        "11110",
+        "10000",
+        "10000"
+      ],
+      "U": [
+        "10001",
+        "10001",
+        "10001",
+        "10001",
+        "01110"
+      ],
+      // 나머지도 추가 가능: T, U, R, E, B, E, E
+    };
+
+    const container = document.getElementById("text");
+
+    const renderLetter = (char) => {
+      const letterGrid = document.createElement("div");
+      letterGrid.className = "letter";
+
+      const pattern = letters[char.toUpperCase()];
+      if (!pattern) return;
+
+      pattern.forEach(row => {
+        row.split("").forEach(dot => {
+          const div = document.createElement("div");
+          div.className = "dot " + (dot === "1" ? (Math.random() > 0.5 ? "white" : "yellow") : "");
+          letterGrid.appendChild(div);
+        });
+      });
+
+      container.appendChild(letterGrid);
+    };
+
+    const text = "FUTURE BEE";
+    for (let char of text) {
+      if (char === " ") {
+        const spacer = document.createElement("div");
+        spacer.style.width = "500px";
+        container.appendChild(spacer);
+      } else {
+        renderLetter(char);
+      }
+    }
+  </script>
+</body>
+</html>
