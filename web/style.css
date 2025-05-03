@@ -19,23 +19,17 @@ font-family: 'BookkMyungjo-Bd', sans-serif;
 text-align: center;
 padding: 40px;
 }
-.circuit-layout {
-display: inline-block;
-position: relative;
-font-size: 24px;
-line-height: 1.2;
-letter-spacing: 0.05em;
-white-space: pre;
-padding: 40px;
-transform: rotateX(30deg);
-transform-style: preserve-3d;
-}
+
 .battery {
+text-align: center;
+width: fit-content;
 color: #4CAF50;
 font-weight: bold;
 text-shadow: 0 0 10px #4CAF50;
 }
 .switch {
+text-align: center;
+width: fit-content;
 color: #F44336;
 font-weight: bold;
 text-shadow: 0 0 10px #F44336;
@@ -53,11 +47,15 @@ text-shadow: none;
 opacity: 0.7;
 }
 .resistor {
+text-align: center;
+width: fit-content;
 color: #9C27B0;
 font-weight: bold;
 text-shadow: 0 0 10px #9C27B0;
 }
 .bulb {
+text-align: center;
+width: fit-content;
 color: #FFC107;
 font-weight: bold;
 text-shadow: 0 0 10px #FFC107;
@@ -68,7 +66,9 @@ opacity: 0.5;
 text-shadow: none;
 }
 .wire {
+width: fit-content;
 color: #444;
+text-align: center;
 transition: all 0.5s;
 }
 .wire.active {
@@ -109,3 +109,19 @@ display: inline-block;
 white-space: pre;
 line-height: 1.5;
 }
+
+.circuit-layout {
+    justify-items: center;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 0px;
+    padding: 0px;
+    transform: rotateX(30deg) rotateZ(-30deg);
+    transform-style: preserve-3d;
+  }
+  
+  .row {
+    display: contents; /* row 내부 span들을 grid cell로 인식 */
+  }
+  

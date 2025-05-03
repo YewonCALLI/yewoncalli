@@ -40,12 +40,3 @@ function resetCircuit() {
     currentActive = false;
 }
 
-// 3D 회전 효과
-let rotX = 30, rotY = 0;
-document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    
-    document.querySelector('.circuit-layout').style.transform = 
-    `perspective(1500px) rotateX(${30 + y}deg) rotateY(${x}deg)`;
-});
