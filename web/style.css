@@ -59,14 +59,20 @@ color: #444;
 font-weight: bold;
 }
 .bulb {
-text-align: center;
-width: fit-content;
-color: orange;
-font-weight: bold;
-transition: all 0.3s;
-}
+    text-align: center;
+    width: fit-content;
+    color: #FFA726; /* 따뜻한 주황빛 */
+    font-weight: bold;
+    transition: all 0.3s;
+    text-shadow:
+      0 0 5px #FFB74D,
+      0 0 10px #ffffff,
+      0 0 20px #FF9800,
+      0 0 30px #FF9800;
+      
+  }
 .bulb.off {
-color: #444;
+color: #555;
 text-shadow: none;
 }
 .wire {
@@ -163,9 +169,9 @@ line-height: 1.5;
   
   @keyframes battery-shake {
     0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-2px); }
+    20% { transform: translateX(-10px); }
     40% { transform: translateX(2px); }
-    60% { transform: translateX(-2px); }
+    60% { transform: translateX(-4px); }
     80% { transform: translateX(2px); }
   }
   
