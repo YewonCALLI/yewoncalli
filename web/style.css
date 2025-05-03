@@ -15,27 +15,30 @@ background: #ffffff;
 color: #fff;
 font-family: 'BookkMyungjo-Bd', sans-serif;
 }
+
 .container {
-text-align: center;
-padding: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    transform: rotateX(30deg) rotateZ(-30deg) scale(1);
+    transition: transform 0.05s linear;
+    transform-style: preserve-3d;
 }
 
 .battery {
 text-align: center;
 width: fit-content;
-color: #4CAF50;
+color: #444;
 font-weight: bold;
-text-shadow: 0 0 10px #4CAF50;
 }
 .switch {
 text-align: center;
 width: fit-content;
-color: #F44336;
+color: #444;
 font-weight: bold;
-text-shadow: 0 0 10px #F44336;
 cursor: pointer;
 transition: all 0.3s;
-padding: 2px 4px;
 border-radius: 3px;
 }
 .switch:hover {
@@ -49,20 +52,18 @@ opacity: 0.7;
 .resistor {
 text-align: center;
 width: fit-content;
-color: #9C27B0;
+color: #444;
 font-weight: bold;
-text-shadow: 0 0 10px #9C27B0;
 }
 .bulb {
 text-align: center;
 width: fit-content;
-color: #FFC107;
+color: orange;
 font-weight: bold;
-text-shadow: 0 0 10px #FFC107;
 transition: all 0.3s;
 }
 .bulb.off {
-opacity: 0.5;
+color: #444;
 text-shadow: none;
 }
 .wire {
@@ -84,23 +85,24 @@ animation: current-flow 2s linear infinite;
 100% { background-position: 0% 0; }
 }
 .controls {
-margin-top: 40px;
-display: flex;
-gap: 20px;
-justify-content: center;
+    bottom: 0px;
+    margin-top: 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 .control-btn {
 padding: 10px 20px;
 background: transparent;
 border: 2px solid #666;
 border-radius: 5px;
-color: #fff;
+color: #444;
 cursor: pointer;
 font-family: 'Courier New', monospace;
 transition: all 0.3s;
 }
 .control-btn:hover {
-border-color: #fff;
+border-color: #444;
 box-shadow: 0 0 10px #fff;
 }
 .circuit-demo {
@@ -110,18 +112,39 @@ white-space: pre;
 line-height: 1.5;
 }
 
+.blank{
+    opacity: 0;
+}
 .circuit-layout {
     justify-items: center;
     width: fit-content;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
     gap: 0px;
     padding: 0px;
-    transform: rotateX(30deg) rotateZ(-30deg);
-    transform-style: preserve-3d;
+  }
+
+  .circuit-layout1 {
+    justify-items: center;
+    width: fit-content;
+    display: flex;
+    gap: 0px;
+    padding: 0px;
+
   }
   
   .row {
-    display: contents; /* row 내부 span들을 grid cell로 인식 */
+    display: flex; 
+    flex-direction: column;
+    width: fit-content;
+  }
+  
+  @keyframes blink-current {
+    0% { color: #444; }
+    50% { color: #03A9F4; text-shadow: 0 0 10px #03A9F4; }
+    100% { color: #444; }
+  }
+  
+  .wire.active {
+    animation: blink-current 0.3s ease-in-out;
   }
   
