@@ -6,14 +6,15 @@
 }
 
 body, html {
-margin: 0;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #ffffff;
-color: #fff;
-font-family: 'BookkMyungjo-Bd', sans-serif;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: #fff;
+    font-family: 'BookkMyungjo-Bd', sans-serif;
+    font-size: 40px;
 }
 
 .container {
@@ -42,12 +43,14 @@ transition: all 0.3s;
 border-radius: 3px;
 }
 .switch:hover {
-background: rgba(244, 67, 54, 0.1);
+    opacity: 0.6;
 }
 .switch.off {
-color: #666;
-text-shadow: none;
-opacity: 0.7;
+    color: #666;
+    text-shadow: none;
+    opacity: 0.7;
+    transform-origin: left;
+    rotate: -15DEG;
 }
 .resistor {
 text-align: center;
@@ -87,7 +90,7 @@ animation: current-flow 2s linear infinite;
 .controls {
     bottom: 0px;
     margin-top: 100px;
-    display: flex;
+    display: none;
     gap: 20px;
     justify-content: center;
 }
@@ -140,11 +143,33 @@ line-height: 1.5;
   
   @keyframes blink-current {
     0% { color: #444; }
-    50% { color: #03A9F4; text-shadow: 0 0 10px #03A9F4; }
+    50% { opacity: 0; text-shadow: 0 0 10px #03A9F4; }
     100% { color: #444; }
   }
   
   .wire.active {
     animation: blink-current 0.3s ease-in-out;
+  }
+  
+  @keyframes battery-charge {
+    0% { color: #aaa; text-shadow: none; }
+    50% { color: #03A9F4; text-shadow: 0 0 10px #03A9F4; }
+    100% { color: #aaa; text-shadow: none; }
+  }
+  
+  .battery.charge {
+    animation: battery-charge 1.2s infinite;
+  }
+  
+  @keyframes battery-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+  }
+  
+  .battery.shake {
+    animation: battery-shake 0.3s;
   }
   
