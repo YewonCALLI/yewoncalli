@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>아티스틱 타이포그래피 회로도</title>
+  <link rel="stylesheet" href="/web/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="circuit-layout">
+      <div class="circuit-demo">
+      <span class="wire">    전선저항저항전선<span class="resistor">저항</span>전
+      선</span>                     <span class="wire">선
+      전</span>                     <span class="wire">전
+      <span class="battery">배터리</span> <span class="wire">전선전선</span> <span class="switch" onclick="toggleSwitch(this)">스위치</span> <span class="wire">선</span><span class="wire">선
+      전</span>                     <span class="wire">전
+      선<span class="switch" onclick="toggleSwitch(this)">스위치</span><span class="wire">전선전선</span><span class="bulb">전구</span>선</span>
+
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button class="control-btn" onclick="toggleCurrent()">전류 시뮬레이션</button>
+      <button class="control-btn" onclick="resetCircuit()">회로 초기화</button>
+    </div>
+  </div>
+  <script src="/web/script.js"></script>
+</body>
+</html>

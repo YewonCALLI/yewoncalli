@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body, html {
+margin: 0;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #ffffff;
+color: #fff;
+font-family: 'BookkMyungjo-Bd', sans-serif;
+}
+.container {
+text-align: center;
+padding: 40px;
+}
+.circuit-layout {
+display: inline-block;
+position: relative;
+font-size: 24px;
+line-height: 1.2;
+letter-spacing: 0.05em;
+white-space: pre;
+padding: 40px;
+transform: rotateX(30deg);
+transform-style: preserve-3d;
+}
+.battery {
+color: #4CAF50;
+font-weight: bold;
+text-shadow: 0 0 10px #4CAF50;
+}
+.switch {
+color: #F44336;
+font-weight: bold;
+text-shadow: 0 0 10px #F44336;
+cursor: pointer;
+transition: all 0.3s;
+padding: 2px 4px;
+border-radius: 3px;
+}
+.switch:hover {
+background: rgba(244, 67, 54, 0.1);
+}
+.switch.off {
+color: #666;
+text-shadow: none;
+opacity: 0.7;
+}
+.resistor {
+color: #9C27B0;
+font-weight: bold;
+text-shadow: 0 0 10px #9C27B0;
+}
+.bulb {
+color: #FFC107;
+font-weight: bold;
+text-shadow: 0 0 10px #FFC107;
+transition: all 0.3s;
+}
+.bulb.off {
+opacity: 0.5;
+text-shadow: none;
+}
+.wire {
+color: #444;
+transition: all 0.5s;
+}
+.wire.active {
+background: linear-gradient(90deg, #03A9F4 0%, #2196F3 50%, #444 50%, #444 100%);
+background-size: 200% 100%;
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: current-flow 2s linear infinite;
+}
+@keyframes current-flow {
+0% { background-position: 200% 0; }
+100% { background-position: 0% 0; }
+}
+.controls {
+margin-top: 40px;
+display: flex;
+gap: 20px;
+justify-content: center;
+}
+.control-btn {
+padding: 10px 20px;
+background: transparent;
+border: 2px solid #666;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+font-family: 'Courier New', monospace;
+transition: all 0.3s;
+}
+.control-btn:hover {
+border-color: #fff;
+box-shadow: 0 0 10px #fff;
+}
+.circuit-demo {
+text-align: left;
+display: inline-block;
+white-space: pre;
+line-height: 1.5;
+}
