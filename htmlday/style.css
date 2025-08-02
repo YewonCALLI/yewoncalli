@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "BookkMyungjo-Bd";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  color: #fff;
+  font-family: "BookkMyungjo-Bd", sans-serif;
+  font-size: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  transform: rotateX(30deg) rotateZ(-30deg) scale(1);
+  transition: transform 0.05s linear;
+  transform-style: preserve-3d;
+}
+
+.poem-header {
+  text-align: center;
+  margin-bottom: 150px;
+  font-family: "BookkMyungjo-Bd", serif;
+}
+
+.poem-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #888;
+}
+
+.poem-author {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.battery {
+  text-align: center;
+  width: fit-content;
+  color: #444;
+  font-weight: bold;
+}
+.switch {
+  text-align: center;
+  width: fit-content;
+  color: #444;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+.switch:hover {
+  opacity: 0.6;
+}
+.switch.off {
+  color: #666;
+  text-shadow: none;
+  opacity: 0.7;
+  transform-origin: left;
+  rotate: -15deg;
+}
+.resistor {
+  text-align: center;
+  width: fit-content;
+  color: #444;
+  font-weight: bold;
+}
+.bulb {
+  text-align: center;
+  width: fit-content;
+  color: #00ff00; /* 따뜻한 주황빛 */
+  font-weight: bold;
+  transition: all 0.3s;
+  text-shadow:
+    0 0 5px #00ff00,
+    0 0 10px #ffffff,
+    0 0 20px #00ff00,
+    0 0 30px #00ff00;
+}
+.bulb.off {
+  color: #555;
+  text-shadow: none;
+}
+.wire {
+  width: fit-content;
+  color: #444;
+  text-align: center;
+  transition: all 0.5s;
+}
+.wire.active {
+  background: linear-gradient(
+    90deg,
+    #00ff00 0%,
+    #00ff00 50%,
+    #00ff00 50%,
+    #00ff00 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: current-flow 2s linear infinite;
+}
+@keyframes current-flow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+.controls {
+  bottom: 0px;
+  margin-top: 100px;
+  display: none;
+  gap: 20px;
+  justify-content: center;
+}
+.control-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #666;
+  border-radius: 5px;
+  color: #444;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  transition: all 0.3s;
+}
+.control-btn:hover {
+  border-color: #444;
+  box-shadow: 0 0 10px #fff;
+}
+.circuit-demo {
+  text-align: left;
+  display: inline-block;
+  white-space: pre;
+  line-height: 1.5;
+}
+
+.blank {
+  opacity: 0;
+}
+.circuit-layout {
+  justify-items: center;
+  width: fit-content;
+  display: flex;
+  gap: 0px;
+  padding: 0px;
+  z-index: 999;
+}
+
+.circuit-layout1 {
+  justify-items: center;
+  width: fit-content;
+  display: flex;
+  gap: 0px;
+  padding: 0px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+@keyframes blink-current {
+  0% {
+    color: #444;
+  }
+  50% {
+    opacity: 0;
+    text-shadow: 0 0 10px #03a9f4;
+  }
+  100% {
+    color: #444;
+  }
+}
+
+.wire.active {
+  animation: blink-current 0.3s ease-in-out;
+}
+
+@keyframes battery-charge {
+  0% {
+    color: #aaa;
+    text-shadow: none;
+  }
+  50% {
+    color: #03a9f4;
+    text-shadow: 0 0 10px #03a9f4;
+  }
+  100% {
+    color: #aaa;
+    text-shadow: none;
+  }
+}
+
+.battery.charge {
+  animation: battery-charge 1.2s infinite;
+}
+
+@keyframes battery-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+.battery.shake {
+  animation: battery-shake 0.3s;
+}
+
+.footer {
+  position: absolute;
+  color: #111;
+}

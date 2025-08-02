@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Circuit</title>
+  <link rel="stylesheet" href="/htmlday/style.css" />
+</head>
+<body>
+    
+  <div class="container">
+    <div class="poem-header">
+        <div class="poem-title">HTML로부터 에너지를 받으시나요?</div>
+        <div class="poem-author">스위치를 눌러 에너지를 느껴보시오. </div>
+    </div>
+    <div class="circuit-layout">
+        <div class="row">
+          <span class="battery">HTML</span>
+        </div>
+      
+        <div class="row"><span class="wire" id="wire-1">전</span></div>
+        <div class="row"><span class="wire" id="wire-2">선</span></div>
+        <div class="row"><span class="wire" id="wire-3">전</span></div>
+        <div class="row"><span class="wire" id="wire-4">선</span></div>
+        <div class="row"><span class="wire" id="wire-5">전</span></div>
+        <div class="row"><span class="wire" id="wire-6">선</span></div>
+      
+        <div class="row">
+          <span class="switch off" onclick="toggleSwitch(this)">스위치</span>
+        </div>
+      
+        <div class="row"><span class="wire" id="wire-7">전</span></div>
+        <div class="row"><span class="wire" id="wire-8">선</span></div>
+        <div class="row"><span class="wire" id="wire-9">전</span></div>
+        <div class="row"><span class="wire" id="wire-10">선</span></div>
+        <div class="row"><span class="wire" id="wire-11">전</span></div>
+        <div class="row"><span class="wire" id="wire-12">선</span></div>
+      
+        <div class="row"><span class="bulb off">전구</span></div>
+      </div>
+      <div class="circuit-layout1">
+        <div class="row">
+          <span class="blank">배터리</span>
+        </div>
+      
+        <div class="row" style="rotate: 270DEG;"><span class="wire">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 90DEG;"><span class="wire" id="wire-2">선</span></div>
+      
+        <div class="row"><span class="blank">전구</span></div>
+      </div>
+      <div class="circuit-layout1">
+        <div class="row">
+          <span class="blank">배터리</span>
+        </div>
+      
+        <div class="row" style="rotate: 270DEG;"><span class="wire"id="wire-2">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 90DEG;"><span class="wire">전</span></div>
+      
+        <div class="row"><span class="blank">전구</span></div>
+      </div>
+      <div class="circuit-layout1">
+        <div class="row">
+          <span class="blank">배터리</span>
+        </div>
+      
+        <div class="row" style="rotate: 270DEG;"><span class="wire"id="wire-2">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="blank">전</span></div>
+        <div class="row" style="rotate: 90DEG;"><span class="wire">선</span></div>
+      
+        <div class="row"><span class="blank">전구</span></div>
+      </div>
+      <div class="circuit-layout1">
+        <div class="row">
+          <span class="blank">배터리</span>
+        </div>
+      
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-27">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-26">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-25">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-24">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-23">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-22">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-21">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-20">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-19">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-18">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-17">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-16">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-15">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-14">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-13">선</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-12">전</span></div>
+        <div class="row" style="rotate: 180DEG;"><span class="wire" id="wire-11">선</span></div>
+        <!-- 전구 -->
+      </div>
+    
+    <div class="controls">
+      <button class="control-btn" onclick="toggleCurrent()">전류 시뮬레이션</button>
+      <button class="control-btn" onclick="resetCircuit()">회로 초기화</button>
+    </div>
+  </div>
+  <script src="/htmlday/script.js"></script>
+</body>
+</html>
