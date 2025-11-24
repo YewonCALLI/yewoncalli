@@ -40,7 +40,7 @@ export function Header() {
         className={classNames(
           'w-full h-fit sticky top-0 z-30 px-4 py-2 md:px-6 md:py-4',
           'inline-flex justify-between items-center',
-          'mix-blend-difference text-white',
+          'mix-blend-difference text-white border-b border-white/10',
         )}
       >
         <div

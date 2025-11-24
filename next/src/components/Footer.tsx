@@ -1,6 +1,11 @@
 import classNames from 'classnames'
 
 export function Footer() {
+  const snsLinks = [
+    { name: 'Instagram', url: 'https://www.instagram.com/yewon.calli/' },
+    { name: 'Github', url: 'https://github.com/YewonCALLI' },
+  ]
+
   return (
     <div
       className={classNames(
@@ -12,8 +17,17 @@ export function Footer() {
         © {new Date().getFullYear()} Yewon Jang
       </div>
       <div className='w-fit inline-flex justify-center items-center gap-4 md:gap-10'>
-        <div className='justify-start text-sm font-medium underline uppercase leading-tight'>Instagram</div>
-        <div className='justify-start text-sm font-medium underline uppercase leading-tight'>Behance</div>
+        {snsLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='justify-start text-sm font-medium underline uppercase leading-tight hover:opacity-70 active:scale-95 transition-all'
+          >
+            {link.name}
+          </a>
+        ))}
       </div>
     </div>
   )
