@@ -1,0 +1,20 @@
+import classNames from 'classnames'
+
+export function Footer() {
+  return (
+    <div
+      className={classNames(
+        'w-full flex flex-col-reverse md:flex-row justify-between items-center',
+        'px-4 py-10 md:px-6 md:py-4 gap-4 md:gap-6',
+      )}
+    >
+      <div className='justify-start text-sm text-center font-normal capitalize leading-normal'>
+        © {new Date().getFullYear()} Yewon Jang
+      </div>
+      <div className='w-fit inline-flex justify-center items-center gap-4 md:gap-10'>
+        <div className='justify-start text-sm font-medium underline uppercase leading-tight'>Instagram</div>
+        <div className='justify-start text-sm font-medium underline uppercase leading-tight'>Behance</div>
+      </div>
+    </div>
+  )
+}
