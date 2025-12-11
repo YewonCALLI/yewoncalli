@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import classNames from 'classnames'
 import { useRouter, usePathname } from 'next/navigation'
+import { Logo } from './Logo'
 
 export function Header() {
   const router = useRouter()
@@ -40,14 +41,14 @@ export function Header() {
         className={classNames(
           'w-full h-fit sticky top-0 z-30 px-4 py-2 md:px-6 md:py-4',
           'inline-flex justify-between items-center',
-          'mix-blend-difference text-white border-b border-white/10',
+          'mix-blend-difference text-white',
         )}
       >
         <div
           onClick={() => handleNavigation('/')}
           className={classNames('w-fit h-fit', 'cursor-pointer', 'hover:opacity-70 active:scale-95 transition-all')}
         >
-          <h1 className='text-lg md:text-2xl font-bold leading-none'>Yewon Jang° Tool Maker</h1>
+          <Logo size='md' />
         </div>
 
         {/* 데스크탑 */}

@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { Logo } from './Logo'
 
 export function Footer() {
   const snsLinks = [
@@ -14,7 +15,7 @@ export function Footer() {
       )}
     >
       <div className='justify-start text-sm text-center font-normal capitalize leading-normal'>
-        © {new Date().getFullYear()} Yewon Jang
+        © {new Date().getFullYear()} <Logo size='sm' />. All rights reserved.
       </div>
       <div className='w-fit inline-flex justify-center items-center gap-4 md:gap-10'>
         {snsLinks.map((link) => (

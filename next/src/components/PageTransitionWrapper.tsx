@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { ReactNode, useEffect, useRef, useState } from 'react'
+import { Logo } from './Logo'
 
 interface PageTransitionWrapperProps {
   children: ReactNode
@@ -146,9 +147,9 @@ export function PageTransitionWrapper({ children, isTransitioning, pathname }: P
               exit='exit'
               className='w-full h-full flex flex-col items-center justify-center overflow-hidden'
             >
-              <h1 className=''>Yewon Jang</h1>
+              <Logo size='lg' />
               <h2 className='font-light text-base md:text-2xl'>
-                {pathname ? pathname.replace('/', '') || 'Home' : ''}
+                {pathname ? pathname.split('/').filter(Boolean).pop() || 'Home' : ''}
               </h2>
             </motion.div>
           </motion.div>
