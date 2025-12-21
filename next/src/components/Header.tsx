@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import classNames from 'classnames'
 import { useRouter, usePathname } from 'next/navigation'
 import { Logo } from './Logo'
+import { HEADER_HEIGHT } from '@/constants'
 
 export function Header() {
   const router = useRouter()
@@ -39,7 +40,7 @@ export function Header() {
     <>
       <div
         className={classNames(
-          'w-full h-fit sticky top-0 z-30 px-4 py-2 md:px-6 md:py-4',
+          `w-full h-[${HEADER_HEIGHT}px] fixed top-0 z-30 px-4 py-2 md:px-6 md:py-4`,
           'inline-flex justify-between items-center',
           'mix-blend-difference text-white',
         )}
@@ -119,7 +120,7 @@ export function Header() {
                   'hover:opacity-70 active:scale-95 transition-all',
                 )}
               >
-                <h1 className='text-lg md:text-2xl font-bold leading-none'>Yewon Jang° Tool Maker</h1>
+                <Logo size='md' />
               </div>
               <button onClick={toggleMobileMenu} className='p-2 -mr-2'>
                 {!isMobileMenuOpen ? (
