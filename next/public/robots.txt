@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yewoncalli.com
+
+# Sitemaps
+Sitemap: https://yewoncalli.com/sitemap.xml
