@@ -6,22 +6,26 @@ import classNames from 'classnames'
 import { GoChevronDown } from 'react-icons/go'
 
 interface ParllaxFrameProps {
-  banner?: React.ReactNode
-  bannerImage?: string
-  bannerTitle?: string
-  bannerSubTitle?: string
-  bannerPosition?: 'top' | 'center' | 'bottom'
+  banner: {
+    image?: string
+    title?: string
+    description?: string
+    subTitle?: string
+  }
+  bannerItem?: React.ReactNode
   bannerClassName?: string
   children: React.ReactNode
   contentClassName?: string
 }
 
 export function ParllaxFrame({
-  banner,
-  bannerImage,
-  bannerTitle,
-  bannerSubTitle,
-  bannerPosition = 'bottom',
+  banner = {
+    image: 'images/template.png',
+    title: 'Title',
+    description: 'Description',
+    subTitle: 'Sub Title',
+  },
+  bannerItem,
   children,
   bannerClassName,
   contentClassName,
@@ -51,13 +55,13 @@ export function ParllaxFrame({
 
   return (
     <>
-      <main className={classNames('w-full h-fit relative')}>
+      <main className={classNames('w-full h-fit relative z-10')}>
         <motion.section
           className={classNames('sticky top-0 min-h-dvh h-fit', contentClassName || 'bg-white text-black')}
         >
           <div
             className={classNames(
-              'absolute inset-0 bg-black pointer-events-none z-10',
+              'hidden md:flex absolute inset-0 bg-black pointer-events-none z-10',
               enableTransition && 'transition-opacity duration-500 ease-out',
               isInView ? 'opacity-50' : 'opacity-0',
             )}
@@ -72,46 +76,40 @@ export function ParllaxFrame({
             bannerClassName || 'bg-black text-white',
           )}
         >
-          {banner ? (
-            banner
-          ) : bannerImage ? (
-            <>
+          {bannerItem ? (
+            bannerItem
+          ) : (
+            <div className='w-full h-full relative'>
               <img
-                src={bannerImage}
-                alt={bannerTitle || 'Banner Image'}
-                className='w-full h-full object-cover object-center'
+                src={banner.image || '/images/template.png'}
+                alt={banner.title || 'Banner Image'}
+                className='w-full h-full  object-cover object-center'
               />
-              <span
+              <div
                 className={classNames(
-                  'absolute mix-blend-difference space-y-4 w-fit flex flex-col justify-start items-start',
-                  bannerPosition === 'top'
-                    ? 'top-12 lg:top-16'
-                    : bannerPosition === 'bottom'
-                      ? 'bottom-12 lg:bottom-16'
-                      : bannerPosition === 'center'
-                        ? 'top-1/2 -translate-y-1/2'
-                        : '',
-                  'left-4 md:left-8 lg:left-12 pr-4 md:pr-8 lg:pr-12',
+                  'absolute gap-4 w-full flex flex-col justify-end items-start z-10',
+                  'bg-gradient-to-t from-black/70 via-black/40 to-transparent',
+                  'px-4 md:px-8 lg:px-12 py-6 md:py-8 lg:py-12',
+                  'bottom-0 left-0',
                 )}
               >
                 <span className={classNames('leading-none font-bold text-white', 'text-4xl md:text-7xl lg:text-9xl')}>
-                  {bannerTitle}
+                  {banner.title}
                 </span>
-                {bannerSubTitle && (
-                  <span className={classNames('leading-tight font-semibold', 'text-base md:text-lg lg:text-xl')}>
-                    {bannerSubTitle}
-                  </span>
-                )}
-              </span>
-            </>
-          ) : (
-            <div className='w-full h-full flex justify-center items-center'>
-              <span className='text-xl font-semibold'>No Image</span>
+                <span
+                  className={classNames('leading-normal font-normal text-white', 'text-base md:text-lg lg:text-xl')}
+                >
+                  {banner.description}
+                </span>
+                <span className={classNames('mt-8 leading-tight font-semibold', 'text-base md:text-lg lg:text-xl')}>
+                  {banner.subTitle}
+                </span>
+              </div>
             </div>
           )}
           <button
             onClick={onClickScrollDown}
-            className='absolute mix-blend-difference z-10 bottom-4 left-1/2 -translate-x-1/2 w-fit h-fit text-white animate-bounce active:scale-95 hover:opacity-70 transition-all'
+            className='absolute mix-blend-difference z-10 bottom-4 inset-x-0 w-full flex justify-center items-center h-fit text-white animate-bounce active:scale-95 hover:opacity-70 transition-all'
           >
             <GoChevronDown className='text-4xl' />
           </button>

@@ -1,5 +1,5 @@
 interface LogoProps {
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
 export const Logo = ({ size = 'md' }: LogoProps) => {
@@ -9,7 +9,13 @@ export const Logo = ({ size = 'md' }: LogoProps) => {
     return <span className=''>Yewon Jang</span>
   }
 
-  if (size === 'sm') {
+  if (size === 'xs') {
+    return (
+      <span className={`text-sm ${commonClasses}`}>
+        <Main />
+      </span>
+    )
+  } else if (size === 'sm') {
     return (
       <span className={`text-base ${commonClasses}`}>
         <Main />

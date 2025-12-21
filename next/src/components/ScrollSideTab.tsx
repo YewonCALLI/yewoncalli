@@ -17,8 +17,8 @@ export const ScrollSideTab = ({ activeSection, sectionIds }: ScrollSideTabProps)
   }
 
   return (
-    <div className='fixed top-20 left-0 w-fit h-fit z-20 px-4 md:px-8'>
-      <div className='w-fit h-fit flex flex-col gap-4 justify-start items-start'>
+    <div className='fixed top-14 xl:top-20 left-0 w-full overflow-x-scroll xl:overflow-auto xl:w-fit h-fit z-20 px-4 md:px-8'>
+      <div className='w-fit h-fit flex flex-row xl:flex-col gap-4 justify-start items-start'>
         {sectionIds.map((section) => (
           <button
             key={section}
