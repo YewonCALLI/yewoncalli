@@ -27,7 +27,7 @@ export function Section({ children, className, ...rest }: InViewFrameProps) {
         duration: 0.8, // 800ms
         ease: [0.4, 0, 0.2, 1], // cubic-bezier(.4,0,.2,1)
       }}
-      className={`w-full relative ${className}`}
+      className={`w-full relative flex flex-col items-center justify-start ${className}`}
       {...rest}
     >
       {children}

@@ -40,7 +40,7 @@ export function Header() {
     <>
       <div
         className={classNames(
-          `w-full h-[${HEADER_HEIGHT}px] fixed top-0 z-30 px-4 py-2 md:px-6 md:py-4`,
+          `w-full h-[${HEADER_HEIGHT}px] fixed top-0 z-30 px-4 md:px-8 py-2 md:py-4`,
           'inline-flex justify-between items-center',
           'mix-blend-difference text-white',
         )}

@@ -62,13 +62,13 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      <PageTransitionWrapper isTransitioning={isTransitioning} pathname={pathname}>
-        <div className={classNames('w-full h-fit min-h-dvh flex flex-col justify-start items-center')}>
-          <Header />
-          {children}
-        </div>
-        <Footer />
-      </PageTransitionWrapper>
+      {/* <PageTransitionWrapper isTransitioning={isTransitioning} pathname={pathname}> */}
+      <div className={classNames('w-full h-fit min-h-dvh flex flex-col justify-start items-center')}>
+        <Header />
+        {children}
+      </div>
+      <Footer />
+      {/* </PageTransitionWrapper> */}
     </>
   )
 }
