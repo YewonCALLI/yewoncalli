@@ -58,7 +58,7 @@ export function Header() {
             <div
               key={page.name}
               className={classNames(
-                'w-fit text-lg font-medium cursor-pointer hover:underline',
+                'w-fit text-lg font-medium cursor-pointer hover:underline underline-offset-4 decoration-2',
                 pathname === page.href ? 'underline' : '',
               )}
               onClick={() => handleNavigation(page.href)}

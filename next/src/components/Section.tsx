@@ -12,7 +12,7 @@ export function Section({ children, className, ...rest }: InViewFrameProps) {
     <div
       className={classNames(
         'w-full relative flex flex-col items-center justify-start',
-        className ? className : 'pt-32 pb-20 space-y-6 md:space-y-12',
+        className ? className : 'pt-32 pb-20 space-y-2 md:space-y-4',
       )}
       {...rest}
     >

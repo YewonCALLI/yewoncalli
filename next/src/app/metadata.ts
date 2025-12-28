@@ -9,9 +9,9 @@ export const METADATA = {
   keywords: [],
   authors: [
     {
-      name: '',
-      email: '',
+      name: 'Yewon Jang',
+      email: 'blockbwriting@gmail.com',
     },
   ],
-  url: '',
+  url: 'https://yewoncalli.com',
 }
