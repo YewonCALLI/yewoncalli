@@ -3,7 +3,17 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-export const PageTitleArea = ({ title }: { title: string }) => {
+interface PageTitleAreaProps {
+  title?: string
+  tabMode?: boolean
+  tab?: {
+    tabs: string[]
+    selectedTab: string
+    onSelectTab: (tab: string) => void
+  }
+}
+
+export const PageTitleArea = ({ title, tabMode = false, tab }: PageTitleAreaProps) => {
   const { scrollY } = useScroll()
   const [isMobile, setIsMobile] = useState(false)
 
@@ -30,19 +40,36 @@ export const PageTitleArea = ({ title }: { title: string }) => {
 
   return (
     <motion.div
-      className='w-full h-fit gap-12 px-4 md:px-8 flex flex-col justify-end pt-6 md:pt-12 pb-4 md:pb-8'
+      className='w-full h-fit gap-4 md:gap-8 px-4 md:px-8 flex flex-row justify-start items-end pt-6 md:pt-12 pb-4 md:pb-8'
       style={{
         minHeight: height,
       }}
     >
-      <motion.span
-        className='-mt-2 md:-mt-4 leading-none'
-        style={{
-          fontSize: fontSize,
-        }}
-      >
-        {title}
-      </motion.span>
+      {!tabMode ? (
+        <motion.span
+          className='-mt-2 md:-mt-4 leading-none'
+          style={{
+            fontSize: fontSize,
+          }}
+        >
+          {title}
+        </motion.span>
+      ) : (
+        <>
+          {tab.tabs.map((tabItem, index) => (
+            <motion.span
+              key={index}
+              className={`-mt-2 md:-mt-4 leading-none cursor-pointer md:hover:opacity-70 active:scale-95 transition-all ${tab.selectedTab === tabItem ? 'text-black' : 'text-gray-400'}`}
+              style={{
+                fontSize: fontSize,
+              }}
+              onClick={() => tab?.onSelectTab(tabItem)}
+            >
+              {tabItem}
+            </motion.span>
+          ))}
+        </>
+      )}
     </motion.div>
   )
 }
