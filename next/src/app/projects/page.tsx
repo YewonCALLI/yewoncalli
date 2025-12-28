@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { MotionDiv, PageTitleArea } from '@/components'
+import { MotionDiv, MotionImg, PageTitleArea } from '@/components'
 import { projects } from './projectlist'
 
 export default function ProjectsPage() {
@@ -65,7 +65,7 @@ const ProjectCard = ({ project }: { project: any }) => {
       className='w-full h-fit mb-4 flex flex-col gap-4 justify-start items-start cursor-pointer hover:opacity-70 active:translate-y-1 transition-all '
     >
       <div className='w-full h-auto aspect-video relative overflow-hidden bg-gray-50'>
-        <img src={project.cover} alt={project.name} className='w-full h-full object-cover object-center' />
+        <MotionImg src={project.cover} alt={project.name} className='w-full h-full object-cover object-center' />
       </div>
       <div className='w-full flex flex-col gap-1'>
         <div className='w-full h-fit flex flex-row flex-wrap gap-2 justify-start items-start mb-1'>
