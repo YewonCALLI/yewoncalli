@@ -40,7 +40,7 @@ export const PageTitleArea = ({ title, tabMode = false, tab }: PageTitleAreaProp
 
   return (
     <motion.div
-      className='w-full h-fit gap-4 md:gap-8 px-4 md:px-8 flex flex-row justify-start items-end pt-6 md:pt-12 pb-4 md:pb-8'
+      className='w-full h-fit font-medium gap-4 md:gap-8 px-4 md:px-8 flex flex-row justify-start items-end pt-6 md:pt-12 pb-4 md:pb-8'
       style={{
         minHeight: height,
       }}

@@ -41,6 +41,7 @@ export function MotionDiv({ children, className, vimeoId, title, text }: InViewF
               absolute left-1/2 top-1/2
               h-[120%] aspect-[16/9] min-w-full
               -translate-x-1/2 -translate-y-1/2
+              bg-black object-cover
             '
           />
           <div className='absolute inset-0 bg-black/30' />

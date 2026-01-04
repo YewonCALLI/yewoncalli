@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { MotionDiv, MotionImg, PageTitleArea } from '@/components'
+import { InViewDiv, MotionImg, PageTitleArea } from '@/components'
 import { projects } from './projectlist'
 
 export default function ProjectsPage() {
@@ -33,10 +33,12 @@ export default function ProjectsPage() {
       <div className='w-full min-h-dvh h-fit pt-14 bg-white z-10'>
         <PageTitleArea tabMode tab={{ tabs, selectedTab, onSelectTab: setSelectedTab }} />
         {selectedTab === 'Projects' && (
-          <MotionDiv className='w-full px-4 md:px-8 pt-6 md:pt-12 pb-8 md:pb-16 space-y-12'>
+          <InViewDiv className='w-full px-4 md:px-8 pt-6 md:pt-12 pb-8 md:pb-16 space-y-12'>
             {sortedYears.map((year) => (
               <div key={year} className='w-full pt-8 flex flex-col md:flex-row justify-start items-start gap-6'>
-                <div className='w-2/5 text-xl md:text-2xl flex flex-row gap-2 justify-start items-center'>{year}</div>
+                <div className='w-2/5 text-xl md:text-2xl flex flex-row gap-2 justify-start font-medium items-center'>
+                  {year}
+                </div>
                 <div className='w-full h-fit grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-6'>
                   {projectsByYear[year].map((project) => (
                     <ProjectCard key={project.slug} project={project} />
@@ -44,15 +46,15 @@ export default function ProjectsPage() {
                 </div>
               </div>
             ))}
-          </MotionDiv>
+          </InViewDiv>
         )}
         {selectedTab === 'Activities' && (
-          <MotionDiv className='w-full h-full flex justify-center items-center py-20'>
+          <InViewDiv className='w-full h-full flex justify-center items-center py-20'>
             <span className='text-lg text-neutral-500'>Activities content coming soon...</span>
-          </MotionDiv>
+          </InViewDiv>
         )}
       </div>
-      <div className='w-full h-[50vh] bg-black sticky bottom-0 flex justify-center items-center'></div>
+      <div className='w-full h-[40dvh] bg-black sticky bottom-0 flex justify-center items-center'></div>
     </>
   )
 }
@@ -80,33 +82,33 @@ const ProjectCard = ({ project }: { project: any }) => {
         </div>
         <span className='text-2xl font-medium px-0.5 mb-2'>{project.name}</span>
         {project.client && (
-          <div className='w-full h-fit flex flex-row justify-start items-start gap-4 text-sm leading-none px-0.5'>
-            <span className='w-fit flex-shrink-0 font-medium text-black'>Client</span>
-            <span className='w-full font-normal text-neutral-700'>{project.client}</span>
+          <div className='w-full h-fit text-sm leading-tight px-0.5'>
+            <span className='font-medium text-black mr-3.5'>Client</span>
+            <span className='font-normal text-neutral-700'>{project.client}</span>
           </div>
         )}
         {project.residency && (
-          <div className='w-full h-fit flex flex-row justify-start items-start gap-4 text-sm leading-none px-0.5'>
-            <span className='w-fit flex-shrink-0 font-medium text-black'>Residency</span>
-            <span className='w-full font-normal text-neutral-700'>{project.residency}</span>
+          <div className='w-full h-fit text-sm leading-tight px-0.5'>
+            <span className='font-medium text-black mr-3.5'>Residency</span>
+            <span className='font-normal text-neutral-700'>{project.residency}</span>
           </div>
         )}
         {project.created_in && (
-          <div className='w-full h-fit flex flex-row justify-start items-start gap-4 text-sm leading-none px-0.5'>
-            <span className='w-fit flex-shrink-0 font-medium text-black'>Created In</span>
-            <span className='w-full font-normal text-neutral-700'>{project.created_in}</span>
+          <div className='w-full h-fit text-sm leading-tight px-0.5'>
+            <span className='font-medium text-black mr-3.5'>Created In</span>
+            <span className='font-normal text-neutral-700'>{project.created_in}</span>
           </div>
         )}
         {project.exhibition && (
-          <div className='w-full h-fit flex flex-row justify-start items-start gap-4 text-sm leading-none px-0.5'>
-            <span className='w-fit flex-shrink-0 font-medium text-black'>Exhibition</span>
-            <span className='w-full font-normal text-neutral-700'>{project.exhibition}</span>
+          <div className='w-full h-fit text-sm leading-tight px-0.5'>
+            <span className='font-medium text-black mr-3.5'>Exhibition</span>
+            <span className='font-normal text-neutral-700'>{project.exhibition}</span>
           </div>
         )}
         {project.award && (
-          <div className='w-full h-fit flex flex-row justify-start items-start gap-4 text-sm leading-none px-0.5'>
-            <span className='w-fit flex-shrink-0 font-medium text-black'>Award</span>
-            <span className='w-full font-normal text-neutral-700'>{project.award}</span>
+          <div className='w-full h-fit text-sm leading-tight px-0.5'>
+            <span className='font-medium text-black mr-3.5'>Award</span>
+            <span className='font-normal text-neutral-700'>{project.award}</span>
           </div>
         )}
         {project.description && (

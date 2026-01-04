@@ -138,9 +138,7 @@ export default function ProjectDetailPage() {
           </Paragpraph>
         </Section>
       </ParllaxFrame>
-      <div className='w-full h-[60dvh] bg-black sticky bottom-0 flex justify-center items-center'>
-        <h1 className='text-white text-7xl text-center w-fit h-fit'>End of Page</h1>
-      </div>
+      <div className='w-full h-[40dvh] bg-black sticky bottom-0 flex justify-center items-center'></div>
     </>
   )
 }

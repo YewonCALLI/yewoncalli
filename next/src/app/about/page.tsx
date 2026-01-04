@@ -1,6 +1,6 @@
 'use client'
 
-import { MotionDiv, MotionImg, PageTitleArea } from '@/components'
+import { InViewDiv, MotionImg, PageTitleArea } from '@/components'
 import Marquee from 'react-fast-marquee'
 import classNames from 'classnames'
 import React from 'react'
@@ -213,7 +213,7 @@ export default function AboutPage() {
       <div className='min-h-dvh w-full h-fit pt-14 bg-white z-10'>
         <PageTitleArea title='About' />
         <div className='space-y-20'>
-          <MotionDiv className='w-full h-fit p-4 md:p-8 flex flex-col md:flex-row justify-between items-stretch gap-12 md:gap-16'>
+          <InViewDiv className='w-full h-fit p-4 md:p-8 flex flex-col md:flex-row justify-between items-stretch gap-12 md:gap-16'>
             {/* left */}
             <NameSection
               jobs={['Computational', 'Designer/Developer']}
@@ -228,9 +228,9 @@ export default function AboutPage() {
                 className='w-full h-full object-cover object-center'
               />
             </div>
-          </MotionDiv>
+          </InViewDiv>
 
-          <MotionDiv className='w-full p-4 md:p-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16'>
+          <InViewDiv className='w-full p-4 md:p-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16'>
             <div className='w-full md:w-7/12 h-fit flex flex-col gap-4 md:gap-8'>
               <span className='font-semibold text-lg md:text-2xl'>Introduce</span>
 
@@ -238,7 +238,7 @@ export default function AboutPage() {
               <p className={classNames('w-full h-full', 'flex text-base md:text-2xl leading-loose ')}>{DESCRIPTION}</p>
             </div>
             <RelatedLinks links={RELATED_LINKS} />
-          </MotionDiv>
+          </InViewDiv>
           <Marquee speed={50} gradient={false} className='p-4 md:p-8'>
             {['Computational Designer', 'Creative Developer', 'Generative Artist', 'Tech Enthusiast'].map(
               (word, index) => (
@@ -249,7 +249,7 @@ export default function AboutPage() {
             )}
           </Marquee>
 
-          <MotionDiv className='w-full p-4 md:p-8 flex flex-col xl:flex-row justify-between items-start gap-12 md:gap-32'>
+          <InViewDiv className='w-full p-4 md:p-8 flex flex-col xl:flex-row justify-between items-start gap-12 md:gap-32'>
             {/* <div className='w-full md:w-4/12 h-fit'></div> */}
             <div className='w-full xl:w-6/12 h-fit flex flex-col gap-8 md:gap-16'>
               <HistoryList history={EDUCATION} />
@@ -259,8 +259,8 @@ export default function AboutPage() {
               <HistoryList history={WORK_EXPERIENCE} />
               <HistoryList history={LEADERSHIP_EXPERIENCE} />
             </div>
-          </MotionDiv>
-          <MotionDiv className='w-full p-4 md:p-8 flex flex-col justify-start items-center gap-4 md:gap-8 bg-gradient-to-t from-gray-100 to-white'>
+          </InViewDiv>
+          <InViewDiv className='w-full p-4 md:p-8 flex flex-col justify-start items-center gap-4 md:gap-8 bg-gradient-to-t from-gray-100 to-white'>
             <div className='w-full h-fit flex flex-col justify-start items-center gap-4 md:gap-8 py-12 md:py-16'>
               <RiDoubleQuotesL className='text-2xl md:text-4xl' />
               <p className={classNames('w-fit h-full', 'text-center italic flex text-lg md:text-2xl leading-loose ')}>
@@ -268,12 +268,10 @@ export default function AboutPage() {
               </p>
               <RiDoubleQuotesR className='text-2xl md:text-4xl' />
             </div>
-          </MotionDiv>
+          </InViewDiv>
         </div>
       </div>
-      <div className='w-full h-[60dvh] p-4 md:p-8 bg-black text-white sticky bottom-0 flex flex-col justify-center items-center'>
-        <h1 className='text-white text-7xl text-center w-fit h-fit'>End of Page</h1>
-      </div>
+      <div className='w-full h-[30dvh] p-4 md:p-8 bg-black text-white sticky bottom-0 flex flex-col justify-center items-center'></div>
     </>
   )
 }

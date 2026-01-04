@@ -19,7 +19,7 @@ export const HistoryList = ({ history }: { history: HistoryListProps }) => {
   return (
     <>
       <div className='w-full h-fit flex flex-col justify-start items-start gap-4'>
-        <div className='font-semibold text-lg md:text-2xl leading-none'>{history.category}</div>
+        <div className='font-semibold text-xl md:text-2xl leading-none'>{history.category}</div>
         <div className='w-full h-fit flex flex-col gap-4 md:gap-8 justify-start items-start border-t border-gray-300 pt-2'>
           {/* 2 depth */}
           {history.items.map((item) => (
