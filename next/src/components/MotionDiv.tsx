@@ -40,9 +40,11 @@ export function MotionDiv({ children, className, vimeoId, title, featured, text 
             allowFullScreen
             className='
               absolute left-1/2 top-1/2
-              h-[120%] aspect-[16/9] min-w-full
+              h-[100%] aspect-[16/9]
               -translate-x-1/2 -translate-y-1/2
               bg-black object-cover
+              lg:h-[105%]
+              2xl:w-[110%] 2xl:h-auto
             '
           />
           <div className='absolute inset-0 bg-black/30' />
@@ -52,7 +54,7 @@ export function MotionDiv({ children, className, vimeoId, title, featured, text 
       <div className='relative z-10'>{children}</div>
 
       {title && (
-        <span className='w-full text-white md:w-1/2 font-medium text-[8vw] md:text-[4vw]'>
+        <span className='w-full text-white md:w-1/2 font-bold tracking-tight text-[8vw] md:text-[4vw]'>
           {title.replace(/\\n/g, '\n')}
         </span>
       )}

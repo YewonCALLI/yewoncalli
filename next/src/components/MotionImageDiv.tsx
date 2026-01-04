@@ -86,7 +86,7 @@ export function MotionImageDiv({
       <div className="relative z-10">{children}</div>
 
       {title && (
-        <span className="w-full text-white md:w-1/2 leading-relaxed font-medium text-[8vw] md:text-[4vw]">
+        <span className="w-full text-white md:w-1/2 font-bold text-[8vw] md:text-[4vw]">
           {title}
         </span>
       )}

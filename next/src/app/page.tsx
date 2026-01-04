@@ -1,4 +1,4 @@
-import { MotionDiv, MotionImageDiv } from '@/components'
+import { MotionDiv, MotionImageDiv, MotionYoutubeDiv } from '@/components'
 
 export default function Page() {
   return (
@@ -19,7 +19,7 @@ export default function Page() {
         ]}
         intervalMs={3000}
         title='TypoFold'
-        featured='Creative Awards at HCI Korea 2025'
+        featured='Creative Award at HCI Korea 2025'
         text='TypoFold is a creative coding tool that transforms 3D typographic forms into printable paper-craft nets, allowing code-generated designs to be cut, folded, and assembled by hand.'
       ></MotionImageDiv>
       <MotionDiv
@@ -29,55 +29,52 @@ export default function Page() {
         featured='Client Work | MiraeN'
         text='An immersive XR learning platform designed to support conceptual understanding in science education.'
       ></MotionDiv>
+      <MotionDiv
+        vimeoId='1151368571'
+        className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
+        title='Samsung Design Membership 2025\nOnline Exhibition'
+        featured='Client Work | Samsung Design Membership'
+      ></MotionDiv>
       <MotionImageDiv
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
         title='Silver Bell'
-        images={[
-          '/images/projects/silver-bell/cover.jpg',
-          '/images/projects/silver-bell/Untitled-120.jpg'
-        ]}
+        images={['/images/projects/silver-bell/cover.jpg', '/images/projects/silver-bell/Untitled-120.jpg']}
         featured='Young Artist Support Platform ‘Hwawon:Hongyeongil’ Residency'
         text='An exercise app designed for older adults in Hongyeon-gil, Seoul'
       ></MotionImageDiv>
-      <MotionDiv
-        vimeoId='1126413221'
+      <MotionImageDiv
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
         title='Franklin'
-        featured='Creative Awards at HCI Korea 2023\nSmilegate AI Membership 2022'
+        images={['/images/projects/franklin/cover.png']}
+        featured='Creative Award at HCI Korea 2023\nSmilegate AI Membership 2022'
         text='Gender Debiased Korean Fairytale Generator'
-      ></MotionDiv>
+      ></MotionImageDiv>
       <MotionDiv
-        vimeoId='1126413221'
+        vimeoId='833905494'
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
-        title='Samsung Design Membership 2025\nOnline Exhibition'
+        title='Simulating #1,2,3'
+        featured='ACC Media Cube, Gwangju'
+        text='A media art that simulates multiple entities attracting one another through gravity, moving and colliding, to explore uncertainty.'
       ></MotionDiv>
-      <MotionDiv
-        vimeoId='1126413221'
+      <MotionYoutubeDiv
+        youtubeId='pBTghj77Zhg'
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
         title='Singlet & Multiplet'
         featured='First Award, Spin Art Contest 2021, Institute for Basic Science (IBS) & Center for Quantum Nanoscience (QNS)'
-        text=''
-      ></MotionDiv>
-      <MotionDiv
-        vimeoId='1126413221'
+        text='Quantum physics based media art performance that connects the process of discovering and embracing various aspects of ego.'
+      ></MotionYoutubeDiv>
+      <MotionImageDiv
+        images={['/images/projects/memeproject/memeproject1.jpeg', '/images/projects/memeproject/memeproject2.jpeg']}
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
         title='Memeproject'
         featured='Plan T House, Hongcheon Art Museum'
         text='An interactive website that explores meme origins, impact, and replication, and helps users create their own memes.'
-      ></MotionDiv>
+      ></MotionImageDiv>
       <MotionDiv
-        vimeoId='1126413221'
+        vimeoId='1151380515'
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
-        title='Simulating #1,2,3'
-        featured='ACC Media Cube, Gwangju'
-        text=''
-      ></MotionDiv>
-      <MotionDiv
-        vimeoId='1126413221'
-        className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
-        title='Singlet & Multiplet'
-        featured='First Award, Spin Art Contest 2021, Institute for Basic Science (IBS) & Center for Quantum Nanoscience (QNS)'
-        text=''
+        title='delta-individualism'
+        text='An installation work that frames modern society as “high-entropy,” linking distorted individualism to hatred, discrimination, and isolation, and proposing Tandava as a collective ritual of renewal toward the common good.'
       ></MotionDiv>
     </>
   )
