@@ -3,7 +3,14 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 
-export const MotionImg = ({ src, alt, className = '' }) => {
+interface MotionImgProps {
+  src: string
+  alt: string
+  className?: string
+  caption?: string
+}
+
+export const MotionImg = ({ src, alt, className = '', caption }: MotionImgProps) => {
   const ImageRef = useRef<HTMLImageElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [showImage, setShowImage] = useState(false)
@@ -47,6 +54,7 @@ export const MotionImg = ({ src, alt, className = '' }) => {
         alt={alt}
         className={`w-full h-full object-cover object-center ${className}`}
       />
+      {caption && <p className='mt-2 text-left text-sm text-neutral-600'>{caption}</p>}
     </div>
   )
 }

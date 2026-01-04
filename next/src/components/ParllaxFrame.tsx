@@ -11,6 +11,7 @@ interface ParllaxFrameProps {
     title?: string
     description?: string
     subTitle?: string
+    subTitle2?: string
   }
   bannerItem?: React.ReactNode
   bannerClassName?: string
@@ -57,7 +58,7 @@ export function ParllaxFrame({
     <>
       <main className={classNames('w-full h-fit relative z-10')}>
         <motion.section
-          className={classNames('sticky top-0 min-h-dvh h-fit', contentClassName || 'bg-white text-black')}
+          className={classNames('sticky top-0 min-h-dvh h-fit pb-20', contentClassName || 'bg-white text-black')}
         >
           <div
             className={classNames(
@@ -87,35 +88,43 @@ export function ParllaxFrame({
               />
               <div
                 className={classNames(
-                  'absolute gap-4 w-full flex flex-col justify-end items-start z-10',
+                  'absolute gap-4 w-full h-1/3 md:h-1/2 flex flex-col justify-end items-start z-10',
                   'bg-gradient-to-t from-black/70 via-black/40 to-transparent',
                   'px-4 md:px-8 lg:px-12 py-6 md:py-8 lg:py-12',
                   'bottom-0 left-0',
                 )}
               >
-                <span className={classNames('leading-none font-bold text-white', 'text-4xl md:text-7xl lg:text-9xl')}>
+                <span className={classNames('leading-tight font-semibold ', 'text-xl md:text-xl lg:text-2xl')}>
+                  {banner.subTitle} | {banner.subTitle2}
+                </span>
+                <span
+                  className={classNames(
+                    'leading-none font-bold text-white',
+                    'text-5xl md:text-5xl lg:text-7xl lg:-ml-1',
+                  )}
+                >
                   {banner.title}
                 </span>
                 <span
-                  className={classNames('leading-normal font-normal text-white', 'text-base md:text-lg lg:text-xl')}
+                  className={classNames(
+                    'leading-normal font-normal text-white mb-16 lg:mb-8',
+                    'text-xl md:text-xl lg:text-2xl',
+                  )}
                 >
                   {banner.description}
-                </span>
-                <span className={classNames('mt-8 leading-tight font-semibold', 'text-base md:text-lg lg:text-xl')}>
-                  {banner.subTitle}
                 </span>
               </div>
             </div>
           )}
           <button
             onClick={onClickScrollDown}
-            className='absolute mix-blend-difference z-10 bottom-4 inset-x-0 w-full flex justify-center items-center h-fit text-white animate-bounce active:scale-95 hover:opacity-70 transition-all'
+            className='absolute z-20 bottom-4 inset-x-0 w-full flex justify-center items-center h-fit text-white animate-bounce active:scale-95 hover:opacity-70 transition-all'
           >
             <GoChevronDown className='text-4xl' />
           </button>
         </motion.section>
 
-        <section className='sticky top-0 h-dvh bg-transparent'></section>
+        <section className='sticky top-0 h-dvh bg-transparent pointer-events-none'></section>
       </main>
     </>
   )

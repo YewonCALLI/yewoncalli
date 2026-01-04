@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
 import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'draw-the-beat')
+  const imagePath = '/images/projects/draw-the-beat/'
+
+  const sectionIds = ['intro', 'question', 'flow', 'sound', 'examples']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,98 +46,111 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/draw-the-beat/cover.jpg',
-          title: 'Draw the Beat!',
-          description: 'A program that creates music by drawing.',
-          subTitle: 'August 31, 2021',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='intro'>
+          <Chapter
+            subTitle='Overview'
+            title='A drawing-based music tool where sketching beats generates sound and sheet music in real time.'
+          />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              Draw the Beat! is an interactive digital art project that blends music and visual design. Users draw beats
+              directly on the screen, triggering sounds while the generated sheet music unfolds live as visual feedback.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
+            <MotionImg src={imagePath + '00.jpg'} alt='Draw the Beat' className='w-full h-fit' />
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='question'>
+          <Chapter
+            subTitle='Key Question'
+            title='Is there a way to make music composition more intuitive and visual?'
+          />
           <Paragpraph left={null}>
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              Instead of starting from symbols, the project focuses on trying ideas through gestures and learning
+              through immediate feedback.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='flow'>
+          <Chapter subTitle='How It Works' title='' />
+          <Paragpraph>
+            <H3>1. Draw</H3>
+            <P>The user draws beats directly on the screen.</P>
+          </Paragpraph>
+          <Paragpraph>
+            <H3>2. Recognize (ML)</H3>
+            <P>Machine learning recognizes and classifies the drawn shapes.</P>
+          </Paragpraph>
+          <Paragpraph>
+            <H3>3. Generate (Sound + Score)</H3>
+            <P>Based on the predicted class, sounds are triggered and sheet music is generated live.</P>
+          </Paragpraph>
+          <Paragpraph>
+            <P>
+              Processing visualizes user input in real time and generates musical elements, while Wekinator uses machine
+              learning to recognize user-drawn graphics and trigger sounds.
+            </P>
+            <MotionImg src={imagePath + '01.jpg'} alt='Draw the Beat' className='w-full h-fit' />
+            <MotionImg src={imagePath + '02.jpg'} alt='Draw the Beat' className='w-full h-fit' />
+          </Paragpraph>
+        </Section>
+
+        <Section id='sound'>
+          <Chapter subTitle='Sound Design' title='' />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              Some sounds are presented alongside familiar imagery—such as clouds and rain—so users can understand the
+              character of a sound through visual cues as well.
             </P>
+            <MotionImg
+              src={imagePath + '03.jpg'}
+              alt='Draw the Beat'
+              className='w-full h-fit'
+              caption='Pairing a drawing with a real-world image (e.g., cloud/rain) helps communicate the sound’s mood and
+              texture.'
+            />
+          </Paragpraph>
+        </Section>
+
+        <Section id='examples'>
+          <Chapter subTitle='Examples' title='Generated Score Examples' />
+          <Paragpraph left={null}>
+            <P>Below are score outputs generated from different drawing patterns.</P>
+            <MotionImg
+              src={imagePath + '04.jpg'}
+              alt='Draw the Beat'
+              className='w-full h-fit'
+              caption='Changing the drawing pattern alters the rhythm density and the resulting notation.'
+            />
+          </Paragpraph>
+
+          <Chapter subTitle='Demo Video' title='Project Summary Video' />
+          <Paragpraph left={null}>
+            <P>A walkthrough showing the end-to-end flow from drawing input to sound and score output.</P>
+            <MotionDiv>
+              <div className='w-full aspect-video'>
+                <iframe
+                  title='vimeo-player'
+                  src='https://player.vimeo.com/video/1039391735?h=b0f97e3fee&title=0&byline=0&portrait=0&badge=0&dnt=1'
+                  className='w-full h-full'
+                  frameBorder='0'
+                  allow='autoplay; fullscreen; picture-in-picture'
+                  allowFullScreen
+                />
+              </div>
+            </MotionDiv>
           </Paragpraph>
         </Section>
       </ParllaxFrame>
