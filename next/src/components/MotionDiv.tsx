@@ -9,10 +9,11 @@ type InViewFrameProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> &
   className?: string
   vimeoId?: string
   title?: string
+  featured?: string
   text?: string
 }
 
-export function MotionDiv({ children, className, vimeoId, title, text }: InViewFrameProps) {
+export function MotionDiv({ children, className, vimeoId, title, featured, text }: InViewFrameProps) {
   const ref = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(ref, { once: false })
 
@@ -51,24 +52,22 @@ export function MotionDiv({ children, className, vimeoId, title, text }: InViewF
       <div className='relative z-10'>{children}</div>
 
       {title && (
-        <span className='w-full text-white md:w-1/2 leading-relaxed font-medium text-[8vw] md:text-[4vw]'>
-          {title?.split('\n').map((line, index, arr) => (
-            <React.Fragment key={index}>
-              {line}
-              {index < arr.length - 1 && <br />}
-            </React.Fragment>
-          ))}
+        <span className='w-full text-white md:w-1/2 font-medium text-[8vw] md:text-[4vw]'>
+          {title.replace(/\\n/g, '\n')}
         </span>
       )}
 
-      <span className='w-full text-white md:w-1/2 leading-relaxed font-regular text-[4vw] md:text-[2vw]'>
-        {text?.split('\n').map((line, index, arr) => (
-          <React.Fragment key={index}>
-            {line}
-            {index < arr.length - 1 && <br />}
-          </React.Fragment>
-        ))}
-      </span>
+      {featured && (
+        <p className='w-full md:w-1/2 text-white leading-relaxed font-regular text-[3vw] md:text-[1.5vw] whitespace-pre-line mb-4'>
+          {featured.replace(/\\n/g, '\n')}
+        </p>
+      )}
+
+      {text && (
+        <p className='w-full md:w-1/2 text-white leading-relaxed font-normal text-[4vw] md:text-[2vw] whitespace-pre-line'>
+          {text.replace(/\\n/g, '\n')}
+        </p>
+      )}
     </motion.div>
   )
 }
