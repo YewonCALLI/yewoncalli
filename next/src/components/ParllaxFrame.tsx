@@ -58,7 +58,7 @@ export function ParllaxFrame({
     <>
       <main className={classNames('w-full h-fit relative z-10')}>
         <motion.section
-          className={classNames('sticky top-0 min-h-dvh h-fit pb-20', contentClassName || 'bg-white text-black')}
+          className={classNames('sticky top-0 min-h-dvh h-fit pb-32', contentClassName || 'bg-white text-black')}
         >
           <div
             className={classNames(
@@ -88,7 +88,7 @@ export function ParllaxFrame({
               />
               <div
                 className={classNames(
-                  'absolute gap-4 w-full h-1/3 md:h-1/2 flex flex-col justify-end items-start z-10',
+                  'absolute gap-4 w-full h-2/5 md:h-1/2 flex flex-col justify-end items-start z-10',
                   'bg-gradient-to-t from-black/70 via-black/40 to-transparent',
                   'px-4 md:px-8 lg:px-12 py-6 md:py-8 lg:py-12',
                   'bottom-0 left-0',

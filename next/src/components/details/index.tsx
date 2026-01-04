@@ -3,8 +3,9 @@
 import classNames from 'classnames'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { GoArrowUpRight } from 'react-icons/go'
 
-const Chapter = ({ subTitle, title }: { subTitle: string; title: string }) => {
+const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => {
   const ref = useRef(null)
   const inView = useInView(ref, { amount: 0.2, once: false })
 
@@ -23,7 +24,7 @@ const Chapter = ({ subTitle, title }: { subTitle: string; title: string }) => {
         duration: 0.8, // 800ms
         ease: [0.4, 0, 0.2, 1], // cubic-bezier(.4,0,.2,1)
       }}
-      className={classNames('w-full py-12 md:py-24 px-4 md:px-8 lg:px-0 max-w-5xl space-y-6')}
+      className={classNames('w-full pt-14 pb-6 md:pt-20 md:pb-16 px-4 md:px-8 lg:px-0 max-w-5xl space-y-6')}
     >
       <span
         className={classNames(
@@ -36,11 +37,19 @@ const Chapter = ({ subTitle, title }: { subTitle: string; title: string }) => {
       >
         {subTitle}
       </span>
-      <h1
-        className={classNames('w-full font-bold leading-none', 'text-4xl', 'md:text-5xl', 'lg:text-5xl', 'xl:text-6xl')}
-      >
-        {title}
-      </h1>
+      {title && (
+        <h1
+          className={classNames(
+            'w-full font-bold leading-none',
+            'text-4xl',
+            'md:text-5xl',
+            'lg:text-5xl',
+            'xl:text-6xl',
+          )}
+        >
+          {title}
+        </h1>
+      )}
     </motion.div>
   )
 }
@@ -82,6 +91,17 @@ const H3 = ({ children }: { children: React.ReactNode }) => {
 
 const P = ({ children }: { children: React.ReactNode }) => {
   return <p className='text-base md:text-lg leading-relaxed'>{children}</p>
+}
+
+const A = ({ children, href }: { children: React.ReactNode; href: string }) => {
+  return (
+    <div className='w-fit text-base md:text-lg leading-relaxed hover:opacity-70 active:translate-y-1 border-b-[2px] border-black transition-all'>
+      <a href={href} target='_blank' rel='noopener noreferrer' className='flex justify-start items-center gap-2'>
+        {children}
+        <GoArrowUpRight className='inline-block text-lg md:text-xl md:-translate-y-[0.5px]' />
+      </a>
+    </div>
+  )
 }
 
 const Div = ({ children }: { children?: React.ReactNode }) => {
@@ -135,4 +155,4 @@ const Div = ({ children }: { children?: React.ReactNode }) => {
   )
 }
 
-export { Chapter, Paragpraph, H1, H3, P, Div }
+export { Chapter, Paragpraph, H1, H3, P, Div, A }

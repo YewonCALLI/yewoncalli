@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
 import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'simulating-1-2-3')
+  const imagePath = '/images/projects/simulating-1-2-3/'
+
+  const sectionIds = ['overview', 'method', 'system', 'videos']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,98 +46,89 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/simulating-1-2-3/cover.jpg',
-          title: 'Simulating #1,2,3',
-          description: 'Simulating gravity through Unreal Engine.',
-          subTitle: 'August 31, 2023',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='overview'>
+          <Chapter subTitle='Overview' />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              Simulating #1,2,3 is a digital simulation exploring the gravitational interactions between entities
+              through physical computations. Within the simulation, the artist observes beings in a two-dimensional
+              world, where each run produces different outcomes as the entities exhibit varied behaviors.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='method'>
+          <Chapter subTitle='Method' />
           <Paragpraph left={null}>
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              This unpredictability mirrors the uncertainty of real life, prompting reflection on how we navigate a
+              world full of probabilistic events, continually adjusting to and predicting the unknown.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='system'>
+          <Chapter
+            subTitle='System
+'
+          />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              The simulation was developed using Unreal Engine&apos;s Blueprint system, where I designed a gravitational
+              algorithm based on the universal law of gravitation. By adjusting parameters such as gravitational
+              acceleration and mass, I controlled the movement of the entities, allowing for dynamic and unique
+              interactions each time the simulation runs.
             </P>
+          </Paragpraph>
+        </Section>
+
+        <Section id='videos'>
+          <Chapter subTitle='Videos' />
+          <Paragpraph left={null}>
+            <div className='w-full aspect-video'>
+              <iframe
+                title='vimeo-player'
+                src='https://player.vimeo.com/video/833905494?h=b0f97e3fee&title=0&byline=0&portrait=0&badge=0&dnt=1'
+                className='w-full h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <div className='w-full aspect-video'>
+              <iframe
+                title='vimeo-player'
+                src='https://player.vimeo.com/video/1000799277?h=b0f97e3fee&title=0&byline=0&portrait=0&badge=0&dnt=1'
+                className='w-full h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <div className='w-full aspect-video'>
+              <iframe
+                title='vimeo-player'
+                src='https://player.vimeo.com/video/1000697197?h=b0f97e3fee&title=0&byline=0&portrait=0&badge=0&dnt=1'
+                className='w-full h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
           </Paragpraph>
         </Section>
       </ParllaxFrame>

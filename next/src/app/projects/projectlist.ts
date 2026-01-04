@@ -87,7 +87,7 @@ export const projects = [
     slug: 'singlet-multiplet',
     name: 'Singlet & Multiplet',
     cover: '/images/projects/singlet-multiplet/cover.jpg',
-    part: 'AI Engineer, UX/UI Designer, Frontend Developer',
+    part: 'Generative Artist, Media Facade Developer',
     description: 'A media art performance exploring identity and quantum mechanics.',
     award:
       '8th International New Media Art Exhibition, CICA Museum Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)',

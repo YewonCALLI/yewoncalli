@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
 import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'singlet-multiplet')
+  const imagePath = '/images/projects/singlet-multiplet/'
+
+  const sectionIds = ['overview', 'concept', 'visuals', 'performance', 'stills']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,98 +46,83 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/singlet-multiplet/cover.jpg',
-          title: 'Singlet & Multiplet',
-          description: 'A media art performance exploring identity and quantum mechanics.',
-          subTitle: 'December 31, 2021',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='overview'>
+          <Chapter subTitle='Overview' />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              Singlet&Multiplet is a media art performance that explores the idea of multiple identities existing within
+              an individual. Drawing inspiration from quantum mechanics, specifically the concepts of superposition and
+              entanglement, the work reflects how people embody diverse, sometimes contradictory, selves throughout
+              life. Just as quantum states exist in layers, so do our various identities, coexisting and shaping who we
+              are.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='concept'>
+          <Chapter subTitle='Concept' />
           <Paragpraph left={null}>
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              The work explores the idea of multiple identities existing within an individual. Team Moiré views these
+              layered identities as &quot;grains&quot; that form the unique patterns and traces of a person, much like
+              quantum mechanics reveals unseen forces.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='visuals'>
+          <Chapter subTitle='Visuals' />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              The performance features video art created with p5.js, utilizing simple graphic elements like points,
+              lines, and planes to represent the layered identities within us. These visual elements complement the
+              story, which unfolds through movement and performance.
             </P>
+          </Paragpraph>
+        </Section>
+
+        <Section id='performance'>
+          <Chapter subTitle='Performance' />
+          <Paragpraph left={null}>
+            <P>
+              Through this work, the team invites reflection on how individuals reconcile their many facets to become
+              more integrated and mature selves.
+            </P>
+          </Paragpraph>
+        </Section>
+
+        <Section id='stills'>
+          <Chapter subTitle='Stills' />
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '01.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '02.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '03.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '04.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '05.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '06.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '07.jpg'} alt='Singlet & Multiplet' className='w-full h-fit' />
           </Paragpraph>
         </Section>
       </ParllaxFrame>

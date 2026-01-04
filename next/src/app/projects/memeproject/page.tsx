@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
-import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
+import { Chapter, Paragpraph, H1, H3, P, Div, A } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'memeproject')
+  const imagePath = '/images/projects/memeproject/'
+
+  const sectionIds = ['overview', 'virtual museum', 'meme making', 'exhibition']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,103 +46,97 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/memeproject/cover.jpg',
-          title: 'Memeproject',
-          description:
-            'An interactive website that explores meme origins, impact, and replication, and helps users create their own memes.',
-          subTitle: 'December 31, 2023',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='overview'>
+          <Chapter subTitle='Project' title='MemeProject + Meme-Making' />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              MemeProject is an interactive website that explores meme origins, impact, and replication, and helps users
+              create their own memes. This work consists of two modules: the main experience (MemeProject) and a
+              companion meme-making tool (Meme-making).
             </P>
           </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
+          <Chapter subTitle='Concept' title='Memes as Cultural Units' />
           <Paragpraph left={null}>
             <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
+              The MemeProject is a fictional company focused on collecting and preserving memes. Drawing on the term
+              &quot;meme&quot; as defined by Richard Dawkins in The Selfish Gene, this project views memes as cultural
+              units that, like genes, replicate and spread independently. While genes are passed down biologically,
+              memes circulate socially, often conveying humor or social critique with a playful edge.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='virtual museum'>
+          <Chapter subTitle='Main Experience' title='A Virtual Museum with Three Floors' />
           <Paragpraph left={null}>
+            <MotionImg src={imagePath + '01.jpg'} alt='memeproject01' caption='MemeProject Start' />
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              Accessible via QR code in the exhibition space, the website invites visitors to a virtual
+              &quot;museum&quot; with three themed floors.
             </P>
           </Paragpraph>
+
+          <Chapter subTitle='Floor 1' title='Origins (Kitchen-style Space)' />
           <Paragpraph left={null}>
-            <Div></Div>
+            <MotionImg src={imagePath + '02.jpg'} alt='memeproject02' caption='Floor 1 scenario' />
+            <P>The first floor is a kitchen-style space explaining meme origins.</P>
+          </Paragpraph>
+
+          <Chapter subTitle='Floor 2' title='Latest Memes & Spread (Globe Sculpture)' />
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '03.jpg'} alt='memeproject03' caption='Floor 2 scenario' />
+            <P>The second floor features the latest memes alongside a globe sculpture symbolizing meme spread.</P>
+          </Paragpraph>
+
+          <Chapter subTitle='Floor 3' title='Create & Save' />
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '04.jpg'} alt='memeproject04' caption='Floor 3 scenario 1' />
+            <MotionImg src={imagePath + '05.jpg'} alt='memeproject05' caption='Floor 3 scenario 2' />
+            <P>The third floor allows visitors to create and save their own memes.</P>
+          </Paragpraph>
+
+          <Paragpraph left={null}>
+            <A href='https://memeproject.vercel.app/'>Visit MemeProject Website</A>
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='meme making'>
+          <Chapter subTitle='Tool' title='Meme-Making' />
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '06.jpg'} alt='memeproject06' caption='Meme-Making Tool' />
+            <P>Meme-Making is a tool where visitors can create and save their own memes.</P>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <A href='https://memeproject.vercel.app/world.html'>Try Meme-Making Tool</A>
+          </Paragpraph>
+        </Section>
+
+        <Section id='exhibition'>
+          <Chapter subTitle='Exhibition' title='Access via QR Code' />
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '07.jpg'} alt='memeproject07' caption='Exhibition Space' />
+            <P>The project’s website is accessible via QR code in the exhibition space.</P>
+          </Paragpraph>
+          <Chapter subTitle='Reflection' title='Self-replication and Cultural Reach' />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              This project explores the self-replicating nature of memes and their potential reach, encouraging visitors
+              to reflect on the humorous yet impactful role memes play in shaping cultural narratives.
             </P>
           </Paragpraph>
         </Section>
       </ParllaxFrame>
-      <div className='w-full h-[40dvh] bg-black sticky bottom-0 flex justify-center items-center'></div>
+      <div className='sticky bottom-0 flex h-[40dvh] w-full items-center justify-center bg-black'></div>
     </>
   )
 }

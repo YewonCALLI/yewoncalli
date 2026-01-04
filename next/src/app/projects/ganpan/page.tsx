@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
-import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
+import { Chapter, Paragpraph, H1, H3, P, Div, A } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'ganpan')
+  const imagePath = '/images/projects/ganpan/'
+
+  const sectionIds = ['overview', 'concept', 'system', 'output']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,102 +46,120 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/ganpan/cover.jpg',
-          title: 'Ganpan',
-          description: 'A Korean typography generation model based on signboard images in South Korea.',
-          subTitle: 'December 31, 2024',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='overview'>
+          <Chapter subTitle='Project' title='Ganpan' />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              Ganpan is a digital art project that transforms user-inputted text into Korean signboard images. At its
+              core is a database built by photographing and labeling individual letters from city signs. When a user
+              enters a sentence, the system assembles and displays it using letter images extracted from real
+              signboards.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
+            <MotionImg
+              src={imagePath + '01.jpg'}
+              alt='ganpan01'
+              caption='Interface that reconstructs user text with signboard letters'
+            />
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='concept'>
+          <Chapter subTitle='Concept' title='Reversing the Methodology of AI' />
           <Paragpraph left={null}>
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              Ganpan operates in the opposite direction of AI image generation. While AI learns from countless sources
+              to create images with untraceable origins, Ganpan collects individual letters from Korean city signboards
+              and clearly preserves their sources. User-inputted text is transformed into actual signboard letters, and
+              clicking each letter reveals its original signboard context.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
+            <MotionImg
+              src={imagePath + '02.jpg'}
+              alt='ganpan02'
+              caption='Figure 1. Diagram comparing AI image generation and Ganpan'
+            />
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='system'>
+          <Chapter subTitle='System' title='Pipeline' />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              Ganpan stores original signboard images and their extracted individual characters (e.g., &apos;은&apos;,
+              &apos;마&apos;, &apos;종&apos;, &apos;합&apos;, &apos;상&apos;, &apos;가&apos;) in a relational structure
+              within a Supabase database. When a user enters text, the system queries the database to retrieve matching
+              letter images and displays them on screen. Each letter image is linked to its source signboard image
+              through a parent key, allowing users to view the original signboard context when clicking on any
+              individual character.
             </P>
+            <MotionImg src={imagePath + '03.jpg'} alt='ganpan03' caption='Figure 2. Ganpan website pipeline' />
+          </Paragpraph>
+
+          <Chapter subTitle='Interaction' title='Click-to-Trace' />
+          <Paragpraph left={null}>
+            <P>Each letter is a sourced image, and a click takes the user back to its original signboard context.</P>
+            <MotionImg src={imagePath + '04.jpg'} alt='ganpan04' caption='Ganpan click-to-trace interaction 1' />
+            <MotionImg src={imagePath + '05.jpg'} alt='ganpan05' caption='Ganpan click-to-trace interaction 2' />
+          </Paragpraph>
+        </Section>
+
+        <Section id='output'>
+          <Chapter subTitle='3D' title='3D Plaza' />
+          <Paragpraph left={null}>
+            <P>
+              We collected more than 300 user-generated signboard images in the dataset. Using three.js, I created a 3D
+              plaza where these images combine to form a tall building.
+            </P>
+            <MotionImg
+              src={imagePath + '06.jpg'}
+              alt='ganpan06'
+              caption='Ganpan 3D plaza with user-generated signboards'
+            />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <A href='https://ganpan.vercel.app/'>Visit Ganpan Website</A>
+          </Paragpraph>
+
+          <Chapter subTitle='Print' title='From Website to Zine' />
+          <Paragpraph left={null}>
+            <P>
+              Ganpan not only stores user-generated sentence images digitally, but also transforms them into analog
+              publications in the form of zines. This brings the artistic process back into physical form and explores
+              how digital art (a website) and print media can work complementarily with analog.
+            </P>
+            <MotionImg
+              src={imagePath + '07.jpg'}
+              alt='ganpan07'
+              caption='Printed documentation reconstructing generated letters and their sources'
+            />
+            <MotionImg
+              src={imagePath + '08.jpg'}
+              alt='ganpan08'
+              caption='Printed documentation reconstructing generated letters and their sources'
+            />
+            <MotionImg
+              src={imagePath + '09.jpg'}
+              alt='ganpan09'
+              caption='Printed documentation reconstructing generated letters and their sources'
+            />
+            <MotionImg
+              src={imagePath + '10.jpg'}
+              alt='ganpan10'
+              caption='Printed documentation reconstructing generated letters and their sources'
+            />
           </Paragpraph>
         </Section>
       </ParllaxFrame>
-      <div className='w-full h-[40dvh] bg-black sticky bottom-0 flex justify-center items-center'></div>
+      <div className='sticky bottom-0 flex h-[40dvh] w-full items-center justify-center bg-black'></div>
     </>
   )
 }

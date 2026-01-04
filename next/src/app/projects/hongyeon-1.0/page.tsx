@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
-import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
+import { Chapter, Paragpraph, H1, H3, P, Div, A } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'hongyeon-1.0')
+  const imagePath = '/images/projects/hongyeon-1.0/'
+
+  const sectionIds = ['overview', 'context', 'data', 'experience', 'exhibition']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,99 +46,80 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/hongyeon-1.0/cover.jpg',
-          title: 'Hongyeon 1.0',
-          description:
-            'A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative.',
-          subTitle: 'December 31, 2023',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='overview'>
+          <Chapter subTitle='Overview' />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              Hongyeon 1.0 is a chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and
+              culture through AI-driven narrative.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='context'>
+          <Chapter subTitle='Context' />
           <Paragpraph left={null}>
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              Hongyeon 1.0 is a project I developed after spending four months visiting Hongyeon-gil, Yeonhui-dong,
+              Seoul. As I observed a noticeable generational gap between the older and younger residents, I aimed to
+              create an AI chatbot that could represent a unified voice, blending perspectives from across the
+              community.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='data'>
+          <Chapter subTitle='Data' />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              Using data collected from street interviews, online surveys, and web scraping, I trained Hongyeon 1.0 to
+              share not only factual information but also personal stories, history, and culture, as if these
+              experiences belonged to one person.
             </P>
+          </Paragpraph>
+        </Section>
+
+        <Section id='experience'>
+          <Chapter subTitle='Experience' />
+          <Paragpraph left={null}>
+            <P>
+              Accessible through an avatar on a website, Hongyeon 1.0 bridges generational divides, allowing users to
+              experience the essence of life in Hongyeon-gil through authentic, AI-driven storytelling.
+            </P>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '01.gif'} alt='experience-1' caption='Hongyeon 1.0 Demo' />
+            <A href='https://hongyeon.vercel.app/'>Try Hongyeon 1.0 Chatbot</A>
+          </Paragpraph>
+        </Section>
+
+        <Section id='exhibit'>
+          <Chapter subTitle='Exhibition' />
+          <Paragpraph left={null}>
+            <P>
+              This chatbot was exhibited in a gallery located in Hongyeon-gil itself, where many local residents had the
+              opportunity to try it firsthand.
+            </P>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg src={imagePath + '02.jpg'} alt='exhibition-1' caption='Exhibition view' />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg
+              src={imagePath + '03.jpg'}
+              alt='exhibition-2'
+              caption='QR code poster placed around the neighborhood to invite locals to interact with Hongyeon 1.0'
+            />
           </Paragpraph>
         </Section>
       </ParllaxFrame>

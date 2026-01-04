@@ -1,13 +1,17 @@
 'use client'
 
-import { Section, ScrollSideTab } from '@/components'
-import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
+import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
+import { Chapter, Paragpraph, H1, H3, P, Div, A } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
+import { projects } from '../projectlist'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
-  const [activeSection, setActiveSection] = useState('research')
+  const project = projects.find((p) => p.slug === 'word-wide-web')
+  const imagePath = '/images/projects/word-wide-web/'
+
+  const sectionIds = ['overview', 'dataset', 'tool', 'credits']
+  const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
     const observerOptions = {
@@ -42,102 +46,105 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/word-wide-web/cover.jpg',
-          title: 'Word Wide Web',
-          description: 'A word-weaving platform that creates poems through connected synonyms.',
-          subTitle: 'December 31, 2024',
+          image: project.cover,
+          title: project.name,
+          description: project.description,
+          subTitle: project.created_date,
+          subTitle2:
+            project.client || project.residency || project.created_in || project.exhibition || project.award || '',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
+        <Section id='overview'>
+          <Chapter subTitle='Project' title='Word Wide Web' />
           <Paragpraph left={null}>
             <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
+              Word Wide Web is a word-weaving platform that creates poems through connected synonyms. Inspired by the
+              Korean nursery rhyme “Red Like an Apple,” it helps writers create chain poetry by connecting words through
+              semantic relationships.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
+            <MotionImg src={imagePath + '01.gif'} alt='word-wide-web01' caption='Interface for weaving chain poetry' />
           </Paragpraph>
         </Section>
 
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+        <Section id='dataset'>
+          <Chapter subTitle='Background' title='SFPC: Human-Scale Natural Language Processing' />
           <Paragpraph left={null}>
             <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
+              During SFPC&apos;s Human-Scale Natural Language Processing class, our class collaborated to label words
+              using a system that breaks down text into 16 parts of speech and 6 criteria pairs (like dog-cat,
+              concrete-intangible, utilitarian-romantic). Inspired by this experience, I created a platform that helps
+              writers find similar words based on these semantic measurements.
             </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
           </Paragpraph>
         </Section>
 
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
+        <Section id='tool'>
+          <Chapter subTitle='How it works' title='Write by Connecting Words' />
+          <Paragpraph left={null}>
+            <P>1. Enter your starting word.</P>
+            <P>2. Browse through suggested related words provided by Word Wide Web.</P>
+            <P>
+              3. You can add your own words if you don&apos;t find what you&apos;re looking for (Note: some words may
+              not exist in our database).
+            </P>
+            <P>4. Continue connecting words to craft your poem.</P>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg
+              src={imagePath + '02.gif'}
+              alt='word-wide-web02'
+              caption='Word suggestion and addition process'
+            />
+            <MotionImg src={imagePath + '03.gif'} alt='word-wide-web03' caption='Weaving words into poetry' />
+            <A href='https://solarword.vercel.app/'>Visit Word Wide Web Website</A>
+          </Paragpraph>
+
+          <Chapter subTitle='What it enables' title='Unexpected Connections' />
           <Paragpraph left={null}>
             <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
+              Through this process, discover unexpected linguistic connections and create poetic expressions that
+              challenge our perception of language relationships.
             </P>
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg
+              src={imagePath + '04.gif'}
+              alt='word-wide-web04'
+              caption='Example of unexpected word connections generated'
+            />
+          </Paragpraph>
+          <Paragpraph left={null}>
+            <MotionImg
+              src={imagePath + '05.png'}
+              alt='word-wide-web05'
+              caption='Example of unexpected word connections generated'
+            />
+          </Paragpraph>
+        </Section>
+
+        <Section id='credits'>
+          <Chapter subTitle='Data contribution' title='Text data contribution, word scoring' />
+          <Paragpraph left={null}>
+            <P>
+              The data and word scoring were collaboratively created by participants, each developing individual
+              projects based on this shared dataset.
+            </P>
+            <H3>
+              Ilona Brand, Lillian Hua, Jean Kim, Maya Williams, kathy wu, Joses Ho, Maya Detwiller, Jireh Deng, Ellen
+              Fritz, Alice Yuan Zhang, Yewon Jang, Charis Poon, Kimberly Lyle, Hannah Jenkins, Cecilia Knaub, Gabriella
+              Chronis, Juliana Gomezr
+            </H3>
+            <MotionImg
+              src={imagePath + '06.gif'}
+              alt='word-wide-web06'
+              caption='Weaving chain poetry with contributed dataset'
+            />
           </Paragpraph>
         </Section>
       </ParllaxFrame>
-      <div className='w-full h-[40dvh] bg-black sticky bottom-0 flex justify-center items-center'></div>
+      <div className='sticky bottom-0 flex h-[40dvh] w-full items-center justify-center bg-black'></div>
     </>
   )
 }
