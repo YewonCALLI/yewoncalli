@@ -23,7 +23,7 @@ export default function Page() {
         text='TypoFold is a creative coding tool that transforms 3D typographic forms into printable paper-craft nets, allowing code-generated designs to be cut, folded, and assembled by hand.'
       ></MotionImageDiv>
       <MotionDiv
-        vimeoId='1151315926'
+        vimeoId='1151529949'
         className='px-4 md:px-8 w-full h-dvh flex flex-col justify-center items-start'
         title='XR Science Museum'
         featured='Client Work | MiraeN'
