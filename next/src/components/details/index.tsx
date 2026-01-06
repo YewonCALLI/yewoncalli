@@ -73,7 +73,7 @@ const Paragpraph = ({ left, children }: { left?: React.ReactNode; children: Reac
         duration: 0.8, // 800ms
         ease: [0.4, 0, 0.2, 1], // cubic-bezier(.4,0,.2,1)
       }}
-      className='w-full  px-4 md:px-8 lg:px-0 pb-4 md:pb-8 max-w-5xl h-fit flex flex-col md:flex-row gap-6 justify-start items-start'
+      className='w-full px-4 md:px-8 lg:px-0 pb-4 md:pb-6 max-w-5xl h-fit flex flex-col md:flex-row gap-6 justify-start items-start'
     >
       <div className='w-full md:w-1/3 h-fit'>{left}</div>
       <div className='w-full h-fit space-y-4'>{children}</div>
@@ -89,8 +89,8 @@ const H3 = ({ children }: { children: React.ReactNode }) => {
   return <h3 className='text-lg md:text-xl font-semibold leading-snug mb-4'>{children}</h3>
 }
 
-const P = ({ children }: { children: React.ReactNode }) => {
-  return <p className='text-base md:text-lg leading-relaxed'>{children}</p>
+const P = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <p className={`text-base md:text-lg leading-relaxed ${className}`}>{children}</p>
 }
 
 const A = ({ children, href }: { children: React.ReactNode; href: string }) => {
@@ -104,7 +104,7 @@ const A = ({ children, href }: { children: React.ReactNode; href: string }) => {
   )
 }
 
-const Div = ({ children }: { children?: React.ReactNode }) => {
+const Div = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
   const [isMagnified, setIsMagnified] = useState(false)
 
   useEffect(() => {
@@ -123,7 +123,7 @@ const Div = ({ children }: { children?: React.ReactNode }) => {
     <>
       <div
         onClick={() => setIsMagnified(!isMagnified)}
-        className='w-full h-auto aspect-video bg-gray-100 cursor-zoom-in md:hover:opacity-70 active:translate-y-1 transition-all'
+        className={`w-full h-fit cursor-zoom-in md:hover:opacity-70 active:translate-y-1 transition-all ${className}`}
       >
         {children}
       </div>
