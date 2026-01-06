@@ -20,7 +20,7 @@ export const projects = [
   {
     slug: 'silver-bell',
     name: 'Silver Bell',
-    cover: 'images/projects/silver-bell/cover.jpg',
+    cover: '/images/projects/silver-bell/cover.jpg',
     part: 'Design Researcher, Application Developer',
     description: 'An exercise app designed for older adults in Hongyeon-gil, Seoul',
     residency: 'Total Museum of Contemporary Art',

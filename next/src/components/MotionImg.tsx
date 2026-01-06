@@ -8,9 +8,10 @@ interface MotionImgProps {
   alt: string
   className?: string
   caption?: string
+  imagePosition?: 'center' | 'top' | 'bottom'
 }
 
-export const MotionImg = ({ src, alt, className = '', caption }: MotionImgProps) => {
+export const MotionImg = ({ src, alt, className = '', caption, imagePosition = 'center' }: MotionImgProps) => {
   const ImageRef = useRef<HTMLImageElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [showImage, setShowImage] = useState(false)
@@ -70,7 +71,8 @@ export const MotionImg = ({ src, alt, className = '', caption }: MotionImgProps)
           ref={ImageRef}
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover object-center`}
+          className={`w-full h-full object-cover
+            ${imagePosition === 'top' ? 'object-top' : imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
         />
         {caption && <p className='mt-2 text-left text-sm text-neutral-600'>{caption}</p>}
       </div>
@@ -92,7 +94,7 @@ export const MotionImg = ({ src, alt, className = '', caption }: MotionImgProps)
             onClick={() => setIsMagnified(false)}
             className='fixed inset-0 !m-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center z-50 cursor-zoom-out'
           >
-            <div className='w-4/5 h-4/5   p-4 cursor-auto'>
+            <div className='w-full md:w-4/5 h-fit md:h-4/5 p-4 cursor-auto'>
               <div className='w-full h-full overflow-auto'>
                 <img src={src} alt={alt} className={`w-full h-full object-contain object-center`} />
               </div>

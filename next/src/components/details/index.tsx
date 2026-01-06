@@ -54,7 +54,17 @@ const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => 
   )
 }
 
-const Paragpraph = ({ left, children }: { left?: React.ReactNode; children: React.ReactNode }) => {
+const Paragpraph = ({
+  left,
+  children,
+  full = false,
+  className,
+}: {
+  left?: React.ReactNode
+  children: React.ReactNode
+  full?: boolean
+  className?: string
+}) => {
   const ref = useRef(null)
   const inView = useInView(ref, { amount: 0.2, once: false })
 
@@ -73,20 +83,24 @@ const Paragpraph = ({ left, children }: { left?: React.ReactNode; children: Reac
         duration: 0.8, // 800ms
         ease: [0.4, 0, 0.2, 1], // cubic-bezier(.4,0,.2,1)
       }}
-      className='w-full px-4 md:px-8 lg:px-0 pb-4 md:pb-6 max-w-5xl h-fit flex flex-col md:flex-row gap-6 justify-start items-start'
+      className={`w-full px-4 md:px-8 lg:px-0 pb-4 md:pb-6 max-w-5xl h-fit flex flex-col md:flex-row gap-6 justify-start items-start ${className}`}
     >
-      <div className='w-full md:w-1/3 h-fit'>{left}</div>
+      {!full && <div className='w-full md:w-1/3 h-fit'>{left}</div>}
       <div className='w-full h-fit space-y-4'>{children}</div>
     </motion.div>
   )
 }
 
-const H1 = ({ children }: { children: React.ReactNode }) => {
-  return <h1 className='text-4xl font-bold leading-snug mb-6'>{children}</h1>
+const H1 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <h1 className={`text-2xl md:text-4xl font-bold leading-tight mt-4 mb-4 ${className}`}>{children}</h1>
 }
 
-const H3 = ({ children }: { children: React.ReactNode }) => {
-  return <h3 className='text-lg md:text-xl font-semibold leading-snug mb-4'>{children}</h3>
+const H2 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <h2 className={`text-xl md:text-2xl font-semibold leading-tight mt-2 mb-2 ${className}`}>{children}</h2>
+}
+
+const H3 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <h3 className={`text-lg md:text-xl font-semibold leading-tight mt-2 mb-2 ${className}`}>{children}</h3>
 }
 
 const P = ({ children, className }: { children: React.ReactNode; className?: string }) => {
@@ -155,4 +169,4 @@ const Div = ({ children, className }: { children?: React.ReactNode; className?: 
   )
 }
 
-export { Chapter, Paragpraph, H1, H3, P, Div, A }
+export { Chapter, Paragpraph, H1, H2, H3, P, Div, A }

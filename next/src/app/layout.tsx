@@ -90,7 +90,6 @@ export default function RootLayout({
       <head>
         <link href='https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap' rel='stylesheet' />
       </head>
-
       <body className={`${pretendard.variable} antialiased relative`}>
         <Layout>{children}</Layout>
       </body>
