@@ -1,7 +1,7 @@
 'use client'
 
 import { Section, ScrollSideTab, MotionImg, MotionDiv } from '@/components'
-import { Chapter, Paragpraph, H1, H3, P, Div, H2 } from '@/components/details'
+import { Chapter, Paragpraph, H1, H3, P, Div, H2, A } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
 import { projects } from '../projectlist'
@@ -423,6 +423,9 @@ export default function ProjectDetailPage() {
               <MotionImg src={imagePath + '23.jpg'} alt='' className='w-full h-fit' />
             </div>
             <MotionImg src={imagePath + '24.jpg'} alt='' className='w-full h-fit' />
+          </Paragpraph>
+          <Paragpraph>
+            <A href='https://typofold.vercel.app/'>Visit TypoFold Website</A>
           </Paragpraph>
         </Section>
 
