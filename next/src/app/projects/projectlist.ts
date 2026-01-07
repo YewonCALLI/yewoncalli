@@ -1,13 +1,13 @@
 export const projects = [
-  {
-    slug: 'new-formative',
-    name: '2025 Samsung Design Membership <New Formative>',
-    cover: '/images/projects/new-formative/cover.jpg',
-    part: 'Frontend Developer',
-    description: 'The online website for 2025 Samsung Design Membership',
-    client: 'Samsung Design Membership',
-    created_date: '2025',
-  },
+  // {
+  //   slug: 'new-formative',
+  //   name: '2025 Samsung Design Membership <New Formative>',
+  //   cover: '/images/projects/new-formative/cover.jpg',
+  //   part: 'Frontend Developer',
+  //   description: 'The online website for 2025 Samsung Design Membership',
+  //   client: 'Samsung Design Membership',
+  //   created_date: '2025',
+  // },
   {
     slug: 'xr-science-museum',
     name: 'XR Science Museum',
@@ -15,6 +15,15 @@ export const projects = [
     part: 'UI/UX Designer, Frontend Developer',
     description: 'A 3D simulation-based learning experience for MiraeN, Korea’s leading textbook publisher',
     client: 'MiraeN',
+    created_date: '2025',
+  },
+  {
+    slug: 'typofold',
+    name: 'Typofold',
+    cover: '/images/projects/typofold/cover.jpg',
+    part: 'UI/UX Designer, Frontend Developer',
+    description: 'Turning code-driven typography into foldable, physical artifacts',
+    award: 'HCI Korea Creative Awards (Excellence Awards) - 2025',
     created_date: '2025',
   },
   {
