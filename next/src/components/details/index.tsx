@@ -26,17 +26,19 @@ const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => 
       }}
       className={classNames('w-full pt-14 pb-6 md:pt-20 md:pb-16 px-4 md:px-8 lg:px-0 max-w-5xl space-y-6')}
     >
-      <span
-        className={classNames(
-          'w-full text-black/70 font-semibold leading-none',
-          'text-xl',
-          'md:text-2xl',
-          'lg:text-2xl',
-          'xl:text-3xl',
-        )}
-      >
-        {subTitle}
-      </span>
+      {subTitle && (
+        <span
+          className={classNames(
+            'w-full text-black/70 font-semibold leading-none',
+            'text-xl',
+            'md:text-2xl',
+            'lg:text-2xl',
+            'xl:text-3xl',
+          )}
+        >
+          {subTitle}
+        </span>
+      )}
       {title && (
         <h1
           className={classNames(

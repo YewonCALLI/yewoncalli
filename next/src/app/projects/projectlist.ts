@@ -13,7 +13,7 @@ export const projects = [
     name: 'XR Science Museum',
     cover: '/images/projects/xr-science-museum/cover.jpg',
     part: 'UI/UX Designer, Frontend Developer',
-    description: 'A 3D simulation-based learning experience for MiraeN, Korea’s leading textbook publisher',
+    description: 'An immersive XR learning platform designed to support conceptual understanding in science education.',
     client: 'MiraeN',
     created_date: '2025',
   },
