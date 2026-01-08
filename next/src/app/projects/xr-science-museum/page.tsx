@@ -10,7 +10,7 @@ export default function ProjectDetailPage() {
   const project = projects.find((p) => p.slug === 'xr-science-museum')
   const imagePath = '/images/projects/xr-science-museum/'
 
-  const sectionIds = ['research', 'development', 'output', 'workshop']
+  const sectionIds = ['research', 'development', 'output', 'reflection']
   const [activeSection, setActiveSection] = useState(sectionIds[0])
 
   useEffect(() => {
@@ -475,6 +475,151 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <MotionImg src={imagePath + '55.jpg'} alt='' className='w-full h-fit' />
             <P>I created an activity guide for each experiment.</P>
+          </Paragpraph>
+          <Paragpraph>
+            <div className='w-full h-fit grid grid-cols-2 md:grid-cols-3 gap-4'>
+              <MotionImg src={imagePath + '56.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '57.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '58.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '59.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '60.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '61.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '62.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '63.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '64.png'} alt='' className='w-full h-fit' />
+            </div>
+          </Paragpraph>
+
+          <Chapter subTitle='Final Design' title='Conducting the Experiment' />
+          <Paragpraph>
+            <P>
+              During curriculum-based experiments, the system visualizes changes in real time and provides continuous
+              feedback that helps students track progress, interpret results, and recognize when a trial is complete.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg src={imagePath + '65.png'} alt='' className='w-full h-fit' />
+          </Paragpraph>
+
+          <Chapter subTitle='Final Design' title='Solution 1. Time-Based Simulations' />
+          <Paragpraph>
+            <P>
+              Time-based simulation supports inquiry by allowing students to observe how variables change over time
+              rather than relying on static snapshots. By controlling time directly, students can pause, rewind, and
+              compare moments to reason about change through repeated observation and measurement.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg src={imagePath + '66.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '67.png '} alt='' className='w-full h-fit' />
+          </Paragpraph>
+
+          <Chapter subTitle='Final Design' title='Solution 2. State Change Simulations' />
+          <Paragpraph>
+            <P>
+              State-change type of simulations let students directly manipulate components to compare discrete
+              conditions side by side. By toggling elements such as switches, batteries, or bulbs, students can observe
+              immediate cause-and-effect relationships between system states.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg src={imagePath + '68.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '69.png '} alt='' className='w-full h-fit' />
+          </Paragpraph>
+
+          <Chapter subTitle='Final Design' title='Solution 3. Comparison & Classification' />
+          <Paragpraph>
+            <P>
+              Comparison and classification simulations type of simulation allows students directly manipulate objects
+              to test how they behave under different conditions. By dragging items between containers, removing them,
+              and trying again, students can compare outcomes, identify patterns, and build their own sequences of
+              classification through repeated testing.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg src={imagePath + '70.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '71.png'} alt='' className='w-full h-fit' />
+          </Paragpraph>
+
+          <Chapter subTitle='Final Design' title='Solution 4. 3D structure and observation simulations' />
+          <Paragpraph>
+            <P>
+              3D structure and observation simulations allow students to explore spatial relationships by viewing
+              phenomena from multiple perspectives. By rotating the scene and adjusting light sources, students can
+              observe how visibility and alignment change across positions, helping them reason about spatial structure
+              and relative motion.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg src={imagePath + '72.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '73.png'} alt='' className='w-full h-fit' />
+          </Paragpraph>
+
+          <Chapter subTitle='Final Design' title='Curriculum' />
+          <Paragpraph>
+            <P>
+              By analyzing recurring patterns across curriculum-based experiments, I translated diverse science content
+              into four reusable XR interaction templates—creating a scalable system that supports inquiry, comparison,
+              and observation across grade levels.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg src={imagePath + '74.png'} alt='' className='w-full h-fit' />
+            <div className='w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4'>
+              <MotionImg src={imagePath + '75.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '76.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '77.png'} alt='' className='w-full h-fit' />
+              <MotionImg src={imagePath + '78.png'} alt='' className='w-full h-fit' />
+            </div>
+            <P>Each category informed a consistent XR layout and simulation logic.</P>
+          </Paragpraph>
+        </Section>
+
+        <Section id='reflection'>
+          <Chapter subTitle='Reflection' title='Future Steps' />
+          <Paragpraph>
+            <P>
+              XR Science Museum will launch in March 2026 and be deployed across multiple classrooms. This rollout
+              enables validation beyond prototyping—allowing us to evaluate learning impact, classroom usability, and
+              system reliability in real instructional contexts. Post-launch, we will analyze usage data, teacher
+              feedback, and student work to assess the following questions.
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <H3>01 | Does XR interaction support conceptual understanding—not just engagement?</H3>
+            <P>
+              - Whether students can describe, predict, and compare phenomena using their own words based on observed
+              outcomes
+              <br />- Whether XR interactions help reduce common misconceptions found in textbook-based instruction
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <H3>02 | Does the system reduce instructional friction for teachers?</H3>
+            <P>
+              - How much the system reduces time spent on setup, explanation, transitions, and resets compared to
+              existing materials
+              <br />- Which workflows or features become classroom bottlenecks and should be prioritized for iteration
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <H3>03 | Is the system reliable under real classroom constraints?</H3>
+            <P>
+              - Whether loading time, frame rate, and interaction responsiveness remain stable across devices and
+              networks
+              <br />- How performance issues affect learning behaviors such as drop-off, retries, and task abandonment
+            </P>
+          </Paragpraph>
+          <Paragpraph>
+            <MotionImg
+              src={imagePath + '79.png'}
+              alt=''
+              className='w-full h-fit'
+              caption='2026 MiraeN Science Textbook Overview Video'
+            />
+            <P>
+              Together, these evaluations will inform how XR can move from experimental novelty to a dependable learning
+              tool in everyday classrooms.
+            </P>
           </Paragpraph>
         </Section>
       </ParllaxFrame>
