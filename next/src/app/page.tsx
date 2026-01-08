@@ -6,7 +6,7 @@ export default function Page() {
       <MotionDiv
         vimeoId='1151315926'
         className='px-4 md:px-8 w-full h-dvh flex justify-start items-center'
-        text='Yewon Jang is an HCI researcher specializing in human-centered tool design. She is skilled in software
+        text='Yewon Jang is a HCI researcher specializing in human-centered tool design. She is skilled in software
         development that entails novel combinations of machine learning, computer graphics, and digital fabrication. Her work received Creative Awards at HCI Korea (2023, 2025).\nCurrently, she is working as a freelance developer.'
       ></MotionDiv>
       <MotionImageDiv
