@@ -10,9 +10,18 @@ interface MotionImgProps {
   caption?: string
   imagePosition?: 'center' | 'top' | 'bottom'
   bgcolor?: string
+  magnify?: boolean
 }
 
-export const MotionImg = ({ src, alt, className = '', caption, imagePosition = 'center', bgcolor }: MotionImgProps) => {
+export const MotionImg = ({
+  src,
+  alt,
+  className = '',
+  caption,
+  imagePosition = 'center',
+  bgcolor,
+  magnify = true,
+}: MotionImgProps) => {
   const ImageRef = useRef<HTMLImageElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [showImage, setShowImage] = useState(false)
@@ -49,8 +58,8 @@ export const MotionImg = ({ src, alt, className = '', caption, imagePosition = '
   return (
     <>
       <div
-        onClick={() => setIsMagnified(!isMagnified)}
-        className={`relative w-full h-full cursor-zoom-in md:hover:opacity-70 active:opacity-50 transition-all ${className}`}
+        onClick={() => magnify && setIsMagnified(!isMagnified)}
+        className={`relative w-full h-full ${magnify ? 'cursor-zoom-in' : 'cursor-pointer'} md:hover:opacity-70 active:opacity-50 transition-all ${className}`}
       >
         {/* 스켈레톤 */}
         <AnimatePresence>

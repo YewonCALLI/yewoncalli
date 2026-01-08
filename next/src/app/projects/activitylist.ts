@@ -1,0 +1,58 @@
+export const activities = [
+  {
+    thumbnail: '/images/activities/p5js.png',
+    category: 'open source',
+    title: 'p5.js 2.0 Renewal Korean Translate Contribution',
+    description: 'Contributed to Korean translation of technical documentations.',
+    year: '2024',
+    date: '03/2024 ~ 04/2024',
+    link: 'https://github.com/p5-js-KO-Translation/2024',
+  },
+  {
+    thumbnail: null,
+    category: 'community',
+    title: 'Open Source Education Curation - NAVER Connect Foundation',
+    description:
+      'Curated educational platforms focused on open-source tools (p5.js, Life Coding, Inflearn) to promote accessible software education.',
+    year: '2023',
+    date: '09/2023',
+    link: 'https://www.instagram.com/p/Cw2w4dMxETC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D',
+  },
+  {
+    thumbnail: '/images/activities/sef2023.jpeg',
+    category: 'community',
+    title: 'Software Education Festival (SEF) 2023 - Full-time Staff',
+    description:
+      'Worked as a full-time staff member for SEF2023, a major software education festival. Led speaker coordination and meetup event management, working closely with various software communities and educational institutions.',
+    year: '2023',
+    date: '05/2023 ~ 09/2023',
+    link: 'https://www.youtube.com/watch?si=GGVawNz0y87OP6zG&v=EG4EocHJbdk&feature=youtu.be',
+  },
+  {
+    thumbnail: null,
+    category: 'research',
+    title: 'Construction of Debiased Korean AI Fairytale Generator',
+    description: 'Journal of Digital Contents Society \n\nJiin An*, Saetbyeol Leeyouk*, Yewon Jang*, & Dasaem Jeong.',
+    year: '2023',
+    date: '07/2023',
+    link: 'http://journal.dcs.or.kr/xml/37344/37344.pdf',
+  },
+  {
+    thumbnail: null,
+    category: 'research',
+    title: 'Debiased korean AI fairytale generator <Franklin>',
+    description: 'PROCEEDINGS OF HCI KOREA \n\nJiin An*, Saetbyeol Leeyouk*, Yewon Jang*, & Dasaem Jeong.',
+    year: '2023',
+    date: '02/2023',
+    link: 'https://conference.hcikorea.org/hcik2023/creative/awarded_CA.asp',
+  },
+  {
+    thumbnail: '/images/activities/ar-workshop.jpg',
+    category: 'workshop',
+    title: 'Create your own AR snowball using SPARK AR',
+    description: 'Collaboration with the Hyundai Motor Company Chung Mong-koo Foundation',
+    year: '2022',
+    date: '11/19/2022',
+    link: 'https://marvelous-catmint-e23.notion.site/AR-641a2795580b47e0a5fa98cc69964c9e?pvs=73',
+  },
+]

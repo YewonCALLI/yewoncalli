@@ -223,6 +223,7 @@ export default function AboutPage() {
             {/* right */}
             <div className='w-full md:w-5/12 aspect-video'>
               <MotionImg
+                magnify={false}
                 src='/images/about/profile.jpg'
                 alt='Yewon Jang'
                 className='w-full h-full object-cover object-center'
