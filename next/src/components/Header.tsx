@@ -15,7 +15,7 @@ export function Header() {
   const pages = [
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
-    { name: 'CV', href: 'https://drive.google.com/file/d/18pTggjeqoG4pwBCx8NIJvVRszwibIx-r/view' },
+    { name: 'CV', href: 'https://drive.google.com/file/d/175nzuC3cMMoPc2TwupMatkR2NDKQfCSI/view?usp=sharing' },
   ]
 
   function toggleMobileMenu() {

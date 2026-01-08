@@ -23,7 +23,7 @@ const RELATED_LINKS = [
   { name: 'GitHub', value: 'https://github.com/yewoncalli' },
   { name: 'LinkedIn', value: 'https://www.linkedin.com/in/yewon-jang-9270962ba' },
   { name: 'Instagram', value: 'https://www.instagram.com/yewon.calli' },
-  { name: 'CV', value: 'https://drive.google.com/file/d/18pTggjeqoG4pwBCx8NIJvVRszwibIx-r/view' },
+  { name: 'CV', value: 'https://drive.google.com/file/d/175nzuC3cMMoPc2TwupMatkR2NDKQfCSI/view?usp=sharing' },
 ]
 
 const EDUCATION = {
