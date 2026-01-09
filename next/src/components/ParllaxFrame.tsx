@@ -62,7 +62,7 @@ export function ParllaxFrame({
         >
           <div
             className={classNames(
-              'hidden md:flex absolute inset-0 bg-black pointer-events-none z-10',
+              'hidden md:flex absolute inset-0 bg-black pointer-events-none z-20',
               enableTransition && 'transition-opacity duration-500 ease-out',
               isInView ? 'opacity-50' : 'opacity-0',
             )}

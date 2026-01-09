@@ -85,10 +85,10 @@ const Paragpraph = ({
         duration: 0.8, // 800ms
         ease: [0.4, 0, 0.2, 1], // cubic-bezier(.4,0,.2,1)
       }}
-      className={`w-full px-4 md:px-8 lg:px-0 pb-4 md:pb-6 max-w-5xl h-fit flex flex-col md:flex-row gap-6 justify-start items-start ${className}`}
+      className={`w-full px-4 md:px-8 lg:px-0 pb-4 md:pb-6 max-w-5xl h-fit flex flex-col md:flex-col gap-6 justify-start items-start ${className}`}
     >
+      {!full && <div className='w-full h-fit'>{left}</div>}
       <div className='w-full h-fit space-y-4'>{children}</div>
-      {!full && <div className='w-full md:w-1/3 h-fit'>{left}</div>}
     </motion.div>
   )
 }
