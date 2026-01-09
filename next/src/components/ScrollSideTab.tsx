@@ -19,7 +19,7 @@ export const ScrollSideTab = ({ activeSection, sectionIds }: ScrollSideTabProps)
 
   return (
     <div
-      className={`absolute top-14 xl:top-[${HEADER_HEIGHT}px] py-2 w-full right-0 overflow-x-scroll bg-white pb-3 xl:overflow-auto xl:w-fit h-fit z-10 px-4 md:px-8`}
+      className={`fixed top-14 xl:top-[${HEADER_HEIGHT}px] py-2 w-full right-0 overflow-x-scroll bg-white pb-3 xl:overflow-auto xl:w-fit h-fit z-10 px-4 md:px-8`}
     >
       <div className='w-fit h-fit flex flex-row xl:flex-col gap-4 justify-start items-end'>
         {sectionIds.map((section) => (
