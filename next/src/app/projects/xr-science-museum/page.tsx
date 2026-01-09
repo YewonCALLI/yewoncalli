@@ -71,17 +71,16 @@ export default function ProjectDetailPage() {
           </Paragpraph>
           <Paragpraph left={null}>
             <P>
-              What are the anticipated negative impacts of adopting AI digital textbooks? <br />
-              (Multiple responses allowed)
+              What are the anticipated negative impacts of adopting AI digital textbooks? (Multiple responses allowed)
             </P>
-            <MotionImg src={imagePath + '01.png'} alt='' className='w-full h-fit mt-4' />
+            <MotionImg src={imagePath + '01.png'} alt='' className='w-1/2 h-fit mt-4' />
           </Paragpraph>
 
           <Paragpraph left={null}>
             <H2>02 | Still Screen-Bound Learning</H2>
           </Paragpraph>
           <Paragpraph left={null}>
-            <MotionImg src={imagePath + '02.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '02.png'} alt='' className='w-[70%] h-fit' />
             <H3>Digital Devices ≠ Digital Learning</H3>
             <P>Infinite potential in learning experience confined to a flat screen.</P>
           </Paragpraph>
@@ -136,7 +135,7 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <H2>01 | Problem Definition</H2>
 
-            <MotionImg src={imagePath + '07.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '07.png'} alt='' className='w-[70%] h-fit' />
           </Paragpraph>
 
           <Paragpraph>
@@ -173,7 +172,7 @@ export default function ProjectDetailPage() {
 
           <Paragpraph>
             <div className='w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
-              <P className='border border-black px-2 py-1 w-fit h-fit'>Inquiry</P>
+              <H2 className='border border-black px-2 py-1 w-fit h-fit'>Inquiry</H2>
               <div className='w-full min-w-0 h-full row-span-3 p-2 md:p-4 lg:p-8 flex justify-center items-center'>
                 <MotionImg src={imagePath + '09.png'} alt='' className='w-full !h-auto aspect-square' />
               </div>
@@ -191,7 +190,7 @@ export default function ProjectDetailPage() {
           </Paragpraph>
           <Paragpraph>
             <div className='w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
-              <P className='border border-black px-2 py-1 w-fit h-fit'>Accessibility</P>
+              <H2 className='border border-black px-2 py-1 w-fit h-fit'>Accessibility</H2>
               <div className='w-full min-w-0 h-full row-span-3 p-2 md:p-4 lg:p-8 flex justify-center items-center'>
                 <MotionImg src={imagePath + '10.png'} alt='' className='w-full !h-auto aspect-square' />
               </div>
@@ -206,7 +205,7 @@ export default function ProjectDetailPage() {
           </Paragpraph>
           <Paragpraph>
             <div className='w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
-              <P className='border border-black px-2 py-1 w-fit h-fit'>Guidance</P>
+              <H2 className='border border-black px-2 py-1 w-fit h-fit'>Guidance</H2>
               <div className='w-full min-w-0 h-full row-span-3 p-2 md:p-4 lg:p-8 flex justify-center items-center'>
                 <MotionImg src={imagePath + '11.png'} alt='' className='w-full !h-auto aspect-square' />
               </div>
@@ -309,7 +308,7 @@ export default function ProjectDetailPage() {
           </Paragpraph>
 
           <Paragpraph>
-            <div className='w-full h-fit grid grid-cols-1 gap-6'>
+            <div className='w-full h-fit grid grid-cols-3 gap-6'>
               <div className='w-full h-fit space-y-4'>
                 <H3>Issue 1</H3>
                 <P>The text is too small for 5th-6th graders reading on tablets from a distance.</P>
@@ -343,7 +342,7 @@ export default function ProjectDetailPage() {
             </div>
           </Paragpraph>
           <Paragpraph>
-            <div className='w-full h-fit grid grid-cols-1 gap-6'>
+            <div className='w-full h-fit grid grid-cols-3 gap-6'>
               <div className='w-full h-fit space-y-4'>
                 <H3>Revision 1</H3>
                 <P>Increased all text sizes by 40%</P>
@@ -453,10 +452,12 @@ export default function ProjectDetailPage() {
             </P>
           </Paragpraph>
           <Paragpraph>
-            <MotionImg src={imagePath + '50.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
-            <MotionImg src={imagePath + '51.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
-            <MotionImg src={imagePath + '52.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
-            <MotionImg src={imagePath + '53.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
+            <div className='w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4'>
+              <MotionImg src={imagePath + '50.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
+              <MotionImg src={imagePath + '51.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
+              <MotionImg src={imagePath + '52.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
+              <MotionImg src={imagePath + '53.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
+            </div>
           </Paragpraph>
         </Section>
 
@@ -473,7 +474,7 @@ export default function ProjectDetailPage() {
             </P>
           </Paragpraph>
           <Paragpraph>
-            <MotionImg src={imagePath + '55.jpg'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '55.jpg'} alt='' className='w-[60%] h-fit' />
             <P>I created an activity guide for each experiment.</P>
           </Paragpraph>
           <Paragpraph>
@@ -564,7 +565,7 @@ export default function ProjectDetailPage() {
             </P>
           </Paragpraph>
           <Paragpraph>
-            <MotionImg src={imagePath + '74.png'} alt='' className='w-full h-fit' />
+            <MotionImg src={imagePath + '74.png'} alt='' className='w-[60%] h-fit' />
             <div className='w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4'>
               <MotionImg src={imagePath + '75.png'} alt='' className='w-full h-fit' />
               <MotionImg src={imagePath + '76.png'} alt='' className='w-full h-fit' />

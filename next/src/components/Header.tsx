@@ -12,6 +12,9 @@ export function Header() {
   const pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  // 메인 페이지 여부 확인
+  const isMainPage = pathname === '/'
+
   const pages = [
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
@@ -27,7 +30,6 @@ export function Header() {
     setIsMobileMenuOpen(false)
   }
 
-  //mobile menu open, ban body scroll
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -40,9 +42,12 @@ export function Header() {
     <>
       <div
         className={classNames(
-          `w-full h-[${HEADER_HEIGHT}px] fixed bg-white top-0 z-30 px-4 md:px-8 py-2 md:py-4`,
-          'inline-flex justify-between items-center',
-          'text-black',
+          `w-full h-[${HEADER_HEIGHT}px] fixed top-0 z-30 px-4 md:px-8 py-2 md:py-4`,
+          'inline-flex justify-between items-center transition-colors duration-300',
+          // 메인 페이지일 때와 아닐 때 다른 스타일 적용
+          isMainPage 
+            ? 'bg-transparent text-white mix-blend-difference' 
+            : 'bg-white text-black',
         )}
       >
         <div
@@ -72,7 +77,6 @@ export function Header() {
         <div className='md:hidden flex items-center'>
           <button onClick={toggleMobileMenu} className='p-2 -mr-2'>
             {!isMobileMenuOpen ? (
-              // 햄버거 아이콘
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -83,7 +87,6 @@ export function Header() {
                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
               </svg>
             ) : (
-              // 닫기 아이콘
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -97,6 +100,7 @@ export function Header() {
           </button>
         </div>
       </div>
+
       {/* 모바일 메뉴 */}
       <AnimatePresence mode='wait'>
         {isMobileMenuOpen && (
@@ -123,29 +127,15 @@ export function Header() {
                 <Logo size='md' />
               </div>
               <button onClick={toggleMobileMenu} className='p-2 -mr-2'>
-                {!isMobileMenuOpen ? (
-                  // 햄버거 아이콘
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
-                  </svg>
-                ) : (
-                  // 닫기 아이콘
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='h-6 w-6'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
-                  </svg>
-                )}
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
+                </svg>
               </button>
             </div>
             <div className='flex flex-col gap-6'>

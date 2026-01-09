@@ -65,6 +65,7 @@ export const Layout = ({ children }) => {
       {/* <PageTransitionWrapper isTransitioning={isTransitioning} pathname={pathname}> */}
       <div className={classNames('w-full h-fit min-h-dvh flex flex-col justify-start items-center')}>
         <Header />
+        
         {children}
       </div>
       <Footer />

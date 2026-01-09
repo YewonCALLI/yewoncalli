@@ -24,7 +24,7 @@ const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => 
         duration: 0.8, // 800ms
         ease: [0.4, 0, 0.2, 1], // cubic-bezier(.4,0,.2,1)
       }}
-      className={classNames('w-full pt-14 pb-6 md:pt-20 md:pb-16 px-4 md:px-8 lg:px-0 max-w-5xl space-y-6')}
+      className={classNames('w-full pt-20 pb-0 md:pt-20 md:pb-0 px-4 md:px-8 lg:px-0 max-w-5xl space-y-6')}
     >
       {subTitle && (
         <span
@@ -87,7 +87,6 @@ const Paragpraph = ({
       }}
       className={`w-full px-4 md:px-8 lg:px-0 pb-4 md:pb-6 max-w-5xl h-fit flex flex-col md:flex-col gap-6 justify-start items-start ${className}`}
     >
-      {!full && <div className='w-full h-fit'>{left}</div>}
       <div className='w-full h-fit space-y-4'>{children}</div>
     </motion.div>
   )
