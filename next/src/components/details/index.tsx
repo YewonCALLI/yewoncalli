@@ -10,8 +10,8 @@ const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => 
   const inView = useInView(ref, { amount: 0.2, once: false })
 
   const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   }
 
   return (
@@ -33,7 +33,7 @@ const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => 
             'text-xl',
             'md:text-2xl',
             'lg:text-2xl',
-            'xl:text-3xl',
+            'xl:text-2xl',
           )}
         >
           {subTitle}
@@ -43,10 +43,10 @@ const Chapter = ({ subTitle, title }: { subTitle?: string; title?: string }) => 
         <h1
           className={classNames(
             'w-full font-bold leading-none',
-            'text-4xl',
-            'md:text-5xl',
-            'lg:text-5xl',
-            'xl:text-6xl',
+            'text-2xl',
+            'md:text-3xl',
+            'lg:text-4xl',
+            'xl:text-4xl',
           )}
         >
           {title}
@@ -71,8 +71,8 @@ const Paragpraph = ({
   const inView = useInView(ref, { amount: 0.2, once: false })
 
   const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0},
+    visible: { opacity: 1 },
   }
 
   return (
@@ -93,7 +93,7 @@ const Paragpraph = ({
 }
 
 const H1 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  return <h1 className={`text-2xl md:text-4xl font-bold leading-tight mt-4 mb-4 ${className}`}>{children}</h1>
+  return <h1 className={`text-2xl md:text-3xl font-bold leading-tight mt-4 mb-4 ${className}`}>{children}</h1>
 }
 
 const H2 = ({ children, className }: { children: React.ReactNode; className?: string }) => {

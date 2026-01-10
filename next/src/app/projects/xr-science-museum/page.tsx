@@ -1,6 +1,6 @@
 'use client'
 
-import { Section, ScrollSideTab, MotionImg } from '@/components'
+import { Section, ScrollSideTab, MotionImg, ImageSlider } from '@/components'
 import { Chapter, Paragpraph, H1, H3, P, Div, H2 } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
@@ -171,7 +171,11 @@ export default function ProjectDetailPage() {
           </Paragpraph>
 
           <Paragpraph>
-            <div className='w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
+            <MotionImg src={imagePath + 'Frame 1618873179.png'} alt='' className='w-full hidden md:block h-fit' />
+          </Paragpraph>
+
+          <Paragpraph>
+            <div className='md:hidden w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
               <H2 className='border border-black px-2 py-1 w-fit h-fit'>Inquiry</H2>
               <div className='w-full min-w-0 h-full row-span-3 p-2 md:p-4 lg:p-8 flex justify-center items-center'>
                 <MotionImg src={imagePath + '09.png'} alt='' className='w-full !h-auto aspect-square' />
@@ -180,16 +184,15 @@ export default function ProjectDetailPage() {
                 Shifts digital science classes from watching explanations to running manipulable experiments.
               </H3>
               <P className='min-w-0'>
-                360º viewing, zoom, pause/rewind
+                • 360º viewing, zoom, pause/rewind
                 <br />
-                Visualization of otherwise invisible phenomena
-                <br />
-                Incorporates gamification elements
+                • Visualization of otherwise invisible phenomena
+                <br />• Incorporates gamification elements
               </P>
             </div>
           </Paragpraph>
           <Paragpraph>
-            <div className='w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
+            <div className='md:hidden w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
               <H2 className='border border-black px-2 py-1 w-fit h-fit'>Accessibility</H2>
               <div className='w-full min-w-0 h-full row-span-3 p-2 md:p-4 lg:p-8 flex justify-center items-center'>
                 <MotionImg src={imagePath + '10.png'} alt='' className='w-full !h-auto aspect-square' />
@@ -198,13 +201,15 @@ export default function ProjectDetailPage() {
                 Makes dense science content usable for diverse literacy levels and device conditions.
               </H3>
               <P className='min-w-0'>
-                High-contrast design, 20pt+ typography, clear non-transparent buttons <br />
-                Audio narration with interruption handling
+                • High-contrast design <br />
+                • 20pt+ typography
+                <br />
+                • Clear non-transparent buttons <br />• Audio narration with interruption handling
               </P>
             </div>
           </Paragpraph>
           <Paragpraph>
-            <div className='w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
+            <div className='md:hidden w-full grid grid-cols-[2fr_1fr] grid-rows-[auto_auto_auto] gap-4'>
               <H2 className='border border-black px-2 py-1 w-fit h-fit'>Guidance</H2>
               <div className='w-full min-w-0 h-full row-span-3 p-2 md:p-4 lg:p-8 flex justify-center items-center'>
                 <MotionImg src={imagePath + '11.png'} alt='' className='w-full !h-auto aspect-square' />
@@ -465,7 +470,7 @@ export default function ProjectDetailPage() {
           {/* <Paragpraph>
             <MotionImg src={imagePath + '54.jpg'} alt='' className='w-full h-fit' />
           </Paragpraph> */}
-
+          <MotionImg magnify={false} src={imagePath + 'finaldesign1.png'} alt='' className='w-full' />
           <Chapter subTitle='Final Design' title='Experiment Setup & Objectives' />
           <Paragpraph>
             <P>
@@ -474,20 +479,26 @@ export default function ProjectDetailPage() {
             </P>
           </Paragpraph>
           <Paragpraph>
-            <MotionImg src={imagePath + '55.jpg'} alt='' className='w-[60%] h-fit' />
-            <P>I created an activity guide for each experiment.</P>
-          </Paragpraph>
-          <Paragpraph>
-            <div className='w-full h-fit grid grid-cols-2 md:grid-cols-3 gap-4'>
-              <MotionImg src={imagePath + '56.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '57.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '58.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '59.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '60.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '61.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '62.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '63.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '64.png'} alt='' className='w-full h-fit' />
+            <P>
+              I created an activity guide for each experiment. This activity guide can access by 'Activity Guide' button
+              on the intro screen.
+            </P>
+            <div className='w-full aspect-[416/221]'>
+              <ImageSlider
+                images={[
+                  imagePath + '56.png',
+                  imagePath + '57.png',
+                  imagePath + '58.png',
+                  imagePath + '59.png',
+                  imagePath + '60.png',
+                  imagePath + '61.png',
+                  imagePath + '62.png',
+                  imagePath + '63.png',
+                  imagePath + '64.png',
+                ]}
+                autoPlay
+                autoPlayInterval={3000}
+              />
             </div>
           </Paragpraph>
 
@@ -509,12 +520,22 @@ export default function ProjectDetailPage() {
               rather than relying on static snapshots. By controlling time directly, students can pause, rewind, and
               compare moments to reason about change through repeated observation and measurement.
             </P>
+            <div className='w-full aspect-[416/221]'>
+              <ImageSlider
+                images={[
+                  imagePath + 'solution_guides/1.jpg',
+                  imagePath + 'solution_guides/2.jpg',
+                  imagePath + 'solution_guides/3.jpg',
+                  imagePath + 'solution_guides/4.jpg',
+                  imagePath + 'solution_guides/5.jpg',
+                  imagePath + 'solution_guides/6.jpg',
+                  imagePath + 'solution_guides/7.jpg',
+                ]}
+                autoPlay
+                autoPlayInterval={3000}
+              />
+            </div>
           </Paragpraph>
-          <Paragpraph>
-            <MotionImg src={imagePath + '66.png'} alt='' className='w-full h-fit' />
-            <MotionImg src={imagePath + '67.png '} alt='' className='w-full h-fit' />
-          </Paragpraph>
-
           <Chapter subTitle='Final Design' title='Solution 2. State Change Simulations' />
           <Paragpraph>
             <P>
@@ -522,10 +543,18 @@ export default function ProjectDetailPage() {
               conditions side by side. By toggling elements such as switches, batteries, or bulbs, students can observe
               immediate cause-and-effect relationships between system states.
             </P>
-          </Paragpraph>
-          <Paragpraph>
-            <MotionImg src={imagePath + '68.png'} alt='' className='w-full h-fit' />
-            <MotionImg src={imagePath + '69.png '} alt='' className='w-full h-fit' />
+            <div className='w-full aspect-[416/221]'>
+              <ImageSlider
+                images={[
+                  imagePath + 'solution_guides/8.jpg',
+                  imagePath + 'solution_guides/9.jpg',
+                  imagePath + 'solution_guides/10.jpg',
+                  imagePath + 'solution_guides/12.jpg',
+                ]}
+                autoPlay
+                autoPlayInterval={3000}
+              />
+            </div>
           </Paragpraph>
 
           <Chapter subTitle='Final Design' title='Solution 3. Comparison & Classification' />
@@ -536,10 +565,22 @@ export default function ProjectDetailPage() {
               and trying again, students can compare outcomes, identify patterns, and build their own sequences of
               classification through repeated testing.
             </P>
-          </Paragpraph>
-          <Paragpraph>
-            <MotionImg src={imagePath + '70.png'} alt='' className='w-full h-fit' />
-            <MotionImg src={imagePath + '71.png'} alt='' className='w-full h-fit' />
+            <div className='w-full aspect-[416/221]'>
+              <ImageSlider
+                images={[
+                  imagePath + 'solution_guides/13.jpg',
+                  imagePath + 'solution_guides/14.jpg',
+                  imagePath + 'solution_guides/15.jpg',
+                  imagePath + 'solution_guides/16.jpg',
+                  imagePath + 'solution_guides/17.jpg',
+                  imagePath + 'solution_guides/18.jpg',
+                  imagePath + 'solution_guides/19.jpg',
+                  imagePath + 'solution_guides/20.jpg',
+                ]}
+                autoPlay
+                autoPlayInterval={3000}
+              />
+            </div>
           </Paragpraph>
 
           <Chapter subTitle='Final Design' title='Solution 4. 3D structure and observation simulations' />
@@ -550,11 +591,23 @@ export default function ProjectDetailPage() {
               observe how visibility and alignment change across positions, helping them reason about spatial structure
               and relative motion.
             </P>
+            <div className='w-full aspect-[416/221]'>
+              <ImageSlider
+                images={[
+                  imagePath + 'solution_guides/21.jpg',
+                  imagePath + 'solution_guides/22.jpg',
+                  imagePath + 'solution_guides/23.jpg',
+                  imagePath + 'solution_guides/24.jpg',
+                  imagePath + 'solution_guides/25.jpg',
+                  imagePath + 'solution_guides/26.jpg',
+                  imagePath + 'solution_guides/27.jpg',
+                ]}
+                autoPlay
+                autoPlayInterval={3000}
+              />
+            </div>
           </Paragpraph>
-          <Paragpraph>
-            <MotionImg src={imagePath + '72.png'} alt='' className='w-full h-fit' />
-            <MotionImg src={imagePath + '73.png'} alt='' className='w-full h-fit' />
-          </Paragpraph>
+          <MotionImg magnify={false} src={imagePath + 'finaldesign2.png'} alt='' className='w-full' />
 
           <Chapter subTitle='Final Design' title='Curriculum' />
           <Paragpraph>
@@ -565,13 +618,16 @@ export default function ProjectDetailPage() {
             </P>
           </Paragpraph>
           <Paragpraph>
-            <MotionImg src={imagePath + '74.png'} alt='' className='w-[60%] h-fit' />
-            <div className='w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4'>
-              <MotionImg src={imagePath + '75.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '76.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '77.png'} alt='' className='w-full h-fit' />
-              <MotionImg src={imagePath + '78.png'} alt='' className='w-full h-fit' />
+            <div className='flex flex-row'>
+              <MotionImg src={imagePath + '74.png'} alt='' className='w-full md:max-w-[60%] h-fit' />
+              <div className='w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4'>
+                <MotionImg src={imagePath + '75.png'} alt='' className='w-full h-fit' />
+                <MotionImg src={imagePath + '76.png'} alt='' className='w-full h-fit' />
+                <MotionImg src={imagePath + '77.png'} alt='' className='w-full h-fit' />
+                <MotionImg src={imagePath + '78.png'} alt='' className='w-full h-fit' />
+              </div>
             </div>
+
             <P>Each category informed a consistent XR layout and simulation logic.</P>
           </Paragpraph>
         </Section>

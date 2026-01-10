@@ -47,7 +47,7 @@ export function Header() {
           // 메인 페이지일 때와 아닐 때 다른 스타일 적용
           isMainPage 
             ? 'bg-transparent text-white mix-blend-difference' 
-            : 'bg-white text-black',
+            : 'bg-white xl:bg-transparent text-black',
         )}
       >
         <div

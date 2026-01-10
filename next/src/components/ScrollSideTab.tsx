@@ -19,16 +19,16 @@ export const ScrollSideTab = ({ activeSection, sectionIds }: ScrollSideTabProps)
 
   return (
     <div
-      className={`fixed top-14 xl:top-[${HEADER_HEIGHT}px] py-2 w-full right-0 overflow-x-scroll bg-white pb-3 xl:overflow-auto xl:w-fit h-fit z-10 px-4 md:px-8`}
+      className={`fixed xl:mix-blend-difference top-14 xl:top-[${HEADER_HEIGHT}px] py-2 w-full right-0 overflow-x-scroll bg-white xl:bg-transparent pb-3 xl:overflow-auto xl:w-fit h-fit z-10 px-4 md:px-8`}
     >
-      <div className='w-fit h-fit flex flex-row xl:flex-col gap-4 justify-start items-end'>
+      <div className='w-fit h-fit flex flex-row xl:flex-col gap-4 justify-start items-end '>
         {sectionIds.map((section) => (
           <button
             key={section}
             onClick={() => scrollToSection(section)}
             className={classNames(
               'capitalize text-base md:text-lg transition-colors duration-300',
-              activeSection === section ? 'text-black font-bold' : 'text-black/40 hover:text-black',
+              activeSection === section ? 'text-black xl:text-white font-bold' : 'text-black/40 xl:text-white/40 hover:text-black/70 xl:hover:text-white/70',
             )}
           >
             {section}

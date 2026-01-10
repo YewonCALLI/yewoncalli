@@ -101,7 +101,7 @@ export default function ProjectDetailPage() {
                     <p className='text-sm md:text-base'>
                       But honestly, I keep wondering—why do images made with creative coding sometimes feel so distant?
                     </p>
-                    <span className='text-xs md:text-sm font-medium'>Member Han</span>
+                    <span className='text-xs md:text-sm font-medium'>Member Kim</span>
                   </div>
                   <div className='w-1/2 lg:w-[90%] h-full'></div>
                 </div>
@@ -125,41 +125,53 @@ export default function ProjectDetailPage() {
               hides the visible effort behind creative work, weakening psychological ownership without actually
               improving the quality of ideas.
             </P>
-          </Paragpraph>
-          <Paragpraph>
-            <H3>Brainstorming feels more effective with conversational AI</H3>
-            <P>
-              Participants reported that back-and-forth interaction with AI supported ideation by helping them explore
-              ideas faster and iterate more fluidly during brainstorming.
-            </P>
-            <MotionImg src={imagePath + '02.png'} alt='Draw the Beat' className='w-full py-4 h-fit' />
-          </Paragpraph>
+            <Paragpraph>
+              <div className='w-full pt-12 flex flex-row gap-12'>
+                <div className='flex flex-col'>
+                  <H3>1. Brainstorming feels more effective with conversational AI</H3>
+                  <P>
+                    Participants reported that back-and-forth interaction with AI supported ideation by helping them
+                    explore ideas faster and iterate more fluidly during brainstorming.
+                  </P>
+                </div>
+                <MotionImg src={imagePath + '02.png'} alt='Draw the Beat' className='w-full py-4 h-fit' />
+              </div>
+            </Paragpraph>
 
-          <Paragpraph>
-            <H3>Quality of ideas remains largely unchanged</H3>
-            <P>
-              Self-reported idea quality showed little difference between no-AI and human-AI collaboration, despite
-              noticeable changes in workflow and speed.
-            </P>
-            <MotionImg src={imagePath + '03.png'} alt='Draw the Beat' className='w-full py-4 h-fit' />
-          </Paragpraph>
+            <Paragpraph>
+              <div className='w-full pt-12 flex flex-row gap-12'>
+                <div className='flex flex-col'>
+                  <H3>2. Quality of ideas remains largely unchanged</H3>
+                  <P>
+                    Self-reported idea quality showed little difference between no-AI and human-AI collaboration,
+                    despite noticeable changes in workflow and speed.
+                  </P>
+                </div>
+                <MotionImg src={imagePath + '03.png'} alt='Draw the Beat' className='w-full py-4 h-fit' />
+              </div>
+            </Paragpraph>
 
-          <Paragpraph>
-            <H3>Automation reduces authorship and ownership</H3>
-            <P>
-              On a 1-7 scale measuring perceived authorship, creators reported a sharp drop in ownership as AI took over
-              more of the writing.
-            </P>
-            <MotionImg src={imagePath + '04.png'} alt='Draw the Beat' className='w-full py-4 h-fit' />
+            <Paragpraph>
+              <div className='w-full pt-12 flex flex-row gap-12'>
+                <div className='flex flex-col'>
+                  <H3>3. Automation reduces authorship and ownership</H3>
+                  <P>
+                    On a 1-7 scale measuring perceived authorship, creators reported a sharp drop in ownership as AI
+                    took over more of the writing.
+                  </P>
+                </div>
+                <MotionImg src={imagePath + '04.png'} alt='Draw the Beat' className='w-full py-4 h-fit' />
+              </div>
+            </Paragpraph>
           </Paragpraph>
 
           <Paragpraph>
             <H2>Key Insight</H2>
-            <P>
+            <H3>
               Automation can increase efficiency and perceived usefulness without improving idea quality—often at the
               cost of creator ownership, making it essential for tools to intentionally preserve agency, effort, and
               authorship through interaction.
-            </P>
+            </H3>
           </Paragpraph>
         </Section>
 
@@ -196,10 +208,10 @@ export default function ProjectDetailPage() {
           </Paragpraph>
           <Paragpraph>
             <H2>Design implication</H2>
-            <P>
+            <H3>
               Ownership emerges when tools make effort, decisions, and corrections visible—suggesting that automation
               should support making, not replace it.
-            </P>
+            </H3>
           </Paragpraph>
 
           <Chapter subTitle='Concept Framing' title='Translating the IKEA Effect into digital making' />
@@ -247,33 +259,46 @@ export default function ProjectDetailPage() {
           </Paragpraph>
 
           <Paragpraph>
-            <P className='border border-black w-fit px-2 py-1'>Make structure visible</P>
-            <H3>TypoFold presents assemblable structures rather than finished results</H3>
-            <MotionImg src={imagePath + '09.jpg'} alt='' className='w-full h-fit' />
-            <P>
-              Instead of hiding generative logic behind final outputs, TypoFold exposes structures as nets—allowing
-              users to see, understand, and work with how forms are constructed.
-            </P>
+            <div className='flex flex-col md:flex-row gap-12'>
+              <div className='flex flex-col'>
+                <P className='border border-black w-fit px-2 py-1'>Make structure visible</P>
+                <H3>TypoFold presents assemblable structures rather than finished results</H3>
+                <P>
+                  Instead of hiding generative logic behind final outputs, TypoFold exposes structures as nets—allowing
+                  users to see, understand, and work with how forms are constructed.
+                </P>
+              </div>
+
+              <MotionImg src={imagePath + '09.jpg'} alt='' className='md:max-w-[300px] h-fit' />
+            </div>
           </Paragpraph>
 
           <Paragpraph>
-            <P className='border border-black w-fit px-2 py-1'>Design for meaningful effort</P>
-            <H3>Effort is not a barrier, but a key driver of ownership.</H3>
-            <MotionImg src={imagePath + '10.jpg'} alt='' className='w-full h-fit' />
-            <P>
-              Rather than minimizing effort entirely, TypoFold requires folding, assembling, and choosing—so users
-              actively shape the making process instead of passively receiving results.
-            </P>
+            <div className='flex flex-col md:flex-row gap-12'>
+              <div className='flex flex-col'>
+                <P className='border border-black w-fit px-2 py-1'>Design for meaningful effort</P>
+                <H3>Effort is not a barrier, but a key driver of ownership.</H3>
+                <P>
+                  Rather than minimizing effort entirely, TypoFold requires folding, assembling, and choosing—so users
+                  actively shape the making process instead of passively receiving results.
+                </P>
+              </div>
+              <MotionImg src={imagePath + '10.jpg'} alt='' className='md:max-w-[300px] h-fit' />
+            </div>
           </Paragpraph>
 
           <Paragpraph>
-            <P className='border border-black w-fit px-2 py-1'>Reframe automation as material</P>
-            <H3>Automation is not about making for the user, but about enabling the user to make.</H3>
-            <MotionImg src={imagePath + '11.jpg'} alt='' className='w-full h-fit' />
-            <P>
-              Instead of completing outcomes automatically, TypoFold uses automation to generate structures that users
-              can manipulate, assemble, and transform.
-            </P>
+            <div className='flex flex-col md:flex-row gap-12'>
+              <div className='flex flex-col'>
+                <P className='border border-black w-fit px-2 py-1'>Reframe automation as material</P>
+                <H3>Automation is not about making for the user, but about enabling the user to make.</H3>
+                <P>
+                  Instead of completing outcomes automatically, TypoFold uses automation to generate structures that
+                  users can manipulate, assemble, and transform.
+                </P>
+              </div>
+              <MotionImg src={imagePath + '11.jpg'} alt='' className='md:max-w-[300px] h-fit' />
+            </div>
           </Paragpraph>
 
           <Chapter subTitle='User Scenario' title='From Code to Fold' />

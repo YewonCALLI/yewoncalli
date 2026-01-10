@@ -59,7 +59,7 @@ export const MotionImg = ({
     <>
       <div
         onClick={() => magnify && setIsMagnified(!isMagnified)}
-        className={`relative w-full h-full ${magnify ? 'cursor-zoom-in' : 'cursor-pointer'} md:hover:opacity-70 active:opacity-50 transition-all ${className}`}
+        className={`relative w-full h-full ${magnify ? 'cursor-zoom-in' : 'cursor-default'} transition-all ${className}`}
       >
         {/* 스켈레톤 - 블러 효과 추가 */}
         <AnimatePresence>
