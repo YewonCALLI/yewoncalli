@@ -80,7 +80,7 @@ export default function ProjectDetailPage() {
             <H2>02 | Still Screen-Bound Learning</H2>
           </Paragpraph>
           <Paragpraph left={null}>
-            <MotionImg src={imagePath + '02.png'} alt='' className='w-[70%] h-fit' />
+            <MotionImg src={imagePath + '02.png'} alt='' className='w-[55%] h-fit' />
             <H3>Digital Devices ≠ Digital Learning</H3>
             <P>Infinite potential in learning experience confined to a flat screen.</P>
           </Paragpraph>
@@ -135,7 +135,7 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <H2>01 | Problem Definition</H2>
 
-            <MotionImg src={imagePath + '07.png'} alt='' className='w-[70%] h-fit' />
+            <MotionImg src={imagePath + '07.png'} alt='' className='max-w-[800px] h-fit' />
           </Paragpraph>
 
           <Paragpraph>

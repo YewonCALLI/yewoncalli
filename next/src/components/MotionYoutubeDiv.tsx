@@ -25,8 +25,8 @@ export function MotionYoutubeDiv({ children, className, youtubeId, title, featur
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1} : { opacity: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={classNames(className, 'z-10 relative overflow-hidden')}
     >
@@ -44,7 +44,7 @@ export function MotionYoutubeDiv({ children, className, youtubeId, title, featur
               h-[100%] aspect-[16/9]
               -translate-x-1/2 -translate-y-1/2
               bg-black
-              lg:h-[115%]
+              lg:h-[110%]
               2xl:w-[110%] 2xl:h-auto
             "
           />
