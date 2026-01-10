@@ -7,11 +7,11 @@ import React from 'react'
 import { HistoryList, NameSection, RelatedLinks } from './components'
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri'
 
-const DESCRIPTION = `Hi, I’m Yewon. I’m an HCI researcher specializing in human-centered tool design. I build interactive systems that help people create, learn, and develop a sense of ownership over what they make.
+const DESCRIPTION = `Hi, I’m Yewon. I’m an HCI researcher specializing in human-centered tool design. I build interactive systems that help people create, learn, and take ownership of what they make.
 
-My work has been recognized with HCI Korea Creative Awards twice: Franklin (2023), a gender-debiased Korean fairytale generator, and TypoFold (2025), a papercraft converter that bridges computational design and physical making. I have investigated factors that increase creators’ ownership when working with automated and generative tools, with a particular focus on digital-physical workflows and paper-based fabrication.
+My work has been recognized twice with the HCI Korea Creative Awards: Franklin (2023), a gender-debiased Korean fairytale generator, and TypoFold (2025), a papercraft converter that bridges computational design and physical making. I have investigated factors that increase creators’ ownership when working with automated and generative tools, with a particular focus on digital-physical workflows and paper-based fabrication.
 
-I currently work at Engineering 6 as a 3D Web Frontend Engineer, and I also collaborate as a freelance frontend engineer with industry partners including Samsung Design Membership and MiraeN. I hold a B.A.S. in Art & Technology and a B.S. in Convergence Software from Sogang University, and I previously worked as a Research Assistant at Sogang University’s Graduate School of Management of Technology.`
+I currently work at Engineering 6 as a 3D Web Frontend Engineer, and I also collaborate as a freelance frontend engineer with industry partners, including Samsung Design Membership and MiraeN. I hold a B.A.S. in Art & Technology and a B.S. in Convergence Software from Sogang University. I previously worked as a Research Assistant at Sogang University’s Graduate School of Management of Technology.`
 
 const ESSAY = `I'm passionate about creating technology that brings art and computation together in new ways. 
 Over the years, I've focused on making complex tech more approachable - turning things like natural language processing and computer graphics into tools that anyone can use to create. 
@@ -253,7 +253,7 @@ export default function AboutPage() {
             <div className='w-full h-full md:w-1/3'>
               <MotionImg
                 magnify={false}
-                src='/images/about/profile.png'
+                src='/images/about/profile2.jpg'
                 alt='Yewon Jang'
                 className='w-full aspect-square'
               />
