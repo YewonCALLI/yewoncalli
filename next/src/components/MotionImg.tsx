@@ -61,28 +61,34 @@ export const MotionImg = ({
         onClick={() => magnify && setIsMagnified(!isMagnified)}
         className={`relative w-full h-full ${magnify ? 'cursor-zoom-in' : 'cursor-pointer'} md:hover:opacity-70 active:opacity-50 transition-all ${className}`}
       >
-        {/* 스켈레톤 */}
+        {/* 스켈레톤 - 블러 효과 추가 */}
         <AnimatePresence>
           {!showImage && (
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: isLoaded ? 0 : 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className='absolute inset-0 bg-pink-500 animate-pulse'
+              className='absolute inset-0 bg-neutral-200'
             />
           )}
         </AnimatePresence>
-        {/* 실제 이미지 */}
+
+        {/* 실제 이미지 - 블러 애니메이션 */}
         <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showImage ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, filter: '', scale: 1 }}
+          animate={{
+            opacity: showImage ? 1 : 0,
+            filter: showImage ? 'blur(0px)' : 'blur(20px)',
+            scale: showImage ? 1 : 1,
+          }}
+          transition={{ duration: 1.0, ease: 'easeOut' }}
           onLoad={handleLoad}
           ref={ImageRef}
           src={src}
           alt={alt}
           className={`w-full h-full object-cover
-            ${imagePosition === 'top' ? 'object-top' : imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
+    ${imagePosition === 'top' ? 'object-top' : imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
         />
         {caption && <p className='mt-2 text-left text-sm text-neutral-600'>{caption}</p>}
       </div>

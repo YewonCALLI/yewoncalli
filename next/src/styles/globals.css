@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-
   * {
     box-sizing: border-box;
   }
@@ -60,8 +58,6 @@
     background: #fff;
     font-size: 100%;
     font-family: 'Satoshi', sans-serif;
-
-
   }
 
   /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 */
@@ -126,5 +122,9 @@
     /* 스크롤바 호버 색상 */
   }
 
-
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }
