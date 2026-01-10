@@ -7,9 +7,11 @@ import React from 'react'
 import { HistoryList, NameSection, RelatedLinks } from './components'
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri'
 
-const DESCRIPTION = `Hi.👋 I'm Yewon, based in Seoul, South Korea. Welcome to my place! Glad to show my projects. I am a technologist focused on developing tools that bridge computational methods with artistic expression. My work enables users to explore new forms of expression through generative arts, music, papercraft, and AI writing. I also do commercial work with code art.
+const DESCRIPTION = `Hi, I’m Yewon. I’m an HCI researcher specializing in human-centered tool design. I build interactive systems that help people create, learn, and develop a sense of ownership over what they make.
 
-I've loved physics since I was young, and I create works that incorporate physical laws.`
+My work has been recognized with HCI Korea Creative Awards twice: Franklin (2023), a gender-debiased Korean fairytale generator, and TypoFold (2025), a papercraft converter that bridges computational design and physical making. I have investigated factors that increase creators’ ownership when working with automated and generative tools, with a particular focus on digital-physical workflows and paper-based fabrication.
+
+I currently work at Engineering 6 as a 3D Web Frontend Engineer, and I also collaborate as a freelance frontend engineer with industry partners including Samsung Design Membership and MiraeN. I hold a B.A.S. in Art & Technology and a B.S. in Convergence Software from Sogang University, and I previously worked as a Research Assistant at Sogang University’s Graduate School of Management of Technology.`
 
 const ESSAY = `I'm passionate about creating technology that brings art and computation together in new ways. 
 Over the years, I've focused on making complex tech more approachable - turning things like natural language processing and computer graphics into tools that anyone can use to create. 
@@ -18,12 +20,11 @@ I love seeing how people light up when they discover new ways to express themsel
 const RELATED_LINKS = [
   {
     name: 'Email',
-    value: 'mailto:blockbwriting@gmail.com',
+    value: 'mailto:yewon11351@gmail.com',
   },
   { name: 'GitHub', value: 'https://github.com/yewoncalli' },
   { name: 'LinkedIn', value: 'https://www.linkedin.com/in/yewon-jang-9270962ba' },
   { name: 'Instagram', value: 'https://www.instagram.com/yewon.calli' },
-  { name: 'CV', value: 'https://drive.google.com/file/d/175nzuC3cMMoPc2TwupMatkR2NDKQfCSI/view?usp=sharing' },
 ]
 
 const EDUCATION = {
@@ -55,39 +56,58 @@ const RESEARCH_EXPERIENCE = {
         text: 'Sogang University, Graduate School of Management of Technology | Research Assistant',
       },
       period: 'Mar 2024 – Apr 2025',
-      list: [
-        {
-          content: 'Built an NLP pipeline to analyze industry–academia collaboration using BERT/SBERT embeddings.',
-        },
-        {
-          content: 'Handled preprocessing, evaluation, and pattern analysis for computational social science research.',
-        },
-        {
-          content: 'Advised by Prof. Kyootai Lee.',
-        },
-      ],
+      list: [],
     },
     {
       subject: {
         text: 'Total Museum of Contemporary Art | Researcher in Digital Literacy',
       },
       period: 'Jul 2023 – Jan 2024',
-      list: [
-        {
-          content:
-            'Led participatory design research with adults 60+ in Hongjae-dong to study digital literacy barriers.',
-        },
-        {
-          content:
-            'Ran interviews, contextual inquiry, and diary studies; insights informed the Silver Bell senior fitness app.',
-        },
-        {
-          content: 'Built and deployed the Android app in React Native.',
-        },
-        {
-          content: 'Advised by Nathalie Boseul Shin.',
-        },
-      ],
+      list: [],
+    },
+  ],
+}
+
+const RECOGNITION_AND_AWARDS = {
+  category: 'Recognition & Awards',
+  items: [
+    {
+      subject: {
+        text: 'HCI Korea Creative Awards - TypoFold (2025)',
+        link: 'https://conference.hcikorea.org/hcik2025/creative/awarded_CA.asp',
+      },
+      period: '2025',
+      list: [],
+    },
+    {
+      subject: {
+        text: 'Yuyeon Foundation Scholarship',
+      },
+      period: '2024',
+      list: [{ content: 'Academic Excellence Scholarship' }],
+    },
+    {
+      subject: {
+        text: 'HCI Korea Creative Awards - Franklin (2023)',
+        link: 'https://conference.hcikorea.org/hcik2023/creative/awarded_CA.asp',
+      },
+      period: '2023',
+      list: [],
+    },
+    {
+      subject: {
+        text: 'Naver SW Scholarship',
+      },
+      period: '2022',
+      list: [],
+    },
+    {
+      subject: {
+        text: 'First Award, Spin Art Contest 2021',
+        link: 'https://qns.science/spinart/',
+      },
+      period: '2021',
+      list: [{ content: 'Institute for Basic Science (IBS) & Center for Quantum Nanoscience (QNS)' }],
     },
   ],
 }
@@ -99,68 +119,29 @@ const WORK_EXPERIENCE = {
       subject: {
         text: 'Engineering6 | 3D Web Frontend Engineer, UX/UI Designer',
       },
-      period: 'April 2025 - Dec 2025',
-      list: [
-        {
-          content: 'Developed a WebXR science learning platform with real-time 3D simulations (Three.js/WebGL/GLSL).',
-        },
-        {
-          content:
-            'Partnered with curriculum teams to translate textbook content into interactive, spatial learning activities.',
-        },
-      ],
+      period: 'Apr 2025 - Dec 2025',
+      list: [],
     },
     {
       subject: {
         text: 'Naver Connect Foundation | Product Manager Internship',
       },
       period: 'May 2023 - Sep 2023',
-      list: [
-        {
-          content: 'Produced UX writing guidelines and wireframes for the SEF2023 site, serving 205K+ visitors.',
-        },
-        {
-          content: 'Coordinated livestream integration to ensure stable delivery across four live sessions.',
-        },
-      ],
+      list: [],
     },
     {
       subject: {
         text: 'Smilegate Membership for AI | Lead Researcher in Text Generation Coherence',
       },
       period: 'Jul 2022 - Nov 2022',
-      list: [
-        {
-          content:
-            'Applied reinforcement learning to improve narrative coherence and reduce cultural/gender bias in Korean fairytale generation.',
-        },
-        {
-          content: 'Built sentiment and hate-speech evaluation modules to support responsible text generation.',
-        },
-      ],
+      list: [],
     },
     {
       subject: {
         text: 'Freelance | UX/UI Designer, Frontend Developer',
       },
       period: 'Jan 2023 - Present',
-      list: [
-        {
-          content: 'Samsung Design Membership: Launched a React/TS online exhibition for 9 projects (6.2K+ visitors).',
-          link: 'https://www.newformative.com/',
-        },
-        {
-          content:
-            'Smilegate Future Lab: Audited and redesigned key flows for the Future Bee Challenge (UN SDG projects).',
-        },
-        {
-          content:
-            'SEED Youth Programs: Facilitated digital citizenship workshops and coached student-led web projects.',
-        },
-        {
-          content: 'Smilegate: Built a learning platform with video CMS, progress tracking, and participant analytics.',
-        },
-      ],
+      list: [],
     },
   ],
 }
@@ -171,7 +152,7 @@ const LEADERSHIP_EXPERIENCE = {
     {
       subject: {
         text: 'TypeLab, Seoul-based Code Artist Collective',
-        link: 'https://typelab-web.vercel.app/',
+        link: 'https://typelab.cc/',
       },
       period: 'Feb 2025 - Present',
       list: [
@@ -192,17 +173,66 @@ const LEADERSHIP_EXPERIENCE = {
         },
       ],
     },
+  ],
+}
+
+const PUBLICATIONS = {
+  category: 'Publications',
+  items: [
     {
       subject: {
-        text: 'Department of Art & Technology, Sogang University',
+        text: 'TypoFold: A Creative Tool for Converting Code-Art based 3D Typography into Paper craft. Proceedings of HCI Korea, 2025.',
       },
-      period: 'Jun 2022 - Nov 2022',
-      list: [
-        {
-          content:
-            'Showcase Team Lead Art&Technology Conference (2021 - 2022) ; Lead Designer, Global Korean Studies Forum (2021)',
-        },
-      ],
+      period: '',
+      list: [],
+    },
+    {
+      subject: {
+        text: 'Construction of Debiased Korean AI Fairytale Generator. Journal of Digital Contents Society with collaborator Jiin Ahn, Saetbyeol Leeyouk, 2023.',
+      },
+      period: '',
+      list: [],
+    },
+    {
+      subject: {
+        text: 'Debiased Korean AI fairytale generator,<Franklin>. Proceedings of HCI Korea with collaborator Jiin Ahn, Saetbyeol Leeyouk, 2023.',
+      },
+      period: '',
+      list: [],
+    },
+  ],
+}
+
+const SELECTED_EXHIBITIONS = {
+  category: 'Selected Exhibitions & Screenings',
+  items: [
+    {
+      subject: {
+        text: "Upon Hestia's Hearth. Group Exhibition",
+      },
+      period: '2025',
+      list: [{ content: 'Kim Hee Soo Art Center Art Gallery 2' }],
+    },
+    {
+      subject: {
+        text: 'The Silver Bell Challenge. Group Exhibition',
+      },
+      period: '2024',
+      list: [{ content: 'ten to the n' }],
+    },
+    {
+      subject: {
+        text: 'The 8th International Exhibition on New Media Art',
+      },
+      period: '2022',
+      list: [{ content: 'CICA Museum' }],
+    },
+    {
+      subject: {
+        text: 'The 1st Joongang Media Art Competition',
+      },
+      period: '2022',
+      list: [{ content: 'Coex Media Tower/Parnas Media Tower' }],
     },
   ],
 }
@@ -210,64 +240,66 @@ const LEADERSHIP_EXPERIENCE = {
 export default function AboutPage() {
   return (
     <>
-      <div className='min-h-dvh w-full h-fit pt-14 bg-white z-10'>
-        <PageTitleArea title='About' />
-        <div className='space-y-20'>
-          <InViewDiv className='w-full h-fit p-4 md:p-8 flex flex-col md:flex-row justify-between items-stretch gap-12 md:gap-16'>
+      <div className='min-h-dvh w-full h-fit pt-14 md:px-20 bg-white z-10'>
+        {/* <PageTitleArea title='About' /> */}
+        <div className='flex flex-col w-full h-fit gap-12'>
+          <InViewDiv className='w-full h-fit p-4 md:p-8 flex flex-col-reverse md:flex-row justify-between items-stretch gap-12 md:gap-16'>
             {/* left */}
-            <NameSection
+            {/* <NameSection
               jobs={['Computational', 'Designer/Developer']}
               name='Yewon Jang'
               location='Seoul, South Korea'
-            />
-            {/* right */}
-            <div className='w-full md:w-5/12 aspect-video'>
+            /> */}
+            <div className='w-full h-full md:w-1/3'>
               <MotionImg
                 magnify={false}
-                src='/images/about/profile.jpg'
+                src='/images/about/profile.png'
                 alt='Yewon Jang'
-                className='w-full h-full object-cover object-center'
+                className='w-full aspect-square'
               />
+              <InViewDiv className='w-full h-fit flex flex-col pt-4 md:pt-4 md:flex-row justify-end items-start gap-12 md:gap-16'>
+                <RelatedLinks links={RELATED_LINKS} />
+              </InViewDiv>
+            </div>
+
+            <div className='w-full md:w-2/3 flex flex-col'>
+              <span className='hidden md:block font-semibold text-lg md:text-xl'>Introduce</span>
+              <p className={classNames('w-full h-full', 'flex text-base md:text-lg leading-loose ')}>{DESCRIPTION}</p>
             </div>
           </InViewDiv>
 
-          <InViewDiv className='w-full p-4 md:p-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16'>
-            <div className='w-full md:w-7/12 h-fit flex flex-col gap-4 md:gap-8'>
-              <span className='font-semibold text-lg md:text-2xl'>Introduce</span>
-
-              {/* Description */}
-              <p className={classNames('w-full h-full', 'flex text-base md:text-2xl leading-loose ')}>{DESCRIPTION}</p>
+          <InViewDiv className='w-full h-fit p-4 md:p-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16'>
+            {/* left */}
+            <div className='w-full w-full flex flex-col'>
+              <span className='font-semibold text-lg md:text-xl'>Clients</span>
+              <Marquee speed={50} gradient={false} className='p-4 md:p-8'>
+                {['/images/clients/frame.png', '/images/clients/frame-1.png', '/images/clients/frame-2.png', '/images/clients/frame-3.png', '/images/clients/frame-4.png','/images/clients/frame-5.png','/images/clients/frame-6.png','/images/clients/frame-7.png'].map(
+                  (imagePath, index) => (
+                    <img
+                      key={index}
+                      src={imagePath}
+                      alt={`Client ${index + 1}`}
+                      className='h-44 md:h-44 w-auto mx-8 object-contain'
+                    />
+                  ),
+                )}
+              </Marquee>
             </div>
-            <RelatedLinks links={RELATED_LINKS} />
           </InViewDiv>
-          <Marquee speed={50} gradient={false} className='p-4 md:p-8'>
-            {['Computational Designer', 'Creative Developer', 'Generative Artist', 'Tech Enthusiast'].map(
-              (word, index) => (
-                <span key={index} className='text-4xl md:text-6xl font-bold leading-none mx-8 whitespace-nowrap'>
-                  {word}
-                </span>
-              ),
-            )}
-          </Marquee>
 
-          <InViewDiv className='w-full p-4 md:p-8 flex flex-col xl:flex-row justify-between items-start gap-12 md:gap-32'>
-            {/* <div className='w-full md:w-4/12 h-fit'></div> */}
-            <div className='w-full xl:w-6/12 h-fit flex flex-col gap-8 md:gap-16'>
+          <InViewDiv className='w-full p-4 md:px-8 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between items-start gap-12 md:gap-16'>
+            <div className='flex flex-col gap-8'>
               <HistoryList history={EDUCATION} />
               <HistoryList history={RESEARCH_EXPERIENCE} />
             </div>
-            <div className='w-full xl:w-6/12 h-fit flex flex-col gap-8 md:gap-16'>
+            <HistoryList history={RECOGNITION_AND_AWARDS} />
+            <div className='flex flex-col gap-8'>
               <HistoryList history={WORK_EXPERIENCE} />
               <HistoryList history={LEADERSHIP_EXPERIENCE} />
             </div>
-          </InViewDiv>
-          <InViewDiv className='w-full p-4 md:p-8 flex flex-col justify-start items-center gap-4 md:gap-8 bg-gradient-to-t from-gray-100 to-white'>
-            <div className='w-full h-fit flex flex-col justify-start items-center gap-4 md:gap-8 py-12 md:py-16'>
-              <RiDoubleQuotesL className='text-2xl md:text-4xl' />
-              <p className={classNames('w-fit h-full', 'text-center italic flex text-lg md:text-2xl leading-loose ')}>
-                {ESSAY}
-              </p>
-              <RiDoubleQuotesR className='text-2xl md:text-4xl' />
+            <div className='flex flex-col gap-8'>
+              <HistoryList history={PUBLICATIONS} />
+              <HistoryList history={SELECTED_EXHIBITIONS} />
             </div>
           </InViewDiv>
         </div>
