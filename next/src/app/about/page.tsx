@@ -242,8 +242,8 @@ export default function AboutPage() {
     <>
       <div className='min-h-dvh w-full h-fit pt-14 md:px-20 bg-white z-10'>
         {/* <PageTitleArea title='About' /> */}
-        <div className='flex flex-col w-full h-fit gap-12'>
-          <InViewDiv className='w-full h-fit p-4 md:p-8 flex flex-col-reverse md:flex-row justify-between items-stretch gap-12 md:gap-16'>
+        <div className='flex flex-col w-full h-fit gap-0'>
+          <InViewDiv className='w-full h-fit p-8 md:p-8 flex flex-col-reverse md:flex-row justify-between items-stretch gap-12 md:gap-16'>
             {/* left */}
             {/* <NameSection
               jobs={['Computational', 'Designer/Developer']}
@@ -263,12 +263,11 @@ export default function AboutPage() {
             </div>
 
             <div className='w-full md:w-2/3 flex flex-col'>
-              <span className='hidden md:block font-semibold text-lg md:text-xl'>Introduce</span>
-              <p className={classNames('w-full h-full', 'flex text-base md:text-lg leading-loose ')}>{DESCRIPTION}</p>
+              <p className={classNames('w-full h-full', 'text-base md:text-lg leading-2 ')}>{DESCRIPTION}</p>
             </div>
           </InViewDiv>
 
-          <InViewDiv className='w-full h-fit p-4 md:p-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16'>
+          <InViewDiv className='w-full h-fit p-8 md:p-8 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-16'>
             {/* left */}
             <div className='w-full w-full flex flex-col'>
               <span className='font-semibold text-lg md:text-xl'>Clients</span>
@@ -287,7 +286,7 @@ export default function AboutPage() {
             </div>
           </InViewDiv>
 
-          <InViewDiv className='w-full p-4 md:px-8 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between items-start gap-12 md:gap-16'>
+          <InViewDiv className='w-full p-8 pb-20 md:px-8 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between items-start gap-12 md:gap-16'>
             <div className='flex flex-col gap-8'>
               <HistoryList history={EDUCATION} />
               <HistoryList history={RESEARCH_EXPERIENCE} />
@@ -304,7 +303,7 @@ export default function AboutPage() {
           </InViewDiv>
         </div>
       </div>
-      <div className='w-full h-[30dvh] p-4 md:p-8 bg-black text-white sticky bottom-0 flex flex-col justify-center items-center'></div>
+      <div className='w-full h-[30dvh] p-8 md:p-8 bg-black text-white sticky bottom-0 flex flex-col justify-center items-center'></div>
     </>
   )
 }
