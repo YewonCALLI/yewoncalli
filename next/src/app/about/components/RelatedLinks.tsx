@@ -20,7 +20,7 @@ export const RelatedLinks = ({ links }: RelatedLinkProps) => {
             <a
               key={item.name}
               href={item.value}
-              className='w-full text-base text-sm font-medium leading-loose border-b border-gray-300 md:hover:border-black active:translate-y-0.5 transition-all'
+              className='w-full text-sm font-medium leading-loose border-b border-gray-300 md:hover:border-black active:translate-y-0.5 transition-all'
               target='_blank'
               rel='noopener noreferrer'
             >
