@@ -126,7 +126,7 @@ export default function ProjectDetailPage() {
               improving the quality of ideas.
             </P>
             <Paragpraph>
-              <div className='w-full pt-12 flex flex-row gap-12'>
+              <div className='w-full pt-12 flex flex-col md:flex-row gap-12'>
                 <div className='flex flex-col'>
                   <H3>1. Brainstorming feels more effective with conversational AI</H3>
                   <P>
@@ -139,7 +139,7 @@ export default function ProjectDetailPage() {
             </Paragpraph>
 
             <Paragpraph>
-              <div className='w-full pt-12 flex flex-row gap-12'>
+              <div className='w-full pt-12 flex flex-col md:flex-row gap-12'>
                 <div className='flex flex-col'>
                   <H3>2. Quality of ideas remains largely unchanged</H3>
                   <P>
@@ -152,7 +152,7 @@ export default function ProjectDetailPage() {
             </Paragpraph>
 
             <Paragpraph>
-              <div className='w-full pt-12 flex flex-row gap-12'>
+              <div className='w-full pt-12 flex flex-col md:flex-row gap-12'>
                 <div className='flex flex-col'>
                   <H3>3. Automation reduces authorship and ownership</H3>
                   <P>
