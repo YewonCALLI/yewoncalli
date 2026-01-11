@@ -480,8 +480,8 @@ export default function ProjectDetailPage() {
           </Paragpraph>
           <Paragpraph>
             <P>
-              I created an activity guide for each experiment. This activity guide can access by 'Activity Guide' button
-              on the intro screen.
+              I created an activity guide for each experiment. This activity guide can access by {"'Activity Guide'"}{' '}
+              button on the intro screen.
             </P>
             <div className='w-full aspect-[416/221]'>
               <ImageSlider
