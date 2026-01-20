@@ -18,6 +18,14 @@ export const projects = [
     created_date: '2025',
   },
   {
+    slug: 'new-formative',
+    name: 'Samsung Design Membership 2025 Online Exhibition',
+    cover: '/images/projects/new-formative/cover.jpg',
+    part: 'Frontend Developer',
+    client: 'Samsung Design Membership',
+    created_date: '2025',
+  },
+  {
     slug: 'typofold',
     name: 'Typofold',
     cover: '/images/projects/typofold/cover.jpg',

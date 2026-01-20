@@ -1,12 +1,12 @@
 'use client'
 
 import { Section, ScrollSideTab } from '@/components'
-import { Chapter, Paragpraph, H1, H3, P, Div } from '@/components/details'
+import { Chapter, Paragpraph, H1, H3, P, Div, A } from '@/components/details'
 import { ParllaxFrame } from '@/components/ParllaxFrame'
 import { useEffect, useRef, useState } from 'react'
 
 export default function ProjectDetailPage() {
-  const sectionIds = ['research', 'process', 'development']
+  const sectionIds = ['Outcome']
   const [activeSection, setActiveSection] = useState('research')
 
   useEffect(() => {
@@ -42,101 +42,94 @@ export default function ProjectDetailPage() {
     <>
       <ParllaxFrame
         banner={{
-          image: '/images/projects/new-formative/cover.jpg',
+          image: '/images/projects/new-formative/cover.png',
           title: '2025 Samsung Design Membership <New Formative>',
           description: 'The online website for 2025 Samsung Design Membership',
-          subTitle: 'January 1, 2025',
+          subTitle: 'Jun 2025 - Aug 2025',
         }}
       >
         <ScrollSideTab activeSection={activeSection} sectionIds={sectionIds} />
 
-        <Section id='research'>
-          {/* Background */}
-          <Chapter subTitle='Background' title='Rapid Aging in an Emerging Cultural Hub' />
-          <Paragpraph left={null}>
-            <P>
-              During the Hwayeon: Hongyeon-gil residency (Sep 2023 to Jan 2024), we observed rapid gentrification and
-              the growth of cultural infrastructure. However, older residents were largely absent from these emerging
-              cultural routes.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>Key Observations</H3>
-            <Div></Div>
+        <Section id='Outcome'>
+          <Chapter
+            subTitle=''
+            title='Developed the Samsung Design Membership Online Exhibition 2025, crafting immersive interaction design and front-end development.'
+          />
+          <Paragpraph>
+            <A href='https://www.newformative.com/'>View site</A>
           </Paragpraph>
 
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>
-              We mapped how younger residents describe Hongyeon-gil—and whether older adults appear in that narrative.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <H3>01 | Research Process - Online Survey</H3>
-          </Paragpraph>
+          <div className='w-full aspect-[16/9] bg-white overflow-hidden relative'>
+            <iframe
+              src='https://player.vimeo.com/video/1151368571?autoplay=1&loop=1&muted=1&background=1'
+              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+              frameBorder='0'
+              allow='autoplay; fullscreen; picture-in-picture'
+              allowFullScreen
+            />
+          </div>
 
-          <Paragpraph
-            left={
-              <>
-                <H3>Online Survey through Instagram</H3>
-                <p className='text-sm'>(Collaborated with Hongyeon-gil influencer, @hongyeongil_seoul)</p>
-              </>
-            }
-          >
-            <Div>images</Div>
-            <P>
-              We used an online survey to capture local knowledge and how younger residents perceive older adults in
-              Hongyeon-gil.
-            </P>
-          </Paragpraph>
-
-          <Paragpraph
-            left={
-              <>
-                <H3>Survey Results</H3>
-                <p className='text-sm'>Participants : 34</p>
-              </>
-            }
-          >
-            <Div>chart1</Div>
-            <Div>chart2</Div>
-            <H3>01 | Older adults were rarely mentioned in how people described Hongyeon-gil.</H3>
-            <Div>image</Div>
-            <H3>02 | Hongyeon-gil is remembered through commercial leisure venues.</H3>
-            <Div>chart</Div>
-          </Paragpraph>
-
-          {/* Field Research */}
-          <Chapter subTitle='Field Research' title='How we collected field insights' />
-          <Paragpraph left={null}>
-            <P>We were able to find stories of elderly people living in Hongyeongil through offline interviews.</P>
-          </Paragpraph>
-        </Section>
-
-        <Section id='process'>
-          {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
-          <Paragpraph left={null}>
-            <P>
-              This list outlines the core technologies and design decisions we chose to develop for the first version.
-            </P>
-          </Paragpraph>
-          <Paragpraph left={null}>
-            <Div></Div>
-          </Paragpraph>
-        </Section>
-
-        <Section id='development'>
-          <Chapter subTitle='Development' title='Building the Application' />
-          <Paragpraph left={null}>
-            <P>
-              We developed the Silver Bell application using React Native for cross-platform compatibility and ease of
-              use.
-            </P>
-          </Paragpraph>
+          <div className='w-full flex m-0 relative'>
+            <div className='w-1/2 aspect-[2160/2700] bg-white overflow-hidden relative'>
+              <iframe
+                src='https://player.vimeo.com/video/1156550188?autoplay=1&loop=1&muted=1&background=1'
+                className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+            <div className='w-1/2 aspect-[2160/2700] bg-white overflow-hidden relative'>
+              <iframe
+                src='https://player.vimeo.com/video/1156550324?autoplay=1&loop=1&muted=1&background=1'
+                className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+          </div>
+          <div className='w-full aspect-[16/9] bg-white overflow-hidden relative'>
+            <iframe
+              src='https://player.vimeo.com/video/1156601059?autoplay=1&loop=1&muted=1&background=1'
+              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+              frameBorder='0'
+              allow='autoplay; fullscreen; picture-in-picture'
+              allowFullScreen
+            />
+          </div>
+          <div className='w-full aspect-[16/9] bg-white overflow-hidden relative'>
+            <iframe
+              src='https://player.vimeo.com/video/1156605487?autoplay=1&loop=1&muted=1&background=1'
+              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+              frameBorder='0'
+              allow='autoplay; fullscreen; picture-in-picture'
+              allowFullScreen
+            />
+          </div>
+          <div className='w-full flex m-0 relative'>
+            <div className='w-1/2 aspect-[2160/2700] bg-white overflow-hidden relative'>
+              <iframe
+                src='https://player.vimeo.com/video/1156550794?autoplay=1&loop=1&muted=1&background=1'
+                className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+            <div className='w-1/2 aspect-[2160/2700] bg-white overflow-hidden relative'>
+              <iframe
+                src='https://player.vimeo.com/video/1156550589?autoplay=1&loop=1&muted=1&background=1'
+                className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[125vh] min-w-full min-h-full'
+                frameBorder='0'
+                allow='autoplay; fullscreen; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
+          </div>
         </Section>
       </ParllaxFrame>
+
       <div className='w-full h-[40dvh] bg-black sticky bottom-0 flex justify-center items-center'></div>
     </>
   )
