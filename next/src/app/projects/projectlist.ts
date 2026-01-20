@@ -20,7 +20,7 @@ export const projects = [
   {
     slug: 'new-formative',
     name: 'Samsung Design Membership 2025 Online Exhibition',
-    cover: '/images/projects/new-formative/cover.jpg',
+    cover: '/images/projects/new-formative/cover.png',
     part: 'Frontend Developer',
     client: 'Samsung Design Membership',
     created_date: '2025',
