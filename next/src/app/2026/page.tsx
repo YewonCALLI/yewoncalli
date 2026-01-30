@@ -2,21 +2,21 @@
 
 import { useRef, Suspense, useMemo } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { OrbitControls, Line } from '@react-three/drei'
+import { OrbitControls, Line, useGLTF } from '@react-three/drei'
 // @ts-ignore
 import { EffectComposer, Pixelation } from '@react-three/postprocessing'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
 import * as THREE from 'three'
 import { ProjectList } from './components/index'
+import { xor } from 'three/tsl'
 
 // 하트 포인트 클라우드 컴포넌트
 function HeartPoints() {
   const pointsRef = useRef<THREE.Points>(null)
-  const obj = useLoader(OBJLoader, '/models/Heart.obj')
+  const { scene } = useGLTF('/models/heart.glb')
 
   const { positions, selectedIndices, originalPositions } = useMemo(() => {
     let vertices: number[] = []
-    obj.traverse((child) => {
+    scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         vertices = Array.from(child.geometry.attributes.position.array)
       }
@@ -34,10 +34,10 @@ function HeartPoints() {
       selectedIndices: selected,
       originalPositions: [...vertices],
     }
-  }, [obj])
+  }, [scene])
 
   useFrame(({ clock }) => {
-    if (!pointsRef.current) return
+    if (!pointsRef.current || positions.length === 0) return
 
     const posArray = pointsRef.current.geometry.attributes.position.array as Float32Array
 
@@ -53,8 +53,10 @@ function HeartPoints() {
     material.size = 0.1 + Math.sin(clock.elapsedTime * 2) * 0.025
   })
 
+  if (positions.length === 0) return null
+
   return (
-    <points ref={pointsRef}>
+    <points ref={pointsRef} rotation={[Math.PI/2,0, 0]}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
@@ -191,8 +193,8 @@ function CoordinateImages() {
         <meshBasicMaterial map={texture1} transparent opacity={0.9} />
       </mesh>
       <mesh
-        position={[-11.5, -3.5, -5]}
-        rotation={[0, Math.PI / 2, 0]}
+        position={[-11.5, -3, -4]}
+        rotation={[-Math.PI/2, 0, Math.PI/2]}
       >
         <planeGeometry args={[8, 4]} />
         <meshBasicMaterial map={texture2} transparent opacity={0.9} side={THREE.DoubleSide} />
@@ -216,7 +218,7 @@ function Scene() {
       </Suspense>
 
       <EffectComposer>
-        <Pixelation granularity={3} />
+        <Pixelation granularity={2.8} />
       </EffectComposer>
     </>
   )
@@ -244,3 +246,6 @@ export default function Page2026() {
     </div>
   )
 }
+
+// Preload the model
+useGLTF.preload('/models/heart.glb')
