@@ -18,6 +18,7 @@ const nextConfig = {
   // },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   images: {},
+  transpilePackages: ['three'],  
   webpack(config, { isServer }) {
     if (!isServer) {
       // We're in the browser build, so we can safely exclude the sharp module
