@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import classNames from 'classnames'
 import { useRouter, usePathname } from 'next/navigation'
-import { Logo } from './Logo'
 import { HEADER_HEIGHT } from '@/constants'
 
-export function Header() {
+export function Header2026() {
   const router = useRouter()
   const pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -16,7 +15,6 @@ export function Header() {
   const isMainPage = pathname === '/'
 
   const pages = [
-    { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'CV', href: 'https://drive.google.com/file/d/175nzuC3cMMoPc2TwupMatkR2NDKQfCSI/view?usp=sharing' },
   ]
@@ -42,62 +40,46 @@ export function Header() {
     <>
       <div
         className={classNames(
-          `w-full h-[${HEADER_HEIGHT}px] fixed top-0 z-30 px-4 md:px-8 py-2 md:py-4`,
+          'font-old-standard',
+          `w-full absolute h-[${HEADER_HEIGHT}px] fixed top-0 z-30 py-2 md:py-4`,
           'inline-flex justify-between items-center transition-colors duration-300',
-          // 메인 페이지일 때와 아닐 때 다른 스타일 적용
-          isMainPage 
-            ? 'bg-transparent text-white mix-blend-difference' 
-            : 'bg-white xl:bg-transparent text-black',
-        )} 
+          isMainPage ? 'text-white mix-blend-difference' : 'xl:bg-transparent text-black',
+        )}
       >
         <div
           onClick={() => handleNavigation('/')}
-          className={classNames('w-fit h-fit', 'cursor-pointer', 'hover:opacity-70 active:scale-95 transition-all')}
+          className={classNames(
+            'w-full h-fit mx-2 border-b border-gray-300',
+            'cursor-pointer text-xs',
+            'hover:opacity-70 active:scale-95 transition-all',
+          )}
         >
-          <Logo size='md' />
+          {' '}
+          Yewon Jang
+        </div>
+
+        <div
+          className={classNames(
+            'w-full h-fit mx-2 border-b border-gray-300',
+            'text-xs',
+            'hover:opacity-70 active:scale-95 transition-all',
+          )}
+        >
+          {' '}
+          yewon11351@gmail.com
         </div>
 
         {/* 데스크탑 */}
-        <div className='w-fit h-fit justify-center items-center gap-4 md:gap-6 hidden md:flex'>
+        <div className='w-full mx-2 border-b border-gray-300 h-fit justify-start items-center gap-4 md:gap-6 flex'>
           {pages.map((page) => (
             <div
               key={page.name}
-              className={classNames(
-                'w-fit text-lg font-medium cursor-pointer hover:underline underline-offset-4 decoration-2',
-                pathname === page.href ? 'underline' : '',
-              )}
+              className={classNames('w-fit text-xs font-medium cursor-pointer decoration-2')}
               onClick={() => handleNavigation(page.href)}
             >
               {page.name}
             </div>
           ))}
-        </div>
-
-        {/* 모바일 */}
-        <div className='md:hidden flex items-center'>
-          <button onClick={toggleMobileMenu} className='p-2 -mr-2'>
-            {!isMobileMenuOpen ? (
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
-              </svg>
-            ) : (
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
-              </svg>
-            )}
-          </button>
         </div>
       </div>
 
@@ -123,9 +105,7 @@ export function Header() {
                   'cursor-pointer',
                   'hover:opacity-70 active:scale-95 transition-all',
                 )}
-              >
-                <Logo size='md' />
-              </div>
+              ></div>
               <button onClick={toggleMobileMenu} className='p-2 -mr-2'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -143,7 +123,7 @@ export function Header() {
                 <div
                   key={page.name}
                   className={classNames(
-                    'w-fit text-lg font-medium cursor-pointer hover:underline',
+                    'w-fit text-lg font-medium cursor-pointer hover:underline ',
                     pathname === page.href ? 'underline' : '',
                   )}
                   onClick={() => handleNavigation(page.href)}

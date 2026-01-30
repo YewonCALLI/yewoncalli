@@ -30,6 +30,8 @@ export default {
       fontFamily: {
         // 한글용 폰트
         korean: ['var(--font-pretendard)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'old-standard': ['"Old Standard TT"', 'serif'],
+        presentation : ['"Presentation"', 'serif'],
       },
       aspectRatio: {},
     },
