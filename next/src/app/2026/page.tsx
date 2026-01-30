@@ -7,7 +7,6 @@ import { OrbitControls, Line, useGLTF } from '@react-three/drei'
 import { EffectComposer, Pixelation } from '@react-three/postprocessing'
 import * as THREE from 'three'
 import { ProjectList } from './components/index'
-import { xor } from 'three/tsl'
 
 // 하트 포인트 클라우드 컴포넌트
 function HeartPoints() {
