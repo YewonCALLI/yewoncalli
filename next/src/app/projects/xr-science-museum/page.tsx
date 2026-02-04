@@ -328,7 +328,7 @@ export default function ProjectDetailPage() {
                 <H3>Issue 2</H3>
                 <P>
                   Transparent buttons are not recognized as clickable elements and have poor touch accuracy, making them
-                  unsuitable for children's tablet use.
+                  unsuitable for children&apos;s tablet use.
                 </P>
                 <p className='opacity-50 text-sm md:text-base'>Project Managers</p>
               </div>
