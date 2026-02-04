@@ -78,7 +78,7 @@ export default function ProjectDetailPage() {
                 <div className='w-full h-full flex flex-row justify-between items-start'>
                   <div className='w-full h-fit flex flex-col gap-4 bg-white px-4 py-2 rounded-lg shadow-xl'>
                     <p className='text-sm md:text-base'>
-                      Graphics made with digital tools feel like code files floating on a screen. They're just
+                      Graphics made with digital tools feel like code files floating on a screen. They&apos;re just
                       temporarily rendered images, and they don&apos;t really feel like mine.
                     </p>
                     <span className='text-xs md:text-sm font-medium'>Member Jang</span>
