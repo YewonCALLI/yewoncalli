@@ -30,7 +30,7 @@ export const projects = [
     name: 'Typofold',
     cover: '/images/projects/typofold/cover.jpg',
     part: 'UI/UX Designer, Frontend Developer',
-    description: 'Turning code-driven typography into foldable, physical artifacts',
+    description: 'A design tool that converts 3D models into paper crafts',
     award: 'HCI Korea Creative Awards (Excellence Awards) - 2025',
     created_date: '2025',
   },

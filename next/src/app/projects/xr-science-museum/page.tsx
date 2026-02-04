@@ -58,44 +58,48 @@ export default function ProjectDetailPage() {
 
         <Section id='research'>
           {/* Background */}
-          <Chapter subTitle='Background' title='Voices Around the Adoption of Digital Textbooks' />
+          <Chapter
+            subTitle='Background'
+            title='Voices surrounding the implementation of AI digital textbooks in South Korea'
+          />
           <Paragpraph left={null}>
             <P>
-              As digital textbooks become more common in classrooms, teachers raise concerns about learning
-              effectiveness, literacy development, and the limits of screen-based instruction. Survey results and
-              interview excerpts below reflect how educators experience these changes in practice.
+              Since the implementation of AI digital textbooks in 2025, digital infrastructure has been expanded, but
+              the quality of educational content has not kept pace. In particular, there is a lack of interactive and
+              highly immersive content that leverages the strengths of the digital environment.
             </P>
           </Paragpraph>
           <Paragpraph left={null}>
-            <H2>01 | While Digital Device Usage Grows, Literacy Skills Continue to Decline</H2>
+            <H2>01 | Online Survey and Teachers Interview</H2>
           </Paragpraph>
           <Paragpraph left={null}>
             <P>
-              What are the anticipated negative impacts of adopting AI digital textbooks? (Multiple responses allowed)
+              What do you think is the most important reason why AI digital textbooks are not as effective as expected?
+              (Multiple answers possible) (Multiple responses allowed)
             </P>
             <MotionImg src={imagePath + '01.png'} alt='' className='w-1/2 h-fit mt-4' />
           </Paragpraph>
 
           <Paragpraph left={null}>
-            <H2>02 | Still Screen-Bound Learning</H2>
-          </Paragpraph>
-          <Paragpraph left={null}>
             <MotionImg src={imagePath + '02.png'} alt='' className='w-[55%] h-fit' />
             <H3>Digital Devices ≠ Digital Learning</H3>
-            <P>Infinite potential in learning experience confined to a flat screen.</P>
+            <P>Digital devices are prepared, but the quality of educational content is insufficient</P>
           </Paragpraph>
 
           {/* Teacher Journey */}
-          <Chapter subTitle='Teacher Journey' title='The Hidden Work Behind Digital Textbooks' />
+          <Chapter subTitle='Teacher Journey' title='We identified the real problems that teachers face' />
           <Paragpraph>
             <P>
-              Following initial research and classroom observations, I mapped a workflow to examine how the introduction
-              of digital textbooks changes how teachers prepare, deliver, and assess lessons compared to traditional
-              classroom teaching.
+              I conducted a comparative analysis of student and teacher experiences in traditional textbook classes
+              versus digital textbook classes. While digital textbooks provide interactive experiences, they actually
+              reduce students' active inquiry and increase teachers' lesson preparation burden.
             </P>
           </Paragpraph>
           <Paragpraph>
-            <H3>Digital textbooks add interactivity, but they also add invisible prep work for teachers.</H3>
+            <H3>
+              Currently used digital textbooks are reducing discussion experiences with peers and replacing them with
+              quiz content.
+            </H3>
             <P>Traditional Textbooks</P>
             <MotionImg src={imagePath + '03.png'} alt='' className='w-full h-fit !mt-2' />
             <P>Digital Textbooks</P>
@@ -103,18 +107,18 @@ export default function ProjectDetailPage() {
           </Paragpraph>
 
           {/* Student Journey */}
-          <Chapter subTitle='Student Journey' title='What Gets Reduced in Digital Textbooks' />
+          <Chapter subTitle='Student Journey' title='We identified the real problems that students face' />
           <Paragpraph>
             <P>
-              Looking at the student side of the same teaching flow highlights how learning experiences shift when
-              digital textbooks are introduced—particularly in interaction, feedback, and collaboration compared to
-              traditional classrooms.
+              I conducted a comparative analysis of student and teacher experiences in traditional textbook classes
+              versus digital textbook classes. While digital textbooks provide interactive experiences, they actually
+              reduce students' active inquiry and increase teachers' lesson preparation burden.
             </P>
           </Paragpraph>
           <Paragpraph>
             <H3>
-              Digital textbooks reduced peer interaction and replaced qualitative teacher feedback with automated quiz
-              scores.
+              Digital textbooks provide students with interactive experiences, but they also increase the burden of
+              device management for teachers.
             </H3>
             <P>Traditional Textbooks</P>
             <MotionImg src={imagePath + '05.png'} alt='' className='w-full h-fit !mt-2' />
@@ -141,8 +145,8 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <H2>02 | Research Question</H2>
             <H1>
-              &quot;What interaction design principles lower teacher-student usage barriers while shifting digital
-              science classes from answer-checking to inquiry and experimentation?&quot;
+              &quot;How can we design digital textbook content to reduce the burden on teachers and students and
+              transform passive learning into active inquiry experiences?&quot;
             </H1>
           </Paragpraph>
         </Section>
@@ -152,9 +156,9 @@ export default function ProjectDetailPage() {
           <Chapter subTitle='MVP List' title='What We’re Building' />
           <Paragpraph>
             <P>
-              Based on the identified classroom constraints and learning gaps, I defined an MVP to sort and prioritize
-              features from most to least critical—focusing on those that directly support inquiry-based science
-              learning while remaining feasible for real classroom use.
+              After identifying the key constraints in the classroom setting and the gaps in student learning, I created
+              an MVP to rank and prioritize features based on their importance. The main focus was on features that
+              directly support inquiry-based science learning while still being practical for everyday classroom use.
             </P>
           </Paragpraph>
           <Paragpraph>
@@ -165,8 +169,9 @@ export default function ProjectDetailPage() {
           <Chapter subTitle='Design Direction' title='Three Design Directions for the XR Museum' />
           <Paragpraph>
             <P>
-              Synthesizing teacher and student pain points with the defined MVP scope led to three design directions
-              that guide how XR should support inquiry, accessibility, and classroom flow.
+              I organized the problems that teachers and students face into three design directions aligned with the MVP
+              list. At the same time, I divided 14 experiments into four experiment types and created reusable XR
+              templates for each prototype.
             </P>
           </Paragpraph>
 
@@ -274,11 +279,11 @@ export default function ProjectDetailPage() {
           </Paragpraph>
 
           {/* Technical Implementation */}
-          <Chapter subTitle='Technical Implementation' title='From Experiment Narrative to Web Simulation' />
+          <Chapter subTitle='Technical Implementation' title='From textbook experiments to web simulations' />
           <Paragpraph left={null}>
             <P>
-              To translate classroom experiments into interactive web simulations, physical processes were modeled,
-              simulated, and rendered in real time using web-based 3D and graphics technologies.
+              To implement experiments from paper-based textbooks as web-based interactive simulations, I modeled and
+              simulated how the experiments work and rendered them in real-time using 3D/graphics technology.
             </P>
           </Paragpraph>
           <Paragpraph>
@@ -299,7 +304,7 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <H2>Computer Graphics</H2>
             <MotionImg src={imagePath + '25.png'} alt='' className='!w-2/3 !md:w-1/2 h-fit' />
-            <P>I created video data by grilling meat and fish using a thermal imaging camera.</P>
+            <P>I created video data by filming scenes of grilling meat and fish with a thermal camera.</P>
             <MotionImg src={imagePath + '26.png'} alt='' className='w-full h-fit' />
             <P>Based on the video data, I developed a thermal camera mode simulation using GLSL shaders.</P>
           </Paragpraph>
@@ -316,20 +321,20 @@ export default function ProjectDetailPage() {
             <div className='w-full h-fit grid grid-cols-3 gap-6'>
               <div className='w-full h-fit space-y-4'>
                 <H3>Issue 1</H3>
-                <P>The text is too small for 5th-6th graders reading on tablets from a distance.</P>
+                <P>Text is too small for 5th-6th grade students.</P>
                 <p className='opacity-50 text-sm md:text-base'>Editorial Team</p>
               </div>
               <div className='w-full h-fit space-y-4'>
                 <H3>Issue 2</H3>
                 <P>
-                  Transparent buttons often fail to read as actionable elements and reduce touch accuracy, making them
-                  unsuitable for children’s tablet use.
+                  Transparent buttons are not recognized as clickable elements and have poor touch accuracy, making them
+                  unsuitable for children's tablet use.
                 </P>
                 <p className='opacity-50 text-sm md:text-base'>Project Managers</p>
               </div>
               <div className='w-full h-fit space-y-4'>
                 <H3>Issue 3</H3>
-                <P>Button animations and visual effects introduce unnecessary visual noise for elementary students.</P>
+                <P>Button animations and visual effects create unnecessary visual noise for elementary students.</P>
                 <p className='opacity-50 text-sm md:text-base'>Editorial Team</p>
               </div>
             </div>
@@ -449,19 +454,19 @@ export default function ProjectDetailPage() {
             </P>
           </Paragpraph>
 
-          <Chapter subTitle='Wireframes & Layout' title='Clustering interaction types' />
+          <Chapter
+            subTitle='Wireframes & Layout'
+            title='I created interaction and UI design guides based on experiment types.'
+          />
           <Paragpraph>
-            <P>
-              To avoid one-off designs for each unit, textbook content was grouped by shared phenomena and interaction
-              patterns.
-            </P>
+            <P>I grouped the curriculum into four experiment types and created interaction and UI design guides.</P>
           </Paragpraph>
           <Paragpraph>
             <div className='w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4'>
-              <MotionImg src={imagePath + '50.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
-              <MotionImg src={imagePath + '51.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
-              <MotionImg src={imagePath + '52.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
-              <MotionImg src={imagePath + '53.png'} alt='' className='w-full !h-auto !aspect-[875/385]' />
+              <MotionImg src={imagePath + '50.png'} alt='' className='w-full !h-auto !aspect-[875/384]' />
+              <MotionImg src={imagePath + '51.png'} alt='' className='w-full !h-auto !aspect-[875/384]' />
+              <MotionImg src={imagePath + '52.png'} alt='' className='w-full !h-auto !aspect-[875/352]' />
+              <MotionImg src={imagePath + '53.png'} alt='' className='w-full !h-auto !aspect-[875/352]' />
             </div>
           </Paragpraph>
         </Section>
