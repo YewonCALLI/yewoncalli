@@ -79,14 +79,14 @@ export default function ProjectDetailPage() {
                   <div className='w-full h-fit flex flex-col gap-4 bg-white px-4 py-2 rounded-lg shadow-xl'>
                     <p className='text-sm md:text-base'>
                       Graphics made with digital tools feel like code files floating on a screen. They're just
-                      temporarily rendered images, and they don't really feel like mine.
+                      temporarily rendered images, and they don&apos;t really feel like mine.
                     </p>
                     <span className='text-xs md:text-sm font-medium'>Member Jang</span>
                   </div>
                   <div className='w-1/4 lg:w-full h-full'></div>
                   <div className='w-full h-fit flex flex-col gap-4 bg-white px-4 py-2 rounded-lg shadow-xl'>
                     <p className='text-sm md:text-base'>
-                      More like a code file floating on a screen, a momentary rendering that I don’t truly hold or own.
+                      More like a code file floating on a screen, a momentary rendering that I don&apos;t truly hold or own.
                     </p>
                     <span className='text-xs md:text-sm font-medium'>Member Lee</span>
                   </div>
@@ -168,9 +168,9 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <H2>Key Insight</H2>
             <H3>
-              Automated tools increase efficiency and convenience, but they don't elevate the quality of ideas. Rather,
+              Automated tools increase efficiency and convenience, but they don&apos;t elevate the quality of ideas. Rather,
               creators often lose their sense of ownership in this process. Therefore, when designing automated tools,
-              it's important to design interactions that allow creators to actively engage and perceive their own
+              it&apos;s important to design interactions that allow creators to actively engage and perceive their own
               effort.
             </H3>
           </Paragpraph>
@@ -187,7 +187,7 @@ export default function ProjectDetailPage() {
               className='w-full h-fit bg-[#0058AB] !-mt-1 px-8'
             />
             <P>
-              According to the IKEA effect, people assign higher value to outcomes they've personally invested effort in
+              According to the IKEA effect, people assign higher value to outcomes they&apos;ve personally invested effort in
               and feel a stronger sense of ownership. Noting that automation increases efficiency but weakens ownership,
               I sought to apply the IKEA effect to creative coding tools.
             </P>
@@ -196,7 +196,7 @@ export default function ProjectDetailPage() {
           <Paragpraph>
             <H2>What creates ownership?</H2>
             <P>
-              <span className='font-medium'>Effort and time | </span> People value creations more when they've invested
+              <span className='font-medium'>Effort and time | </span> People value creations more when they&apos;ve invested
               significant effort and time into making them.
             </P>
           </Paragpraph>
@@ -280,7 +280,7 @@ export default function ProjectDetailPage() {
             <div className='flex flex-col md:flex-row gap-12'>
               <div className='flex flex-col'>
                 <P className='border border-black w-fit px-2 py-1'>Supportive</P>
-                <H3>Automation doesn't mean making it for you; it means enabling you to make it yourself.</H3>
+                <H3>Automation doesn&apos;t mean making it for you; it means enabling you to make it yourself.</H3>
                 <P>Automation is used to generate structures that users can transform, combine, and modify.</P>
               </div>
               <MotionImg src={imagePath + '11.jpg'} alt='' className='md:max-w-[300px] h-fit' />
@@ -378,7 +378,7 @@ export default function ProjectDetailPage() {
             <H1>Solution</H1>
             <P>
               To solve this, I sorted the faces by their orientation and used a DFS algorithm that skips internal faces.
-              This ensures the generated paper nets don't overlap and can actually be assembled by hand.
+              This ensures the generated paper nets don&apos;t overlap and can actually be assembled by hand.
             </P>
           </Paragpraph>
           <Paragpraph>
