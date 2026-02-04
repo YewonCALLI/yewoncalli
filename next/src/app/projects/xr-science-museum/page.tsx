@@ -92,7 +92,7 @@ export default function ProjectDetailPage() {
             <P>
               I conducted a comparative analysis of student and teacher experiences in traditional textbook classes
               versus digital textbook classes. While digital textbooks provide interactive experiences, they actually
-              reduce students' active inquiry and increase teachers' lesson preparation burden.
+              reduce students&apos; active inquiry and increase teachers&apos; lesson preparation burden.
             </P>
           </Paragpraph>
           <Paragpraph>
@@ -112,7 +112,7 @@ export default function ProjectDetailPage() {
             <P>
               I conducted a comparative analysis of student and teacher experiences in traditional textbook classes
               versus digital textbook classes. While digital textbooks provide interactive experiences, they actually
-              reduce students' active inquiry and increase teachers' lesson preparation burden.
+              reduce students&apos; active inquiry and increase teachers&apos; lesson preparation burden.
             </P>
           </Paragpraph>
           <Paragpraph>
@@ -153,7 +153,7 @@ export default function ProjectDetailPage() {
 
         <Section id='development'>
           {/* MVP List */}
-          <Chapter subTitle='MVP List' title='What We’re Building' />
+          <Chapter subTitle='MVP List' title="What We&apos;re Building" />
           <Paragpraph>
             <P>
               After identifying the key constraints in the classroom setting and the gaps in student learning, I created
