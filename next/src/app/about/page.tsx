@@ -7,6 +7,7 @@ import React from 'react'
 import { HistoryList, NameSection, RelatedLinks } from './components'
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri'
 
+
 const DESCRIPTION = `Hi, I’m Yewon. I’m an HCI researcher specializing in human-centered tool design. I build interactive systems that help people create, learn, and take ownership of what they make.
 
 My work has been recognized twice with the HCI Korea Creative Awards: Franklin (2023), a gender-debiased Korean fairytale generator, and TypoFold (2025), a papercraft converter that bridges computational design and physical making. I have investigated factors that increase creators’ ownership when working with automated and generative tools, with a particular focus on digital-physical workflows and paper-based fabrication.
