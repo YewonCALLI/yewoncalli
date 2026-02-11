@@ -1,4 +1,5 @@
 export * from './ThreeScene'
 export * from './Header2026'
 export * from './Footer2026'
-export * from './ProjectList'
+export { ProjectList, works } from './ProjectList'
+export type { Project } from './ProjectList'

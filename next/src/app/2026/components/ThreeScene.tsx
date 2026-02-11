@@ -79,18 +79,6 @@ export default function ThreeScene() {
 
     const mesh = createSampleGeometry()
 
-    // 애니메이션 루프
-    const animate = () => {
-      animationIdRef.current = requestAnimationFrame(animate)
-      
-      if (mesh) {
-        mesh.rotation.x += 0.005
-        mesh.rotation.y += 0.01
-      }
-      
-      renderer.render(scene, camera)
-    }
-    animate()
 
     // 리사이즈 핸들러
     const handleResize = () => {
