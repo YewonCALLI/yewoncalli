@@ -8,6 +8,7 @@ import { EffectComposer, Pixelation } from '@react-three/postprocessing'
 import * as THREE from 'three'
 import { ProjectList, works } from './components/index'
 import type { Project } from './components/ProjectList'
+import { ProjectListMobile } from './components/ProjectListMobile'
 
 // ──────────────────────────────────────────────
 // Types
@@ -450,7 +451,15 @@ export default function Page2026() {
   return (
     <div className='w-full absolute h-full min-h-dvh bg-white'>
       <div className='w-full bottom-0 p-4 md:w-[clamp(200px,33vw,50vw)] md:top-12 md:left-2 absolute md:mx-auto z-10'>
-        <ProjectList onProjectClick={handleProjectClick} selectedProject={selectedProject?.project ?? null} />
+        {/* 데스크탑: md 이상에서만 표시 */}
+        <div className='hidden md:block'>
+          <ProjectList onProjectClick={handleProjectClick} selectedProject={selectedProject?.project ?? null} />
+        </div>
+
+        {/* 모바일: md 미만에서만 표시 */}
+        <div className='block md:hidden'>
+          <ProjectListMobile onProjectClick={handleProjectClick} selectedProject={selectedProject?.project ?? null} />
+        </div>
       </div>
 
       {selectedProject && (

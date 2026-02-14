@@ -42,14 +42,14 @@ export function Header2026() {
         className={classNames(
           'font-old-standard',
           `w-full absolute h-[${HEADER_HEIGHT}px] fixed top-0 z-30 py-2 md:py-4`,
-          'flex justify-between items-center transition-colors duration-300',
+          'flex flex-row justify-between items-center px-2 transition-colors duration-300',
           isMainPage ? 'text-white mix-blend-difference' : 'xl:bg-transparent text-black',
         )}
       >
         <div
           onClick={() => handleNavigation('/')}
           className={classNames(
-            'w-full h-fit mx-2 border-b border-gray-300',
+            'w-1/4 md:w-1/3 h-fit md:mx-2 border-b border-gray-300',
             'cursor-pointer text-xs',
             'hover:opacity-70 active:scale-95 transition-all',
           )}
@@ -60,7 +60,7 @@ export function Header2026() {
 
         <div
           className={classNames(
-            'w-full h-fit mx-2 border-b border-gray-300',
+            'w-fit h-fit pr-4 md:w-1/3 md:mx-2 border-b border-gray-300',
             'cursor-pointer text-xs',
             'hover:opacity-70 active:scale-95 transition-all',
           )}
@@ -69,7 +69,7 @@ export function Header2026() {
           yewon11351@gmail.com
         </div>
 
-        <div className='w-full mx-2 border-b border-gray-300 h-fit justify-start items-center gap-4 md:gap-6 flex'>
+        <div className='w-1/3 md:w-1/3 md:mx-2 border-b border-gray-300 h-fit justify-start items-center gap-4 md:gap-6 flex'>
           {pages.map((page) => (
             <div
               key={page.name}
