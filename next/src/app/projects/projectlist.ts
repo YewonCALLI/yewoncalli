@@ -1,30 +1,23 @@
+export type ProjectSkill =
+  | 'Creative Tools'
+  | 'AI & Fairness'
+  | 'Computer Graphics'
+  | 'Community-Centered Design'
+  | 'Media Art'
+  | 'Interaction Design'
+  | 'Computational Craft'
+
+export const ALL_SKILLS: ProjectSkill[] = [
+  'Creative Tools',
+  'AI & Fairness',
+  'Computer Graphics',
+  'Computational Craft',
+  'Community-Centered Design',
+  'Interaction Design',
+  'Media Art',
+]
+
 export const projects = [
-  // {
-  //   slug: 'new-formative',
-  //   name: '2025 Samsung Design Membership <New Formative>',
-  //   cover: '/images/projects/new-formative/cover.jpg',
-  //   part: 'Frontend Developer',
-  //   description: 'The online website for 2025 Samsung Design Membership',
-  //   client: 'Samsung Design Membership',
-  //   created_date: '2025',
-  // },
-  {
-    slug: 'xr-science-museum',
-    name: 'XR Science Museum',
-    cover: '/images/projects/xr-science-museum/cover.jpg',
-    part: 'UX/UI Designer, Frontend Developer',
-    description: 'An immersive XR learning platform designed to support conceptual understanding in science education.',
-    client: 'MiraeN',
-    created_date: '2025',
-  },
-  {
-    slug: 'new-formative',
-    name: 'Samsung Design Membership 2025 Online Exhibition',
-    cover: '/images/projects/new-formative/cover.png',
-    part: 'Frontend Developer',
-    client: 'Samsung Design Membership',
-    created_date: '2025',
-  },
   {
     slug: 'typofold',
     name: 'Typofold',
@@ -33,6 +26,26 @@ export const projects = [
     description: 'A design tool that converts 3D models into paper crafts',
     award: 'HCI Korea Creative Awards (Excellence Awards) - 2025',
     created_date: '2025',
+    skills: ['Creative Tools', 'Computer Graphics', 'Computational Craft'] as ProjectSkill[],
+  },
+  {
+    slug: 'xr-science-museum',
+    name: 'XR Science Museum',
+    cover: '/images/projects/xr-science-museum/cover.jpg',
+    part: 'UX/UI Designer, Frontend Developer',
+    description: 'An immersive XR learning platform designed to support conceptual understanding in science education.',
+    client: 'MiraeN',
+    created_date: '2025',
+    skills: ['Creative Tools', 'Computer Graphics'] as ProjectSkill[],
+  },
+  {
+    slug: 'new-formative',
+    name: 'Samsung Design Membership 2025 Online Exhibition',
+    cover: '/images/projects/new-formative/cover.png',
+    part: 'Frontend Developer',
+    client: 'Samsung Design Membership',
+    created_date: '2025',
+    skills: ['Interaction Design'] as ProjectSkill[],
   },
   {
     slug: 'silver-bell',
@@ -42,6 +55,7 @@ export const projects = [
     description: 'An exercise app designed for older adults in Hongyeon-gil, Seoul',
     residency: 'Total Museum of Contemporary Art',
     created_date: '2024',
+    skills: ['Community-Centered Design'] as ProjectSkill[],
   },
   {
     slug: 'word-wide-web',
@@ -51,6 +65,7 @@ export const projects = [
     description: 'A word-weaving platform that creates poems through connected synonyms.',
     created_in: 'SFPC (School for Poetic Computation)',
     created_date: '2024',
+    skills: ['Creative Tools', 'Media Art'] as ProjectSkill[],
   },
   {
     slug: 'ganpan',
@@ -60,6 +75,7 @@ export const projects = [
     description: 'A Korean typography generation model based on signboard images in South Korea.',
     exhibition: '2024 ATC (Art&Technology Conference)',
     created_date: '2024',
+    skills: ['Creative Tools'] as ProjectSkill[],
   },
   {
     slug: 'memeproject',
@@ -70,6 +86,7 @@ export const projects = [
       'An interactive website that explores meme origins, impact, and replication, and helps users create their own memes.',
     exhibition: 'PlanT House, Hongcheon Art Museum',
     created_date: '2023',
+    skills: ['Creative Tools', 'Media Art'] as ProjectSkill[],
   },
   {
     slug: 'hongyeon-1.0',
@@ -80,6 +97,7 @@ export const projects = [
       'A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative.',
     residency: 'Total Museum of Contemporary Art',
     created_date: '2023',
+    skills: ['AI & Fairness', 'Community-Centered Design', 'Media Art'] as ProjectSkill[],
   },
   {
     slug: 'simulating-1-2-3',
@@ -89,6 +107,7 @@ export const projects = [
     description: 'Simulating gravity through Unreal Engine.',
     exhibition: 'ACC Media Cube, Gwangju',
     created_date: '2023',
+    skills: ['Computer Graphics','Media Art'] as ProjectSkill[],
   },
   {
     slug: 'franklin',
@@ -99,6 +118,7 @@ export const projects = [
       "A gender-neutral Korean fairy tale generator using AI, addressing social biases in children's literature.",
     award: 'HCI Korea 2022',
     created_date: '2022',
+    skills: ['AI & Fairness'] as ProjectSkill[],
   },
   {
     slug: 'singlet-multiplet',
@@ -109,6 +129,7 @@ export const projects = [
     award:
       '8th International New Media Art Exhibition, CICA Museum Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)',
     created_date: '2021',
+    skills: ['Media Art'] as ProjectSkill[],
   },
   {
     slug: 'draw-the-beat',
@@ -118,5 +139,6 @@ export const projects = [
     description: 'A program that creates music by drawing.',
     created_in: 'School Project (Creative Algorithms)',
     created_date: '2021',
+    skills: ['Creative Tools', 'Computational Craft'] as ProjectSkill[],
   },
 ]
