@@ -21,7 +21,7 @@ export const projects = [
   {
     slug: 'typofold',
     name: 'Typofold',
-    cover: '/images/projects/typofold/cover.jpg',
+    cover: '/images/projects/typofold/Untitled-112.jpeg',
     part: 'Tool development, Digital Fabrication',
     description: 'A design tool that converts 3D models into paper crafts',
     award: 'HCI Korea Creative Awards (Excellence Awards) - 2025',
@@ -31,7 +31,7 @@ export const projects = [
   {
     slug: 'xr-science-museum',
     name: 'XR Science Museum',
-    cover: '/images/projects/xr-science-museum/cover.jpg',
+    cover: '/images/projects/xr-science-museum/cover.jpeg',
     part: 'UX/UI Designer, Frontend Developer',
     description: 'An immersive XR learning platform designed to support conceptual understanding in science education.',
     client: 'MiraeN',
