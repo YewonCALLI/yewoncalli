@@ -171,7 +171,7 @@ const ProjectCard = ({ project, highlightedSkills = [] }: { project: any; highli
                 <span
                   key={skill}
                   className={classNames(
-                    'text-xs text-nowrap lg:text-sm leading-none px-0.5 py-0.5 md:px-2 md:py-2 border',
+                    'text-xs text-nowrap lg:text-sm leading-none px-1.5 py-1 md:px-2 md:py-2 border',
                     highlightedSkills.includes(skill)
                       ? 'bg-black text-white border-black'
                       : 'bg-white text-black border-black/20',
@@ -184,7 +184,7 @@ const ProjectCard = ({ project, highlightedSkills = [] }: { project: any; highli
           )}
         </div>
         {project.description && (
-          <p className='w-full h-full text-neutral-700 text-sm font-normal leading-snug px-0.5 mt-2 pr-2'>
+          <p className='w-full h-full text-neutral-700 text-sm font-normal leading-snug px-0.5 md:mt-2'>
             {project.description}
           </p>
         )}
