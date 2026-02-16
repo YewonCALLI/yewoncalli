@@ -147,26 +147,42 @@ export default function ProjectsPage() {
 }
 
 const ProjectCard = ({ project, highlightedSkills = [] }: { project: any; highlightedSkills?: ProjectSkill[] }) => {
+  const vimeoSrc = project.vimeoId
+    ? `https://player.vimeo.com/video/${project.vimeoId}?background=1&autoplay=1&muted=1&loop=1&playsinline=1`
+    : null
+
   return (
     <Link
       href={`/projects/${project.slug}`}
       key={project.slug}
-      className='w-full h-fit mb-4 flex flex-col gap-4 justify-start items-start cursor-pointer hover:opacity-70 active:translate-y-1 transition-all '
+      className='w-full h-fit mb-4 flex flex-col gap-4 justify-start items-start cursor-pointer hover:opacity-70 active:translate-y-1 transition-all'
     >
-      
+      {project.created_date && <span className='text-sm text-neutral-700 mt-1 px-0.5'>{project.created_date}</span>}
       <div className='w-full h-auto aspect-video relative overflow-hidden bg-gray-50 rounded-md'>
-        <MotionImg
-          src={project.cover}
-          alt={project.name}
-          magnify={false}
-          className='w-full h-full object-cover object-center'
-        />
+        {vimeoSrc ? (
+          <iframe
+            src={vimeoSrc}
+            title={`${project.name} video`}
+            frameBorder='0'
+            allow='autoplay; fullscreen; picture-in-picture'
+            allowFullScreen
+            className='absolute left-1/2 top-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none'
+            style={{ aspectRatio: '16/9' }}
+          />
+        ) : (
+          <MotionImg
+            src={project.cover}
+            alt={project.name}
+            magnify={false}
+            className='w-full h-full object-cover object-center'
+          />
+        )}
       </div>
       <div className='w-full flex flex-col gap-1'>
-        <div className='w-full flex flex-col md:flex-row justify-between items-start gap-2'>
+        <div className='w-full flex flex-col md:flex-row justify-between items-start'>
           <span className='text-xl font-medium'>{project.name}</span>
           {project.skills && project.skills.length > 0 && (
-            <div className='h-full flex flex-row flex-wrap gap-1.5 px-0.5'>
+            <div className='h-full flex my-2 flex-row flex-wrap md:justify-end gap-1.5 px-0.5'>
               {project.skills.map((skill: ProjectSkill) => (
                 <span
                   key={skill}
@@ -188,6 +204,13 @@ const ProjectCard = ({ project, highlightedSkills = [] }: { project: any; highli
             {project.description}
           </p>
         )}
+        {project.exhibition && <span className='text-sm text-neutral-700 px-0.5'>Featured: {project.exhibition}</span>}
+        {project.residency && <span className='text-sm text-neutral-700 px-0.5'>Featured: {project.residency}</span>}
+        {project.award && <span className='text-sm text-neutral-700 px-0.5'>Received: {project.award}</span>}
+        {project.publication && (
+          <span className='text-sm text-neutral-700 px-0.5'>Publication: {project.publication}</span>
+        )}
+        {project.client && <span className='text-sm text-neutral-700 px-0.5'>Client: {project.client}</span>}
       </div>
     </Link>
   )

@@ -1,20 +1,20 @@
 export type ProjectSkill =
-  | 'Creative Tools'
-  | 'AI & Fairness'
+  | 'Tool Development'
+  | 'AI & Society'
   | 'Computer Graphics'
-  | 'Community-Centered Design'
   | 'Media Art'
   | 'Interaction Design'
-  | 'Computational Craft'
+  | 'Digital Fabrication'
+  | 'Personal Project'
 
 export const ALL_SKILLS: ProjectSkill[] = [
-  'Creative Tools',
-  'AI & Fairness',
+  'Tool Development',
+  'AI & Society',
   'Computer Graphics',
-  'Computational Craft',
-  'Community-Centered Design',
+  'Digital Fabrication',
   'Interaction Design',
   'Media Art',
+  'Personal Project',
 ]
 
 export const projects = [
@@ -24,9 +24,10 @@ export const projects = [
     cover: '/images/projects/typofold/Untitled-112.jpeg',
     part: 'Tool development, Digital Fabrication',
     description: 'A design tool that converts 3D models into paper crafts',
-    award: 'HCI Korea Creative Awards (Excellence Awards) - 2025',
+    award: 'HCI Korea Creative Awards 2025',
+    exhibition: 'Slanted Magazine #47—Digital Tools (04/2026 Release)',
     created_date: '2025',
-    skills: ['Creative Tools', 'Computer Graphics', 'Computational Craft'] as ProjectSkill[],
+    skills: ['Tool Development', 'Computer Graphics', 'Digital Fabrication', 'Personal Project'] as ProjectSkill[],
   },
   {
     slug: 'xr-science-museum',
@@ -36,7 +37,8 @@ export const projects = [
     description: 'An immersive XR learning platform designed to support conceptual understanding in science education.',
     client: 'MiraeN',
     created_date: '2025',
-    skills: ['Creative Tools', 'Computer Graphics'] as ProjectSkill[],
+    skills: ['Tool Development', 'Computer Graphics'] as ProjectSkill[],
+    vimeoId: '1151529949',
   },
   {
     slug: 'new-formative',
@@ -46,6 +48,7 @@ export const projects = [
     client: 'Samsung Design Membership',
     created_date: '2025',
     skills: ['Interaction Design'] as ProjectSkill[],
+    vimeoId: '1151368571',
   },
   {
     slug: 'silver-bell',
@@ -55,17 +58,18 @@ export const projects = [
     description: 'An exercise app designed for older adults in Hongyeon-gil, Seoul',
     residency: 'Total Museum of Contemporary Art',
     created_date: '2024',
-    skills: ['Community-Centered Design'] as ProjectSkill[],
+    skills: ['AI & Society'] as ProjectSkill[],
+    vimeoId: '1165424772',
   },
   {
     slug: 'word-wide-web',
     name: 'Word Wide Web',
-    cover: '/images/projects/word-wide-web/cover.jpg',
+    cover: '/images/projects/word-wide-web/cover.gif',
     part: 'Graphic Designer, AI Engineer, Frontend Developer',
     description: 'A word-weaving platform that creates poems through connected synonyms.',
-    created_in: 'SFPC (School for Poetic Computation)',
+    residency: 'SFPC Summer 2024',
     created_date: '2024',
-    skills: ['Creative Tools', 'Media Art'] as ProjectSkill[],
+    skills: ['Tool Development', 'Media Art'] as ProjectSkill[],
   },
   {
     slug: 'ganpan',
@@ -75,7 +79,8 @@ export const projects = [
     description: 'A Korean typography generation model based on signboard images in South Korea.',
     exhibition: '2024 ATC (Art&Technology Conference)',
     created_date: '2024',
-    skills: ['Creative Tools'] as ProjectSkill[],
+    skills: ['Tool Development', 'AI & Society'] as ProjectSkill[],
+    vimeoId: '1165433285',
   },
   {
     slug: 'memeproject',
@@ -86,7 +91,7 @@ export const projects = [
       'An interactive website that explores meme origins, impact, and replication, and helps users create their own memes.',
     exhibition: 'PlanT House, Hongcheon Art Museum',
     created_date: '2023',
-    skills: ['Creative Tools', 'Media Art'] as ProjectSkill[],
+    skills: ['Tool Development', 'Media Art'] as ProjectSkill[],
   },
   {
     slug: 'hongyeon-1.0',
@@ -95,9 +100,10 @@ export const projects = [
     part: 'AI Engineer, Frontend Developer',
     description:
       'A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative.',
-    residency: 'Total Museum of Contemporary Art',
+    residency: 'The Silver Bell Challenge, ten to n gallery',
     created_date: '2023',
-    skills: ['AI & Fairness', 'Community-Centered Design', 'Media Art'] as ProjectSkill[],
+    skills: ['AI & Society', 'Community-Centered Design', 'Media Art'] as ProjectSkill[],
+    vimeoId: '911056877',
   },
   {
     slug: 'simulating-1-2-3',
@@ -107,18 +113,32 @@ export const projects = [
     description: 'Simulating gravity through Unreal Engine.',
     exhibition: 'ACC Media Cube, Gwangju',
     created_date: '2023',
-    skills: ['Computer Graphics','Media Art'] as ProjectSkill[],
+    skills: ['Computer Graphics', 'Media Art'] as ProjectSkill[],
+    vimeoId: '833905494',
+  },
+  {
+    slug: 'delta-individualism',
+    name: 'delta-individualism',
+    cover: '/images/projects/delta-individualism/cover.jpg',
+    part: 'AI Engineer, Backend Developer',
+    description:
+      "Rube Goldberg machine that frames modern society as 'high-entropy,' linking distorted individualism to hatred, discrimination, and isolation, and proposing Tandava as a collective ritual of renewal toward the common good.",
+    exhibition: '2022 ATC (Art&Technology Conference)',
+    created_date: '2022',
+    skills: ['Digital Fabrication', 'Media Art'] as ProjectSkill[],
+    vimeoId: '1151380515',
   },
   {
     slug: 'franklin',
     name: 'Franklin',
-    cover: '/images/projects/franklin/cover.jpg',
+    cover: '/images/projects/franklin/01.jpg',
     part: 'AI Engineer, Backend Developer',
     description:
       "A gender-neutral Korean fairy tale generator using AI, addressing social biases in children's literature.",
-    award: 'HCI Korea 2022',
+    award: 'HCI Korea Creative Awards 2023',
+    publication: 'Journal of Digital Contents Society',
     created_date: '2022',
-    skills: ['AI & Fairness'] as ProjectSkill[],
+    skills: ['AI & Society'] as ProjectSkill[],
   },
   {
     slug: 'singlet-multiplet',
@@ -126,8 +146,10 @@ export const projects = [
     cover: '/images/projects/singlet-multiplet/cover.jpg',
     part: 'Creative Technologist',
     description: 'A media art performance exploring identity and quantum mechanics.',
+    exhibition:
+      '8th International New Media Art Exhibition, CICA Museum & Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)',
     award:
-      '8th International New Media Art Exhibition, CICA Museum Beyond the Lens : Nano Bio Nature, Seoul Institute of the Arts, IBS(Institute for Basic Science)',
+      'First Award, Spin Art Contest 2021, Institute for Basic Science (IBS) & Center for Quantum Nanoscience (QNS)',
     created_date: '2021',
     skills: ['Media Art'] as ProjectSkill[],
   },
@@ -139,6 +161,7 @@ export const projects = [
     description: 'A program that creates music by drawing.',
     created_in: 'School Project (Creative Algorithms)',
     created_date: '2021',
-    skills: ['Creative Tools', 'Computational Craft'] as ProjectSkill[],
+    skills: ['Tool Development'] as ProjectSkill[],
+    vimeoId:'1028274888'
   },
 ]
