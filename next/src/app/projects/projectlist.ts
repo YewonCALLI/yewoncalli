@@ -100,7 +100,7 @@ export const projects = [
       'A chatbot blending multigenerational voices from Hongyeon-gil, sharing local stories and culture through AI-driven narrative.',
     residency: 'The Silver Bell Challenge, ten to n gallery',
     created_date: '2023',
-    skills: ['AI & Society', 'Community-Centered Design', 'Media Art'] as ProjectSkill[],
+    skills: ['AI & Society', 'Media Art'] as ProjectSkill[],
     vimeoId: '911056877',
   },
   {
