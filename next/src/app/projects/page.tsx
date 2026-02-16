@@ -179,7 +179,7 @@ const ProjectCard = ({ project, highlightedSkills = [] }: { project: any; highli
         )}
       </div>
       <div className='w-full flex flex-col gap-1'>
-        <div className='w-full flex flex-col md:flex-row justify-between items-start'>
+        <div className='w-full flex flex-col md:flex-row justify-between items-start md:items-center'>
           <span className='text-xl font-medium'>{project.name}</span>
           {project.skills && project.skills.length > 0 && (
             <div className='h-full flex my-2 flex-row flex-wrap md:justify-end gap-1.5 px-0.5'>

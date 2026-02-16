@@ -5,7 +5,6 @@ export type ProjectSkill =
   | 'Media Art'
   | 'Interaction Design'
   | 'Digital Fabrication'
-  | 'Personal Project'
 
 export const ALL_SKILLS: ProjectSkill[] = [
   'Tool Development',
@@ -14,7 +13,6 @@ export const ALL_SKILLS: ProjectSkill[] = [
   'Digital Fabrication',
   'Interaction Design',
   'Media Art',
-  'Personal Project',
 ]
 
 export const projects = [
@@ -27,7 +25,7 @@ export const projects = [
     award: 'HCI Korea Creative Awards 2025',
     exhibition: 'Slanted Magazine #47—Digital Tools (04/2026 Release)',
     created_date: '2025',
-    skills: ['Tool Development', 'Computer Graphics', 'Digital Fabrication', 'Personal Project'] as ProjectSkill[],
+    skills: ['Tool Development', 'Computer Graphics', 'Digital Fabrication'] as ProjectSkill[],
   },
   {
     slug: 'xr-science-museum',
@@ -162,6 +160,6 @@ export const projects = [
     created_in: 'School Project (Creative Algorithms)',
     created_date: '2021',
     skills: ['Tool Development'] as ProjectSkill[],
-    vimeoId:'1028274888'
+    vimeoId: '1028274888',
   },
 ]

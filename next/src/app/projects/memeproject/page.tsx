@@ -127,12 +127,20 @@ export default function ProjectDetailPage() {
             <MotionImg src={imagePath + '07.jpg'} alt='memeproject07' caption='Exhibition Space' />
             <P>The project’s website is accessible via QR code in the exhibition space.</P>
           </Paragpraph>
-          <Chapter subTitle='Reflection' title='Self-replication and Cultural Reach' />
+          <Chapter subTitle='Demo Video' title='Project Summary Video' />
           <Paragpraph left={null}>
-            <P>
-              This project explores the self-replicating nature of memes and their potential reach, encouraging visitors
-              to reflect on the humorous yet impactful role memes play in shaping cultural narratives.
-            </P>
+            <MotionDiv>
+              <div className='w-full aspect-video'>
+                <iframe
+                  title='vimeo-player'
+                  src='https://player.vimeo.com/video/1000663988?h=b0f97e3fee&title=0&byline=0&portrait=0&badge=0&dnt=1'
+                  className='w-full h-full'
+                  frameBorder='0'
+                  allow='autoplay; fullscreen; picture-in-picture'
+                  allowFullScreen
+                />
+              </div>
+            </MotionDiv>
           </Paragpraph>
         </Section>
       </ParllaxFrame>
