@@ -239,9 +239,7 @@ const FeaturedProjectCard = ({
           {/* Header */}
           <div className='flex flex-col gap-2'>
             <div className='flex flex-row items-center gap-2 flex-wrap'>
-              {project.created_date && (
-                <span className='text-xs text-neutral-500'>{project.created_date}</span>
-              )}
+              {project.created_date && <span className='text-xs text-neutral-500'>{project.created_date}</span>}
             </div>
             <h2 className='text-2xl md:text-3xl font-semibold leading-tight'>{project.name}</h2>
           </div>
@@ -249,12 +247,8 @@ const FeaturedProjectCard = ({
           {/* Research Question */}
           {project.researchQuestion && (
             <div className='border-l-2 border-black pl-4'>
-              <p className='text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1'>
-                Research Question
-              </p>
-              <p className='text-sm md:text-base text-neutral-800 leading-relaxed italic'>
-                "{project.researchQuestion}"
-              </p>
+              <p className='text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1'>Research Question</p>
+              <p className='text-sm md:text-base text-neutral-800 leading-relaxed italic'>{project.researchQuestion}</p>
             </div>
           )}
 
@@ -292,19 +286,11 @@ const FeaturedProjectCard = ({
             </div>
           )}
           <div className='flex flex-col gap-0.5'>
-            {project.award && (
-              <span className='text-xs text-neutral-500'>🏆 {project.award}</span>
-            )}
-            {project.exhibition && (
-              <span className='text-xs text-neutral-500'>📍 {project.exhibition}</span>
-            )}
-            {project.publication && (
-              <span className='text-xs text-neutral-500'>📄 {project.publication}</span>
-            )}
+            {project.award && <span className='text-xs text-neutral-500'>🏆 {project.award}</span>}
+            {project.exhibition && <span className='text-xs text-neutral-500'>📍 {project.exhibition}</span>}
+            {project.publication && <span className='text-xs text-neutral-500'>📄 {project.publication}</span>}
             {project.funded && project.funded.length > 0 && (
-              <span className='text-xs text-neutral-500'>
-                🙏 Funded by {project.funded.join(', ')}
-              </span>
+              <span className='text-xs text-neutral-500'>🙏 Funded by {project.funded.join(', ')}</span>
             )}
           </div>
         </div>

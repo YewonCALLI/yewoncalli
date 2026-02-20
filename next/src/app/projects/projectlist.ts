@@ -97,7 +97,7 @@ export const projects = [
     part: 'Graphic Designer, AI Engineer, Frontend Developer',
     description: 'A word-weaving platform that creates poems through connected synonyms.',
     researchQuestion:
-      "Can a community's shared vocabulary become the foundation for a tool that supports poetic expression?",
+      `Can a community's shared vocabulary become the foundation for a tool that supports poetic expression?`,
     residency: 'SFPC Summer 2024',
     created_date: '2024',
     skills: ['Tool Development', 'Media Art'] as ProjectSkill[],
@@ -159,7 +159,7 @@ export const projects = [
     cover: '/images/projects/delta-individualism/cover.jpg',
     part: 'AI Engineer, Backend Developer',
     description:
-      "Rube Goldberg machine that frames modern society as 'high-entropy,' linking distorted individualism to hatred, discrimination, and isolation, and proposing Tandava as a collective ritual of renewal toward the common good.",
+      `Rube Goldberg machine that frames modern society as 'high-entropy,' linking distorted individualism to hatred, discrimination, and isolation, and proposing Tandava as a collective ritual of renewal toward the common good.`,
     researchQuestion: 'How can the concept of entropy explain the social consequences of hyper-individualism?',
     exhibition: '2022 ATC (Art&Technology Conference)',
     funded: ['National Research Foundation (NRF)'],
