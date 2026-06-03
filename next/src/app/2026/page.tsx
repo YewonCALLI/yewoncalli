@@ -1,5 +1,13 @@
 'use client'
 
+// ── 모바일 씬 위치 조절 ──────────────────────────────
+// 양수 = 씬이 왼쪽으로, 음수 = 오른쪽으로 (px 단위)
+const MOBILE_SCENE_OFFSET_X = 150
+// 줌인 거리 (클수록 멀리서 줌인)
+const ZOOM_DISTANCE = 0.2
+const MOBILE_ZOOM_DISTANCE = 0.25
+// ────────────────────────────────────────────────────
+
 import { useRef, Suspense, useMemo, useState, useCallback, useEffect } from 'react'
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { OrbitControls, Line, useGLTF, Billboard, Text, useTexture } from '@react-three/drei'
@@ -96,7 +104,7 @@ function HeartPoints({ onPositionsReady }: { onPositionsReady: (positions: THREE
 // ──────────────────────────────────────────────
 // Camera Animator
 // ──────────────────────────────────────────────
-function CameraAnimator({ target, controlsRef }: { target: THREE.Vector3 | null; controlsRef: React.RefObject<any> }) {
+function CameraAnimator({ target, controlsRef, zoomDistance }: { target: THREE.Vector3 | null; controlsRef: React.RefObject<any>; zoomDistance: number }) {
   const { camera } = useThree()
   const animating = useRef(false)
   const startPos = useRef(new THREE.Vector3())
@@ -116,7 +124,7 @@ function CameraAnimator({ target, controlsRef }: { target: THREE.Vector3 | null;
     }
 
     endTarget.current.set(target.x - 0.1, target.y, target.z)
-    endPos.current.set(target.x, target.y, target.z + 0.2)
+    endPos.current.set(target.x, target.y, target.z + zoomDistance)
 
     progress.current = 0
     animating.current = true
@@ -354,18 +362,38 @@ function CoordinateImages() {
 // ──────────────────────────────────────────────
 // 메인 씬
 // ──────────────────────────────────────────────
+function MobileViewOffset({ offsetX }: { offsetX: number }) {
+  const { camera, size } = useThree()
+
+  useEffect(() => {
+    const cam = camera as THREE.PerspectiveCamera
+    if (offsetX !== 0) {
+      cam.setViewOffset(size.width, size.height, offsetX, 0, size.width, size.height)
+    } else {
+      cam.clearViewOffset()
+    }
+    return () => cam.clearViewOffset()
+  }, [offsetX, camera, size])
+
+  return null
+}
+
 function Scene({
   selectedProject,
   particlePositions,
   onPositionsReady,
   controlsRef,
   onNavigate,
+  sceneOffsetX,
+  zoomDistance,
 }: {
   selectedProject: SelectedProjectState | null
   particlePositions: THREE.Vector3[]
   onPositionsReady: (positions: THREE.Vector3[]) => void
   controlsRef: React.RefObject<any>
   onNavigate: (project: Project) => void
+  sceneOffsetX: number
+  zoomDistance: number
 }) {
   const cameraTarget = useMemo(() => {
     if (!selectedProject) return null
@@ -391,7 +419,7 @@ function Scene({
         <CoordinateImages />
       </Suspense>
 
-      <CameraAnimator target={cameraTarget} controlsRef={controlsRef} />
+      <CameraAnimator target={cameraTarget} controlsRef={controlsRef} zoomDistance={zoomDistance} />
 
       {selectedProject && selectedProject.targetPosition && (
         <Suspense fallback={null}>
@@ -402,6 +430,8 @@ function Scene({
           />
         </Suspense>
       )}
+
+      <MobileViewOffset offsetX={sceneOffsetX} />
 
       <EffectComposer>
         <Pixelation granularity={selectedProject ? 6.0 : 2.8} />
@@ -417,6 +447,14 @@ export default function Page2026() {
   const [selectedProject, setSelectedProject] = useState<SelectedProjectState | null>(null)
   const [particlePositions, setParticlePositions] = useState<THREE.Vector3[]>([])
   const controlsRef = useRef<any>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const handlePositionsReady = useCallback((positions: THREE.Vector3[]) => {
     setParticlePositions(positions)
@@ -486,6 +524,8 @@ export default function Page2026() {
               onPositionsReady={handlePositionsReady}
               controlsRef={controlsRef}
               onNavigate={handleNavigate}
+              sceneOffsetX={isMobile ? MOBILE_SCENE_OFFSET_X : 0}
+              zoomDistance={isMobile ? MOBILE_ZOOM_DISTANCE : ZOOM_DISTANCE}
             />
           </Suspense>
         </Canvas>
